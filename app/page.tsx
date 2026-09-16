@@ -4,6 +4,7 @@ import {
   useEffect,
   useMemo,
   useState,
+  type MouseEvent,
 } from "react";
 
 import Image from "next/image";
@@ -12,12 +13,9 @@ import { useRouter } from "next/navigation";
 
 import {
   projects,
-  ProjectType,
+  type Project,
+  type ProjectType,
 } from "../data/projects";
-
-/* =========================================================
-   TYPES
-========================================================= */
 
 type FilterType =
   | "all"
@@ -45,9 +43,171 @@ const categoryFilters: {
   },
 ];
 
-/* =========================================================
-   HOME
-========================================================= */
+type EditorialProjectCardProps = {
+  project: Project;
+  className?: string;
+
+  onOpen?: (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => void;
+};
+
+function EditorialProjectCard({
+  project,
+  className = "",
+  onOpen,
+}: EditorialProjectCardProps) {
+  const href = `/work/${project.slug}`;
+
+  const showPlay =
+    project.type === "film" ||
+    project.type === "short-form";
+
+  const isGif =
+    project.cover?.toLowerCase().endsWith(".gif") ??
+    false;
+
+  return (
+    <Link
+      href={href}
+      className={`editorial-project ${className}`}
+      data-cursor
+      onClick={(event) => {
+        if (onOpen) {
+          onOpen(event, href);
+        }
+      }}
+    >
+
+      {/* IMAGE */}
+
+      <div className="editorial-project-media">
+
+        {project.cover ? (
+
+          isGif ? (
+
+            <img
+              src={project.cover}
+              alt={project.title}
+              className="editorial-project-image editorial-project-gif"
+            />
+
+          ) : (
+
+            <Image
+              src={project.cover}
+              alt={project.title}
+              fill
+              sizes="100vw"
+              className="editorial-project-image"
+            />
+
+          )
+
+        ) : (
+
+          <div className="editorial-project-placeholder">
+            {project.number}
+          </div>
+
+        )}
+
+      </div>
+
+
+      {/* SHADE */}
+
+      <div className="editorial-project-shade" />
+
+
+      {/* TOP META */}
+
+      <div className="editorial-project-top">
+
+        <span>
+          PROJECT {project.number}
+        </span>
+
+        {project.year && (
+          <span>
+            {project.year}
+          </span>
+        )}
+
+      </div>
+
+
+      {/* BOTTOM */}
+
+      <div className="editorial-project-bottom">
+
+        <div>
+
+          <h3>
+            {project.title}
+          </h3>
+
+          <span>
+            {project.category}
+          </span>
+
+        </div>
+
+
+        <span className="editorial-project-play">
+
+          {showPlay ? (
+
+            <span className="editorial-project-play-icon">
+              ▶
+            </span>
+
+          ) : (
+
+            <span className="editorial-project-play-text">
+              VIEW
+            </span>
+
+          )}
+
+        </span>
+
+      </div>
+
+    </Link>
+  );
+}
+
+function EditorialSectionHeader({
+  title,
+  count,
+  index,
+  note,
+}: {
+  title: string;
+  count: number;
+  index: string;
+  note: string;
+}) {
+  return (
+    <div className="editorial-category-header">
+      <div className="editorial-category-title">
+        <h2>{title}</h2>
+
+        <span>
+          / {String(count).padStart(2, "0")}
+        </span>
+      </div>
+
+      <div className="editorial-category-right">
+        <span>{note}</span>
+        <span>{index}</span>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const router = useRouter();
@@ -62,24 +222,70 @@ export default function Home() {
     setIsTransitioning,
   ] = useState(false);
 
-  /* =========================================================
-     FILTER PROJECTS
-  ========================================================= */
+  const filmProjects = useMemo(
+    () =>
+      projects.filter(
+        (project) =>
+          project.type === "film"
+      ),
+    []
+  );
 
-  const filteredProjects = useMemo(() => {
+  const motionProjects = useMemo(
+    () =>
+      projects.filter(
+        (project) =>
+          project.type === "motion"
+      ),
+    []
+  );
+
+  const shortProjects = useMemo(
+    () =>
+      projects.filter(
+        (project) =>
+          project.type ===
+          "short-form"
+      ),
+    []
+  );
+
+  const photoProjects = useMemo(
+    () =>
+      projects.filter(
+        (project) =>
+          project.type ===
+          "photography"
+      ),
+    []
+  );
+
+  const activeCount = useMemo(() => {
     if (activeFilter === "all") {
-      return projects;
+      return projects.length;
     }
 
     return projects.filter(
       (project) =>
         project.type === activeFilter
-    );
+    ).length;
   }, [activeFilter]);
 
-  /* =========================================================
-     CUSTOM CURSOR
-  ========================================================= */
+  const showFilm =
+    activeFilter === "all" ||
+    activeFilter === "film";
+
+  const showMotion =
+    activeFilter === "all" ||
+    activeFilter === "motion";
+
+  const showShort =
+    activeFilter === "all" ||
+    activeFilter === "short-form";
+
+  const showPhotography =
+    activeFilter === "all" ||
+    activeFilter === "photography";
 
   useEffect(() => {
     const cursor =
@@ -88,18 +294,17 @@ export default function Home() {
       );
 
     const moveCursor = (
-      event: MouseEvent
+      event: globalThis.MouseEvent
     ) => {
       if (!cursor) return;
 
-      (
-        cursor as HTMLElement
-      ).style.left =
+      const element =
+        cursor as HTMLElement;
+
+      element.style.left =
         `${event.clientX}px`;
 
-      (
-        cursor as HTMLElement
-      ).style.top =
+      element.style.top =
         `${event.clientY}px`;
     };
 
@@ -109,15 +314,13 @@ export default function Home() {
       );
 
     const addHover = () => {
-      if (!cursor) return;
-
-      cursor.classList.add("hover");
+      cursor?.classList.add("hover");
     };
 
     const removeHover = () => {
-      if (!cursor) return;
-
-      cursor.classList.remove("hover");
+      cursor?.classList.remove(
+        "hover"
+      );
     };
 
     window.addEventListener(
@@ -161,14 +364,10 @@ export default function Home() {
     };
   }, [activeFilter]);
 
-  /* =========================================================
-     PROJECT SCROLL REVEAL
-  ========================================================= */
-
   useEffect(() => {
     const projectElements =
       document.querySelectorAll(
-        ".project"
+        ".editorial-project"
       );
 
     const observer =
@@ -191,9 +390,9 @@ export default function Home() {
           );
         },
         {
-          threshold: 0.1,
+          threshold: 0.08,
           rootMargin:
-            "0px 0px -5% 0px",
+            "0px 0px -4% 0px",
         }
       );
 
@@ -203,14 +402,9 @@ export default function Home() {
       }
     );
 
-    return () => {
+    return () =>
       observer.disconnect();
-    };
   }, [activeFilter]);
-
-  /* =========================================================
-     NAVBAR SCROLL
-  ========================================================= */
 
   useEffect(() => {
     const nav =
@@ -248,15 +442,9 @@ export default function Home() {
     };
   }, []);
 
-  /* =========================================================
-     PAGE TRANSITION
-  ========================================================= */
-
   const openProject = (
     event:
-      React.MouseEvent<
-        HTMLAnchorElement
-      >,
+      MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
     event.preventDefault();
@@ -272,17 +460,41 @@ export default function Home() {
     }, 450);
   };
 
-  /* =========================================================
-     RETURN
-  ========================================================= */
+  const filmRowTwo =
+    filmProjects.slice(1, 4);
+
+  /*
+   * FORM ĐÃ CHỐT
+   *
+   * ROW 1: 01
+   * ROW 2: 02 / 03 / 04
+   * ROW 3: 08 / 09
+   * ROW 4: 06 / 07 / 05
+   */
+
+  const filmRowThree = [
+    filmProjects[7],
+    filmProjects[8],
+  ].filter(
+    (
+      project
+    ): project is Project =>
+      Boolean(project)
+  );
+
+  const filmRowFour = [
+    filmProjects[5],
+    filmProjects[6],
+    filmProjects[4],
+  ].filter(
+    (
+      project
+    ): project is Project =>
+      Boolean(project)
+  );
 
   return (
     <main className="portfolio">
-
-      {/* =====================================================
-          PAGE TRANSITION
-      ===================================================== */}
-
       <div
         className={`page-transition ${
           isTransitioning
@@ -291,10 +503,6 @@ export default function Home() {
         }`}
       />
 
-      {/* =====================================================
-          CUSTOM CURSOR
-      ===================================================== */}
-
       <div className="custom-cursor" />
 
       {/* =====================================================
@@ -302,13 +510,11 @@ export default function Home() {
       ===================================================== */}
 
       <nav className="nav">
-
         <div className="logo">
           CUONG HOANG
         </div>
 
         <div className="nav-right">
-
           <a
             href="#work"
             className="nav-item"
@@ -332,9 +538,7 @@ export default function Home() {
           >
             CONTACT
           </a>
-
         </div>
-
       </nav>
 
       {/* =====================================================
@@ -342,31 +546,21 @@ export default function Home() {
       ===================================================== */}
 
       <section className="hero">
-
         <div className="hero-title">
-
           <div className="hero-line">
-            <span>
-              MEDIA
-            </span>
+            <span>MEDIA</span>
           </div>
 
           <div className="hero-line">
-            <span>
-              MOTION
-            </span>
+            <span>MOTION</span>
           </div>
 
           <div className="hero-line indent">
-            <span>
-              DESIGNER
-            </span>
+            <span>DESIGNER</span>
           </div>
-
         </div>
 
         <div className="hero-bottom">
-
           <span>
             BASED IN VIETNAM
           </span>
@@ -378,420 +572,300 @@ export default function Home() {
           <span>
             2026
           </span>
-
         </div>
-
       </section>
 
       {/* =====================================================
-          WORK
+          EDITORIAL WORK
       ===================================================== */}
 
       <section
-        className="work-section"
         id="work"
+        className="editorial-work-section"
       >
-
-        {/* =================================================
-            WORK HEADER
-        ================================================= */}
-
-        <div className="section-header">
-
-          <span>
+        <div className="editorial-work-heading">
+          <h1>
             SELECTED WORK
-          </span>
+          </h1>
 
           <span>
-            2025 — 2026
-          </span>
-
-        </div>
-
-        {/* =================================================
-            FILTER
-        ================================================= */}
-
-        <div className="work-filter">
-
-          {/* ALL — LEFT */}
-
-          <div className="work-filter-left">
-
-            <button
-              type="button"
-              className={`work-filter-button ${
-                activeFilter === "all"
-                  ? "is-active"
-                  : ""
-              }`}
-              onClick={() =>
-                setActiveFilter("all")
-              }
-              data-cursor
-            >
-              ALL
-            </button>
-
-          </div>
-
-          {/* 4 FILTERS — CENTER */}
-
-          <div className="work-filter-center">
-
-            {categoryFilters.map(
-              (filter) => (
-
-                <button
-                  key={filter.value}
-                  type="button"
-                  className={`work-filter-button ${
-                    activeFilter ===
-                    filter.value
-                      ? "is-active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setActiveFilter(
-                      filter.value
-                    )
-                  }
-                  data-cursor
-                >
-                  {filter.label}
-                </button>
-
-              )
-            )}
-
-          </div>
-
-          {/* PROJECT COUNT */}
-
-          <div className="work-filter-count">
-
             {String(
-              filteredProjects.length
+              activeCount
             ).padStart(2, "0")}
-
-            <span>
-              {" / "}
-            </span>
-
+            {" / "}
             {String(
               projects.length
             ).padStart(2, "0")}
+          </span>
+        </div>
 
-          </div>
+        {/* FILTER */}
 
+        <div className="editorial-filter">
+          <button
+            type="button"
+            className={
+              activeFilter === "all"
+                ? "is-active"
+                : ""
+            }
+            onClick={() =>
+              setActiveFilter("all")
+            }
+            data-cursor
+          >
+            ALL
+          </button>
+
+          {categoryFilters.map(
+            (filter) => (
+              <button
+                key={filter.value}
+                type="button"
+                className={
+                  activeFilter ===
+                  filter.value
+                    ? "is-active"
+                    : ""
+                }
+                onClick={() =>
+                  setActiveFilter(
+                    filter.value
+                  )
+                }
+                data-cursor
+              >
+                {filter.label}
+              </button>
+            )
+          )}
         </div>
 
         {/* =================================================
-            PROJECT LIST
+            FILM
         ================================================= */}
 
-        <div
-          className={`projects projects-filter-${activeFilter}`}
-          key={activeFilter}
-        >
+        {showFilm && (
+          <section className="editorial-category editorial-film">
+            <EditorialSectionHeader
+              title="FILM"
+              count={
+                filmProjects.length
+              }
+              index="01"
+              note="STORIES FOR A WIDER TOMORROW"
+            />
 
-          {filteredProjects.map(
-            (project) => {
+            {filmProjects[0] && (
+              <EditorialProjectCard
+                project={
+                  filmProjects[0]
+                }
+                className="film-hero"
+                onOpen={openProject}
+              />
+            )}
 
-              const href =
-                `/work/${project.slug}`;
+            <div className="film-row film-row-three">
+              {filmRowTwo.map(
+                (project) => (
+                  <EditorialProjectCard
+                    key={
+                      project.number
+                    }
+                    project={project}
+                    className="film-small"
+                    onOpen={
+                      openProject
+                    }
+                  />
+                )
+              )}
+            </div>
 
-              /*
-               * PROJECT 01 chỉ dùng layout
-               * đặc biệt khi đang ở ALL.
-               */
+            {/* ROW 3 — 08 / 09 */}
 
-              const isFeatured =
-                activeFilter === "all" &&
-                project.number === "01";
+            <div className="film-row film-row-two">
+              {filmRowThree.map(
+                (project) => (
+                  <EditorialProjectCard
+                    key={
+                      project.number
+                    }
+                    project={project}
+                    className="film-wide"
+                    onOpen={
+                      openProject
+                    }
+                  />
+                )
+              )}
+            </div>
 
-              return (
+            {/* ROW 4 — 06 / 07 / 05 */}
 
-                <Link
-                  href={href}
-                  key={project.number}
-                  className={`project project-type-${project.type} ${
-                    isFeatured
-                      ? "project-featured"
-                      : ""
-                  }`}
-                  data-cursor
-                  onClick={(event) =>
-                    openProject(
-                      event,
-                      href
-                    )
+            <div className="film-row film-row-three">
+              {filmRowFour.map(
+                (project) => (
+                  <EditorialProjectCard
+                    key={
+                      project.number
+                    }
+                    project={project}
+                    className="film-small"
+                    onOpen={
+                      openProject
+                    }
+                  />
+                )
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* =================================================
+            MOTION
+        ================================================= */}
+
+        {showMotion && (
+          <section className="editorial-category editorial-motion">
+            <EditorialSectionHeader
+              title="MOTION"
+              count={
+                motionProjects.length
+              }
+              index="02"
+              note="IDEAS IN MOTION"
+            />
+
+            <div className="editorial-motion-grid">
+              {motionProjects[0] && (
+                <EditorialProjectCard
+                  project={
+                    motionProjects[0]
                   }
-                >
-
-                  {isFeatured ? (
-
-                    /* =============================================
-                       PROJECT 01 — FEATURED
-                    ============================================= */
-
-                    <div className="featured-project">
-
-                      {/* =========================================
-                          BLACK & WHITE BACKGROUND
-                      ========================================= */}
-
-                      <div className="featured-background">
-
-                        {project.cover && (
-
-                          <Image
-                            src={
-                              project.cover
-                            }
-                            alt={
-                              project.title
-                            }
-                            fill
-                            priority
-                            sizes="100vw"
-                            className="featured-background-image"
-                          />
-
-                        )}
-
-                        <div className="featured-overlay" />
-
-                      </div>
-
-                      {/* =========================================
-                          TOP INFORMATION
-                      ========================================= */}
-
-                      <div className="featured-top">
-
-                        <span>
-                          PROJECT{" "}
-                          {
-                            project.number
-                          }
-                        </span>
-
-                        <div className="featured-top-center">
-
-                          <span>
-                            {
-                              project.category
-                            }
-                          </span>
-
-                          <strong>
-                            CUONG HOANG
-                          </strong>
-
-                        </div>
-
-                        <span className="featured-year">
-                          {
-                            project.year
-                          }
-                        </span>
-
-                      </div>
-
-                      {/* =========================================
-                          SMALL COLOR IMAGE
-
-                          CÙNG ẢNH VỚI BACKGROUND
-                          NHƯNG GIỮ MÀU GỐC
-                      ========================================= */}
-
-                      <div className="featured-small-image">
-
-                        {project.cover && (
-
-                          <Image
-                            src={
-                              project.cover
-                            }
-                            alt={`${project.title} color preview`}
-                            fill
-                            sizes="35vw"
-                            className="featured-small-image-content"
-                          />
-
-                        )}
-
-                      </div>
-
-                      {/* =========================================
-                          PLAY BUTTON
-                      ========================================= */}
-
-                      <div className="featured-center">
-
-                        <div className="featured-play">
-                          PLAY
-                        </div>
-
-                      </div>
-
-                      {/* =========================================
-                          PROJECT TITLE
-                      ========================================= */}
-
-                      <div className="featured-title">
-
-                        <span>
-                          CMC DATA
-                        </span>
-
-                        <span>
-                          CENTER
-                        </span>
-
-                      </div>
-
-                      {/* =========================================
-                          FILM
-
-                          ĐÂY CHÍNH LÀ ĐOẠN MÀY HỎI
-                      ========================================= */}
-
-                      <div className="featured-film-wrap">
-
-                        <div className="featured-side-title">
-                          FILM
-                        </div>
-
-                      </div>
-
-                      {/* =========================================
-                          BOTTOM INFORMATION
-                      ========================================= */}
-
-                      <div className="featured-bottom">
-
-                        <span>
-                          DIRECTOR / DOP / EDITOR
-                        </span>
-
-                        <span>
-                          VIEW PROJECT
-                        </span>
-
-                      </div>
-
-                    </div>
-
-                  ) : (
-
-                    /* =============================================
-                       NORMAL PROJECT CARD
-                    ============================================= */
-
-                    <>
-
-                      <div className="project-visual">
-
-                        {project.cover ? (
-
-                          <Image
-                            src={
-                              project.cover
-                            }
-                            alt={`${project.title} cover`}
-                            fill
-                            sizes="100vw"
-                            className="project-cover"
-                          />
-
-                        ) : (
-
-                          <div className="project-placeholder">
-
-                            <span>
-                              PROJECT{" "}
-                              {
-                                project.number
-                              }
-                            </span>
-
-                          </div>
-
-                        )}
-
-                        {/* PROJECT TYPE */}
-
-                        <div className="project-type-badge">
-
-                          {project.type ===
-                            "film" &&
-                            "FILM"}
-
-                          {project.type ===
-                            "motion" &&
-                            "MOTION"}
-
-                          {project.type ===
-                            "short-form" &&
-                            "SHORT-FORM"}
-
-                          {project.type ===
-                            "photography" &&
-                            "PHOTOGRAPHY"}
-
-                        </div>
-
-                      </div>
-
-                      {/* PROJECT INFO */}
-
-                      <div className="project-info">
-
-                        <div className="project-number">
-                          {
-                            project.number
-                          }
-                        </div>
-
-                        <div className="project-title">
-                          {
-                            project.title
-                          }
-                        </div>
-
-                        <div className="project-meta">
-
-                          <span>
-                            {
-                              project.category
-                            }
-                          </span>
-
-                          <span>
-                            {
-                              project.year
-                            }
-                          </span>
-
-                        </div>
-
-                      </div>
-
-                    </>
-
-                  )}
-
-                </Link>
-
-              );
-
-            }
-          )}
-
-        </div>
-
+                  className="motion-main"
+                  onOpen={
+                    openProject
+                  }
+                />
+              )}
+
+              {motionProjects[1] && (
+                <EditorialProjectCard
+                  project={
+                    motionProjects[1]
+                  }
+                  className="motion-side motion-side-top"
+                  onOpen={
+                    openProject
+                  }
+                />
+              )}
+
+              {motionProjects[2] && (
+                <EditorialProjectCard
+                  project={
+                    motionProjects[2]
+                  }
+                  className="motion-side motion-side-bottom"
+                  onOpen={
+                    openProject
+                  }
+                />
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* =================================================
+            SHORT FORM
+        ================================================= */}
+
+        {showShort && (
+          <section className="editorial-category editorial-short">
+            <EditorialSectionHeader
+              title="SHORT-FORM"
+              count={
+                shortProjects.length
+              }
+              index="03"
+              note="SMALL FORMAT. BIG STORIES."
+            />
+
+            <div className="editorial-short-grid">
+              {shortProjects.map(
+                (project) => (
+                  <EditorialProjectCard
+                    key={
+                      project.number
+                    }
+                    project={project}
+                    className="short-card"
+                    onOpen={
+                      openProject
+                    }
+                  />
+                )
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* =================================================
+            PHOTOGRAPHY
+        ================================================= */}
+
+        {showPhotography && (
+          <section className="editorial-category editorial-photo">
+            <EditorialSectionHeader
+              title="PHOTOGRAPHY"
+              count={
+                photoProjects.length
+              }
+              index="04"
+              note="PEOPLE. PLACES. MOMENTS."
+            />
+
+            <div className="editorial-photo-grid">
+              {photoProjects[0] && (
+                <EditorialProjectCard
+                  project={
+                    photoProjects[0]
+                  }
+                  className="photo-main"
+                  onOpen={
+                    openProject
+                  }
+                />
+              )}
+
+              {photoProjects[1] && (
+                <EditorialProjectCard
+                  project={
+                    photoProjects[1]
+                  }
+                  className="photo-side"
+                  onOpen={
+                    openProject
+                  }
+                />
+              )}
+
+              {photoProjects[2] && (
+                <EditorialProjectCard
+                  project={
+                    photoProjects[2]
+                  }
+                  className="photo-side"
+                  onOpen={
+                    openProject
+                  }
+                />
+              )}
+            </div>
+          </section>
+        )}
       </section>
 
       {/* =====================================================
@@ -802,9 +876,7 @@ export default function Home() {
         id="about"
         className="about-section"
       >
-
         <div className="about-header">
-
           <span>
             ABOUT
           </span>
@@ -812,25 +884,19 @@ export default function Home() {
           <span>
             01
           </span>
-
         </div>
 
         <div className="about-main">
-
           <div className="about-intro">
-
             <p>
               I CREATE VISUAL STORIES
               THROUGH FILM, MOTION
               AND DESIGN.
             </p>
-
           </div>
 
           <div className="about-details">
-
             <div className="about-location">
-
               <span className="about-label">
                 BASED IN
               </span>
@@ -838,17 +904,14 @@ export default function Home() {
               <span>
                 VIETNAM
               </span>
-
             </div>
 
             <div className="about-role">
-
               <span className="about-label">
                 WHAT I DO
               </span>
 
               <div className="about-role-list">
-
                 <span>
                   DIRECTOR
                 </span>
@@ -872,15 +935,10 @@ export default function Home() {
                 <span>
                   PHOTOGRAPHY
                 </span>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* =====================================================
@@ -891,9 +949,7 @@ export default function Home() {
         id="contact"
         className="contact-section"
       >
-
         <div className="contact-header">
-
           <span>
             CONTACT
           </span>
@@ -901,11 +957,9 @@ export default function Home() {
           <span>
             02
           </span>
-
         </div>
 
         <div className="contact-main">
-
           <p className="contact-title">
             HAVE A PROJECT
             IN MIND?
@@ -918,13 +972,10 @@ export default function Home() {
           >
             LET&apos;S TALK ↗
           </a>
-
         </div>
 
         <div className="contact-footer">
-
           <div className="contact-links">
-
             <a
               href="mailto:caocuong749@gmail.com"
               data-cursor
@@ -958,17 +1009,13 @@ export default function Home() {
             >
               BEHANCE
             </a>
-
           </div>
 
           <span>
             © 2026 CUONG HOANG
           </span>
-
         </div>
-
       </section>
-
     </main>
   );
 }

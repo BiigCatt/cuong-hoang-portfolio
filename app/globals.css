@@ -12,10 +12,15 @@ html {
 body {
   background: #820000;
   color: #d3b69c;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+
   overflow-x: hidden;
 }
-
 button,
 a {
   font: inherit;
@@ -2257,238 +2262,7 @@ a {
 .project-cover {
   object-fit: cover;
 }
-/* =========================================================
-   MOTION â€” SHOWCASE GRID
-========================================================= */
 
-.projects-filter-motion {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap:
-    70px
-    30px;
-
-  padding-top: 70px;
-}
-
-.projects-filter-motion
-.project-type-motion {
-  padding: 0;
-
-  border-bottom: 0;
-}
-
-.projects-filter-motion
-.project-type-motion:nth-child(3) {
-  grid-column:
-    1 / -1;
-
-  width: 70%;
-
-  justify-self: center;
-}
-
-.project-type-motion
-.project-visual {
-  width: 100%;
-
-  height: auto;
-
-  aspect-ratio: 16 / 10;
-}
-
-.project-type-motion
-.project-info {
-  grid-template-columns:
-    45px
-    1fr;
-
-  gap: 15px;
-
-  padding-top: 18px;
-}
-
-.project-type-motion
-.project-meta {
-  grid-column: 2;
-
-  justify-content:
-    space-between;
-}
-/* =========================================================
-   SHORT-FORM â€” 9:16
-========================================================= */
-
-.projects-filter-short-form {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 60px;
-
-  max-width: 1050px;
-
-  margin: 0 auto;
-
-  padding-top: 80px;
-}
-
-.projects-filter-short-form
-.project-type-short-form {
-  padding: 0 0 50px;
-
-  border-bottom: 0;
-}
-
-.project-type-short-form
-.project-visual {
-  width: 100%;
-
-  height: auto;
-
-  aspect-ratio: 9 / 16;
-}
-
-.project-type-short-form
-.project-info {
-  display: grid;
-
-  grid-template-columns:
-    40px
-    1fr;
-
-  gap: 12px;
-
-  padding-top: 18px;
-}
-
-.project-type-short-form
-.project-title {
-  font-size:
-    clamp(
-      28px,
-      3vw,
-      50px
-    );
-}
-
-.project-type-short-form
-.project-meta {
-  grid-column: 2;
-
-  justify-content:
-    space-between;
-}
-/* =========================================================
-   PHOTOGRAPHY â€” EDITORIAL GRID
-========================================================= */
-
-.projects-filter-photography {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap:
-    120px
-    50px;
-
-  padding-top: 90px;
-}
-
-.projects-filter-photography
-.project-type-photography {
-  padding: 0;
-
-  border-bottom: 0;
-}
-
-
-/* PHOTO 01 */
-
-.projects-filter-photography
-.project-type-photography:nth-child(1) {
-  width: 88%;
-}
-
-
-/* PHOTO 02 */
-
-.projects-filter-photography
-.project-type-photography:nth-child(2) {
-  width: 72%;
-
-  justify-self: end;
-
-  margin-top: 170px;
-}
-
-
-/* PHOTO 03 */
-
-.projects-filter-photography
-.project-type-photography:nth-child(3) {
-  width: 72%;
-
-  margin-left: 8%;
-}
-
-
-/* PHOTO 04 */
-
-.projects-filter-photography
-.project-type-photography:nth-child(4) {
-  width: 92%;
-
-  justify-self: end;
-
-  margin-top: -20px;
-}
-
-
-.project-type-photography
-.project-visual {
-  height: auto;
-
-  aspect-ratio: 4 / 5;
-}
-
-
-/* PHOTO 01 + 04 NGANG HÆ N */
-
-.projects-filter-photography
-.project-type-photography:nth-child(1)
-.project-visual,
-
-.projects-filter-photography
-.project-type-photography:nth-child(4)
-.project-visual {
-  aspect-ratio: 3 / 2;
-}
-
-
-.project-type-photography
-.project-info {
-  grid-template-columns:
-    40px
-    1fr;
-
-  gap: 12px;
-
-  padding-top: 16px;
-}
-
-.project-type-photography
-.project-meta {
-  grid-column: 2;
-
-  justify-content:
-    space-between;
-}
 /* =========================================================
    ALL â€” CLEAN CINEMATIC LIST
 ========================================================= */
@@ -3901,70 +3675,6 @@ a {
 
 
 /* =========================================================
-   FILM â€” CLEAN / NO EFFECT
-========================================================= */
-
-.featured-film-wrap {
-  position: absolute;
-
-  top: 0;
-  right: 0;
-  bottom: 0;
-
-  width: 28%;
-
-  z-index: 7;
-
-  overflow: hidden;
-
-  pointer-events: none;
-}
-
-.featured-side-title {
-  position: absolute;
-
-  top: 50%;
-  right: -0.03em;
-
-  z-index: 8;
-
-  white-space: nowrap;
-
-  font-size:
-    clamp(
-      220px,
-      27vw,
-      500px
-    );
-
-  font-weight: 900;
-
-  line-height: 0.68;
-
-  letter-spacing: -0.095em;
-
-  color: #ead9c9;
-
-  /* Äá»˜ Má»œ 74% */
-  opacity: 0.74;
-
-  /* XOAY CHá»® */
-  transform:
-    translateY(-50%)
-    rotate(270deg);
-
-  transform-origin: center;
-
-  /* Bá» TOĂ€N Bá»˜ EFFECT */
-  text-shadow: none;
-
-  filter: none;
-
-  transition: none;
-}
-
-
-/* =========================================================
    BOTTOM META
 ========================================================= */
 
@@ -4486,4 +4196,6940 @@ a {
     font-size: 10px;
   }
 
+}
+/* =========================================================
+   UNIFIED PROJECT THUMBNAIL
+========================================================= */
+
+.project-featured {
+  width: 100%;
+
+  padding:
+    70px
+    0
+    100px;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.18);
+}
+
+.featured-project {
+  position: relative;
+
+  width: 100%;
+
+  height: min(68vw, 900px);
+
+  min-height: 650px;
+
+  overflow: hidden;
+
+  background: #080808;
+
+  color: #f0dfcf;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.featured-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.featured-background-image {
+  object-fit: cover;
+
+  filter:
+    grayscale(100%)
+    contrast(1.08)
+    brightness(0.52)
+    blur(3px);
+
+  transform: scale(1.035);
+
+  transition:
+    transform
+      1.5s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    filter
+      0.8s
+      ease;
+}
+
+.featured-project:hover
+.featured-background-image {
+  transform: scale(1.055);
+
+  filter:
+    grayscale(100%)
+    contrast(1.08)
+    brightness(0.56)
+    blur(2px);
+}
+
+.featured-background-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size:
+    clamp(
+      40px,
+      8vw,
+      140px
+    );
+
+  font-weight: 900;
+
+  opacity: 0.08;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.featured-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.12) 45%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.42) 0%,
+      rgba(0, 0, 0, 0.02) 50%,
+      rgba(0, 0, 0, 0.38) 100%
+    );
+}
+
+
+/* =========================================================
+   TOP META
+========================================================= */
+
+.featured-top {
+  position: absolute;
+
+  top: 26px;
+
+  left: 30px;
+  right: 30px;
+
+  z-index: 10;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: start;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.featured-top-center {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.featured-top-center strong {
+  font-size: 15px;
+
+  font-weight: 900;
+
+  letter-spacing: -0.02em;
+
+  opacity: 0.22;
+}
+
+.featured-year {
+  text-align: right;
+}
+
+
+/* =========================================================
+   SMALL COLOR IMAGE
+========================================================= */
+
+.featured-small-image {
+  position: absolute;
+
+  left: 3.2%;
+  top: 28%;
+
+  width: 34%;
+
+  max-width: 520px;
+
+  aspect-ratio: 16 / 10;
+
+  z-index: 6;
+
+  overflow: hidden;
+
+  background: #111;
+
+  box-shadow:
+    0
+    24px
+    75px
+    rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform
+      0.9s
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-small-image-content {
+  object-fit: cover;
+
+  filter: none;
+
+  transform: scale(1.01);
+
+  transition:
+    transform
+      1.2s
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-project:hover
+.featured-small-image {
+  transform: translateY(-8px);
+}
+
+.featured-project:hover
+.featured-small-image-content {
+  transform: scale(1.045);
+}
+
+.featured-small-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  font-weight: 900;
+
+  opacity: 0.15;
+}
+
+
+/* =========================================================
+   PLAY / VIEW
+========================================================= */
+
+.featured-center {
+  position: absolute;
+
+  left: 52%;
+  top: 50%;
+
+  z-index: 10;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.featured-play {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(240, 223, 207, 0.68);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(7px);
+
+  -webkit-backdrop-filter: blur(7px);
+
+  color: #f0dfcf;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.featured-project:hover
+.featured-play {
+  transform: scale(1.1);
+
+  background: #f0dfcf;
+
+  color: #111;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.featured-title {
+  position: absolute;
+
+  left: 3.2%;
+
+  bottom: 7%;
+
+  z-index: 10;
+
+  width: 60%;
+
+  font-size:
+    clamp(
+      42px,
+      5.2vw,
+      92px
+    );
+
+  font-weight: 900;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.06em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RIGHT TYPE
+========================================================= */
+
+.featured-type-wrap {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 27%;
+  height: 100%;
+
+  z-index: 7;
+
+  overflow: visible;
+
+  pointer-events: none;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   TYPE WORD
+
+   writing-mode giúp chữ đứng dọc
+   nhưng vẫn là NGUYÊN MỘT TỪ,
+   không tách F / I / L / M.
+========================================================= */
+
+.featured-type-word {
+  color: #d3b69c;
+
+  opacity: 0.74;
+
+  font-size:
+    clamp(
+      115px,
+      15vw,
+      260px
+    );
+
+  font-weight: 900;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.08em;
+
+  white-space: nowrap;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+
+  transform:
+    rotate(180deg);
+
+  transform-origin: center;
+
+  text-shadow: none;
+
+  filter: none;
+}
+
+
+/* =========================================================
+   MOTION
+========================================================= */
+
+.project-type-motion
+.featured-type-word {
+  font-size:
+    clamp(
+      82px,
+      10vw,
+      180px
+    );
+}
+
+
+/* =========================================================
+   SHORT-FORM
+========================================================= */
+
+.project-type-short-form
+.featured-type-word {
+  font-size:
+    clamp(
+      52px,
+      6vw,
+      105px
+    );
+
+  letter-spacing: -0.055em;
+}
+
+
+/* =========================================================
+   PHOTOGRAPHY
+========================================================= */
+
+.project-type-photography
+.featured-type-word {
+  font-size:
+    clamp(
+      45px,
+      5.3vw,
+      92px
+    );
+
+  letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   BOTTOM META
+========================================================= */
+
+.featured-bottom {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+
+  bottom: 22px;
+
+  z-index: 12;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   ALL FILTERS USE SAME ONE-COLUMN LAYOUT
+========================================================= */
+
+.projects-filter-all,
+.projects-filter-film,
+.projects-filter-motion,
+.projects-filter-short-form,
+.projects-filter-photography {
+  display: block;
+
+  width: 100%;
+
+  max-width: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+/* =========================================================
+   RESET OLD FILTER PROJECT SIZES
+========================================================= */
+
+.projects-filter-motion
+.project,
+
+.projects-filter-short-form
+.project,
+
+.projects-filter-photography
+.project {
+  width: 100%;
+
+  max-width: none;
+
+  margin-left: 0;
+  margin-right: 0;
+
+  grid-column: auto;
+
+  justify-self: stretch;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .featured-project {
+    height: 78vw;
+
+    min-height: 620px;
+  }
+
+  .featured-small-image {
+    width: 37%;
+  }
+
+  .featured-type-wrap {
+    width: 29%;
+  }
+
+  .featured-type-word {
+    font-size:
+      clamp(
+        95px,
+        15vw,
+        190px
+      );
+  }
+
+  .project-type-motion
+  .featured-type-word {
+    font-size:
+      clamp(
+        70px,
+        10vw,
+        135px
+      );
+  }
+
+  .project-type-short-form
+  .featured-type-word {
+    font-size:
+      clamp(
+        44px,
+        6vw,
+        85px
+      );
+  }
+
+  .project-type-photography
+  .featured-type-word {
+    font-size:
+      clamp(
+        38px,
+        5vw,
+        70px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .project-featured {
+    padding:
+      35px
+      0
+      55px;
+  }
+
+  .featured-project {
+    height: 125vw;
+
+    min-height: 580px;
+
+    max-height: 760px;
+  }
+
+
+  /* BACKGROUND */
+
+  .featured-background-image {
+    filter:
+      grayscale(100%)
+      contrast(1.06)
+      brightness(0.5)
+      blur(2px);
+  }
+
+
+  /* META */
+
+  .featured-top {
+    top: 14px;
+
+    left: 14px;
+    right: 14px;
+
+    font-size: 6px;
+  }
+
+  .featured-top-center strong {
+    font-size: 9px;
+  }
+
+
+  /* COLOR IMAGE */
+
+  .featured-small-image {
+    left: 5%;
+
+    top: 27%;
+
+    width: 48%;
+  }
+
+
+  /* PLAY */
+
+  .featured-center {
+    left: 55%;
+  }
+
+  .featured-play {
+    width: 54px;
+
+    height: 54px;
+
+    font-size: 6px;
+  }
+
+
+  /* TITLE */
+
+  .featured-title {
+    left: 5%;
+
+    bottom: 9%;
+
+    width: 65%;
+
+    font-size:
+      clamp(
+        30px,
+        9vw,
+        52px
+      );
+  }
+
+
+  /* TYPE */
+
+  .featured-type-wrap {
+    width: 31%;
+  }
+
+  .featured-type-word {
+    font-size:
+      clamp(
+        70px,
+        22vw,
+        120px
+      );
+
+    opacity: 0.74;
+  }
+
+  .project-type-motion
+  .featured-type-word {
+    font-size:
+      clamp(
+        50px,
+        15vw,
+        82px
+      );
+  }
+
+  .project-type-short-form
+  .featured-type-word {
+    font-size:
+      clamp(
+        30px,
+        8vw,
+        48px
+      );
+  }
+
+  .project-type-photography
+  .featured-type-word {
+    font-size:
+      clamp(
+        27px,
+        7vw,
+        42px
+      );
+  }
+
+
+  /* BOTTOM */
+
+  .featured-bottom {
+    left: 14px;
+    right: 14px;
+
+    bottom: 14px;
+
+    font-size: 6px;
+  }
+
+}
+/* =========================================================
+   EDITORIAL WORK LAYOUT — FINAL
+   09 FILM / 03 MOTION / 04 SHORT / 03 PHOTO
+========================================================= */
+
+.editorial-work-section {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    150px
+    40px
+    140px;
+
+  background: #eee9e1;
+
+  color: #5f1717;
+}
+
+
+/* =========================================================
+   WORK TITLE
+========================================================= */
+
+.editorial-work-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  padding-bottom: 24px;
+
+  border-bottom:
+    1px solid
+    rgba(95, 23, 23, 0.35);
+}
+
+.editorial-work-heading h1 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      32px,
+      3.2vw,
+      58px
+    );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.045em;
+}
+
+.editorial-work-heading > span {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      22px,
+      2vw,
+      36px
+    );
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.editorial-filter {
+  min-height: 100px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 48px;
+
+  flex-wrap: wrap;
+}
+
+.editorial-filter button {
+  position: relative;
+
+  padding:
+    8px
+    0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #5f1717;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  cursor: none;
+
+  opacity: 0.55;
+}
+
+.editorial-filter button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #5f1717;
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform
+    0.35s
+    ease;
+}
+
+.editorial-filter button:hover,
+.editorial-filter button.is-active {
+  opacity: 1;
+}
+
+.editorial-filter button:hover::after,
+.editorial-filter button.is-active::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.editorial-category {
+  width: 100%;
+
+  margin-top: 28px;
+}
+
+.editorial-category + .editorial-category {
+  margin-top: 42px;
+}
+
+.editorial-category-header {
+  min-height: 54px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.editorial-category-title {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 12px;
+}
+
+.editorial-category-title h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      36px,
+      4vw,
+      64px
+    );
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.055em;
+}
+
+.editorial-category-title span {
+  padding-bottom: 4px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+}
+
+.editorial-category-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 45px;
+
+  padding-bottom: 4px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   BASE CARD
+========================================================= */
+
+.editorial-project {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  color: #eee9e1;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  background: #111;
+
+  cursor: none;
+
+  opacity: 0;
+
+  transform: translateY(32px);
+
+  transition:
+    opacity
+      0.8s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    transform
+      0.8s
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-project.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.editorial-project-media {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.editorial-project-image {
+  object-fit: cover;
+
+  filter:
+    brightness(0.68)
+    saturate(0.75)
+    contrast(1.05);
+
+  transform: scale(1.01);
+
+  transition:
+    transform
+      1.2s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    filter
+      0.6s
+      ease;
+}
+
+.editorial-project:hover
+.editorial-project-image {
+  transform: scale(1.045);
+
+  filter:
+    brightness(0.77)
+    saturate(0.88)
+    contrast(1.05);
+}
+
+.editorial-project-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111,
+      #252525
+    );
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      18px,
+      3vw,
+      50px
+    );
+
+  font-weight: 700;
+
+  opacity: 0.4;
+}
+
+.editorial-project-shade {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12)
+        0%,
+      rgba(0, 0, 0, 0.06)
+        42%,
+      rgba(0, 0, 0, 0.72)
+        100%
+    );
+}
+
+.editorial-project-top {
+  position: absolute;
+
+  top: 16px;
+  left: 18px;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.editorial-project-bottom {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.editorial-project-bottom h3 {
+  max-width: 80%;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      17px,
+      1.75vw,
+      31px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
+}
+
+.editorial-project-bottom
+div > span {
+  display: block;
+
+  margin-top: 9px;
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.editorial-project-play {
+  flex: 0 0 auto;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(238, 233, 225, 0.75);
+
+  border-radius: 50%;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 7px;
+
+  transition:
+    background
+      0.3s
+      ease,
+    color
+      0.3s
+      ease,
+    transform
+      0.3s
+      ease;
+}
+
+.editorial-project:hover
+.editorial-project-play {
+  background: #eee9e1;
+
+  color: #111;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   FILM
+========================================================= */
+
+.film-hero {
+  margin-top: 8px;
+
+  aspect-ratio: 16 / 4.1;
+
+  min-height: 270px;
+}
+
+.film-hero
+.editorial-project-bottom h3 {
+  max-width: 560px;
+
+  font-size:
+    clamp(
+      36px,
+      4vw,
+      70px
+    );
+
+  line-height: 0.82;
+}
+
+.film-row {
+  width: 100%;
+
+  display: grid;
+
+  gap: 8px;
+
+  margin-top: 8px;
+}
+
+.film-row-three {
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+}
+
+.film-row-two {
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+}
+
+.film-small {
+  aspect-ratio: 16 / 5.2;
+
+  min-height: 150px;
+}
+
+.film-wide {
+  aspect-ratio: 16 / 3.6;
+
+  min-height: 160px;
+}
+
+
+/* =========================================================
+   MOTION
+========================================================= */
+
+.editorial-motion-grid {
+  width: 100%;
+
+  margin-top: 8px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.28fr
+    1fr;
+
+  grid-template-rows:
+    1fr
+    1fr;
+
+  gap: 8px;
+}
+
+.motion-main {
+  grid-column: 1;
+  grid-row:
+    1 / 3;
+
+  min-height: 390px;
+}
+
+.motion-side {
+  min-height: 191px;
+}
+
+.motion-side-top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.motion-side-bottom {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+/* =========================================================
+   SHORT FORM
+========================================================= */
+
+.editorial-short-grid {
+  width: 86%;
+
+  margin:
+    10px
+    auto
+    0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    clamp(
+      26px,
+      4vw,
+      70px
+    );
+}
+
+.short-card {
+  aspect-ratio: 9 / 14;
+
+  min-height: 430px;
+}
+
+
+/* =========================================================
+   PHOTOGRAPHY
+========================================================= */
+
+.editorial-photo-grid {
+  width: 100%;
+
+  margin-top: 8px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.45fr
+    0.82fr
+    0.88fr;
+
+  gap: 8px;
+}
+
+.photo-main,
+.photo-side {
+  min-height: 285px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .editorial-work-section {
+    padding:
+      120px
+      28px;
+  }
+
+  .editorial-filter {
+    gap: 28px;
+  }
+
+  .film-hero {
+    min-height: 250px;
+  }
+
+  .film-small {
+    min-height: 150px;
+  }
+
+  .film-wide {
+    min-height: 170px;
+  }
+
+  .motion-main {
+    min-height: 330px;
+  }
+
+  .motion-side {
+    min-height: 161px;
+  }
+
+  .editorial-short-grid {
+    width: 100%;
+
+    gap: 22px;
+  }
+
+  .short-card {
+    min-height: 360px;
+  }
+
+  .photo-main,
+  .photo-side {
+    min-height: 240px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .editorial-work-section {
+    padding:
+      95px
+      18px
+      90px;
+  }
+
+  .editorial-work-heading {
+    align-items: center;
+  }
+
+  .editorial-work-heading h1 {
+    font-size: 30px;
+  }
+
+  .editorial-work-heading > span {
+    font-size: 17px;
+  }
+
+
+  /* FILTER */
+
+  .editorial-filter {
+    min-height: 88px;
+
+    justify-content: flex-start;
+
+    gap:
+      14px
+      20px;
+  }
+
+  .editorial-filter button {
+    font-size: 8px;
+
+    cursor: pointer;
+  }
+
+
+  /* HEADER */
+
+  .editorial-category + .editorial-category {
+    margin-top: 55px;
+  }
+
+  .editorial-category-header {
+    min-height: 42px;
+
+    gap: 20px;
+  }
+
+  .editorial-category-title h2 {
+    font-size:
+      clamp(
+        29px,
+        10vw,
+        42px
+      );
+  }
+
+  .editorial-category-title span {
+    font-size: 10px;
+  }
+
+  .editorial-category-right {
+    gap: 12px;
+
+    font-size: 5px;
+  }
+
+  .editorial-category-right
+  span:first-child {
+    display: none;
+  }
+
+
+  /* CARD */
+
+  .editorial-project {
+    cursor: pointer;
+  }
+
+  .editorial-project-top {
+    top: 10px;
+    left: 11px;
+
+    font-size: 5px;
+  }
+
+  .editorial-project-bottom {
+    left: 11px;
+    right: 11px;
+    bottom: 10px;
+  }
+
+  .editorial-project-bottom h3 {
+    max-width: 86%;
+
+    font-size: 16px;
+  }
+
+  .editorial-project-bottom
+  div > span {
+    margin-top: 5px;
+
+    font-size: 5px;
+  }
+
+  .editorial-project-play {
+    width: 28px;
+    height: 28px;
+
+    font-size: 5px;
+  }
+
+
+  /* FILM */
+
+  .film-hero {
+    min-height: 260px;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .film-hero
+  .editorial-project-bottom h3 {
+    font-size:
+      clamp(
+        28px,
+        9vw,
+        45px
+      );
+  }
+
+  .film-row-three,
+  .film-row-two {
+    grid-template-columns: 1fr;
+  }
+
+  .film-small,
+  .film-wide {
+    min-height: 190px;
+
+    aspect-ratio: 16 / 8;
+  }
+
+
+  /* MOTION */
+
+  .editorial-motion-grid {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto;
+  }
+
+  .motion-main,
+  .motion-side-top,
+  .motion-side-bottom {
+    grid-column: 1;
+
+    grid-row: auto;
+
+    min-height: 220px;
+  }
+
+
+  /* SHORT */
+
+  .editorial-short-grid {
+    width: 100%;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 10px;
+  }
+
+  .short-card {
+    min-height: 320px;
+
+    aspect-ratio: 9 / 15;
+  }
+
+
+  /* PHOTO */
+
+  .editorial-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-main,
+  .photo-side {
+    min-height: 230px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .editorial-work-section {
+    padding-left: 14px;
+
+    padding-right: 14px;
+  }
+
+  .editorial-short-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .short-card {
+    width: 72%;
+
+    min-height: 420px;
+
+    margin:
+      0
+      auto;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .editorial-project {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .editorial-project-image,
+  .editorial-project-play {
+    transition: none;
+  }
+
+}
+/* =========================================================
+   RESTORE OLD COLOR + FONT
+========================================================= */
+
+.editorial-work-section {
+  background: #820000;
+  color: #d3b69c;
+
+}
+
+/* WORK TITLE */
+
+.editorial-work-heading {
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.25);
+}
+
+/* FILTER */
+
+.editorial-filter button {
+  color: #d3b69c;
+
+}
+
+.editorial-filter button::after {
+  background: #d3b69c;
+}
+
+/* CATEGORY TITLE */
+
+.editorial-category-title h2,
+.editorial-category-title span,
+.editorial-category-right {
+  color: #d3b69c;
+
+}
+
+/* PROJECT TITLE */
+
+.editorial-project-bottom h3 {
+
+  font-weight: 700;
+
+  letter-spacing: -0.045em;
+}
+
+/* PROJECT META */
+
+.editorial-project-top,
+.editorial-project-bottom div > span {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* =========================================================
+   =========================================================
+   MONTSERRAT — GLOBAL FINAL FONT SYSTEM
+   =========================================================
+========================================================= */
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   HOMEPAGE
+========================================================= */
+
+.portfolio,
+.nav,
+.logo,
+.nav-right,
+.nav-item,
+.hero,
+.hero-title,
+.hero-line,
+.hero-bottom,
+.work-section,
+.section-header {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   EDITORIAL WORK
+========================================================= */
+
+.editorial-work-section,
+.editorial-work-heading,
+.editorial-work-heading h1,
+.editorial-work-heading > span,
+.editorial-filter,
+.editorial-filter button,
+.editorial-category,
+.editorial-category-header,
+.editorial-category-title,
+.editorial-category-title h2,
+.editorial-category-title span,
+.editorial-category-right,
+.editorial-project,
+.editorial-project-top,
+.editorial-project-bottom,
+.editorial-project-bottom h3,
+.editorial-project-bottom div > span,
+.editorial-project-play,
+.editorial-project-placeholder {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section,
+.about-header,
+.about-main,
+.about-intro,
+.about-intro p,
+.about-details,
+.about-location,
+.about-role,
+.about-label,
+.about-role-list {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section,
+.contact-header,
+.contact-main,
+.contact-title,
+.contact-cta,
+.contact-footer,
+.contact-links {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   GENERIC PROJECT DETAIL
+========================================================= */
+
+.project-page,
+.project-nav,
+.project-logo,
+.project-back,
+.project-detail-hero,
+.project-detail-meta,
+.project-detail-title,
+.project-video-section,
+.project-video-label,
+.project-play,
+.project-info-section,
+.project-info-label,
+.project-description,
+.project-facts,
+.project-fact,
+.fact-label,
+.project-gallery,
+.gallery-main,
+.gallery-item,
+.gallery-stack,
+.gallery-cinematic,
+.next-project-section,
+.next-project-label,
+.next-project-link {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   APERTURE / PROJECT 01
+========================================================= */
+
+.aperture-project,
+.aperture-nav,
+.aperture-logo,
+.aperture-nav-center,
+.aperture-nav-right,
+.aperture-hero,
+.aperture-play,
+.aperture-bottom-title,
+.aperture-project-number,
+.aperture-bottom-title h1,
+.aperture-type-big,
+.aperture-type-meta,
+.aperture-credit,
+.aperture-film-section,
+.aperture-section-label,
+.aperture-film-placeholder,
+.aperture-about,
+.aperture-about-label,
+.aperture-about-content,
+.aperture-about-content p,
+.aperture-facts,
+.aperture-gallery,
+.aperture-next {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   PHOTOGRAPHY DETAIL
+========================================================= */
+
+.photography-project-page,
+.photography-detail-hero,
+.photography-detail-hero .project-detail-meta,
+.photography-detail-hero .project-detail-title,
+.photography-project-page .photo-gallery,
+.photography-project-page .next-project-section {
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   FONT WEIGHT SYSTEM
+========================================================= */
+
+/* SMALL UI / META */
+
+.nav-right,
+.hero-bottom,
+.editorial-filter button,
+.editorial-category-right,
+.editorial-project-top,
+.editorial-project-bottom div > span,
+.about-header,
+.about-label,
+.contact-header,
+.contact-footer,
+.project-detail-meta,
+.project-info-label,
+.fact-label {
+  font-weight: 500;
+}
+
+
+/* NAV / STANDARD CONTENT */
+
+.logo,
+.project-logo,
+.aperture-logo,
+.about-location,
+.about-role,
+.project-fact {
+  font-weight: 600;
+}
+
+
+/* CATEGORY + PROJECT TITLES */
+
+.editorial-work-heading h1,
+.editorial-category-title h2,
+.editorial-project-bottom h3,
+.project-detail-title,
+.contact-cta {
+  font-weight: 700;
+}
+
+
+/* HERO / LARGE DISPLAY */
+
+.hero-title,
+.about-intro p,
+.contact-title,
+.aperture-bottom-title h1 {
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   KEEP ORIGINAL COLOR SYSTEM
+========================================================= */
+
+.editorial-work-section {
+  background: #820000;
+
+  color: #d3b69c;
+}
+
+.editorial-work-heading {
+  border-bottom:
+    1px solid
+    rgba(
+      211,
+      182,
+      156,
+      0.25
+    );
+}
+
+.editorial-work-heading h1,
+.editorial-work-heading > span,
+.editorial-filter button,
+.editorial-category-title h2,
+.editorial-category-title span,
+.editorial-category-right {
+  color: #d3b69c;
+}
+
+.editorial-filter button::after {
+  background: #d3b69c;
+}
+ /* =========================================================
+   EDITORIAL TEXT COLOR — FINAL FIX
+========================================================= */
+
+.editorial-work-section,
+.editorial-work-heading,
+.editorial-work-heading h1,
+.editorial-work-heading > span,
+.editorial-filter,
+.editorial-filter button,
+.editorial-category,
+.editorial-category-title,
+.editorial-category-title h2,
+.editorial-category-title span,
+.editorial-category-right {
+  color: #d3b69c;
+}
+
+
+/* PROJECT CARD TEXT */
+
+.editorial-project,
+.editorial-project-top,
+.editorial-project-bottom,
+.editorial-project-bottom h3,
+.editorial-project-bottom div,
+.editorial-project-bottom div > span,
+.editorial-project-play {
+  color: #d3b69c;
+}
+
+
+/* PLACEHOLDER */
+
+.editorial-project-placeholder {
+  color: #d3b69c;
+}
+
+
+/* PLAY / VIEW CIRCLE */
+
+.editorial-project-play {
+  border-color:
+    rgba(211, 182, 156, 0.75);
+}
+
+.editorial-project:hover
+.editorial-project-play {
+  background: #d3b69c;
+  color: #820000;
+}
+
+
+/* FILTER UNDERLINE */
+
+.editorial-filter button::after {
+  background: #d3b69c;
+}
+/* =========================================================
+   PROJECT PLAY / VIEW ICON — FINAL
+========================================================= */
+
+.editorial-project-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editorial-project-play-icon {
+  font-size: 11px;
+  line-height: 1;
+
+  transform: translateX(1px);
+}
+
+.editorial-project-play-text {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+/* =========================================================
+   =========================================================
+   MOTION PROJECT 02 — DETAIL
+   =========================================================
+========================================================= */
+
+.motion02-project {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #820000;
+  color: #d3b69c;
+
+  overflow-x: hidden;
+
+  font-family:
+    var(--font-montserrat),
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.motion02-nav {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 130px !important;
+  padding: 0 28px !important;
+  z-index: 100 !important;
+
+  display: grid !important;
+  grid-template-columns: max-content 1fr max-content !important;
+  align-items: center !important;
+  column-gap: 40px !important;
+
+  /* Nền tối hơn + blur mạnh phần ảnh phía sau */
+  background: rgba(255, 255, 255, 0.6) !important;
+
+  -webkit-backdrop-filter: blur(10px) saturate(44%) !important;
+  backdrop-filter: blur(10px) saturate(44%) !important;
+
+  border-bottom: 1px solid rgba(252, 250, 249, 0.3) !important;
+}
+
+.motion02-nav::before {
+  display: none !important;
+}
+
+.motion02-nav > * {
+  position: relative;
+  z-index: 1;
+}
+/* =========================================================
+   HERO
+========================================================= */
+
+.motion02-hero {
+  position: relative;
+
+  width: 100%;
+
+  height: 100vh;
+
+  min-height: 760px;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+
+/* BACKGROUND */
+
+.motion02-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+}
+
+.motion02-background-image {
+  filter:
+    grayscale(1)
+    contrast(1.08)
+    brightness(0.52)
+    sepia(0.08) !important;
+}
+
+.motion02-background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.08) 48%,
+      rgba(0, 0, 0, 0.52)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.34)
+    );
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.motion02-grid-lines {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.motion02-grid-lines span {
+  position: absolute;
+
+  top: 0;
+
+  width: 1px;
+
+  height: 100%;
+
+  background:
+    rgba(211, 182, 156, 0.12);
+}
+
+.motion02-grid-lines span:nth-child(1) {
+  left: 33.333%;
+}
+
+.motion02-grid-lines span:nth-child(2) {
+  left: 60%;
+}
+
+.motion02-grid-lines span:nth-child(3) {
+  right: 23%;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.motion02-meta {
+  position: absolute;
+
+  top: 120px;
+
+  left: 40px;
+  right: 40px;
+
+  z-index: 7;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.11em;
+}
+
+.motion02-meta span:nth-child(2) {
+  text-align: center;
+}
+
+.motion02-meta span:nth-child(3) {
+  text-align: right;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+/* =========================================================
+   VIEW
+========================================================= */
+
+.motion02-view {
+  position: absolute;
+
+  left: 53%;
+  top: 50%;
+
+  z-index: 9;
+
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid
+    rgba(211, 182, 156, 0.75);
+
+  border-radius: 50%;
+
+  color: #d3b69c;
+
+  text-decoration: none;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.motion02-view:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.1);
+
+  background: #d3b69c;
+
+  color: #820000;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.motion02-title-wrap {
+  position: absolute;
+
+  left: 4%;
+
+  bottom: 7%;
+
+  z-index: 9;
+
+  width: 62%;
+}
+
+.motion02-title-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.motion02-title-wrap h1 {
+  font-size:
+    clamp(
+      58px,
+      7.3vw,
+      130px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.065em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GIANT MOTION TYPE
+========================================================= */
+
+.motion02-type {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  z-index: 5;
+
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  color: #d3b69c;
+
+  opacity: 0.74;
+
+  font-size:
+    clamp(
+      80px,
+      10vw,
+      175px
+    );
+
+  font-weight: 900;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.07em;
+
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
+
+  transform: rotate(180deg);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.motion02-role {
+  position: absolute;
+
+  right: 40px;
+
+  bottom: 26px;
+
+  z-index: 8;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   SECTION COMMON
+========================================================= */
+.motion02-about,
+.motion02-gallery {
+  width: 100%;
+
+  padding:
+    130px
+    40px;
+}
+
+.motion02-section-head {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.25);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   SHOWCASE
+========================================================= */
+
+.motion02-video-frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.motion02-video {
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+}
+
+.motion02-main-image {
+  object-fit: cover;
+
+  filter:
+    brightness(0.72);
+}
+
+.motion02-coming-soon {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size:
+    clamp(
+      24px,
+      4vw,
+      64px
+    );
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  background:
+    rgba(0, 0, 0, 0.25);
+}
+
+
+.motion02-about-grid {
+  display: grid;
+
+  grid-template-columns:
+    380px
+    minmax(0, 1fr);
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+
+.motion02-about-content {
+  min-width: 0;
+
+  text-align: left;
+}
+
+
+.motion02-about-content p {
+  margin: 0;
+
+  width: 100%;
+
+  max-width: none;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      28px,
+      2vw,
+      36px
+    );
+
+  font-weight: 500;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  text-align: left;
+}
+
+
+.motion02-about-content p span {
+  display: block;
+
+  white-space: nowrap;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1200px) {
+
+  .motion02-about-grid {
+    grid-template-columns:
+      280px
+      minmax(0, 1fr);
+
+    gap: 50px;
+  }
+
+.motion02-about-content p {
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      28px
+    );
+}
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .motion02-about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+ .motion02-about-content p {
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      28px
+    );
+}
+
+  .motion02-about-content p span {
+    white-space: normal;
+  }
+
+}
+/* =========================================================
+   =========================================================
+   MOTION PROJECT 02
+   =========================================================
+========================================================= */
+
+.motion02-about-grid {
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(0, 1fr);
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+.motion02-about-content {
+  min-width: 0;
+
+  text-align: left;
+}
+
+
+.motion02-about-content p {
+  margin: 0;
+
+  width: 100%;
+
+  max-width: none;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      30px,
+      2.35vw,
+      42px
+    );
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+
+  text-align: left;
+}
+
+
+.motion02-about-content p span {
+  display: block;
+
+  white-space: nowrap;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+  .motion02-about-grid {
+    grid-template-columns:
+      240px
+      minmax(0, 1fr);
+
+    gap: 40px;
+  }
+
+  .motion02-about-content p {
+    font-size:
+      clamp(
+        24px,
+        2.4vw,
+        34px
+      );
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .motion02-about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .motion02-about-content p {
+    font-size:
+      clamp(
+        26px,
+        7vw,
+        36px
+      );
+  }
+
+  .motion02-about-content p span {
+    white-space: normal;
+  }
+
+}
+
+/* =========================================================
+   6 GIF GALLERY
+========================================================= */
+
+.motion02-gallery {
+  padding-top: 80px;
+}
+
+
+.motion02-gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      12,
+      1fr
+    );
+
+  gap: 24px;
+}
+
+
+.motion02-gallery-item {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+
+/* GIF 01 */
+
+.motion02-gallery-item-1 {
+  grid-column:
+    1 / 9;
+
+  aspect-ratio: 16 / 9;
+}
+
+
+/* GIF 02 */
+
+.motion02-gallery-item-2 {
+  grid-column:
+    7 / 13;
+
+  aspect-ratio: 4 / 3;
+
+  margin-top: 130px;
+}
+
+
+/* GIF 03 */
+
+.motion02-gallery-item-3 {
+  grid-column:
+    2 / 11;
+
+  aspect-ratio: 16 / 9;
+
+  margin-top: 60px;
+}
+
+
+/* GIF 04 */
+
+.motion02-gallery-item-4 {
+  grid-column:
+    1 / 7;
+
+  aspect-ratio: 16 / 10;
+
+  margin-top: 70px;
+}
+
+
+/* GIF 05 */
+
+.motion02-gallery-item-5 {
+  grid-column:
+    7 / 13;
+
+  aspect-ratio: 16 / 10;
+
+  margin-top: 70px;
+}
+
+
+/* GIF 06 */
+
+.motion02-gallery-item-6 {
+  grid-column:
+    3 / 11;
+
+  aspect-ratio: 16 / 9;
+
+  margin-top: 70px;
+}
+
+
+.motion02-gallery-image {
+  object-fit: cover;
+
+  transition:
+    transform
+    1.2s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.motion02-gallery-item:hover
+.motion02-gallery-image {
+  transform: scale(1.035);
+}
+
+
+.motion02-gallery-number {
+  position: absolute;
+
+  left: 14px;
+  bottom: 12px;
+
+  z-index: 3;
+
+  color: #d3b69c;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+.motion02-next {
+  padding:
+    110px
+    40px;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.2);
+}
+
+
+.motion02-next-label {
+  display: block;
+
+  margin-bottom: 42px;
+
+  color: #d3b69c;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.5;
+}
+
+
+.motion02-next a {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  color: #d3b69c;
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      48px,
+      7vw,
+      120px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.06em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HOMEPAGE PLAY / VIEW
+========================================================= */
+
+.editorial-project-play {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #d3b69c;
+
+  border-color:
+    rgba(
+      211,
+      182,
+      156,
+      0.75
+    );
+}
+
+
+.editorial-project-play-icon {
+  font-size: 11px;
+
+  line-height: 1;
+
+  transform:
+    translateX(1px);
+}
+
+
+.editorial-project-play-text {
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  line-height: 1;
+}
+
+
+.editorial-project:hover
+.editorial-project-play {
+  background: #d3b69c;
+
+  color: #820000;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .motion02-nav {
+    padding:
+      0
+      28px;
+  }
+
+
+  .motion02-meta {
+    left: 28px;
+    right: 28px;
+  }
+
+  .motion02-about,
+  .motion02-gallery {
+    padding:
+      110px
+      28px;
+  }
+
+
+  .motion02-about-grid {
+    gap: 50px;
+  }
+
+
+  .motion02-facts {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+  }
+
+
+  .motion02-next {
+    padding:
+      90px
+      28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .motion02-nav {
+    height: 72px;
+
+    padding:
+      0
+      18px;
+
+    grid-template-columns:
+      1fr
+      auto;
+  }
+
+
+  .motion02-logo {
+    font-size: 18px;
+  }
+
+
+  .motion02-nav-center {
+    display: none;
+  }
+
+
+  .motion02-back {
+    font-size: 8px;
+  }
+
+
+  .motion02-hero {
+    height: 100svh;
+
+    min-height: 650px;
+  }
+
+
+  .motion02-grid-lines
+  span:nth-child(2),
+
+  .motion02-grid-lines
+  span:nth-child(3) {
+    display: none;
+  }
+
+
+  .motion02-grid-lines
+  span:nth-child(1) {
+    left: 50%;
+  }
+
+
+  .motion02-meta {
+    top: 92px;
+
+    left: 18px;
+    right: 18px;
+
+    font-size: 6px;
+  }
+
+  .motion02-view {
+    left: 57%;
+
+    width: 54px;
+    height: 54px;
+
+    font-size: 6px;
+  }
+
+
+  .motion02-title-wrap {
+    left: 18px;
+
+    bottom: 8%;
+
+    width: 67%;
+  }
+
+
+  .motion02-title-wrap h1 {
+    font-size:
+      clamp(
+        39px,
+        11vw,
+        62px
+      );
+  }
+
+
+  .motion02-type {
+    width: 31%;
+
+    font-size:
+      clamp(
+        55px,
+        16vw,
+        90px
+      );
+  }
+
+
+  .motion02-role {
+    display: none;
+  }
+
+
+  /* SECTIONS */
+
+  .motion02-showcase,
+  .motion02-about,
+  .motion02-gallery {
+    padding:
+      80px
+      18px;
+  }
+
+
+  /* ABOUT */
+
+  .motion02-about-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 36px;
+  }
+
+
+  .motion02-about-content p {
+    font-size:
+      clamp(
+        28px,
+        8vw,
+        44px
+      );
+  }
+
+
+  .motion02-facts {
+    margin-top: 60px;
+
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  /* GIF GALLERY */
+
+  .motion02-gallery-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+
+  .motion02-gallery-item,
+  .motion02-gallery-item-1,
+  .motion02-gallery-item-2,
+  .motion02-gallery-item-3,
+  .motion02-gallery-item-4,
+  .motion02-gallery-item-5,
+  .motion02-gallery-item-6 {
+    width: 100%;
+
+    margin: 0;
+
+    aspect-ratio: 16 / 9;
+  }
+
+
+  /* NEXT */
+
+  .motion02-next {
+    padding:
+      75px
+      18px;
+  }
+
+
+  .motion02-next a {
+    font-size:
+      clamp(
+        38px,
+        11vw,
+        65px
+      );
+  }
+
+}
+/* =========================================================
+   MOTION 02 PREVIEW GIF — FINAL FIX
+========================================================= */
+
+/* TẮT HOÀN TOÀN HOVER SCALE CŨ */
+
+/* =========================================================
+   MOTION 02 — PREVIEW GIF CLEAN FINAL
+   SOURCE GIF: 848 × 477
+========================================================= */
+
+.motion02-preview {
+  position: absolute;
+
+  left: 5%;
+  top: 29%;
+
+  width: 34%;
+  max-width: 540px;
+
+  aspect-ratio: 848 / 477;
+
+  z-index: 6;
+
+  overflow: hidden;
+
+  background: #111;
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* GIF */
+
+.motion02-preview > img.motion02-preview-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: none;
+  scale: 1;
+
+  transition: none;
+
+  max-width: none;
+  max-height: none;
+
+  pointer-events: none;
+}
+
+
+/* KHÔNG ĐỔI SIZE KHI HOVER */
+
+.motion02-preview:hover
+.motion02-preview-image {
+  transform: none;
+  scale: 1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .motion02-preview {
+    width: 39%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .motion02-preview {
+    left: 18px;
+    top: 30%;
+
+    width: 53%;
+    max-width: none;
+
+    aspect-ratio: 848 / 477;
+  }
+
+}
+/* =========================================================
+   =========================================================
+   MOTION PROJECT 02 — FINAL OVERRIDE
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   HERO PREVIEW — GIF 01
+========================================================= */
+
+.motion02-preview {
+  position: absolute;
+
+  left: 5%;
+  top: 29%;
+
+  width: 34%;
+  max-width: 540px;
+
+  aspect-ratio: 848 / 477;
+
+  z-index: 6;
+
+  overflow: hidden;
+
+  background: #111;
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+.motion02-preview > img.motion02-preview-image {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  transform: none !important;
+  scale: 1 !important;
+
+  transition: none !important;
+
+  max-width: none !important;
+  max-height: none !important;
+}
+
+
+.motion02-preview:hover
+.motion02-preview-image {
+  transform: none !important;
+  scale: 1 !important;
+}
+
+
+/* =========================================================
+   BACKGROUND GIF
+========================================================= */
+
+.motion02-background-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    grayscale(1)
+    contrast(1.08)
+    brightness(0.48);
+
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.motion02-about {
+  width: 100%;
+
+  padding:
+    100px
+    40px
+    90px;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.16);
+}
+
+
+.motion02-about-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 0.7fr)
+    2fr;
+
+  gap: 60px;
+}
+
+
+.motion02-about-label {
+  color: #d3b69c;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.55;
+}
+
+
+.motion02-about-content p {
+  max-width: 33ch;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      7px,
+      0.55vw,
+      10px
+    );
+
+  font-weight: 500;
+
+  line-height: 1.25;
+}
+.motion02-facts {
+  margin-top: 55px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+.motion02-facts div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.motion02-facts span {
+  color: #d3b69c;
+
+  font-size: 7px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.11em;
+
+  opacity: 0.45;
+}
+
+
+.motion02-facts strong {
+  color: #d3b69c;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.motion02-gallery {
+  width: 100%;
+
+  padding:
+    70px
+    40px
+    100px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.motion02-gallery
+.motion02-section-head {
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.motion02-gallery-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      12,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   GALLERY ITEM
+========================================================= */
+
+.motion02-gallery-item {
+  position: relative;
+
+  width: 100%;
+
+  margin: 0 !important;
+
+  overflow: hidden;
+
+  background: #111;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   GIF IMAGE — ORIGINAL ASPECT RATIO
+========================================================= */
+
+.motion02-gallery-image {
+  position: relative !important;
+
+  top: auto !important;
+  left: auto !important;
+
+  width: 100% !important;
+  height: auto !important;
+
+  display: block;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  transform: none !important;
+  scale: 1 !important;
+
+  transition:
+    opacity
+    0.3s
+    ease !important;
+
+  max-width: 100%;
+
+  max-height: none !important;
+}
+
+
+.motion02-gallery-item:hover
+.motion02-gallery-image {
+  transform: none !important;
+  scale: 1 !important;
+
+  opacity: 0.94;
+}
+
+
+/* =========================================================
+   GIF 01 — FULL WIDTH
+========================================================= */
+
+.motion02-gallery-item-1 {
+  grid-column:
+    1 / 13 !important;
+
+  margin: 0 !important;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   GIF 02 — LEFT
+========================================================= */
+
+.motion02-gallery-item-2 {
+  grid-column:
+    1 / 7 !important;
+
+  margin: 0 !important;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   GIF 03 — RIGHT
+========================================================= */
+
+.motion02-gallery-item-3 {
+  grid-column:
+    7 / 13 !important;
+
+  margin: 0 !important;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   GIF 04 — LARGE LEFT
+========================================================= */
+
+.motion02-gallery-item-4 {
+  grid-column:
+    1 / 8 !important;
+
+  margin: 0 !important;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   GIF 05 — SMALL RIGHT
+========================================================= */
+
+.motion02-gallery-item-5 {
+  grid-column:
+    8 / 13 !important;
+
+  margin: 0 !important;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   GIF 06 — FULL WIDTH
+========================================================= */
+
+.motion02-gallery-item-6 {
+  grid-column:
+    1 / 13 !important;
+
+  margin: 0 !important;
+
+  aspect-ratio: auto !important;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.motion02-gallery-number {
+  position: absolute;
+
+  left: 10px;
+  bottom: 10px;
+
+  z-index: 3;
+
+  min-width: 28px;
+
+  padding:
+    5px
+    7px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.45
+    );
+
+  backdrop-filter:
+    blur(6px);
+
+  -webkit-backdrop-filter:
+    blur(6px);
+
+  color: #d3b69c;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.1em;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+.motion02-next {
+  padding:
+    90px
+    40px;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.2);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .motion02-preview {
+    width: 39%;
+  }
+
+
+  .motion02-about {
+    padding:
+      90px
+      28px
+      80px;
+  }
+
+
+  .motion02-about-grid {
+    gap: 40px;
+  }
+
+
+  .motion02-gallery {
+    padding:
+      60px
+      28px
+      85px;
+  }
+
+
+  .motion02-gallery-grid {
+    gap: 8px;
+  }
+
+
+  .motion02-next {
+    padding:
+      80px
+      28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  /* PREVIEW */
+
+  .motion02-preview {
+    left: 18px;
+
+    top: 30%;
+
+    width: 53%;
+    max-width: none;
+
+    aspect-ratio: 848 / 477;
+  }
+
+
+  /* ABOUT */
+
+  .motion02-about {
+    padding:
+      70px
+      18px;
+  }
+
+
+  .motion02-about-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 30px;
+  }
+
+
+  .motion02-about-content p {
+    font-size:
+      clamp(
+        27px,
+        8vw,
+        42px
+      );
+  }
+
+
+  .motion02-facts {
+    margin-top: 45px;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 18px;
+  }
+
+
+  /* GALLERY */
+
+  .motion02-gallery {
+    padding:
+      50px
+      18px
+      70px;
+  }
+
+
+  .motion02-gallery-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+
+  .motion02-gallery-item,
+  .motion02-gallery-item-1,
+  .motion02-gallery-item-2,
+  .motion02-gallery-item-3,
+  .motion02-gallery-item-4,
+  .motion02-gallery-item-5,
+  .motion02-gallery-item-6 {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    aspect-ratio: auto !important;
+  }
+
+
+  .motion02-gallery-image {
+    width: 100% !important;
+
+    height: auto !important;
+
+    object-fit: contain !important;
+  }
+
+
+  /* NEXT */
+
+  .motion02-next {
+    padding:
+      70px
+      18px;
+  }
+
+}
+/* =========================================================
+   MOTION PROJECT 02 — TEXT SCALE UP
+========================================================= */
+
+.motion02-page .project-nav,
+.motion02-page .motion02-topbar {
+  min-height: 100px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* =========================================================
+   TOP LEFT — CUONG HOANG
+========================================================= */
+
+.motion02-page .project-logo,
+.motion02-page .motion02-brand,
+.motion02-page .motion02-top-left {
+  font-size: clamp(40px, 3vw, 64px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1 !important;
+}
+
+/* =========================================================
+   TOP CENTER + TOP RIGHT
+========================================================= */
+
+.motion02-page .project-back,
+.motion02-page .motion02-back,
+.motion02-page .motion02-top-right,
+.motion02-page .motion02-top-center,
+.motion02-page .motion02-top-center span,
+.motion02-page .motion02-top-center small,
+.motion02-page .motion02-top-center p,
+.motion02-page .motion02-top-center div {
+  font-size: clamp(20px, 1.55vw, 30px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.1 !important;
+}
+
+/* =========================================================
+   ALL SMALL TEXT / NUMBER (KHÔNG PHẢI TITLE CHÍNH)
+========================================================= */
+
+.motion02-page .project-detail-meta,
+.motion02-page .project-detail-meta span,
+.motion02-page .project-info-label,
+.motion02-page .next-project-label,
+.motion02-page .motion02-kicker,
+.motion02-page .motion02-meta,
+.motion02-page .motion02-meta span,
+.motion02-page .motion02-count,
+.motion02-page .motion02-index,
+.motion02-page .motion02-label,
+.motion02-page .motion02-caption,
+.motion02-page .motion02-role,
+.motion02-page .motion02-year,
+.motion02-page .motion02-small-text,
+.motion02-page .motion02-footer span {
+  font-size: clamp(20px, 1.55vw, 30px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.12 !important;
+}
+
+/* =========================================================
+   DESCRIPTION — THU CÒN KHOẢNG 3 DÒNG
+========================================================= */
+
+.motion02-page .project-info-content,
+.motion02-page .motion02-description-wrap,
+.motion02-page .motion02-about-copy {
+  max-width: 100%;
+}
+
+.motion02-page .project-description,
+.motion02-page .motion02-description {
+  max-width: 34ch !important;
+  font-size: clamp(22px, 1.65vw, 32px) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* nếu muốn ép cứng chỉ hiện đúng 3 dòng thì mở block này ra */
+/*
+.motion02-page .project-description,
+.motion02-page .motion02-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+*/
+
+/* =========================================================
+   KEEP TITLE BIG — KHÔNG SCALE THEO TEXT KHÁC
+========================================================= */
+
+.motion02-page .project-detail-title,
+.motion02-page .motion02-title,
+.motion02-page .motion02-main-title,
+.motion02-page .featured-title {
+  font-size: inherit;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .motion02-page .project-logo,
+  .motion02-page .motion02-brand,
+  .motion02-page .motion02-top-left {
+    font-size: clamp(30px, 4vw, 46px) !important;
+  }
+
+  .motion02-page .project-back,
+  .motion02-page .motion02-back,
+  .motion02-page .motion02-top-right,
+  .motion02-page .motion02-top-center,
+  .motion02-page .motion02-top-center span,
+  .motion02-page .motion02-top-center small,
+  .motion02-page .project-detail-meta,
+  .motion02-page .project-detail-meta span,
+  .motion02-page .project-info-label,
+  .motion02-page .next-project-label,
+  .motion02-page .motion02-kicker,
+  .motion02-page .motion02-meta,
+  .motion02-page .motion02-count,
+  .motion02-page .motion02-label {
+    font-size: clamp(16px, 2vw, 24px) !important;
+  }
+
+  .motion02-page .project-description,
+  .motion02-page .motion02-description {
+    max-width: 32ch !important;
+    font-size: clamp(18px, 1.8vw, 24px) !important;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .motion02-page .project-logo,
+  .motion02-page .motion02-brand,
+  .motion02-page .motion02-top-left {
+    font-size: 24px !important;
+  }
+
+  .motion02-page .project-back,
+  .motion02-page .motion02-back,
+  .motion02-page .motion02-top-right,
+  .motion02-page .motion02-top-center,
+  .motion02-page .motion02-top-center span,
+  .motion02-page .motion02-top-center small,
+  .motion02-page .project-detail-meta,
+  .motion02-page .project-detail-meta span,
+  .motion02-page .project-info-label,
+  .motion02-page .next-project-label,
+  .motion02-page .motion02-kicker,
+  .motion02-page .motion02-meta,
+  .motion02-page .motion02-count,
+  .motion02-page .motion02-label {
+    font-size: 12px !important;
+  }
+
+  .motion02-page .project-description,
+  .motion02-page .motion02-description {
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+}
+/* =========================================================
+   MOTION 02 — MAX TYPE SCALE
+========================================================= */
+
+/* =========================================================
+   TOP NAV
+========================================================= */
+
+.motion02-nav {
+  height: 130px;
+  padding: 0 34px;
+}
+
+
+/* CUONG HOANG — TO HẲN */
+
+.motion02-logo {
+  font-size: clamp(42px, 4vw, 78px) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 0.9 !important;
+
+  letter-spacing: -0.025em !important;
+}
+
+
+/* CENTER TOP */
+
+.motion02-nav-center {
+  font-size: clamp(22px, 1.9vw, 34px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* BACK TO WORK */
+
+.motion02-back {
+  font-size: clamp(20px, 1.7vw, 32px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   HERO META
+========================================================= */
+
+.motion02-meta {
+  top: 165px !important;
+
+  font-size: clamp(20px, 1.7vw, 32px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+}
+
+
+/* =========================================================
+   MOTION / 02
+========================================================= */
+
+.motion02-title-label {
+  margin-bottom: 18px !important;
+
+  font-size: clamp(20px, 1.8vw, 34px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.motion02-role {
+  font-size: clamp(18px, 1.4vw, 28px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+}
+
+
+/* =========================================================
+   VIEW CIRCLE
+========================================================= */
+
+.motion02-view {
+  width: 110px !important;
+  height: 110px !important;
+
+  font-size: 18px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 0.06em !important;
+}
+
+
+/* =========================================================
+   SECTION HEADER — 01 / ABOUT / 02 / VISUAL BREAKDOWN
+========================================================= */
+
+.motion02-section-head {
+  margin-bottom: 30px !important;
+
+  padding-bottom: 24px !important;
+
+  font-size: clamp(22px, 1.8vw, 34px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.035em !important;
+}
+
+
+/* =========================================================
+   ABOUT LABEL
+========================================================= */
+
+.motion02-about-label {
+  font-size: clamp(20px, 1.55vw, 30px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1.05 !important;
+
+  letter-spacing: 0.035em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION — GỌN CÒN ~3 DÒNG
+========================================================= */
+
+.motion02-about-content p {
+  max-width: 33ch;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      7px,
+      0.55vw,
+      10px
+    );
+
+  font-weight: 500;
+
+  line-height: 1.25;
+}
+
+/* =========================================================
+   FACT LABELS
+========================================================= */
+
+.motion02-facts span {
+  font-size: clamp(18px, 1.35vw, 26px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+
+  opacity: 0.7 !important;
+}
+
+
+/* =========================================================
+   FACT VALUES
+========================================================= */
+
+.motion02-facts strong {
+  font-size: clamp(22px, 1.8vw, 34px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1.05 !important;
+
+  letter-spacing: 0.015em !important;
+}
+
+
+/* =========================================================
+   GALLERY NUMBERS
+========================================================= */
+
+.motion02-gallery-number {
+  left: 16px !important;
+  bottom: 16px !important;
+
+  min-width: 54px !important;
+
+  padding: 10px 12px !important;
+
+  font-size: 18px !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+}
+
+
+/* =========================================================
+   NEXT PROJECT LABEL
+========================================================= */
+
+.motion02-next-label {
+  margin-bottom: 48px !important;
+
+  font-size: clamp(20px, 1.6vw, 30px) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.04em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .motion02-nav {
+    height: 105px;
+  }
+
+  .motion02-logo {
+    font-size: 42px !important;
+  }
+
+  .motion02-nav-center {
+    font-size: 22px !important;
+  }
+
+  .motion02-back {
+    font-size: 18px !important;
+  }
+
+  .motion02-meta {
+    top: 135px !important;
+
+    font-size: 20px !important;
+  }
+
+  .motion02-title-label,
+  .motion02-section-head {
+    font-size: 22px !important;
+  }
+
+  .motion02-about-label {
+    font-size: 20px !important;
+  }
+
+  .motion02-about-content p {
+    max-width: 30ch !important;
+
+    font-size: 36px !important;
+  }
+
+  .motion02-facts span {
+    font-size: 16px !important;
+  }
+
+  .motion02-facts strong {
+    font-size: 22px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .motion02-nav {
+    height: 82px;
+
+    padding: 0 18px;
+  }
+
+  .motion02-logo {
+    font-size: 26px !important;
+  }
+
+  .motion02-nav-center {
+    display: none;
+  }
+
+  .motion02-back {
+    font-size: 12px !important;
+  }
+
+  .motion02-meta {
+    top: 105px !important;
+
+    font-size: 12px !important;
+  }
+
+  .motion02-title-label {
+    font-size: 14px !important;
+  }
+
+  .motion02-role {
+    font-size: 12px !important;
+  }
+
+  .motion02-view {
+    width: 72px !important;
+    height: 72px !important;
+
+    font-size: 11px !important;
+  }
+
+  .motion02-section-head {
+    font-size: 15px !important;
+  }
+
+  .motion02-about-label {
+    font-size: 14px !important;
+  }
+
+  .motion02-about-content p {
+    max-width: 100% !important;
+
+    font-size: 28px !important;
+
+    line-height: 1.1 !important;
+  }
+
+  .motion02-facts span {
+    font-size: 12px !important;
+  }
+
+  .motion02-facts strong {
+    font-size: 16px !important;
+  }
+
+  .motion02-gallery-number {
+    font-size: 11px !important;
+
+    min-width: 38px !important;
+
+    padding: 7px 8px !important;
+  }
+
+  .motion02-next-label {
+    font-size: 14px !important;
+  }
+
+}
+/* =========================================================
+   MOTION PROJECT 02 — FINAL FIX
+========================================================= */
+
+/* TOP BAR */
+
+.motion02-nav {
+  position: relative;
+
+  height: 130px;
+
+  padding: 0 32px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(211, 182, 156, 0.16);
+
+  overflow: hidden;
+}
+
+.motion02-nav::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  z-index: 0;
+}
+
+.motion02-nav > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* LOGO LEFT */
+
+.motion02-logo {
+  color: #d3b69c;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  font-size: clamp(28px, 2.4vw, 42px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+
+/* CENTER INFO */
+
+.motion02-nav-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.motion02-nav-center span {
+  font-size: clamp(18px, 1.8vw, 30px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+
+  color: #d3b69c;
+}
+
+.motion02-nav-center strong {
+  font-size: clamp(16px, 1.6vw, 26px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  color: rgba(211, 182, 156, 0.72);
+}
+
+
+/* BACK LINK */
+
+.motion02-back {
+  color: #d3b69c;
+  text-decoration: none;
+
+  font-size: clamp(18px, 1.5vw, 28px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+
+  white-space: nowrap;
+}
+
+
+/* HERO META */
+
+.motion02-meta {
+  top: 150px !important;
+
+  font-size: clamp(18px, 1.45vw, 26px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+}
+
+
+/* RIGHT TYPE PANEL */
+
+.motion02-type-wrap {
+  position: absolute;
+
+  top: 130px;
+  right: 0;
+  bottom: 0;
+
+  width: 220px;
+  height: calc(100% - 130px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* MOTION WORD */
+
+.motion02-type-word {
+  display: block;
+
+  max-height: 100%;
+
+  color: #d3b69c;
+
+  opacity: 0.92;
+
+  white-space: nowrap;
+
+  writing-mode:
+    vertical-rl;
+
+  text-orientation:
+    mixed;
+
+  transform:
+    rotate(180deg);
+
+  font-size:
+    clamp(
+      88px,
+      8.8vw,
+      158px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.8;
+
+  letter-spacing:
+    -0.03em;
+}
+
+/* ABOUT SECTION — bỏ hết mục ở tấm 3 */
+
+.motion02-facts,
+.motion02-info-grid,
+.motion02-about-extra,
+.motion02-role-block,
+.motion02-detail-grid {
+  display: none !important;
+}
+
+
+/* nếu section ABOUT đang có khoảng trống vì xoá facts */
+
+.motion02-about {
+  padding-bottom: 110px !important;
+}
+
+.motion02-about-content {
+  max-width: 1000px;
+}
+
+.motion02-about-content p {
+  max-width: 34ch;
+
+  font-size: clamp(28px, 2.8vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .motion02-nav {
+    height: 110px;
+    padding: 0 24px;
+  }
+
+  .motion02-logo {
+    font-size: 28px;
+  }
+
+  .motion02-nav-center span {
+    font-size: 20px;
+  }
+
+  .motion02-nav-center strong {
+    font-size: 18px;
+  }
+
+  .motion02-back {
+    font-size: 18px;
+  }
+
+  .motion02-meta {
+    top: 128px !important;
+    font-size: 18px !important;
+  }
+
+  .motion02-type-wrap {
+    top: 110px;
+    width: 180px;
+    height: calc(100% - 110px);
+  }
+
+  .motion02-type-word {
+    font-size: clamp(110px, 14vw, 170px);
+  }
+}
+
+@media (max-width: 600px) {
+  .motion02-nav {
+    height: 82px;
+    padding: 0 18px;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .motion02-logo {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .motion02-nav-center {
+    gap: 4px;
+  }
+
+  .motion02-nav-center span {
+    font-size: 12px;
+  }
+
+  .motion02-nav-center strong {
+    font-size: 11px;
+  }
+
+  .motion02-back {
+    font-size: 11px;
+  }
+
+  .motion02-meta {
+    top: 96px !important;
+    font-size: 11px !important;
+  }
+
+  .motion02-type-wrap {
+    top: 82px;
+    width: 92px;
+    height: calc(100% - 82px);
+  }
+
+  .motion02-type-word {
+    font-size: clamp(72px, 18vw, 110px);
+    line-height: 0.8;
+  }
+
+  .motion02-about-content p {
+    max-width: 100%;
+    font-size: 28px;
+  }
+}
+/* =========================================================
+   MOTION 02 LOGO — FINAL
+========================================================= */
+
+.motion02-logo {
+  display: inline-block !important;
+
+  width: max-content !important;
+  max-width: none !important;
+
+  white-space: nowrap !important;
+
+  font-size: clamp(22px, 2vw, 30px) !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: -0.025em !important;
+
+  color: #d3b69c !important;
+
+  text-decoration: none !important;
+}
+
+
+/* NAV LEFT KHÔNG ÉP LOGO XUỐNG DÒNG */
+
+.motion02-nav {
+  grid-template-columns:
+    max-content
+    1fr
+    max-content !important;
+
+  column-gap: 40px !important;
+}
+/* =========================================================
+   MOTION 02 — HEADLINE FINAL
+========================================================= */
+
+.motion02-nav {
+  height: 130px !important;
+
+  padding:
+    0
+    28px !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    max-content
+    1fr
+    max-content !important;
+
+  align-items: center !important;
+
+  column-gap: 40px !important;
+
+  /* nền đen 66% để vẫn thấy background phía sau */
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.66
+    ) !important;
+
+  /* blur ảnh phía sau */
+  backdrop-filter:
+    blur(18px) !important;
+
+  -webkit-backdrop-filter:
+    blur(18px) !important;
+
+  border-bottom:
+    1px solid
+    rgba(
+      211,
+      182,
+      156,
+      0.22
+    ) !important;
+}
+
+
+/* =========================================================
+   CUONG HOANG — TO + DÀY HƠN
+========================================================= */
+
+.motion02-logo {
+  display: block !important;
+
+  width: max-content !important;
+
+  white-space: nowrap !important;
+
+  color: #d3b69c !important;
+
+  text-decoration: none !important;
+
+  font-size:
+    clamp(
+      34px,
+      2.8vw,
+      52px
+    ) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    -0.035em !important;
+}
+
+
+/* =========================================================
+   MOTION DESIGN — NHỎ HƠN LOGO
+========================================================= */
+
+.motion02-nav-center {
+  justify-self: center !important;
+
+  font-size:
+    clamp(
+      22px,
+      1.8vw,
+      32px
+    ) !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+}
+
+
+/* =========================================================
+   BACK TO WORK — NHỎ HƠN LOGO
+========================================================= */
+
+.motion02-back {
+  justify-self: end !important;
+
+  white-space: nowrap !important;
+
+  color: #d3b69c !important;
+
+  text-decoration: none !important;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      30px
+    ) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+}
+/* =========================================================
+   MOTION 02 — GLASS HEADER FINAL FIX
+========================================================= */
+
+.motion02-nav {
+  position: absolute !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 130px !important;
+
+  padding: 0 28px !important;
+
+  z-index: 100 !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    max-content
+    1fr
+    max-content !important;
+
+  align-items: center !important;
+
+  column-gap: 40px !important;
+
+  /* QUAN TRỌNG:
+     không dùng nền đen đặc nữa */
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.66
+    ) !important;
+
+  /* BLUR ẢNH HERO PHÍA SAU */
+  backdrop-filter:
+    blur(24px)
+    saturate(65%) !important;
+
+  -webkit-backdrop-filter:
+    blur(24px)
+    saturate(65%) !important;
+
+  border-bottom:
+    1px solid
+    rgba(
+      211,
+      182,
+      156,
+      0.22
+    ) !important;
+
+  overflow: visible !important;
+}
+
+
+/* TẮT LỚP ĐEN CŨ NẾU CÒN */
+
+.motion02-nav::before {
+  display: none !important;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.motion02-logo {
+  display: block !important;
+
+  width: max-content !important;
+
+  white-space: nowrap !important;
+
+  color: #d3b69c !important;
+
+  text-decoration: none !important;
+
+  font-size:
+    clamp(
+      34px,
+      2.7vw,
+      50px
+    ) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    -0.035em !important;
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.motion02-nav-center {
+  justify-self: center !important;
+
+  color: #d3b69c !important;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      30px
+    ) !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   BACK TO WORK
+========================================================= */
+
+.motion02-back {
+  justify-self: end !important;
+
+  white-space: nowrap !important;
+
+  color: #d3b69c !important;
+
+  text-decoration: none !important;
+
+  font-size:
+    clamp(
+      19px,
+      1.45vw,
+      27px
+    ) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+}
+/* =========================================================
+   MOTION 02 — GLASS / BLUR HEADLINE TEST
+========================================================= */
+
+.motion02-nav {
+  position: absolute !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 130px !important;
+
+  padding: 0 28px !important;
+
+  z-index: 100 !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    max-content
+    1fr
+    max-content !important;
+
+  align-items: center !important;
+
+  column-gap: 40px !important;
+
+  /* lớp trong suốt để blur thấy rõ */
+.motion02-nav {
+  background: rgba(255, 255, 255, 0.08) !important;
+
+  backdrop-filter:
+    blur(96px)
+    saturate(55%)
+    brightness(80%) !important;
+
+  -webkit-backdrop-filter:
+    blur(96px)
+    saturate(55%)
+    brightness(80%) !important;
+}
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.6) !important;
+}
+
+
+/* bỏ lớp nền đen cũ nếu còn */
+
+.motion02-nav::before {
+  display: none !important;
+}
+
+
+/* CUONG HOANG */
+
+.motion02-logo {
+  white-space: nowrap !important;
+
+  width: max-content !important;
+
+  color: #d3b69c !important;
+
+  font-size:
+    clamp(
+      34px,
+      2.7vw,
+      50px
+    ) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    -0.035em !important;
+}
+
+
+/* MOTION DESIGN */
+
+.motion02-nav-center {
+  justify-self: center !important;
+
+  color: #d3b69c !important;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      30px
+    ) !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* BACK TO WORK */
+
+.motion02-back {
+  justify-self: end !important;
+
+  white-space: nowrap !important;
+
+  color: #d3b69c !important;
+
+  font-size:
+    clamp(
+      19px,
+      1.45vw,
+      27px
+    ) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+}
+/* =========================================================
+   MOTION 02 — LOCK HEADLINE ON SCROLL
+========================================================= */
+
+.motion02-nav {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 130px !important;
+
+  z-index: 9999 !important;
+
+  padding: 0 28px !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    max-content
+    1fr
+    max-content !important;
+
+  align-items: center !important;
+
+  column-gap: 40px !important;
+
+  background:
+    rgba(255, 255, 255, 0.08) !important;
+
+  backdrop-filter:
+    blur(96px)
+    saturate(55%)
+    brightness(80%) !important;
+
+  -webkit-backdrop-filter:
+    blur(96px)
+    saturate(55%)
+    brightness(80%) !important;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.18) !important;
+}
+/* =========================================================
+   MOTION 02 — TYPE + RED PAGE FINAL
+========================================================= */
+
+
+/* =========================================================
+   PAGE BACKGROUND = RED
+========================================================= */
+
+.motion02-project {
+  background: #820000 !important;
+  color: #d3b69c !important;
+}
+
+.motion02-about,
+.motion02-gallery,
+.motion02-next {
+  background: #820000 !important;
+}
+
+
+/* =========================================================
+   MOTION WORD — KHÔNG LAN LÊN HEADLINE
+========================================================= */
+
+.motion02-type {
+  position: absolute !important;
+
+  /* headline cao 130px */
+  top: 130px !important;
+  right: 0 !important;
+
+  width: 23% !important;
+
+  /* chỉ chiếm vùng hero bên dưới headline */
+  height: calc(100% - 130px) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  z-index: 5 !important;
+
+  color: #d3b69c !important;
+
+  opacity: 0.78 !important;
+
+  font-size:
+    clamp(
+      100px,
+      11vw,
+      190px
+    ) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 0.72 !important;
+
+  letter-spacing: -0.07em !important;
+
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+
+  transform: rotate(180deg) !important;
+
+  pointer-events: none !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.motion02-hero {
+  background: #820000 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .motion02-type {
+    top: 82px !important;
+
+    height:
+      calc(
+        100% - 82px
+      ) !important;
+
+    width: 28% !important;
+
+    font-size:
+      clamp(
+        70px,
+        18vw,
+        110px
+      ) !important;
+  }
+
+}
+/* =========================================================
+   MOTION 02 — RED TINT HERO
+========================================================= */
+
+.motion02-background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(130, 0, 0, 0.14) 0%,
+      rgba(130, 0, 0, 0.08) 45%,
+      rgba(130, 0, 0, 0.22) 100%
+    ),
+    rgba(130, 0, 0, 0.10) !important;
+
+  mix-blend-mode: multiply;
+
+  z-index: 1;
+}
+/* =========================================================
+   MOTION 02 — REMOVE ALL BLACK PAGE BACKGROUND
+========================================================= */
+
+.motion02-project,
+.motion02-showcase,
+.motion02-about,
+.motion02-gallery,
+.motion02-next {
+  background: #820000 !important;
+}
+
+
+/* HEADER CỦA TỪNG SECTION */
+
+.motion02-section-head {
+  background: #820000 !important;
+
+  color: #d3b69c !important;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.25) !important;
+}
+
+
+/* KHUNG GIF / MOTION */
+
+.motion02-video-frame {
+  background: #820000 !important;
+}
+
+
+/* GALLERY ITEM
+   nếu GIF có transparency thì phía sau cũng là đỏ */
+
+.motion02-gallery-item {
+  background: #820000 !important;
+}
+
+
+/* ABOUT */
+
+.motion02-about-grid,
+.motion02-about-content {
+  background: transparent !important;
+}
+
+
+/* NEXT */
+
+.motion02-next {
+  background: #820000 !important;
+}
+
+
+/* BODY KHÔNG LỘ NỀN ĐEN Ở KHE */
+
+body:has(.motion02-project) {
+  background: #820000 !important;
+}
+/* =========================================================
+   =========================================================
+   MOTION PROJECT 02 — HERO TO RED BLEND FINAL
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   PAGE BASE
+========================================================= */
+
+.motion02-project {
+  background: #820000 !important;
+  color: #d3b69c !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.motion02-hero {
+  position: relative !important;
+
+  background: #820000 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND IMAGE
+========================================================= */
+
+.motion02-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+}
+
+
+.motion02-background-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    grayscale(1)
+    contrast(1.08)
+    brightness(0.52)
+    sepia(0.08) !important;
+
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   RED TINT OVER BACKGROUND
+========================================================= */
+
+.motion02-background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(130, 0, 0, 0.08) 0%,
+      rgba(130, 0, 0, 0.12) 40%,
+      rgba(130, 0, 0, 0.22) 75%,
+      rgba(130, 0, 0, 0.42) 100%
+    ) !important;
+
+  mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   HERO → RED TRANSITION
+========================================================= */
+
+.motion02-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 260px;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(130, 0, 0, 0) 0%,
+
+      rgba(130, 0, 0, 0.05) 12%,
+
+      rgba(130, 0, 0, 0.14) 28%,
+
+      rgba(130, 0, 0, 0.3) 46%,
+
+      rgba(130, 0, 0, 0.52) 63%,
+
+      rgba(130, 0, 0, 0.75) 78%,
+
+      rgba(130, 0, 0, 0.92) 90%,
+
+      #820000 100%
+    );
+}
+
+
+/* =========================================================
+   HERO CONTENT LUÔN NẰM TRÊN GRADIENT
+========================================================= */
+
+.motion02-preview,
+.motion02-view,
+.motion02-title-wrap,
+.motion02-type,
+.motion02-role,
+.motion02-meta {
+  position: absolute;
+
+  z-index: 6;
+}
+
+
+.motion02-view,
+.motion02-title-wrap {
+  z-index: 9;
+}
+
+
+/* =========================================================
+   FIRST SECTION AFTER HERO
+========================================================= */
+
+.motion02-showcase {
+  position: relative;
+
+  width: 100%;
+
+  margin: 0 !important;
+
+  padding:
+    90px
+    40px
+    110px !important;
+
+  background: #820000 !important;
+
+  color: #d3b69c !important;
+
+  z-index: 4;
+}
+
+
+/* thêm overlap nhẹ để không có đường cắt */
+
+.motion02-showcase::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: -80px;
+
+  width: 100%;
+  height: 80px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(130, 0, 0, 0) 0%,
+
+      rgba(130, 0, 0, 0.28) 28%,
+
+      rgba(130, 0, 0, 0.65) 65%,
+
+      #820000 100%
+    );
+}
+
+
+/* =========================================================
+   SHOWCASE HEADER
+========================================================= */
+
+.motion02-showcase
+.motion02-section-head {
+  position: relative;
+
+  z-index: 2;
+
+  background: transparent !important;
+
+  color: #d3b69c !important;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.25) !important;
+}
+
+
+/* =========================================================
+   MAIN MOTION FRAME
+========================================================= */
+
+.motion02-video-frame {
+  position: relative;
+
+  z-index: 2;
+
+  background: #820000 !important;
+}
+
+
+/* =========================================================
+   ALL SECTIONS BELOW
+========================================================= */
+
+.motion02-about,
+.motion02-gallery,
+.motion02-next {
+  background: #820000 !important;
+
+  color: #d3b69c !important;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.motion02-gallery-item {
+  background: #820000 !important;
+}
+
+
+/* =========================================================
+   BODY FALLBACK
+========================================================= */
+
+body:has(.motion02-project) {
+  background: #820000 !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .motion02-hero::after {
+    height: 220px;
+  }
+
+  .motion02-showcase {
+    padding:
+      80px
+      28px
+      95px !important;
+  }
+
+  .motion02-showcase::before {
+    top: -65px;
+
+    height: 65px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .motion02-hero::after {
+    height: 180px;
+  }
+
+  .motion02-showcase {
+    padding:
+      65px
+      18px
+      80px !important;
+  }
+
+  .motion02-showcase::before {
+    top: -50px;
+
+    height: 50px;
+  }
+
+}
+/* =========================================================
+   =========================================================
+   MOTION PROJECT 02 — NAV + HERO FINAL
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.motion02-project {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #820000 !important;
+  color: #d3b69c;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   FIXED GLASS NAV / HEADLINE
+========================================================= */
+
+.motion02-nav {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 130px !important;
+
+  z-index: 9999 !important;
+
+  padding:
+    0
+    28px !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    max-content
+    1fr
+    max-content !important;
+
+  align-items: center !important;
+
+  column-gap: 40px !important;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    ) !important;
+
+  backdrop-filter:
+    blur(72px)
+    saturate(60%)
+    brightness(85%) !important;
+
+  -webkit-backdrop-filter:
+    blur(72px)
+    saturate(60%)
+    brightness(85%) !important;
+
+  border-bottom:
+    1px solid
+    rgba(
+      211,
+      182,
+      156,
+      0.18
+    ) !important;
+
+  overflow: hidden;
+}
+
+
+/* TẮT LỚP CŨ NẾU CÒN */
+
+.motion02-nav::before {
+  display: none !important;
+}
+
+
+/* =========================================================
+   CUONG HOANG
+========================================================= */
+
+.motion02-logo {
+  display: block !important;
+
+  width: max-content !important;
+  max-width: none !important;
+
+  white-space: nowrap !important;
+
+  justify-self: start;
+
+  color: #d3b69c !important;
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      34px,
+      2.7vw,
+      50px
+    ) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    -0.035em !important;
+}
+
+
+/* =========================================================
+   MOTION DESIGN — CENTER
+========================================================= */
+
+.motion02-nav-center {
+  justify-self: center !important;
+
+  color: #d3b69c !important;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      30px
+    ) !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   BACK TO WORK
+========================================================= */
+
+.motion02-back {
+  justify-self: end !important;
+
+  white-space: nowrap !important;
+
+  color: #d3b69c !important;
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      19px,
+      1.45vw,
+      27px
+    ) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.motion02-hero {
+  position: relative !important;
+
+  width: 100%;
+
+  height: 100vh;
+  min-height: 720px;
+
+  background: #820000 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.motion02-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+}
+
+
+.motion02-background-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter:
+    grayscale(1)
+    contrast(1.08)
+    brightness(0.52)
+    sepia(0.08) !important;
+
+  transform:
+    scale(1.025);
+}
+
+
+/* =========================================================
+   RED TINT
+========================================================= */
+
+.motion02-background-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+
+      rgba(130, 0, 0, 0.05) 0%,
+
+      rgba(130, 0, 0, 0.08) 40%,
+
+      rgba(130, 0, 0, 0.14) 68%,
+
+      rgba(130, 0, 0, 0.30) 100%
+    ) !important;
+
+  mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   HERO → RED BLEND
+========================================================= */
+
+.motion02-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 300px;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(130, 0, 0, 0) 0%,
+
+      rgba(130, 0, 0, 0.06) 18%,
+
+      rgba(130, 0, 0, 0.16) 34%,
+
+      rgba(130, 0, 0, 0.34) 52%,
+
+      rgba(130, 0, 0, 0.58) 69%,
+
+      rgba(130, 0, 0, 0.82) 84%,
+
+      #820000 100%
+    );
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.motion02-meta {
+  position: absolute;
+
+  top: 155px !important;
+
+  left: 38px;
+  right: 38px;
+
+  z-index: 7;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-right: 37%;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      18px,
+      1.45vw,
+      26px
+    ) !important;
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing:
+    0.025em;
+}
+
+
+/* =========================================================
+   PREVIEW GIF 01
+========================================================= */
+
+.motion02-preview {
+  position: absolute;
+
+  left: 4.8%;
+  top: 30%;
+
+  width: 31%;
+  max-width: 540px;
+
+  aspect-ratio:
+    848 / 477;
+
+  z-index: 7;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  box-shadow:
+    0
+    30px
+    90px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+.motion02-preview-image {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block;
+
+  object-fit:
+    contain !important;
+
+  object-position:
+    center !important;
+
+  transform:
+    none !important;
+
+  scale:
+    1 !important;
+
+  transition:
+    none !important;
+}
+
+
+.motion02-preview:hover
+.motion02-preview-image {
+  transform:
+    none !important;
+
+  scale:
+    1 !important;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.motion02-view {
+  position: absolute;
+
+  left: 53%;
+  top: 51%;
+
+  z-index: 8;
+
+  width: 110px;
+  height: 110px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border:
+    1px solid
+    rgba(
+      211,
+      182,
+      156,
+      0.75
+    );
+
+  border-radius: 50%;
+
+  color: #d3b69c;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.04em;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.motion02-view:hover {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.08);
+
+  background:
+    #d3b69c;
+
+  color:
+    #820000;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.motion02-title-wrap {
+  position: absolute;
+
+  left: 4%;
+  bottom: 6%;
+
+  width: 60%;
+
+  z-index: 8;
+}
+
+
+.motion02-title-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      30px
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.035em;
+}
+
+
+.motion02-title-wrap h1 {
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      72px,
+      7.8vw,
+      140px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.78;
+
+  letter-spacing:
+    -0.065em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   RIGHT VERTICAL MOTION
+========================================================= */
+
+.motion02-type {
+  position: absolute !important;
+
+  /* nằm dưới headline */
+  top: 145px !important;
+
+  right: 1% !important;
+
+  bottom: 95px !important;
+
+  width: 15% !important;
+
+  min-width: 120px;
+  max-width: 200px;
+
+  height:
+    auto !important;
+
+  z-index: 7 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  pointer-events: none;
+}
+
+
+/* CHỮ MOTION */
+
+.motion02-type-word {
+  display: block;
+
+  max-height: 100%;
+
+  color: #d3b69c;
+
+  opacity: 0.92;
+
+  white-space: nowrap;
+
+  writing-mode:
+    vertical-rl;
+
+  text-orientation:
+    mixed;
+
+  transform:
+    rotate(180deg);
+
+  font-size:
+    clamp(
+      95px,
+      9.5vw,
+      170px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.78;
+
+  letter-spacing:
+    -0.075em;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.motion02-role {
+  position: absolute;
+
+  right: 38px;
+  bottom: 24px;
+
+  z-index: 8;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      18px,
+      1.45vw,
+      26px
+    );
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.035em;
+}
+
+
+/* =========================================================
+   NO GRID LINES
+========================================================= */
+
+.motion02-grid-lines {
+  display: none !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .motion02-nav {
+    height: 110px !important;
+
+    padding:
+      0
+      24px !important;
+  }
+
+
+  .motion02-logo {
+    font-size:
+      30px !important;
+  }
+
+
+  .motion02-nav-center {
+    font-size:
+      18px !important;
+  }
+
+
+  .motion02-back {
+    font-size:
+      16px !important;
+  }
+
+
+  .motion02-meta {
+    top:
+      130px !important;
+
+    left: 28px;
+    right: 28px;
+
+    font-size:
+      16px !important;
+  }
+
+
+  .motion02-preview {
+    left: 28px;
+
+    width: 38%;
+  }
+
+
+  .motion02-view {
+    width: 86px;
+    height: 86px;
+
+    font-size:
+      14px;
+  }
+
+
+  .motion02-type {
+    top:
+      125px !important;
+
+    right:
+      1% !important;
+
+    bottom:
+      80px !important;
+
+    width:
+      16% !important;
+
+    min-width:
+      90px;
+
+    max-width:
+      150px;
+  }
+
+
+  .motion02-type-word {
+    font-size:
+      clamp(
+        75px,
+        9vw,
+        130px
+      );
+  }
+
+
+  .motion02-role {
+    right: 28px;
+
+    font-size:
+      16px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .motion02-nav {
+    height:
+      82px !important;
+
+    padding:
+      0
+      18px !important;
+
+    column-gap:
+      12px !important;
+  }
+
+
+  .motion02-logo {
+    font-size:
+      20px !important;
+  }
+
+
+  .motion02-nav-center {
+    font-size:
+      11px !important;
+  }
+
+
+  .motion02-back {
+    font-size:
+      10px !important;
+  }
+
+
+  .motion02-meta {
+    top:
+      100px !important;
+
+    left:
+      18px;
+
+    right:
+      18px;
+
+    padding-right:
+      25%;
+
+    font-size:
+      11px !important;
+  }
+
+
+  .motion02-preview {
+    left:
+      18px;
+
+    top:
+      29%;
+
+    width:
+      52%;
+
+    max-width:
+      none;
+  }
+
+
+  .motion02-view {
+    left:
+      58%;
+
+    width:
+      66px;
+
+    height:
+      66px;
+
+    font-size:
+      10px;
+  }
+
+
+  .motion02-title-wrap {
+    left:
+      18px;
+
+    bottom:
+      7%;
+
+    width:
+      68%;
+  }
+
+
+  .motion02-title-label {
+    font-size:
+      13px;
+  }
+
+
+  .motion02-title-wrap h1 {
+    font-size:
+      clamp(
+        44px,
+        12vw,
+        68px
+      );
+  }
+
+
+  .motion02-type {
+    top:
+      96px !important;
+
+    right:
+      0 !important;
+
+    bottom:
+      65px !important;
+
+    width:
+      20% !important;
+
+    min-width:
+      70px;
+
+    max-width:
+      100px;
+  }
+
+
+  .motion02-type-word {
+    font-size:
+      clamp(
+        55px,
+        13vw,
+        90px
+      );
+
+    line-height:
+      0.82;
+  }
+
+
+  .motion02-role {
+    display:
+      none;
+  }
+
+
+  .motion02-hero::after {
+    height:
+      210px;
+  }
+
+}
+
+/* =========================================================
+   MOTION 02 — ABOUT FINAL OVERRIDE
+   Balanced 1/3 / 2/3 layout + readable description size
+========================================================= */
+
+.motion02-about-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr !important;
+  column-gap: 80px !important;
+  align-items: start !important;
+}
+
+.motion02-about-content {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  display: block !important;
+}
+
+.motion02-about-content p {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+
+  font-size: clamp(28px, 1.9vw, 34px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 500 !important;
+
+  text-align: left !important;
+  text-align-last: left !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.motion02-about-content p span {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+@media (max-width: 1200px) {
+  .motion02-about-grid {
+    grid-template-columns: 1fr 2fr !important;
+    column-gap: 48px !important;
+  }
+
+  .motion02-about-content p {
+    font-size: clamp(24px, 2.5vw, 30px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .motion02-about-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 30px !important;
+  }
+
+  .motion02-about-content p {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    line-height: 1.08 !important;
+  }
+}
+.motion02-about-first-line {
+  white-space: nowrap;
+}
+/* =========================================================
+   MOTION 02 — ABOUT WIDTH FINAL
+========================================================= */
+
+.motion02-about-grid {
+  width: 100% !important;
+
+  grid-template-columns:
+    1fr
+    2fr !important;
+
+  column-gap: 60px !important;
+}
+
+
+.motion02-about-content {
+  width: 100% !important;
+
+  max-width: none !important;
+
+  min-width: 0 !important;
+}
+
+
+.motion02-about-content p {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+
+  font-size:
+    clamp(
+      30px,
+      1.7vw,
+      31px
+    ) !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.08 !important;
+  letter-spacing: -0.025em !important;
+
+  text-align: left !important;
+}
+
+
+.motion02-about-first-line {
+  display: inline-block !important;
+
+  width: max-content !important;
+
+  max-width: none !important;
+
+  white-space: nowrap !important;
 }

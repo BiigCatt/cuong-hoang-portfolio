@@ -1,62 +1,131 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: {
-    default: "Cuong Hoang — Director / DOP / Editor",
-    template: "%s — Cuong Hoang",
-  },
+/* =========================================================
+   MONTSERRAT
+========================================================= */
 
-  description:
-    "Portfolio of Cuong Hoang — Director, DOP and Editor based in Vietnam. Selected work across film, media production and motion design.",
-
-  keywords: [
-    "Cuong Hoang",
-    "Director",
-    "DOP",
-    "Editor",
-    "Media Production",
-    "Motion Design",
-    "Vietnam",
-    "Film",
-    "Portfolio",
-  ],
-
-  authors: [
+const montserrat = localFont({
+  src: [
     {
-      name: "Cuong Hoang",
+      path: "./fonts/Montserrat-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-ThinItalic.ttf",
+      weight: "100",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-ExtraLightItalic.ttf",
+      weight: "200",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-LightItalic.ttf",
+      weight: "300",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-SemiBoldItalic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-ExtraBoldItalic.ttf",
+      weight: "800",
+      style: "italic",
+    },
+
+    {
+      path: "./fonts/Montserrat-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Montserrat-BlackItalic.ttf",
+      weight: "900",
+      style: "italic",
     },
   ],
 
-  creator: "Cuong Hoang",
+  variable: "--font-montserrat",
 
-  openGraph: {
-    title: "Cuong Hoang — Director / DOP / Editor",
+  display: "swap",
+});
 
-    description:
-      "Selected film, media production and motion design work by Cuong Hoang.",
+/* =========================================================
+   METADATA
+========================================================= */
 
-    type: "website",
-
-    locale: "en_US",
-
-    siteName: "Cuong Hoang Portfolio",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-
-    title: "Cuong Hoang — Director / DOP / Editor",
-
-    description:
-      "Selected film, media production and motion design work by Cuong Hoang.",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
+export const metadata: Metadata = {
+  title: "Cuong Hoang",
+  description:
+    "Media / Motion / Designer — Portfolio of Cuong Hoang",
 };
+
+/* =========================================================
+   ROOT LAYOUT
+========================================================= */
 
 export default function RootLayout({
   children,
@@ -65,7 +134,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={montserrat.variable}>
         {children}
       </body>
     </html>

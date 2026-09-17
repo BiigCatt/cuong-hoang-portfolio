@@ -43,6 +43,15 @@ const categoryFilters: {
   },
 ];
 
+type ProjectCardProps = {
+  project: Project;
+  className?: string;
+  onOpen: (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => void;
+};
+
 type EditorialProjectCardProps = {
   project: Project;
   className?: string;
@@ -118,33 +127,12 @@ function EditorialProjectCard({
 
 
       {/* SHADE */}
-
       <div className="editorial-project-shade" />
 
-
-      {/* TOP META */}
-
-      <div className="editorial-project-top">
-
-        <span>
-          PROJECT {project.number}
-        </span>
-
-        {project.year && (
-          <span>
-            {project.year}
-          </span>
-        )}
-
-      </div>
-
-
       {/* BOTTOM */}
-
       <div className="editorial-project-bottom">
 
         <div>
-
           <h3>
             {project.title}
           </h3>
@@ -152,9 +140,7 @@ function EditorialProjectCard({
           <span>
             {project.category}
           </span>
-
         </div>
-
 
         <span className="editorial-project-play">
 
@@ -583,63 +569,334 @@ export default function Home() {
         id="work"
         className="editorial-work-section"
       >
-        <div className="editorial-work-heading">
-          <h1>
-            SELECTED WORK
-          </h1>
+{/* =====================================================
+    WORK HEADER — FINAL
+===================================================== */}
 
-          <span>
-            {String(
-              activeCount
-            ).padStart(2, "0")}
-            {" / "}
-            {String(
-              projects.length
-            ).padStart(2, "0")}
-          </span>
-        </div>
+<div className="work-final-head">
 
-        {/* FILTER */}
+  <div className="work-final-title-row">
 
-        <div className="editorial-filter">
-          <button
-            type="button"
-            className={
-              activeFilter === "all"
-                ? "is-active"
-                : ""
-            }
-            onClick={() =>
-              setActiveFilter("all")
-            }
-            data-cursor
-          >
-            ALL
-          </button>
+    <h1>
+      SELECTED WORK
+    </h1>
 
-          {categoryFilters.map(
-            (filter) => (
-              <button
-                key={filter.value}
-                type="button"
-                className={
-                  activeFilter ===
-                  filter.value
-                    ? "is-active"
-                    : ""
-                }
-                onClick={() =>
-                  setActiveFilter(
-                    filter.value
-                  )
-                }
-                data-cursor
-              >
-                {filter.label}
-              </button>
-            )
-          )}
-        </div>
+    <span>
+      {String(activeCount).padStart(2, "0")}
+      {" / "}
+      {String(projects.length).padStart(2, "0")}
+    </span>
+
+  </div>
+
+
+  {/* FILTER */}
+
+  <div
+    className="work-nav-inline-final"
+    style={{
+      width: "100%",
+      display: "grid",
+      gridTemplateColumns:
+        "max-content 1px max-content 1px max-content 1px max-content 1px max-content",
+      alignItems: "center",
+      justifyContent: "center",
+      columnGap: "22px",
+      paddingTop: "36px",
+    }}
+  >
+
+    {/* ALL */}
+    <button
+      type="button"
+      onClick={() => setActiveFilter("all")}
+      data-cursor
+      style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "34px",
+        margin: 0,
+        padding: 0,
+        border: 0,
+        background: "transparent",
+        color: "#d3b69c",
+        fontFamily: "inherit",
+        fontSize: "clamp(20px, 1.55vw, 28px)",
+        fontWeight: activeFilter === "all" ? 800 : 650,
+        lineHeight: 1,
+        letterSpacing: "0.025em",
+        opacity: activeFilter === "all" ? 1 : 0.42,
+        whiteSpace: "nowrap",
+        cursor: "pointer",
+      }}
+    >
+      <span
+        style={{
+          display: "block",
+          lineHeight: 1,
+        }}
+      >
+        ALL
+      </span>
+
+      <span
+      className="work-filter-line"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: "-3px",
+          height: "2px",
+          background:
+            activeFilter === "all"
+              ? "#d3b69c"
+              : "transparent",
+        }}
+      />
+    </button>
+
+    <span
+    className="work-filter-line"
+      aria-hidden="true"
+      style={{
+        display: "block",
+        width: "1px",
+        height: "18px",
+        background: "rgba(211, 182, 156, 0.38)",
+      }}
+    />
+
+    {/* FILM */}
+    <button
+      type="button"
+      onClick={() => setActiveFilter("film")}
+      data-cursor
+      style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "34px",
+        margin: 0,
+        padding: 0,
+        border: 0,
+        background: "transparent",
+        color: "#d3b69c",
+        fontFamily: "inherit",
+        fontSize: "clamp(20px, 1.55vw, 28px)",
+        fontWeight: activeFilter === "film" ? 800 : 650,
+        lineHeight: 1,
+        letterSpacing: "0.025em",
+        opacity: activeFilter === "film" ? 1 : 0.42,
+        whiteSpace: "nowrap",
+        cursor: "pointer",
+      }}
+    >
+      <span style={{ display: "block", lineHeight: 1 }}>
+        FILM
+      </span>
+
+      <span
+        className="work-filter-line"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: "-3px",
+          height: "2px",
+          background:
+            activeFilter === "film"
+              ? "#d3b69c"
+              : "transparent",
+        }}
+      />
+    </button>
+
+    <span
+      className="work-filter-line"
+      aria-hidden="true"
+      style={{
+        display: "block",
+        width: "1px",
+        height: "18px",
+        background: "rgba(211, 182, 156, 0.38)",
+      }}
+    />
+
+    {/* MOTION */}
+    <button
+      type="button"
+      onClick={() => setActiveFilter("motion")}
+      data-cursor
+      style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "34px",
+        margin: 0,
+        padding: 0,
+        border: 0,
+        background: "transparent",
+        color: "#d3b69c",
+        fontFamily: "inherit",
+        fontSize: "clamp(20px, 1.55vw, 28px)",
+        fontWeight: activeFilter === "motion" ? 800 : 650,
+        lineHeight: 1,
+        letterSpacing: "0.025em",
+        opacity: activeFilter === "motion" ? 1 : 0.42,
+        whiteSpace: "nowrap",
+        cursor: "pointer",
+      }}
+    >
+      <span style={{ display: "block", lineHeight: 1 }}>
+        MOTION
+      </span>
+
+      <span
+        className="work-filter-line"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: "-3px",
+          height: "2px",
+          background:
+            activeFilter === "motion"
+              ? "#d3b69c"
+              : "transparent",
+        }}
+      />
+    </button>
+
+    <span
+    className="work-filter-line"
+      aria-hidden="true"
+      style={{
+        display: "block",
+        width: "1px",
+        height: "18px",
+        background: "rgba(211, 182, 156, 0.38)",
+      }}
+    />
+
+    {/* SHORT-FORM */}
+    <button
+      type="button"
+      onClick={() => setActiveFilter("short-form")}
+      data-cursor
+      style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "34px",
+        margin: 0,
+        padding: 0,
+        border: 0,
+        background: "transparent",
+        color: "#d3b69c",
+        fontFamily: "inherit",
+        fontSize: "clamp(20px, 1.55vw, 28px)",
+        fontWeight:
+          activeFilter === "short-form" ? 800 : 650,
+        lineHeight: 1,
+        letterSpacing: "0.025em",
+        opacity:
+          activeFilter === "short-form" ? 1 : 0.42,
+        whiteSpace: "nowrap",
+        cursor: "pointer",
+      }}
+    >
+      <span style={{ display: "block", lineHeight: 1 }}>
+        SHORT-FORM
+      </span>
+
+      <span
+        className="work-filter-line"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: "-3px",
+          height: "2px",
+          background:
+            activeFilter === "short-form"
+              ? "#d3b69c"
+              : "transparent",
+        }}
+      />
+    </button>
+
+    <span
+    className="work-filter-line"
+      aria-hidden="true"
+      style={{
+        display: "block",
+        width: "1px",
+        height: "18px",
+        background: "rgba(211, 182, 156, 0.38)",
+      }}
+    />
+
+    {/* PHOTOGRAPHY */}
+    <button
+      type="button"
+      onClick={() => setActiveFilter("photography")}
+      data-cursor
+      style={{
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "34px",
+        margin: 0,
+        padding: 0,
+        border: 0,
+        background: "transparent",
+        color: "#d3b69c",
+        fontFamily: "inherit",
+        fontSize: "clamp(20px, 1.55vw, 28px)",
+        fontWeight:
+          activeFilter === "photography" ? 800 : 650,
+        lineHeight: 1,
+        letterSpacing: "0.025em",
+        opacity:
+          activeFilter === "photography" ? 1 : 0.42,
+        whiteSpace: "nowrap",
+        cursor: "pointer",
+      }}
+    >
+      <span style={{ display: "block", lineHeight: 1 }}>
+        PHOTOGRAPHY
+      </span>
+
+      <span
+      className="work-filter-line"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: "-3px",
+          height: "2px",
+          background:
+            activeFilter === "photography"
+              ? "#d3b69c"
+              : "transparent",
+        }}
+      />
+    </button>
+
+  </div>
+
+</div>
 
         {/* =================================================
             FILM

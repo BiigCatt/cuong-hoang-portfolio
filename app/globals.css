@@ -11133,3 +11133,1615 @@ body:has(.motion02-project) {
 
   white-space: nowrap !important;
 }
+/* =========================================================
+   MOTION CARD — FINAL TUNING
+========================================================= */
+
+/* GAME ON — 1 hàng + to hơn */
+.editorial-project-bottom h3 {
+  font-size: clamp(34px, 3vw, 56px) !important;
+  font-weight: 800 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.045em !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* MOTION GRAPHICS — to + dày nhẹ */
+.editorial-project-bottom > div > span {
+  margin-top: 10px !important;
+
+  display: block;
+
+  font-size: clamp(12px, 1vw, 17px) !important;
+  font-weight: 650 !important;
+
+  letter-spacing: 0.02em !important;
+}
+
+
+/* VIEW — vòng tròn lớn x3 */
+.editorial-project-play {
+  width: 120px !important;
+  height: 120px !important;
+
+  flex: 0 0 120px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #d3b69c !important;
+  border-radius: 50% !important;
+}
+
+
+.editorial-project-play-text {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+
+  letter-spacing: 0.08em !important;
+}
+/* MOTION CARD — TUNING */
+
+.editorial-project-bottom h3 {
+  font-size: clamp(30px, 2.5vw, 46px) !important;
+  font-weight: 800 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.editorial-project-bottom > div > span {
+  font-size: clamp(10px, 0.8vw, 14px) !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.editorial-project-play {
+  width: 72px !important;
+  height: 72px !important;
+  flex: 0 0 72px !important;
+}
+
+.editorial-project-play-text {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+/* WORK FILTER — BIG */
+
+.editorial-filter {
+  gap: 56px !important;
+}
+
+.editorial-filter button {
+  font-size: clamp(
+    20px,
+    1.6vw,
+    30px
+  ) !important;
+
+  font-weight: 600 !important;
+
+  letter-spacing: 0.06em !important;
+
+  padding-bottom: 10px !important;
+}
+
+.editorial-filter button::after {
+  height: 2px !important;
+}
+/* =========================================================
+   FILTER + CATEGORY META TUNING
+========================================================= */
+
+/* ALL / FILM / MOTION / SHORT-FORM / PHOTOGRAPHY */
+.editorial-filter button {
+  font-size: clamp(
+    30px,
+    2.25vw,
+    42px
+  ) !important;
+
+  font-weight: 750 !important;
+
+  letter-spacing: 0.035em !important;
+}
+
+
+/* chữ note bên phải: STORIES FOR A WIDER TOMORROW */
+.editorial-category-right {
+  font-size: 13px !important;
+
+  font-weight: 600 !important;
+
+  letter-spacing: 0.06em !important;
+}
+
+
+/* số 01 bên phải */
+.editorial-category-right span:last-child {
+  font-size: 13px !important;
+
+  font-weight: 700 !important;
+}
+/* =========================================================
+   HERO — LAYOUT D
+========================================================= */
+
+.hero-layout-d {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding:
+    58px
+    5vw
+    24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(180, 0, 0, 0.18),
+      transparent 55%
+    ),
+    #820000;
+
+  display: block;
+}
+
+
+/* TOP META */
+
+.hero-layout-d-meta {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 5;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      10px,
+      0.85vw,
+      15px
+    );
+
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.9;
+}
+
+
+.hero-layout-d-meta span:nth-child(2) {
+  text-align: center;
+}
+
+
+.hero-layout-d-meta span:nth-child(3) {
+  text-align: right;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hero-layout-d-title {
+  position: relative;
+
+  width: 100%;
+
+  margin-top:
+    clamp(
+      60px,
+      7vh,
+      100px
+    );
+
+  color: #d3b69c;
+
+  font-weight: 800;
+
+  line-height: 0.76;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.hero-layout-d-line {
+  position: relative;
+
+  width: max-content;
+
+  z-index: 3;
+
+  font-size:
+    clamp(
+      100px,
+      12vw,
+      205px
+    );
+}
+
+
+.hero-layout-d-media {
+  margin-left: 0;
+}
+
+
+.hero-layout-d-motion {
+  margin-left: 0;
+}
+
+
+.hero-layout-d-designer {
+  margin-left: 12vw;
+}
+
+
+/* =========================================================
+   GHOST / LAYERED TYPE
+========================================================= */
+
+.hero-layout-d-ghost {
+  position: absolute;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      100px,
+      12vw,
+      205px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.76;
+
+  letter-spacing: -0.07em;
+
+  opacity: 0.11;
+
+  text-transform: uppercase;
+}
+
+
+.hero-layout-d-ghost-1 {
+  left: 0;
+
+  top: 1.52em;
+}
+
+
+.hero-layout-d-ghost-2 {
+  left: 12vw;
+
+  top: 2.3em;
+
+  opacity: 0.08;
+}
+
+
+/* =========================================================
+   SELECTED WORK — LAYOUT D
+========================================================= */
+
+.editorial-work-layout-d {
+  position: relative;
+
+  width: 100%;
+
+  padding-top: 0;
+
+  background: #820000;
+}
+
+
+.selected-work-layout-d {
+  width: calc(100% - 10vw);
+
+  margin: 0 auto;
+
+  min-height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.55);
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.55);
+}
+
+
+.selected-work-layout-d h1 {
+  margin: 0;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      32px,
+      3vw,
+      52px
+    );
+
+  font-weight: 750;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+
+.selected-work-layout-d > span {
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      20px,
+      1.6vw,
+      30px
+    );
+
+  font-weight: 500;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* =========================================================
+   FILTER — LAYOUT D
+========================================================= */
+
+.editorial-filter-layout-d {
+  width: calc(100% - 10vw);
+
+  margin: 0 auto;
+
+  padding:
+    55px
+    0
+    80px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 40px;
+}
+
+
+.editorial-filter-layout-d button {
+  position: relative;
+
+  padding:
+    0
+    0
+    14px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #d3b69c;
+
+  font-family: inherit;
+
+  font-size:
+    clamp(
+      23px,
+      2vw,
+      36px
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.015em;
+
+  opacity: 0.38;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.editorial-filter-layout-d button:hover {
+  opacity: 0.75;
+
+  transform: translateY(-2px);
+}
+
+
+.editorial-filter-layout-d button.is-active {
+  opacity: 1;
+
+  font-weight: 800;
+}
+
+
+.editorial-filter-layout-d button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #d3b69c;
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform
+    0.4s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.editorial-filter-layout-d button.is-active::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .hero-layout-d {
+    min-height: 82vh;
+
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+
+  .hero-layout-d-line,
+  .hero-layout-d-ghost {
+    font-size:
+      clamp(
+        80px,
+        13vw,
+        150px
+      );
+  }
+
+
+  .hero-layout-d-designer,
+  .hero-layout-d-ghost-2 {
+    margin-left: 8vw;
+  }
+
+
+  .selected-work-layout-d,
+  .editorial-filter-layout-d {
+    width:
+      calc(
+        100% - 64px
+      );
+  }
+
+
+  .editorial-filter-layout-d {
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+
+    column-gap: 48px;
+    row-gap: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero-layout-d {
+    min-height: 70svh;
+
+    padding:
+      32px
+      20px;
+  }
+
+
+  .hero-layout-d-meta {
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  .hero-layout-d-title {
+    margin-top: 75px;
+  }
+
+
+  .hero-layout-d-line,
+  .hero-layout-d-ghost {
+    font-size:
+      clamp(
+        55px,
+        17vw,
+        100px
+      );
+  }
+
+
+  .hero-layout-d-designer {
+    margin-left: 8vw;
+  }
+
+
+  .hero-layout-d-ghost-1 {
+    top: 1.55em;
+  }
+
+
+  .hero-layout-d-ghost-2 {
+    left: 8vw;
+
+    top: 2.35em;
+  }
+
+
+  .selected-work-layout-d {
+    width:
+      calc(
+        100% - 40px
+      );
+
+    min-height: 80px;
+  }
+
+
+  .selected-work-layout-d h1 {
+    font-size:
+      clamp(
+        24px,
+        7vw,
+        36px
+      );
+  }
+
+
+  .selected-work-layout-d > span {
+    font-size: 15px;
+  }
+
+
+  .editorial-filter-layout-d {
+    width:
+      calc(
+        100% - 40px
+      );
+
+    padding:
+      38px
+      0
+      60px;
+
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap:
+      28px
+      20px;
+  }
+
+
+  .editorial-filter-layout-d button {
+    width: max-content;
+
+    font-size: 19px;
+  }
+
+}
+
+/* =========================================================
+   WORK ART FILTER — CENTERED / TIGHT FINAL
+========================================================= */
+
+.work-art-filter {
+  position: relative !important;
+  left: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+
+  width: fit-content !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding-top: 58px !important;
+
+  gap: 28px !important;
+
+  transform: translateX(-50%) !important;
+
+  grid-template-columns: none !important;
+}
+
+.work-art-filter button {
+  flex: 0 0 auto !important;
+
+  width: max-content !important;
+  min-width: max-content !important;
+
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  white-space: nowrap !important;
+
+  justify-self: auto !important;
+}
+
+@media (max-width: 900px) {
+  .work-art-filter {
+    left: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+
+    gap: 18px 24px !important;
+
+    transform: none !important;
+  }
+}
+/* =========================================================
+   WORK FILTER — FIXED SPACING
+========================================================= */
+
+.work-final-filter {
+  width: max-content;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding-top: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+
+  flex-wrap: nowrap;
+}
+
+
+/* TỪ FILM TRỞ ĐI */
+
+.work-final-filter-item {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  margin: 0;
+}
+
+
+/* BUTTON */
+
+.work-final-filter button {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: max-content;
+
+  margin: 0;
+  padding: 0 0 10px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #d3b69c;
+
+  font-family: inherit;
+
+  font-size: clamp(20px, 1.55vw, 28px);
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: 0.025em;
+
+  opacity: 0.42;
+
+  cursor: pointer;
+}
+
+
+/* BỎ MARGIN CŨ CỦA ALL */
+
+.work-final-filter > button {
+  margin: 0 !important;
+}
+
+
+/* DIVIDER */
+
+.work-final-divider {
+  margin: 0 !important;
+
+  display: block;
+
+  color: #d3b69c;
+
+  font-size: 24px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  opacity: 0.35;
+
+  transform: translateY(-4px);
+}
+
+
+/* ACTIVE */
+
+.work-final-filter button.is-active {
+  opacity: 1;
+
+  font-weight: 800;
+}
+
+
+/* UNDERLINE */
+
+.work-final-filter button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #d3b69c;
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+}
+
+
+.work-final-filter button.is-active::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+/* =========================================
+   EDITORIAL FILTER — CENTER + TIGHT FINAL
+========================================= */
+
+.editorial-filter {
+  display: flex !important;
+
+  width: max-content !important;
+  max-width: calc(100% - 40px) !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  min-height: 0 !important;
+
+  justify-content: center !important;
+  align-items: center !important;
+
+  flex-wrap: nowrap !important;
+
+  gap: 18px !important;
+}
+
+.editorial-filter button {
+  flex: 0 0 auto !important;
+
+  width: max-content !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+/* =========================================================
+   SELECTED WORK — FINAL OPTION
+========================================================= */
+
+.work-final-head {
+  width: 100%;
+
+  padding:
+    52px
+    40px
+    50px;
+
+  background: #820000;
+
+  color: #d3b69c;
+}
+
+
+/* =========================================================
+   TITLE ROW
+========================================================= */
+
+.work-final-title-row {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  padding-bottom: 32px;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.42);
+}
+
+
+.work-final-title-row h1 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      46px,
+      5vw,
+      82px
+    );
+
+  font-weight: 650;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  color: #d3b69c;
+}
+
+
+.work-final-title-row > span {
+  font-size:
+    clamp(
+      22px,
+      2vw,
+      34px
+    );
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  color: #d3b69c;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.work-final-filter {
+  width: max-content;
+
+  max-width: 100%;
+
+  margin:
+    0
+    auto;
+
+  padding-top: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0;
+
+  flex-wrap: nowrap;
+}
+
+
+.work-final-filter-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+
+.work-final-filter button {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: max-content;
+
+  margin: 0;
+
+  padding:
+    0
+    0
+    12px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #d3b69c;
+
+  font-family: inherit;
+
+  font-size:
+    clamp(
+      20px,
+      1.55vw,
+      28px
+    );
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.04em;
+
+  opacity: 0.48;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.25s ease;
+}
+
+
+.work-final-filter > button {
+  margin-right: 28px;
+}
+
+
+.work-final-filter button:hover {
+  opacity: 0.8;
+}
+
+
+.work-final-filter button.is-active {
+  opacity: 1;
+
+  font-weight: 750;
+}
+
+
+/* UNDERLINE ACTIVE */
+
+.work-final-filter button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #d3b69c;
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.work-final-filter button.is-active::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+
+/* =========================================================
+   DIVIDER |
+========================================================= */
+
+.work-final-divider {
+  display: block;
+
+  color: #d3b69c;
+
+  font-size:
+    clamp(
+      22px,
+      1.7vw,
+      30px
+    );
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  opacity: 0.35;
+
+  margin-right: 28px;
+
+  transform:
+    translateY(-5px);
+}
+
+
+/* =========================================================
+   CATEGORY HEADER
+   FILM /09 ---------------- NOTE 01
+========================================================= */
+
+.editorial-category-header {
+  min-height: 110px !important;
+
+  padding:
+    30px
+    40px
+    18px !important;
+
+  display: flex !important;
+
+  align-items: flex-end !important;
+
+  justify-content: space-between !important;
+
+  gap: 40px !important;
+
+  background: #820000 !important;
+
+  color: #d3b69c !important;
+}
+
+
+.editorial-category-title {
+  display: flex !important;
+
+  align-items: flex-end !important;
+
+  gap: 18px !important;
+}
+
+
+.editorial-category-title h2 {
+  margin: 0 !important;
+
+  font-size:
+    clamp(
+      56px,
+      6vw,
+      96px
+    ) !important;
+
+  font-weight: 650 !important;
+
+  line-height: 0.82 !important;
+
+  letter-spacing: -0.055em !important;
+
+  color: #d3b69c !important;
+}
+
+
+.editorial-category-title span {
+  padding-bottom: 5px;
+
+  font-size:
+    clamp(
+      17px,
+      1.4vw,
+      24px
+    ) !important;
+
+  font-weight: 400 !important;
+
+  color: #d3b69c !important;
+}
+
+
+.editorial-category-right {
+  padding-bottom: 5px;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 42px !important;
+
+  color: #d3b69c !important;
+
+  font-size:
+    clamp(
+      11px,
+      0.9vw,
+      15px
+    ) !important;
+
+  font-weight: 550 !important;
+
+  letter-spacing: 0.08em !important;
+}
+
+
+/* =========================================================
+   CARD — LAST MOCKUP LOOK
+========================================================= */
+
+.editorial-project {
+  overflow: hidden;
+}
+
+
+.film-hero {
+  margin:
+    0
+    40px;
+
+  width:
+    calc(
+      100% - 80px
+    ) !important;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .work-final-head {
+    padding:
+      45px
+      28px;
+  }
+
+
+  .work-final-filter {
+    flex-wrap: wrap;
+
+    row-gap: 24px;
+  }
+
+
+  .work-final-filter button {
+    font-size: 18px;
+  }
+
+
+  .work-final-filter-item {
+    gap: 18px;
+  }
+
+
+  .work-final-divider {
+    margin-right: 18px;
+  }
+
+
+  .editorial-category-header {
+    padding-left: 28px !important;
+
+    padding-right: 28px !important;
+  }
+
+
+  .film-hero {
+    margin-left: 28px;
+
+    margin-right: 28px;
+
+    width:
+      calc(
+        100% - 56px
+      ) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .work-final-head {
+    padding:
+      36px
+      20px;
+  }
+
+
+  .work-final-title-row {
+    padding-bottom: 22px;
+  }
+
+
+  .work-final-title-row h1 {
+    font-size:
+      clamp(
+        36px,
+        11vw,
+        54px
+      );
+  }
+
+
+  .work-final-title-row > span {
+    font-size: 16px;
+  }
+
+
+  .work-final-filter {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap:
+      18px
+      0;
+  }
+
+
+  .work-final-filter button {
+    font-size: 15px;
+
+    padding-bottom: 7px;
+  }
+
+
+  .work-final-filter > button {
+    margin-right: 16px;
+  }
+
+
+  .work-final-filter-item {
+    gap: 12px;
+  }
+
+
+  .work-final-divider {
+    margin-right: 12px;
+
+    font-size: 17px;
+  }
+
+
+  .editorial-category-header {
+    min-height: 80px !important;
+
+    padding:
+      24px
+      20px
+      14px !important;
+  }
+
+
+  .editorial-category-title h2 {
+    font-size:
+      clamp(
+        40px,
+        13vw,
+        62px
+      ) !important;
+  }
+
+
+  .editorial-category-right
+  span:first-child {
+    display: none;
+  }
+
+
+  .film-hero {
+    margin-left: 20px;
+
+    margin-right: 20px;
+
+    width:
+      calc(
+        100% - 40px
+      ) !important;
+
+    border-radius: 6px;
+  }
+
+}
+/* =========================================
+   WORK FILTER — FINAL CLEAN
+========================================= */
+
+.work-final-filter {
+  width: max-content;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding-top: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0;
+}
+
+
+.work-final-filter button {
+  position: relative;
+
+  width: max-content;
+  flex: 0 0 auto;
+
+  margin: 0;
+
+  padding:
+    0
+    26px
+    11px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #d3b69c;
+
+  font-family: inherit;
+
+  font-size: clamp(20px, 1.55vw, 28px);
+
+  font-weight: 650;
+
+  line-height: 1;
+
+  letter-spacing: 0.025em;
+
+  opacity: 0.42;
+
+  cursor: pointer;
+}
+
+
+/* bỏ padding ngoài cùng */
+
+.work-final-filter button:first-child {
+  padding-left: 0;
+}
+
+.work-final-filter button:last-child {
+  padding-right: 0;
+}
+
+
+/* DẤU GẠCH DỌC GIỮA CÁC MỤC */
+
+.work-final-filter button + button::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 45%;
+
+  width: 1px;
+  height: 22px;
+
+  background: rgba(211, 182, 156, 0.42);
+
+  transform: translateY(-50%);
+}
+
+
+/* ACTIVE */
+
+.work-final-filter button.is-active {
+  opacity: 1;
+  font-weight: 800;
+}
+
+
+/* GẠCH CHÂN ACTIVE */
+
+.work-final-filter button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 26px;
+  right: 26px;
+  bottom: 0;
+
+  height: 2px;
+
+  background: #d3b69c;
+
+  transform: scaleX(0);
+}
+
+
+.work-final-filter button:first-child::after {
+  left: 0;
+}
+
+
+.work-final-filter button.is-active::after {
+  transform: scaleX(1);
+}
+/* =========================================================
+   WORK FILTER — HOVER EFFECT
+========================================================= */
+
+.work-nav-inline-final button {
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    letter-spacing 0.3s ease !important;
+}
+
+
+/* TEXT HOVER */
+
+.work-nav-inline-final button:hover {
+  opacity: 1 !important;
+
+  transform: translateY(-2px);
+
+  letter-spacing: 0.055em !important;
+}
+
+
+/* UNDERLINE */
+
+.work-nav-inline-final .work-filter-line {
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.work-nav-inline-final button:hover .work-filter-line {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* HOVER UNDERLINE */
+
+.work-nav-inline-final button:hover > span:last-child {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+
+/* ACTIVE — luôn giữ underline */
+
+.work-nav-inline-final button:has(
+  > span:last-child[style*="rgb"]
+) > span:last-child {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   HOMEPAGE PLAY ICON — TRUE CENTERED TRIANGLE
+   Replace the text glyph ▶ with a CSS triangle so baseline
+   metrics can no longer push it downward.
+========================================================= */
+
+.editorial-project-play {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.editorial-project-play-icon {
+  display: block !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  margin: 0 0 0 4px !important;
+  padding: 0 !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  border-top: 12px solid transparent !important;
+  border-bottom: 12px solid transparent !important;
+  border-left: 20px solid currentColor !important;
+
+  transform: none !important;
+}

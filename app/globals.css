@@ -12745,3 +12745,20 @@ body:has(.motion02-project) {
 
   transform: none !important;
 }
+/* =========================================================
+   MOTION PROJECT 03 — GIF 04 FULL WIDTH
+========================================================= */
+
+.motion03-project .motion02-gallery-item-4 {
+  grid-column: 1 / 13 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  aspect-ratio: auto !important;
+}
+
+.motion03-project .motion02-gallery-item-4 .motion02-gallery-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}

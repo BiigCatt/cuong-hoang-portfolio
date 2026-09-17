@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/projects/motion-project-03/02.gif
+public/projects/motion-project-03/03.gif
+public/projects/motion-project-03/04.gif

@@ -2,12 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { MouseEvent } from "react";
 
-import { PROJECT_TYPE_LABEL, Project } from "../../data/projects";
+import {
+  PROJECT_TYPE_LABEL,
+  Project,
+} from "../../data/projects";
 
 type ProjectCardProps = {
   project: Project;
   href: string;
-  onOpen: (event: MouseEvent<HTMLAnchorElement>, href: string) => void;
+  onOpen: (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => void;
 };
 
 export default function ProjectCard({
@@ -43,11 +49,16 @@ export default function ProjectCard({
       </div>
 
       <div className="project-info">
-        <div className="project-number">{project.number}</div>
-        <div className="project-title">{project.title}</div>
+        <div className="project-number">
+          {project.number}
+        </div>
+
+        <div className="project-title">
+          {project.title}
+        </div>
+
         <div className="project-meta">
           <span>{project.category}</span>
-          <span>{project.year}</span>
         </div>
       </div>
     </Link>

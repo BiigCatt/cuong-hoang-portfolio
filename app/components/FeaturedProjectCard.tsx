@@ -49,7 +49,6 @@ export default function FeaturedProjectCard({
             <span>{project.category}</span>
             <strong>CUONG HOANG</strong>
           </div>
-          <span className="featured-year">{project.year}</span>
         </div>
 
         <div className="featured-small-image">

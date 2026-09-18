@@ -2610,37 +2610,7 @@ a {
 ========================================================= */
 
 .aperture-grid {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 4;
-
-  pointer-events: none;
-}
-
-.grid-line {
-  position: absolute;
-
-  top: 0;
-
-  width: 1px;
-  height: 100%;
-
-  background:
-    rgba(211, 182, 156, 0.14);
-}
-
-.grid-line-1 {
-  left: 33.33%;
-}
-
-.grid-line-2 {
-  left: 60%;
-}
-
-.grid-line-3 {
-  right: 24%;
+  display: none;
 }
 
 
@@ -2806,53 +2776,31 @@ a {
   top: 82px;
   right: 0;
 
-  width: 24%;
+  width: 30%;
 
-  height:
-    calc(
-      100% - 82px
-    );
+  height: calc(100% - 82px);
 
-  z-index: 7;
+  z-index: 0;
 
   overflow: hidden;
 
-  border-left:
-    1px solid
-    rgba(211, 182, 156, 0.16);
+  border-left: none;
 
-  background:
-    rgba(7, 7, 7, 0.45);
+  background: transparent;
 }
 
 .aperture-type-big {
   position: absolute;
-
-  right: -0.08em;
+  right: 0.02em;
   top: 50%;
-
-  transform:
-    translateY(-50%)
-    rotate(90deg);
-
+  transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
-
   white-space: nowrap;
-
-  font-size:
-    clamp(
-      140px,
-      20vw,
-      360px
-    );
-
+  font-size: clamp(140px, 18vw, 320px);
   font-weight: 900;
-
   line-height: 0.72;
-
-  letter-spacing: -0.085em;
-
-  color: #d3b69c;
+  letter-spacing: -0.06em;
+  color: rgba(211, 182, 156, 0.67);
 }
 
 .aperture-type-meta {
@@ -12761,4 +12709,1244 @@ body:has(.motion02-project) {
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
+}
+/* =========================================================
+   FILM DETAIL — SHARED 6 IMAGE GALLERY
+========================================================= */
+
+.aperture-gallery-4 {
+  grid-column: 1 / 7;
+  aspect-ratio: 16 / 9;
+  margin-top: 40px;
+}
+
+.aperture-gallery-5 {
+  grid-column: 7 / 13;
+  aspect-ratio: 16 / 9;
+  margin-top: 40px;
+}
+
+.aperture-gallery-6 {
+  grid-column: 1 / 13;
+  aspect-ratio: 16 / 9;
+  margin-top: 40px;
+}
+
+.aperture-gallery-4 .aperture-gallery-image,
+.aperture-gallery-5 .aperture-gallery-image,
+.aperture-gallery-6 .aperture-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* =========================================================
+   FILM BREAKDOWN — SHARED
+========================================================= */
+
+.film-breakdown-section {
+  padding:
+    90px
+    40px
+    160px;
+
+  background: #050505;
+
+  color: #e8d0b6;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.film-breakdown-head {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(232, 208, 182, 0.22);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.film-breakdown-intro {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: flex-end;
+
+  gap: 40px;
+
+  padding:
+    32px
+    0
+    35px;
+}
+
+
+.film-breakdown-intro h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      38px,
+      5vw,
+      76px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+
+.film-breakdown-intro p {
+  width: 100%;
+
+  max-width: 360px;
+
+  margin: 0;
+
+  font-size: 9px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.film-breakdown-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      6,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   NORMAL CARD
+========================================================= */
+
+.film-breakdown-card {
+  position: relative;
+
+  grid-column:
+    span 2;
+
+  aspect-ratio:
+    16 / 9;
+
+  overflow: hidden;
+
+  background: #0a0a0a;
+
+  border:
+    1px solid
+    rgba(232, 208, 182, 0.22);
+}
+
+
+/* =========================================================
+   GIF 01 — FIRST / FEATURED
+========================================================= */
+
+.film-breakdown-card.is-featured {
+  grid-column:
+    1 / -1;
+
+  aspect-ratio:
+    16 / 6.5;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.film-breakdown-media {
+  position: absolute;
+
+  inset: 0;
+}
+
+
+.film-breakdown-image {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform
+    0.8s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.film-breakdown-card:hover
+.film-breakdown-image {
+  transform:
+    scale(1.025);
+}
+
+
+/* =========================================================
+   DARK GRADIENT
+========================================================= */
+
+.film-breakdown-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.86)
+      0%,
+      rgba(0, 0, 0, 0.2)
+      42%,
+      transparent
+      70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.film-breakdown-number {
+  font-size:
+    clamp(
+      25px,
+      2.5vw,
+      42px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.05em;
+
+  color: #f3eee8;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.film-breakdown-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.film-breakdown-text h3 {
+  margin: 0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: #f3eee8;
+}
+
+
+.film-breakdown-text p {
+  margin: 0;
+
+  font-size: 7px;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+  max-width: 900px
+) {
+
+  .film-breakdown-section {
+    padding:
+      70px
+      28px
+      120px;
+  }
+
+
+  .film-breakdown-intro {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .film-breakdown-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .film-breakdown-card {
+    grid-column:
+      span 1;
+  }
+
+
+  .film-breakdown-card.is-featured {
+    grid-column:
+      1 / -1;
+
+    aspect-ratio:
+      16 / 8;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+  max-width: 600px
+) {
+
+  .film-breakdown-section {
+    padding:
+      55px
+      18px
+      90px;
+  }
+
+
+  .film-breakdown-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 8px;
+  }
+
+
+  .film-breakdown-card,
+  .film-breakdown-card.is-featured {
+    grid-column:
+      1;
+
+    aspect-ratio:
+      16 / 9;
+  }
+
+
+  .film-breakdown-overlay {
+    padding: 13px;
+  }
+
+}
+/* =========================================================
+   FILM ABOUT — MOTION STYLE
+========================================================= */
+
+.film-about-section {
+  background: #9d0000;
+  color: #e6c8ac;
+  padding: 28px 32px 110px;
+}
+
+.film-about-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding-bottom: 18px;
+  margin-bottom: 34px;
+
+  border-bottom: 1px solid rgba(230, 200, 172, 0.22);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.film-about-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.film-about-label {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.film-about-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.film-about-description {
+  margin: 0;
+  max-width: 1180px;
+
+  font-size: clamp(42px, 4.2vw, 78px);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  text-align: left;
+}
+
+.film-about-meta {
+  display: flex;
+  gap: 120px;
+  margin-top: 72px;
+  flex-wrap: wrap;
+}
+
+.film-about-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 220px;
+}
+
+.film-about-meta-k {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.film-about-meta-v {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .film-about-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .film-about-description {
+    max-width: 100%;
+    font-size: clamp(34px, 5vw, 58px);
+  }
+
+  .film-about-meta {
+    gap: 48px;
+    margin-top: 44px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .film-about-section {
+    padding: 22px 18px 72px;
+  }
+
+  .film-about-label {
+    font-size: 18px;
+  }
+
+  .film-about-description {
+    font-size: clamp(24px, 7vw, 38px);
+    line-height: 1;
+  }
+
+  .film-about-meta {
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 32px;
+  }
+
+  .film-about-meta-v {
+    font-size: 15px;
+  }
+}/* =========================================================
+   FILM DETAIL — RED THEME
+========================================================= */
+
+.film-detail-red {
+  background: #820000 !important;
+  color: #d3b69c;
+}
+
+.film-detail-red .aperture-film-section,
+.film-detail-red .aperture-about,
+.film-detail-red .aperture-gallery,
+.film-detail-red .film-breakdown-section,
+.film-detail-red .aperture-next {
+  background: #820000 !important;
+  color: #d3b69c !important;
+}
+
+.film-detail-red .aperture-film-frame {
+  background: #111;
+}
+
+.film-detail-red .aperture-about,
+.film-detail-red .aperture-next,
+.film-detail-red .film-breakdown-head {
+  border-color: rgba(211, 182, 156, 0.28) !important;
+}
+/* =========================================================
+   FILM ABOUT — USE MOTION SYSTEM
+========================================================= */
+
+.film-detail-red .film-motion-about {
+  width: 100% !important;
+
+  background: #820000 !important;
+
+  color: #d3b69c !important;
+
+  padding:
+    100px
+    40px
+    110px !important;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.16) !important;
+}
+
+
+/* HEADER 02 / ABOUT — GIỐNG MOTION */
+
+.film-detail-red
+.film-motion-about
+.motion02-section-head {
+  margin-bottom: 30px !important;
+
+  padding-bottom: 24px !important;
+
+  border-bottom:
+    1px solid
+    rgba(211, 182, 156, 0.25) !important;
+
+  font-size:
+    clamp(
+      22px,
+      1.8vw,
+      34px
+    ) !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.035em !important;
+}
+
+
+/* 1/3 — 2/3 GIỐNG MOTION */
+
+.film-detail-red
+.film-motion-about
+.motion02-about-grid {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    1fr
+    2fr !important;
+
+  column-gap:
+    60px !important;
+
+  align-items:
+    start !important;
+}
+
+
+/* ABOUT THE PROJECT */
+
+.film-detail-red
+.film-motion-about
+.motion02-about-label {
+  color:
+    #d3b69c !important;
+
+  font-size:
+    clamp(
+      20px,
+      1.55vw,
+      30px
+    ) !important;
+
+  font-weight:
+    700 !important;
+
+  line-height:
+    1.05 !important;
+
+  letter-spacing:
+    0.035em !important;
+
+  opacity:
+    1 !important;
+}
+
+
+/* DESCRIPTION — Y CHANG MOTION */
+
+.film-detail-red
+.film-motion-about
+.motion02-about-content p {
+  width:
+    100% !important;
+
+  max-width:
+    none !important;
+
+  margin:
+    0 !important;
+
+  color:
+    #d3b69c !important;
+
+  font-size:
+    clamp(
+      30px,
+      1.7vw,
+      31px
+    ) !important;
+
+  font-weight:
+    600 !important;
+
+  line-height:
+    1.08 !important;
+
+  letter-spacing:
+    -0.025em !important;
+
+  text-align:
+    left !important;
+}
+
+
+/* =========================================================
+   ROLE / TYPE — GIỮ NỘI DUNG FILM
+========================================================= */
+
+.film-motion-meta {
+  width: 100%;
+
+  margin-top: 60px;
+
+  padding-top: 24px;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.25);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 40px;
+}
+
+
+.film-motion-meta-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.film-motion-meta-item span {
+  color: #d3b69c;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0.1em;
+
+  opacity: 0.55;
+}
+
+
+.film-motion-meta-item strong {
+  color: #d3b69c;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: 0.035em;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .film-detail-red
+  .film-motion-about {
+    padding:
+      80px
+      28px !important;
+  }
+
+
+  .film-detail-red
+  .film-motion-about
+  .motion02-about-grid {
+    grid-template-columns:
+      1fr !important;
+
+    row-gap:
+      30px !important;
+  }
+
+
+  .film-detail-red
+  .film-motion-about
+  .motion02-about-content p {
+    font-size:
+      clamp(
+        24px,
+        6vw,
+        32px
+      ) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .film-detail-red
+  .film-motion-about {
+    padding:
+      65px
+      18px !important;
+  }
+
+
+  .film-motion-meta {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      24px;
+
+    margin-top:
+      40px;
+  }
+
+}
+.film-detail-red .film-motion-about {
+  width: 100% !important;
+  background: #820000 !important;
+  color: #d3b69c !important;
+
+  /* giảm khoảng trống trên */
+  padding: 36px 40px 72px !important;
+
+  border-top: 1px solid rgba(211, 182, 156, 0.16) !important;
+  min-height: auto !important;
+}
+
+.film-detail-red
+.film-motion-about
+.motion02-section-head {
+  margin-bottom: 20px !important;
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid rgba(211, 182, 156, 0.25) !important;
+}
+
+.film-detail-red
+.film-motion-about
+.motion02-about-grid {
+  margin-top: 0 !important;
+}
+.film-detail-red
+.film-motion-about
+.motion02-section-head {
+  margin-bottom: 24px !important;
+  padding-bottom: 18px !important;
+
+  font-size: clamp(42px, 4.5vw, 76px) !important;
+  font-weight: 900 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.045em !important;
+
+  color: #d3b69c !important;
+
+  border-bottom:
+    2px solid
+    rgba(211, 182, 156, 0.45) !important;
+}
+.film-detail-red
+.aperture-film-section
+.aperture-section-label {
+  margin-bottom: 24px !important;
+
+  font-size: clamp(42px, 4.5vw, 76px) !important;
+  font-weight: 900 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.045em !important;
+
+  color: #d3b69c !important;
+
+  text-transform: uppercase !important;
+
+  padding-bottom: 18px !important;
+
+  border-bottom:
+    2px solid
+    rgba(211, 182, 156, 0.45) !important;
+}
+/* =========================================================
+   FILM DETAIL — BIG META + BREAKDOWN HEADER
+========================================================= */
+
+/* ROLE / TYPE label */
+.film-motion-meta-item span {
+  font-size: clamp(18px, 1.3vw, 24px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  opacity: 0.7 !important;
+}
+
+
+/* DIRECTOR / DOP / EDITOR
+   MUSIC / PERFORMANCE FILM */
+.film-motion-meta-item strong {
+  font-size: clamp(26px, 2vw, 38px) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+
+/* BREAKDOWN / 06 VISUALS */
+.film-breakdown-head {
+  font-size: clamp(28px, 2.4vw, 44px) !important;
+  font-weight: 900 !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0.03em !important;
+
+  padding-bottom: 22px !important;
+
+  border-bottom:
+    2px solid
+    rgba(211, 182, 156, 0.45) !important;
+}
+
+
+/* cho 2 đầu BREAKDOWN / 06 VISUALS đậm đều */
+.film-breakdown-head span {
+  font-size: inherit !important;
+  font-weight: 900 !important;
+}
+/* ROLE / TYPE label */
+.film-motion-meta-item span {
+  font-size: clamp(12px, 0.85vw, 16px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  opacity: 0.7 !important;
+}
+
+/* DIRECTOR / DOP / EDITOR
+   MUSIC / PERFORMANCE FILM */
+.film-motion-meta-item strong {
+  font-size: clamp(18px, 1.3vw, 24px) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* BREAKDOWN / 06 VISUALS */
+.film-breakdown-head {
+  font-size: clamp(18px, 1.4vw, 26px) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+  padding-bottom: 16px !important;
+}
+
+.film-breakdown-head span {
+  font-size: inherit !important;
+  font-weight: 900 !important;
+}
+/* FILM ABOUT — DESCRIPTION TO HƠN */
+.film-detail-red
+.film-motion-about
+.motion02-about-content p {
+  width: 100% !important;
+  max-width: 27ch !important;
+
+  font-size: clamp(40px, 3.1vw, 58px) !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+
+  color: #d3b69c !important;
+}
+/* =========================================================
+   FILM BREAKDOWN — COMPACT
+========================================================= */
+
+.film-breakdown-section {
+  padding-top: 28px !important;
+}
+
+.film-breakdown-head {
+  margin-bottom: 18px !important;
+}
+
+.film-breakdown-grid {
+  margin-top: 0 !important;
+}
+
+/* bỏ luôn khoảng của intro nếu CSS cũ còn */
+.film-breakdown-intro {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* FILM BREAKDOWN — NUMBER ONLY */
+
+.film-breakdown-overlay {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-start !important;
+
+  padding: 18px !important;
+}
+
+.film-breakdown-number {
+  font-size: clamp(34px, 3vw, 52px) !important;
+  font-weight: 900 !important;
+  line-height: 0.85 !important;
+  letter-spacing: -0.05em !important;
+
+  color: #f3eee8 !important;
+}
+
+.film-breakdown-text {
+  display: none !important;
+}
+.film-detail-red
+.aperture-film-section
+.aperture-section-label {
+  font-size: clamp(22px, 2.2vw, 38px) !important;
+  font-weight: 900 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.03em !important;
+}
+/* ==== FILM DETAIL TITLE: SPEED UP ==== */
+.film-detail-red .aperture-project-title,
+.film-detail-red .aperture-hero-title,
+.film-detail-red .film-detail-title {
+  font-size: clamp(96px, 10vw, 180px) !important;
+  line-height: 0.9 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.05em !important;
+}
+
+/* nếu title đang tách mỗi chữ / mỗi dòng bằng span */
+.film-detail-red .aperture-project-title span,
+.film-detail-red .aperture-hero-title span,
+.film-detail-red .film-detail-title span {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: inherit !important;
+}
+.film-detail-red
+.aperture-bottom-title h1 {
+  font-size: clamp(78px, 8vw, 140px) !important;
+  font-weight: 900 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.05em !important;
+}
+.film-detail-red
+.aperture-project-number {
+  font-size: clamp(17px, 1.3vw, 24px) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.055em !important;
+}
+/* =========================================================
+   FILM DETAIL NAV — MATCH MOTION
+========================================================= */
+
+
+
+/* LOGO */
+
+.film-detail-logo {
+  display: block;
+
+  width: max-content;
+
+  white-space: nowrap;
+
+  color: #d3b69c;
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      34px,
+      2.6vw,
+      48px
+    );
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing:
+    -0.035em;
+}
+
+
+/* CENTER */
+
+
+/* BACK */
+
+.film-detail-back {
+  justify-self: end;
+
+  white-space: nowrap;
+
+  color: #d3b69c;
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      18px,
+      1.4vw,
+      26px
+    );
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.025em;
+}
+/* =========================================================
+   FILM NAV — SAME REAL BLUR AS MOTION
+========================================================= */
+
+
+
+/* ẢNH COVER COPY VÀO NAV */
+
+
+/* BLUR ẢNH COVER THẬT */
+
+
+
+/* TINT */
+
+
+
+/* TEXT TRÊN NAV */
+
+
+
+/* LOGO */
+
+.film-detail-logo {
+  justify-self: start !important;
+
+  text-decoration: none !important;
+
+  font-size:
+    clamp(
+      34px,
+      2.6vw,
+      48px
+    ) !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    -0.035em !important;
+}
+
+
+/* CENTER */
+
+
+
+
+/* BACK */
+
+.film-detail-back {
+  justify-self: end !important;
+
+  text-decoration: none !important;
+
+  font-size:
+    clamp(
+      18px,
+      1.4vw,
+      26px
+    ) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing:
+    0.025em !important;
+}
+/* =========================================================
+   FILM NAV — FIX BLUR CHỈ NẰM TRONG NAV
+========================================================= */
+
+
+
+
+/* KHUNG BLUR — CHỈ CAO 130PX */
+
+
+
+/* QUAN TRỌNG:
+   ABSOLUTE, KHÔNG PHẢI FIXED */
+
+
+
+
+/* TINT CHỈ TRONG NAV */
+
+
+
+/* TEXT */
+
+.film-detail-logo,
+.film-detail-nav-center,
+.film-detail-back {
+  position: relative !important;
+
+  z-index: 3 !important;
+
+  color: #d3b69c !important;
 }

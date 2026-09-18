@@ -46,7 +46,7 @@ export const projects: Project[] = [
     titleLines: ["CMC DATA", "CENTER"],
     type: "film",
     category: "CORPORATE FILM",
-    role: "DIRECTOR / DOP / EDITOR",
+    role: "DIRECTOR / DOP / CAM OP / EDITOR",
     description:
       "Video giới thiệu quy trình bảo trì, bảo dưỡng Data Center.",
     featured: true,
@@ -98,18 +98,26 @@ export const projects: Project[] = [
     cover: "",
   },
 
-  {
-    number: "05",
-    slug: "film-project-05",
-    title: "Film Project 05",
-    type: "film",
-    category: "FILM",
-    role: "DIRECTOR / DOP / EDITOR",
-    description: "Project description coming soon.",
-    video: "",
-    images: [],
-    cover: "",
-  },
+ {
+  number: "05",
+  slug: "film-project-05",
+  title: "SPEED UP",
+  type: "film",
+  category: "MUSIC / PERFORMANCE FILM",
+  role: "DIRECTOR / DOP / CAM OP / EDITOR",
+  description:
+    "A high-energy rock performance film built around fast guitar shredding, dramatic lighting, and dynamic camera work, capturing the raw intensity of the performance.",
+  video: "https://www.youtube.com/embed/qw6PQNEVVVk",
+  images: [
+    "/projects/film-project-05/01.gif",
+    "/projects/film-project-05/02.gif",
+    "/projects/film-project-05/03.gif",
+    "/projects/film-project-05/04.gif",
+    "/projects/film-project-05/05.gif",
+    "/projects/film-project-05/06.gif",
+  ],
+  cover: "/projects/film-project-05/cover.jpg",
+},
 
   {
     number: "06",

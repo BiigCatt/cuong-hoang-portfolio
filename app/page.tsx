@@ -446,38 +446,38 @@ export default function Home() {
     }, 450);
   };
 
-  const filmRowTwo =
-    filmProjects.slice(1, 4);
+const filmRowTwo =
+  filmProjects.slice(1, 4);
 
-  /*
-   * FORM ĐÃ CHỐT
-   *
-   * ROW 1: 01
-   * ROW 2: 02 / 03 / 04
-   * ROW 3: 08 / 09
-   * ROW 4: 06 / 07 / 05
-   */
+/*
+ * FILM ORDER
+ *
+ * ROW 1: 01
+ * ROW 2: 02 / 03 / 04
+ * ROW 3: 05 / 06
+ * ROW 4: 07 / 08 / 09
+ */
 
-  const filmRowThree = [
-    filmProjects[7],
-    filmProjects[8],
-  ].filter(
-    (
-      project
-    ): project is Project =>
-      Boolean(project)
-  );
+const filmRowThree = [
+  filmProjects[4],
+  filmProjects[5],
+].filter(
+  (
+    project
+  ): project is Project =>
+    Boolean(project)
+);
 
-  const filmRowFour = [
-    filmProjects[5],
-    filmProjects[6],
-    filmProjects[4],
-  ].filter(
-    (
-      project
-    ): project is Project =>
-      Boolean(project)
-  );
+const filmRowFour = [
+  filmProjects[6],
+  filmProjects[7],
+  filmProjects[8],
+].filter(
+  (
+    project
+  ): project is Project =>
+    Boolean(project)
+);
 
   return (
     <main className="portfolio">

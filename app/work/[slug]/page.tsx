@@ -1,4 +1,6 @@
 import FilmProjectLayout from "../../components/FilmProjectLayout";
+import { getFilmAssets } from "../../../lib/getFilmAssets";
+
 import Image from "next/image";
 
 import Link from "next/link";
@@ -48,36 +50,42 @@ export default async function ProjectPage({
   const nextProject =
 
     projects[(currentIndex + 1) % projects.length];
+
     const filmProjects = projects.filter(
-  (item) => item.type === "film"
-);
+    (item) => item.type === "film"
+  );
 
-const filmIndex = filmProjects.findIndex(
-  (item) => item.slug === project.slug
-);
+  const filmIndex = filmProjects.findIndex(
+    (item) => item.slug === project.slug
+  );
 
-const nextFilmProject =
-  filmProjects[
-    (filmIndex + 1) % filmProjects.length
-  ];
+  const nextFilmProject =
+    filmProjects[
+      (filmIndex + 1) % filmProjects.length
+    ] ?? project;
+
 /* =========================================================
+
    SHARED LAYOUT — ALL FILM PROJECTS
+
 ========================================================= */
 
 if (project.type === "film") {
-  return (
-    <FilmProjectLayout
-      project={project}
-      nextProject={nextFilmProject}
-    />
-  );
-}
+    const filmProject = await getFilmAssets(project);
+
+    return (
+      <FilmProjectLayout
+        project={filmProject}
+        nextProject={nextFilmProject}
+      />
+    );
+  }
 
   /* =========================================================
 
    SPECIAL LAYOUT — ALL MOTION PROJECTS
 
-\========================================================= */
+========================================================= */
 
 const motionProjects = projects.filter(
 
@@ -96,11 +104,17 @@ if (project.type === "motion") {
   return (
 
    <main
+
   className={`motion02-project ${
+
     project.slug === "motion-project-03"
+
       ? "motion03-project"
+
       : ""
+
   }`}
+
 >
 
       {/* =====================================================
@@ -564,6 +578,7 @@ if (project.type === "motion") {
             {project.category}
 
           </span>
+
 </div>
 
         <h1 className="project-detail-title">

@@ -13950,3 +13950,318 @@ body:has(.motion02-project) {
 
   color: #d3b69c !important;
 }
+/* =========================================================
+   FILM HERO → RED PAGE BLEND
+   SAME AS MOTION
+========================================================= */
+
+.film-detail-red .aperture-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 300px;
+
+  z-index: 7;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+
+      rgba(130, 0, 0, 0) 0%,
+
+      rgba(130, 0, 0, 0.05) 16%,
+
+      rgba(130, 0, 0, 0.14) 32%,
+
+      rgba(130, 0, 0, 0.32) 50%,
+
+      rgba(130, 0, 0, 0.56) 68%,
+
+      rgba(130, 0, 0, 0.82) 84%,
+
+      #820000 100%
+    );
+}
+/* FILM DETAIL NAV — chỉ giảm chiều cao */
+.motion02-nav {
+  min-height: 96px !important;
+  height: 96px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.film-detail-red
+.aperture-next > span {
+  font-size: clamp(22px, 2.2vw, 38px) !important;
+  font-weight: 900 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.03em !important;
+
+  color: #d3b69c !important;
+  opacity: 0.55 !important;
+}
+/* FILM ABOUT — bỏ line + thu hẹp khoảng cách trên */
+.film-detail-red .film-motion-about {
+  border-top: none !important;
+
+  padding-top: 28px !important;
+
+  margin-top: 0 !important;
+}
+
+.film-detail-red
+.film-motion-about
+.motion02-section-head {
+  margin-top: 0 !important;
+}
+.film-detail-red .aperture-play {
+  width: 130px !important;
+  height: 130px !important;
+}
+
+.film-detail-red .aperture-play span {
+  font-size: 58px !important;
+}
+/* FILM HERO — PLAY BUTTON STRONGER */
+
+.film-detail-red .aperture-play {
+  width: 140px !important;
+  height: 140px !important;
+
+  border:
+    3px solid
+    rgba(211, 182, 156, 0.95) !important;
+
+  border-radius: 50% !important;
+}
+
+.film-detail-red .aperture-play span {
+  margin-left: 10px !important;
+
+  font-size: 72px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+
+  color: #d3b69c !important;
+}
+/* FILM HERO — PLAY BUTTON REALLY BIG */
+
+.film-detail-red .aperture-play {
+  width: 160px !important;
+  height: 160px !important;
+
+  border: 3px solid rgba(211, 182, 156, 0.95) !important;
+  border-radius: 50% !important;
+}
+
+/* bỏ ký tự ▶ cũ, vẽ triangle thật */
+.film-detail-red .aperture-play span {
+  display: block !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  margin: 0 0 0 14px !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  border-top: 34px solid transparent !important;
+  border-bottom: 34px solid transparent !important;
+  border-left: 58px solid #d3b69c !important;
+}
+/* FILM HERO — PLAY BUTTON */
+
+.film-detail-red .aperture-play {
+  width: 160px !important;
+  height: 160px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 3px solid #d3b69c !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+  color: #d3b69c !important;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease !important;
+}
+
+
+/* BÌNH THƯỜNG = TAM GIÁC */
+
+.film-detail-red .aperture-play span {
+  font-size: 0 !important;
+  margin: 0 !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  border-top: 34px solid transparent !important;
+  border-bottom: 34px solid transparent !important;
+  border-left: 58px solid #d3b69c !important;
+
+  transition: all 0.25s ease !important;
+}
+
+
+/* HOVER = FILL BEIGE */
+
+.film-detail-red .aperture-play:hover {
+  background: #d3b69c !important;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.05) !important;
+}
+
+
+/* HOVER: ẨN TAM GIÁC */
+
+.film-detail-red .aperture-play:hover span {
+  width: auto !important;
+  height: auto !important;
+
+  border: 0 !important;
+
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+
+  color: #820000 !important;
+}
+
+
+/* ĐỔI NỘI DUNG THÀNH PLAY */
+
+.film-detail-red .aperture-play:hover span {
+  color: transparent !important;
+  position: relative;
+}
+
+.film-detail-red .aperture-play:hover span::after {
+  content: "PLAY";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: #820000;
+
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+/* =========================================================
+   FILM PLAY — CENTER PERFECTLY
+========================================================= */
+
+.film-detail-red .aperture-play {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+/* reset triangle cũ */
+.film-detail-red .aperture-play span {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 0 !important;
+
+  font-size: 0 !important;
+}
+
+
+/* triangle play */
+.film-detail-red .aperture-play span::before {
+  content: "";
+
+  width: 0;
+  height: 0;
+
+  border-top: 34px solid transparent;
+  border-bottom: 34px solid transparent;
+  border-left: 58px solid #d3b69c;
+
+  /* dịch nhẹ sang phải để tâm thị giác chuẩn */
+  transform: translateX(6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* hover: ẩn triangle */
+.film-detail-red .aperture-play:hover span::before {
+  opacity: 0;
+}
+
+
+/* chữ PLAY khi hover */
+.film-detail-red .aperture-play span::after {
+  content: "PLAY";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: #820000;
+
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.08em;
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+
+/* hiện PLAY */
+.film-detail-red .aperture-play:hover span::after {
+  opacity: 1;
+}
+.film-detail-red .aperture-bottom-title {
+  width: calc(100vw - 70px) !important;
+  max-width: none !important;
+}
+
+.film-detail-red .aperture-bottom-title h1 {
+  width: 100% !important;
+  max-width: none !important;
+}
+.film-detail-red .film-title-line {
+  display: block !important;
+  white-space: nowrap !important;
+}

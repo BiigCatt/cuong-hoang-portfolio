@@ -1,4 +1,5 @@
 import FilmProjectLayout from "../../components/FilmProjectLayout";
+import ShortFormProjectLayout from "../../components/ShortFormProjectLayout";
 import { getFilmAssets } from "../../../lib/getFilmAssets";
 
 import Image from "next/image";
@@ -468,7 +469,37 @@ if (project.type === "motion") {
   );
 
 }
+const shortFormProjects =
+  projects.filter(
+    (item) =>
+      item.type === "short-form"
+  );
 
+const shortFormIndex =
+  shortFormProjects.findIndex(
+    (item) =>
+      item.slug === project.slug
+  );
+
+const nextShortFormProject =
+  shortFormProjects[
+    (shortFormIndex + 1) %
+      shortFormProjects.length
+  ] ?? project;
+
+if (
+  project.type ===
+  "short-form"
+) {
+  return (
+    <ShortFormProjectLayout
+      project={project}
+      nextProject={
+        nextShortFormProject
+      }
+    />
+  );
+}
   /* =========================================================
 
      NORMAL LAYOUT — OTHER PROJECTS

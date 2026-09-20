@@ -86,14 +86,16 @@ export default function FilmProjectLayout({
      PREVIEW IMAGE
   ========================================================= */
 
- const previewImage =
-  project.slug === "film-project-06"
-    ? project.images[2] ||
-      project.images[0] ||
-      project.cover
-    : project.images[1] ||
-      project.images[0] ||
-      project.cover;
+const previewImage =
+  project.slug === "cmc-data-center"
+    ? project.images[0] || project.cover
+    : project.slug === "film-project-06"
+      ? project.images[2] ||
+        project.images[0] ||
+        project.cover
+      : project.images[1] ||
+        project.images[0] ||
+        project.cover;
 
   /* =========================================================
      VIDEO
@@ -132,7 +134,7 @@ export default function FilmProjectLayout({
       featured:
         index === 0,
     }));
-
+const heroImage = project.cover;
   return (
     <main className="aperture-project film-detail-red">
 
@@ -171,19 +173,16 @@ export default function FilmProjectLayout({
 
         {/* BACKGROUND */}
 
-        {project.cover && (
-          <Image
-            src={project.cover}
-            alt={project.title}
-            fill
-            priority
-            sizes="100vw"
-            className="aperture-background"
-            unoptimized={
-              isGif(project.cover)
-            }
-          />
-        )}
+  {heroImage && (
+  <Image
+    src={heroImage}
+    alt={project.title}
+    fill
+    priority
+    sizes="100vw"
+    className="aperture-background"
+  />
+)}
 
         <div className="aperture-dark-overlay" />
 
@@ -251,14 +250,19 @@ export default function FilmProjectLayout({
             PROJECT {project.number}
           </span>
 
-         <h1>
+     <h1>
   {(project.titleLines?.length
     ? project.titleLines
     : [project.title]
-  ).map((line) => (
+  ).map((line, index) => (
     <span
-      key={line}
-      className="film-title-line"
+      key={`${line}-${index}`}
+      className={`film-title-line ${
+        project.slug === "cmc-data-center" &&
+        index === 1
+          ? "film-title-line-pj1-small"
+          : ""
+      }`}
     >
       {line}
     </span>

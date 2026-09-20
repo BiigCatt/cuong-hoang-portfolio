@@ -14993,3 +14993,77 @@ body:has(.motion02-project) {
   }
 
 }
+.film-detail-red .film-title-line-pj1-small {
+  font-size: 0.52em !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.045em !important;
+}
+.editorial-project-bottom h3 .editorial-title-line {
+  display: block !important;
+}
+/* SUNNY SKILLS CAMP — KÉO CAO KHUNG CHỮ */
+.editorial-project-copy-tall {
+  min-height: 150px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+}
+
+.editorial-project-copy-tall h3 {
+  max-width: 100% !important;
+  line-height: 0.88 !important;
+}
+.editorial-project-title-tall {
+  min-height: 110px !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+}
+/* PJ1 — rộng bằng nguyên hàng 3 card phía dưới */
+.editorial-film .film-hero {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+/* =========================================================
+   SHORT-FORM — STAGGERED 7 PROJECTS
+========================================================= */
+
+.editorial-short-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 70px 28px !important;
+  padding-bottom: 100px !important;
+}
+
+/* hàng 1 */
+.editorial-short-grid .short-card:nth-child(1) {
+  transform: translateY(0);
+}
+
+.editorial-short-grid .short-card:nth-child(2) {
+  transform: translateY(70px);
+}
+
+.editorial-short-grid .short-card:nth-child(3) {
+  transform: translateY(20px);
+}
+
+.editorial-short-grid .short-card:nth-child(4) {
+  transform: translateY(95px);
+}
+
+/* hàng 2 */
+.editorial-short-grid .short-card:nth-child(5) {
+  transform: translateY(35px);
+}
+
+.editorial-short-grid .short-card:nth-child(6) {
+  transform: translateY(110px);
+}
+
+.editorial-short-grid .short-card:nth-child(7) {
+  transform: translateY(55px);
+}

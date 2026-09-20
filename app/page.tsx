@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import {
 
   useEffect,
@@ -14,15 +12,11 @@ import {
 
 } from "react";
 
-
-
 import Image from "next/image";
 
 import Link from "next/link";
 
 import { useRouter } from "next/navigation";
-
-
 
 import {
 
@@ -34,15 +28,11 @@ import {
 
 } from "../data/projects";
 
-
-
 type FilterType =
 
   | "all"
 
   | ProjectType;
-
-
 
 const categoryFilters: {
 
@@ -86,8 +76,6 @@ const categoryFilters: {
 
 ];
 
-
-
 type ProjectCardProps = {
 
   project: Project;
@@ -104,15 +92,11 @@ type ProjectCardProps = {
 
 };
 
-
-
 type EditorialProjectCardProps = {
 
   project: Project;
 
   className?: string;
-
-
 
   onOpen?: (
 
@@ -123,8 +107,6 @@ type EditorialProjectCardProps = {
   ) => void;
 
 };
-
-
 
 function EditorialProjectCard({
 
@@ -138,23 +120,17 @@ function EditorialProjectCard({
 
   const href = `/work/${project.slug}`;
 
-
-
   const showPlay =
 
     project.type === "film" ||
 
     project.type === "short-form";
 
-
-
   const isGif =
 
     project.cover?.toLowerCase().endsWith(".gif") ??
 
     false;
-
-
 
   return (
 
@@ -178,23 +154,13 @@ function EditorialProjectCard({
 
     >
 
-
-
       {/* IMAGE */}
-
-
 
       <div className="editorial-project-media">
 
-
-
         {project.cover ? (
 
-
-
           isGif ? (
-
-
 
             <img
 
@@ -206,11 +172,7 @@ function EditorialProjectCard({
 
             />
 
-
-
           ) : (
-
-
 
             <Image
 
@@ -226,15 +188,9 @@ function EditorialProjectCard({
 
             />
 
-
-
           )
 
-
-
         ) : (
-
-
 
           <div className="editorial-project-placeholder">
 
@@ -242,57 +198,53 @@ function EditorialProjectCard({
 
           </div>
 
-
-
         )}
 
-
-
       </div>
-
-
-
-
 
       {/* SHADE */}
 
       <div className="editorial-project-shade" />
 
-
-
       {/* BOTTOM */}
 
       <div className="editorial-project-bottom">
+          <div>
+            <h3
+  style={
+    project.title === "SUNNY SUMMER CAMP"
+      ? {
+          minHeight: "110px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+        }
+      : undefined
+  }
+>
+  {project.title === "SUNNY SUMMER CAMP" ? (
+  <>
+    SUNNY
+    <br />
+    SUMMER CAMP
+  </>
+  ) : project.title === "DIM SUM WORKSHOP" ? (
+    <>
+      DIM SUM
+      <br />
+      WORKSHOP
+    </>
+  ) : (
+    project.title
+  )}
+</h3>
 
+            <span>{project.category}</span>
+          </div>
 
-
-        <div>
-
-          <h3>
-
-            {project.title}
-
-          </h3>
-
-
-
-          <span>
-
-            {project.category}
-
-          </span>
-
-        </div>
-
-
-
-        <span className="editorial-project-play">
-
-
+          <span className="editorial-project-play">
 
           {showPlay ? (
-
-
 
             <span className="editorial-project-play-icon">
 
@@ -300,11 +252,7 @@ function EditorialProjectCard({
 
             </span>
 
-
-
           ) : (
-
-
 
             <span className="editorial-project-play-text">
 
@@ -312,27 +260,17 @@ function EditorialProjectCard({
 
             </span>
 
-
-
           )}
-
-
 
         </span>
 
-
-
       </div>
-
-
 
     </Link>
 
   );
 
 }
-
-
 
 function EditorialSectionHeader({
 
@@ -364,8 +302,6 @@ function EditorialSectionHeader({
 
         <h2>{title}</h2>
 
-
-
         <span>
 
           / {String(count).padStart(2, "0")}
@@ -373,8 +309,6 @@ function EditorialSectionHeader({
         </span>
 
       </div>
-
-
 
       <div className="editorial-category-right">
 
@@ -390,13 +324,9 @@ function EditorialSectionHeader({
 
 }
 
-
-
 export default function Home() {
 
   const router = useRouter();
-
-
 
   const [
 
@@ -406,8 +336,6 @@ export default function Home() {
 
   ] = useState<FilterType>("all");
 
-
-
   const [
 
     isTransitioning,
@@ -415,8 +343,6 @@ export default function Home() {
     setIsTransitioning,
 
   ] = useState(false);
-
-
 
   const filmProjects = useMemo(
 
@@ -434,8 +360,6 @@ export default function Home() {
 
   );
 
-
-
   const motionProjects = useMemo(
 
     () =>
@@ -451,8 +375,6 @@ export default function Home() {
     []
 
   );
-
-
 
   const shortProjects = useMemo(
 
@@ -472,8 +394,6 @@ export default function Home() {
 
   );
 
-
-
   const photoProjects = useMemo(
 
     () =>
@@ -492,8 +412,6 @@ export default function Home() {
 
   );
 
-
-
   const activeCount = useMemo(() => {
 
     if (activeFilter === "all") {
@@ -501,8 +419,6 @@ export default function Home() {
       return projects.length;
 
     }
-
-
 
     return projects.filter(
 
@@ -514,15 +430,11 @@ export default function Home() {
 
   }, [activeFilter]);
 
-
-
   const showFilm =
 
     activeFilter === "all" ||
 
     activeFilter === "film";
-
-
 
   const showMotion =
 
@@ -530,23 +442,17 @@ export default function Home() {
 
     activeFilter === "motion";
 
-
-
   const showShort =
 
     activeFilter === "all" ||
 
     activeFilter === "short-form";
 
-
-
   const showPhotography =
 
     activeFilter === "all" ||
 
     activeFilter === "photography";
-
-
 
   useEffect(() => {
 
@@ -558,8 +464,6 @@ export default function Home() {
 
       );
 
-
-
     const moveCursor = (
 
       event: globalThis.MouseEvent
@@ -568,27 +472,19 @@ export default function Home() {
 
       if (!cursor) return;
 
-
-
       const element =
 
         cursor as HTMLElement;
 
-
-
       element.style.left =
 
         `${event.clientX}px`;
-
-
 
       element.style.top =
 
         `${event.clientY}px`;
 
     };
-
-
 
     const interactiveElements =
 
@@ -598,15 +494,11 @@ export default function Home() {
 
       );
 
-
-
     const addHover = () => {
 
       cursor?.classList.add("hover");
 
     };
-
-
 
     const removeHover = () => {
 
@@ -618,8 +510,6 @@ export default function Home() {
 
     };
 
-
-
     window.addEventListener(
 
       "mousemove",
@@ -627,8 +517,6 @@ export default function Home() {
       moveCursor
 
     );
-
-
 
     interactiveElements.forEach(
 
@@ -642,8 +530,6 @@ export default function Home() {
 
         );
 
-
-
         element.addEventListener(
 
           "mouseleave",
@@ -656,8 +542,6 @@ export default function Home() {
 
     );
 
-
-
     return () => {
 
       window.removeEventListener(
@@ -667,8 +551,6 @@ export default function Home() {
         moveCursor
 
       );
-
-
 
       interactiveElements.forEach(
 
@@ -681,8 +563,6 @@ export default function Home() {
             addHover
 
           );
-
-
 
           element.removeEventListener(
 
@@ -700,8 +580,6 @@ export default function Home() {
 
   }, [activeFilter]);
 
-
-
   useEffect(() => {
 
     const projectElements =
@@ -711,8 +589,6 @@ export default function Home() {
         ".editorial-project"
 
       );
-
-
 
     const observer =
 
@@ -735,8 +611,6 @@ export default function Home() {
                   "is-visible"
 
                 );
-
-
 
                 observer.unobserve(
 
@@ -764,8 +638,6 @@ export default function Home() {
 
       );
 
-
-
     projectElements.forEach(
 
       (project) => {
@@ -776,15 +648,11 @@ export default function Home() {
 
     );
 
-
-
     return () =>
 
       observer.disconnect();
 
   }, [activeFilter]);
-
-
 
   useEffect(() => {
 
@@ -792,13 +660,9 @@ export default function Home() {
 
       document.querySelector(".nav");
 
-
-
     const handleScroll = () => {
 
       if (!nav) return;
-
-
 
       if (window.scrollY > 40) {
 
@@ -820,11 +684,7 @@ export default function Home() {
 
     };
 
-
-
     handleScroll();
-
-
 
     window.addEventListener(
 
@@ -840,8 +700,6 @@ export default function Home() {
 
     );
 
-
-
     return () => {
 
       window.removeEventListener(
@@ -856,8 +714,6 @@ export default function Home() {
 
   }, []);
 
-
-
   const openProject = (
 
     event:
@@ -870,19 +726,13 @@ export default function Home() {
 
     event.preventDefault();
 
-
-
     if (isTransitioning) {
 
       return;
 
     }
 
-
-
     setIsTransitioning(true);
-
-
 
     window.setTimeout(() => {
 
@@ -892,13 +742,9 @@ export default function Home() {
 
   };
 
-
-
 const filmRowTwo =
 
   filmProjects.slice(1, 4);
-
-
 
 /*
 
@@ -915,8 +761,6 @@ const filmRowTwo =
  * ROW 4: 07 / 08 / 09
 
  */
-
-
 
 const filmRowThree = [
 
@@ -935,8 +779,6 @@ const filmRowThree = [
     Boolean(project)
 
 );
-
-
 
 const filmRowFour = [
 
@@ -958,8 +800,6 @@ const filmRowFour = [
 
 );
 
-
-
   return (
 
     <main className="portfolio">
@@ -978,19 +818,13 @@ const filmRowFour = [
 
       />
 
-
-
       <div className="custom-cursor" />
-
-
 
       {/* =====================================================
 
           NAV
 
       ===================================================== */}
-
-
 
       <nav className="nav">
 
@@ -999,8 +833,6 @@ const filmRowFour = [
           CUONG HOANG
 
         </div>
-
-
 
         <div className="nav-right">
 
@@ -1018,8 +850,6 @@ const filmRowFour = [
 
           </a>
 
-
-
           <a
 
             href="#about"
@@ -1033,8 +863,6 @@ const filmRowFour = [
             ABOUT
 
           </a>
-
-
 
           <a
 
@@ -1054,15 +882,11 @@ const filmRowFour = [
 
       </nav>
 
-
-
       {/* =====================================================
 
           HERO
 
       ===================================================== */}
-
-
 
       <section className="hero">
 
@@ -1074,15 +898,11 @@ const filmRowFour = [
 
           </div>
 
-
-
           <div className="hero-line">
 
             <span>MOTION</span>
 
           </div>
-
-
 
           <div className="hero-line indent">
 
@@ -1092,8 +912,6 @@ const filmRowFour = [
 
         </div>
 
-
-
         <div className="hero-bottom">
 
           <span>
@@ -1102,15 +920,11 @@ const filmRowFour = [
 
           </span>
 
-
-
           <span>
 
             SCROLL ↓
 
           </span>
-
-
 
           <span>
 
@@ -1122,15 +936,11 @@ const filmRowFour = [
 
       </section>
 
-
-
       {/* =====================================================
 
           EDITORIAL WORK
 
       ===================================================== */}
-
-
 
       <section
 
@@ -1146,23 +956,15 @@ const filmRowFour = [
 
 ===================================================== */}
 
-
-
 <div className="work-final-head">
 
-
-
   <div className="work-final-title-row">
-
-
 
     <h1>
 
       SELECTED WORK
 
     </h1>
-
-
 
     <span>
 
@@ -1174,17 +976,9 @@ const filmRowFour = [
 
     </span>
 
-
-
   </div>
 
-
-
-
-
   {/* FILTER */}
-
-
 
   <div
 
@@ -1211,8 +1005,6 @@ const filmRowFour = [
     }}
 
   >
-
-
 
     {/* ALL */}
 
@@ -1282,8 +1074,6 @@ const filmRowFour = [
 
       </span>
 
-
-
       <span
 
       className="work-filter-line"
@@ -1316,8 +1106,6 @@ const filmRowFour = [
 
     </button>
 
-
-
     <span
 
     className="work-filter-line"
@@ -1337,8 +1125,6 @@ const filmRowFour = [
       }}
 
     />
-
-
 
     {/* FILM */}
 
@@ -1398,8 +1184,6 @@ const filmRowFour = [
 
       </span>
 
-
-
       <span
 
         className="work-filter-line"
@@ -1432,8 +1216,6 @@ const filmRowFour = [
 
     </button>
 
-
-
     <span
 
       className="work-filter-line"
@@ -1453,8 +1235,6 @@ const filmRowFour = [
       }}
 
     />
-
-
 
     {/* MOTION */}
 
@@ -1514,8 +1294,6 @@ const filmRowFour = [
 
       </span>
 
-
-
       <span
 
         className="work-filter-line"
@@ -1548,8 +1326,6 @@ const filmRowFour = [
 
     </button>
 
-
-
     <span
 
     className="work-filter-line"
@@ -1569,8 +1345,6 @@ const filmRowFour = [
       }}
 
     />
-
-
 
     {/* SHORT-FORM */}
 
@@ -1634,8 +1408,6 @@ const filmRowFour = [
 
       </span>
 
-
-
       <span
 
         className="work-filter-line"
@@ -1668,8 +1440,6 @@ const filmRowFour = [
 
     </button>
 
-
-
     <span
 
     className="work-filter-line"
@@ -1689,8 +1459,6 @@ const filmRowFour = [
       }}
 
     />
-
-
 
     {/* PHOTOGRAPHY */}
 
@@ -1754,8 +1522,6 @@ const filmRowFour = [
 
       </span>
 
-
-
       <span
 
       className="work-filter-line"
@@ -1788,23 +1554,15 @@ const filmRowFour = [
 
     </button>
 
-
-
   </div>
 
-
-
 </div>
-
-
 
         {/* =================================================
 
             FILM
 
         ================================================= */}
-
-
 
         {showFilm && (
 
@@ -1826,8 +1584,6 @@ const filmRowFour = [
 
             />
 
-
-
             {filmProjects[0] && (
 
               <EditorialProjectCard
@@ -1845,8 +1601,6 @@ const filmRowFour = [
               />
 
             )}
-
-
 
             <div className="film-row film-row-three">
 
@@ -1880,11 +1634,7 @@ const filmRowFour = [
 
             </div>
 
-
-
             {/* ROW 3 — 08 / 09 */}
-
-
 
             <div className="film-row film-row-two">
 
@@ -1918,11 +1668,7 @@ const filmRowFour = [
 
             </div>
 
-
-
             {/* ROW 4 — 06 / 07 / 05 */}
-
-
 
             <div className="film-row film-row-three">
 
@@ -1960,15 +1706,11 @@ const filmRowFour = [
 
         )}
 
-
-
         {/* =================================================
 
             SHORT FORM
 
         ================================================= */}
-
-
 
         {showShort && (
 
@@ -1989,8 +1731,6 @@ const filmRowFour = [
               note="SMALL FORMAT. BIG STORIES."
 
             />
-
-
 
             <div className="editorial-short-grid">
 
@@ -2028,15 +1768,11 @@ const filmRowFour = [
 
         )}
 
-
-
         {/* =================================================
 
             PHOTOGRAPHY
 
         ================================================= */}
-
-
 
         {showPhotography && (
 
@@ -2057,8 +1793,6 @@ const filmRowFour = [
               note="PEOPLE. PLACES. MOMENTS."
 
             />
-
-
 
             <div className="editorial-photo-grid">
 
@@ -2084,8 +1818,6 @@ const filmRowFour = [
 
               )}
 
-
-
               {photoProjects[1] && (
 
                 <EditorialProjectCard
@@ -2107,8 +1839,6 @@ const filmRowFour = [
                 />
 
               )}
-
-
 
               {photoProjects[2] && (
 
@@ -2137,13 +1867,12 @@ const filmRowFour = [
           </section>
 
         )}
+
 {/* =================================================
 
             MOTION
 
         ================================================= */}
-
-
 
         {showMotion && (
 
@@ -2164,8 +1893,6 @@ const filmRowFour = [
               note="IDEAS IN MOTION"
 
             />
-
-
 
             <div className="editorial-motion-grid">
 
@@ -2191,8 +1918,6 @@ const filmRowFour = [
 
               )}
 
-
-
               {motionProjects[1] && (
 
                 <EditorialProjectCard
@@ -2214,8 +1939,6 @@ const filmRowFour = [
                 />
 
               )}
-
-
 
               {motionProjects[2] && (
 
@@ -2245,20 +1968,13 @@ const filmRowFour = [
 
         )}
 
-
-
-        
       </section>
-
-
 
       {/* =====================================================
 
           ABOUT
 
       ===================================================== */}
-
-
 
       <section
 
@@ -2276,8 +1992,6 @@ const filmRowFour = [
 
           </span>
 
-
-
           <span>
 
             01
@@ -2285,8 +1999,6 @@ const filmRowFour = [
           </span>
 
         </div>
-
-
 
         <div className="about-main">
 
@@ -2304,8 +2016,6 @@ const filmRowFour = [
 
           </div>
 
-
-
           <div className="about-details">
 
             <div className="about-location">
@@ -2316,8 +2026,6 @@ const filmRowFour = [
 
               </span>
 
-
-
               <span>
 
                 VIETNAM
@@ -2325,8 +2033,6 @@ const filmRowFour = [
               </span>
 
             </div>
-
-
 
             <div className="about-role">
 
@@ -2336,8 +2042,6 @@ const filmRowFour = [
 
               </span>
 
-
-
               <div className="about-role-list">
 
                 <span>
@@ -2346,15 +2050,11 @@ const filmRowFour = [
 
                 </span>
 
-
-
                 <span>
 
                   DOP
 
                 </span>
-
-
 
                 <span>
 
@@ -2362,23 +2062,17 @@ const filmRowFour = [
 
                 </span>
 
-
-
                 <span>
 
                   MEDIA PRODUCTION
 
                 </span>
 
-
-
                 <span>
 
                   MOTION DESIGN
 
                 </span>
-
-
 
                 <span>
 
@@ -2396,15 +2090,11 @@ const filmRowFour = [
 
       </section>
 
-
-
       {/* =====================================================
 
           CONTACT
 
       ===================================================== */}
-
-
 
       <section
 
@@ -2422,8 +2112,6 @@ const filmRowFour = [
 
           </span>
 
-
-
           <span>
 
             02
@@ -2431,8 +2119,6 @@ const filmRowFour = [
           </span>
 
         </div>
-
-
 
         <div className="contact-main">
 
@@ -2444,8 +2130,6 @@ const filmRowFour = [
 
           </p>
 
-
-
           <a
 
             href="mailto:caocuong749@gmail.com"
@@ -2456,13 +2140,11 @@ const filmRowFour = [
 
           >
 
-            LET&apos;S TALK ↗
+            LET'S TALK ↗
 
           </a>
 
         </div>
-
-
 
         <div className="contact-footer">
 
@@ -2480,8 +2162,6 @@ const filmRowFour = [
 
             </a>
 
-
-
             <a
 
               href="https://www.instagram.com/no.6rt/"
@@ -2498,8 +2178,6 @@ const filmRowFour = [
 
             </a>
 
-
-
             <a
 
               href="https://www.youtube.com/@TheHillsOfficial-ME"
@@ -2515,8 +2193,6 @@ const filmRowFour = [
               YOUTUBE
 
             </a>
-
-
 
             <a
 
@@ -2535,8 +2211,6 @@ const filmRowFour = [
             </a>
 
           </div>
-
-
 
           <span>
 

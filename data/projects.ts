@@ -3,7 +3,6 @@ export type ProjectType =
   | "motion"
   | "short-form"
   | "photography";
-
 export type Project = {
   number: string;
   slug: string;
@@ -18,7 +17,6 @@ export type Project = {
   images: string[];
   cover: string;
 };
-
 export const PROJECT_TYPE_LABEL: Record<
   ProjectType,
   string
@@ -28,12 +26,9 @@ export const PROJECT_TYPE_LABEL: Record<
   "short-form": "SHORT-FORM",
   photography: "PHOTOGRAPHY",
 };
-
-
 /* =========================================================
    PHOTOGRAPHY DATA
 ========================================================= */
-
 const TEAMBUILDING_PHOTOS = Array.from(
   { length: 51 },
   (_, index) =>
@@ -41,17 +36,12 @@ const TEAMBUILDING_PHOTOS = Array.from(
       index + 1
     ).padStart(2, "0")}.jpg`
 );
-
-
 /* =========================================================
    PROJECTS
 ========================================================= */
-
 export const projects: Project[] = [
-
   /* =======================================================
      FILM — 01 → 09
-
      QUY TẮC CHUNG:
      public/projects/<slug>/
        cover.jpg
@@ -59,19 +49,17 @@ export const projects: Project[] = [
        02.gif / 02.jpg
        03.gif / 03.jpg
        ...
-
      images KHÔNG cần khai báo nữa.
      Film detail tự quét folder.
   ======================================================= */
-
   {
     number: "01",
     slug: "cmc-data-center",
     title:
       "CMC Data Center Maintenance and Servicing",
     titleLines: [
-      "CMC DATA",
-      "CENTER",
+      "CMC DC",
+      "Maintenance and Servicing",
     ],
     type: "film",
     category: "CORPORATE FILM",
@@ -80,17 +68,12 @@ export const projects: Project[] = [
     description:
       "Video giới thiệu quy trình bảo trì, bảo dưỡng Data Center.",
     featured: true,
-
     video:
-      "https://www.youtube.com/embed/m8_8tMzmpTg",
-
+      "https://youtu.be/3iAe5tBNQ2E",
     images: [],
-
     cover:
       "/projects/cmc-data-center/cover.jpg",
   },
-
-
   {
     number: "02",
     slug: "film-project-02",
@@ -101,16 +84,11 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover:
       "/projects/film-project-02/cover.jpg",
   },
-
-
   {
     number: "03",
     slug: "film-project-03",
@@ -121,16 +99,11 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover:
       "/projects/film-project-03/cover.jpg",
   },
-
-
   {
     number: "04",
     slug: "film-project-04",
@@ -141,16 +114,11 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover:
       "/projects/film-project-04/cover.jpg",
   },
-
-
   {
     number: "05",
     slug: "film-project-05",
@@ -160,20 +128,14 @@ export const projects: Project[] = [
       "MUSIC / PERFORMANCE FILM",
     role:
       "DIRECTOR / DOP / CAM OP / EDITOR",
-
     description:
       "A high-energy rock performance film built around fast guitar shredding, dramatic lighting, and dynamic camera work, capturing the raw intensity of the performance.",
-
     video:
       "https://www.youtube.com/embed/qw6PQNEVVVk",
-
     images: [],
-
     cover:
       "/projects/film-project-05/cover.jpg",
   },
-
-
   {
     number: "06",
     slug: "film-project-06",
@@ -188,36 +150,30 @@ export const projects: Project[] = [
       "CAM OP / EDITOR",
     description:
   "A dynamic event film capturing culinary demonstrations, chef interactions, and competition highlights from the U.S. Chicken Tailored Seminar & Cooking Contest 2025.",
-
     video: "https://youtu.be/bML3vhrjsKI?si=xqR6TodlUsp_Wgtb",
-
     images: [],
-
     cover:
       "/projects/film-project-06/cover.jpg",
   },
-
-
   {
     number: "07",
     slug: "film-project-07",
-    title: "Film Project 07",
+    title: "SUNNY SUMMER CAMP",
+     titleLines: [
+  "SUNNY SUMMER",
+  "CAMP",
+],
     type: "film",
     category: "FILM",
     role:
-      "DIRECTOR / DOP / EDITOR",
-    description:
-      "Project description coming soon.",
-
+      "CAM OP / EDITOR",
+   description:
+  "A lively summer camp film capturing hands-on cooking, creative workshops, and technology activities designed for young participants.",
     video: "",
-
     images: [],
-
     cover:
       "/projects/film-project-07/cover.jpg",
   },
-
-
   {
     number: "08",
     slug: "film-project-08",
@@ -228,40 +184,33 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
   "A promotional film for Hướng Nghiệp Á Âu’s Bartending Academy, capturing bartender stories, training, and cocktail craft.",
-
     video: "https://youtu.be/1kKSqlvHKl8?si=Vcy-deQX0mPCmShU",
-
     images: [],
-
     cover:
       "/projects/film-project-08/cover.jpg",
   },
-
-
   {
     number: "09",
     slug: "film-project-09",
-    title: "Film Project 09",
+    title: "DIM SUM WORKSHOP",
     type: "film",
-    category: "FILM",
+     titleLines: [
+  "DIM SUM",
+  "WORKSHOP",
+],
+    category: "WORKSHOP RECAP",
     role:
-      "DIRECTOR / DOP / EDITOR",
+      "CAM OP / DOP / EDITOR",
     description:
-      "Project description coming soon.",
-
-    video: "",
-
+  "An event film capturing a hands-on dim sum workshop, from live chef demonstrations to practical techniques and participant experiences.",
+    video: "https://youtu.be/AB1QL43m6nI",
     images: [],
-
     cover:
       "/projects/film-project-09/cover.jpg",
   },
-
-
   /* =======================================================
      MOTION — 10 → 12
   ======================================================= */
-
   {
     number: "10",
     slug: "motion-project-01",
@@ -270,18 +219,12 @@ export const projects: Project[] = [
     category: "MOTION DESIGN",
     role:
       "MOTION DESIGNER / EDITOR",
-
     description:
       "Motion design project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
-
-
   {
     number: "11",
     slug: "motion-project-02",
@@ -290,12 +233,9 @@ export const projects: Project[] = [
     category: "MOTION GRAPHICS",
     role:
       "MOTION GRAPHICS / EDITOR",
-
     description:
       "A motion design project for CMC Telecom “GAME ON — One Team, One Goal” campaign, combining football-inspired visuals, dynamic mascots, and energetic stadium graphics into a bold event identity.",
-
     video: "",
-
     images: [
       "/projects/motion-project-02/01.gif",
       "/projects/motion-project-02/02.gif",
@@ -304,12 +244,9 @@ export const projects: Project[] = [
       "/projects/motion-project-02/05.gif",
       "/projects/motion-project-02/06.gif",
     ],
-
     cover:
       "/projects/motion-project-02/cover.png",
   },
-
-
   {
     number: "12",
     slug: "motion-project-03",
@@ -318,28 +255,21 @@ export const projects: Project[] = [
     category: "MOTION DESIGN",
     role:
       "MOTION DESIGNER / EDITOR",
-
     description:
       "A playful motion piece for CMC Telecom Family Day, celebrating connection and togetherness through colorful mascot visuals.",
-
     video: "",
-
     images: [
       "/projects/motion-project-03/01.gif",
       "/projects/motion-project-03/02.gif",
       "/projects/motion-project-03/03.gif",
       "/projects/motion-project-03/04.gif",
     ],
-
     cover:
       "/projects/motion-project-03/cover.png",
   },
-
-
   /* =======================================================
-     SHORT-FORM — 13 → 16
+     SHORT-FORM — 13 → 19
   ======================================================= */
-
   {
     number: "13",
     slug: "short-form-project-01",
@@ -348,18 +278,12 @@ export const projects: Project[] = [
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
-
     description:
       "Short-form video project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
-
-
   {
     number: "14",
     slug: "short-form-project-02",
@@ -368,18 +292,12 @@ export const projects: Project[] = [
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
-
     description:
       "Short-form video project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
-
-
   {
     number: "15",
     slug: "short-form-project-03",
@@ -388,18 +306,12 @@ export const projects: Project[] = [
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
-
     description:
       "Short-form video project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
-
-
   {
     number: "16",
     slug: "short-form-project-04",
@@ -408,24 +320,60 @@ export const projects: Project[] = [
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
-
     description:
       "Short-form video project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
 
-
-  /* =======================================================
-     PHOTOGRAPHY — 17 → 19
-  ======================================================= */
-
   {
     number: "17",
+    slug: "short-form-project-05",
+    title: "Short-Form Project 05",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video: "",
+    images: [],
+    cover: "",
+  },
+  {
+    number: "18",
+    slug: "short-form-project-06",
+    title: "Short-Form Project 06",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video: "",
+    images: [],
+    cover: "",
+  },
+  {
+    number: "19",
+    slug: "short-form-project-07",
+    title: "Short-Form Project 07",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video: "",
+    images: [],
+    cover: "",
+  },
+  /* =======================================================
+     PHOTOGRAPHY — 20 → 22
+  ======================================================= */
+  {
+    number: "20",
     slug:
       "photography-project-01",
     title:
@@ -433,42 +381,30 @@ export const projects: Project[] = [
     type: "photography",
     category: "PHOTOGRAPHY",
     role: "PHOTOGRAPHER",
-
     description:
       "A photography series documenting a 3-day team building trip with CMC Telecom in Da Nang, capturing the people, activities, and memorable moments throughout the journey.",
-
     video: "",
-
     images:
       TEAMBUILDING_PHOTOS,
-
     cover:
       "/images/photography/cmc-teambuilding-18y/cover.jpg",
   },
-
-
   {
-    number: "18",
+    number: "21",
     slug:
       "photography-project-02",
     title: "PICKLEBALL",
     type: "photography",
     category: "PHOTOGRAPHY",
     role: "PHOTOGRAPHER",
-
     description:
       "Photography project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
-
-
   {
-    number: "19",
+    number: "22",
     slug:
       "photography-project-03",
     title:
@@ -476,23 +412,16 @@ export const projects: Project[] = [
     type: "photography",
     category: "PHOTOGRAPHY",
     role: "PHOTOGRAPHER",
-
     description:
       "Photography project description coming soon.",
-
     video: "",
-
     images: [],
-
     cover: "",
   },
 ];
-
-
 /* =========================================================
    HELPERS
 ========================================================= */
-
 export function getProject(
   slug: string
 ) {
@@ -501,8 +430,6 @@ export function getProject(
       project.slug === slug
   );
 }
-
-
 export function getNextProject(
   slug: string
 ) {
@@ -511,18 +438,14 @@ export function getNextProject(
       (item) =>
         item.slug === slug
     );
-
   if (currentIndex < 0) {
     return projects[0];
   }
-
   return projects[
     (currentIndex + 1) %
       projects.length
   ];
 }
-
-
 export function getTitleLines(
   project: Project
 ) {
@@ -531,25 +454,20 @@ export function getTitleLines(
   ) {
     return project.titleLines;
   }
-
   const words =
     project.title
       .trim()
       .split(/\s+/);
-
   if (words.length <= 2) {
     return [project.title];
   }
-
   const mid = Math.ceil(
     words.length / 2
   );
-
   return [
     words
       .slice(0, mid)
       .join(" "),
-
     words
       .slice(mid)
       .join(" "),

@@ -15067,3 +15067,80 @@ body:has(.motion02-project) {
 .editorial-short-grid .short-card:nth-child(7) {
   transform: translateY(55px);
 }
+.shortform-stagger-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+/* form chung */
+.shortform-card {
+  grid-column: span 3;
+}
+
+/* hàng 1: 4 item */
+.shortform-card-1 {
+  grid-column: 1 / span 3;
+}
+
+.shortform-card-2 {
+  grid-column: 4 / span 3;
+  margin-top: 70px;
+}
+
+.shortform-card-3 {
+  grid-column: 7 / span 3;
+}
+
+.shortform-card-4 {
+  grid-column: 10 / span 3;
+  margin-top: 70px;
+}
+
+/* hàng 2: 3 item, căn giữa + sole với hàng trên */
+.shortform-card-5 {
+  grid-column: 2 / span 3;
+  margin-top: 8px;
+}
+
+.shortform-card-6 {
+  grid-column: 5 / span 3;
+  margin-top: 78px;
+}
+
+.shortform-card-7 {
+  grid-column: 8 / span 3;
+  margin-top: 8px;
+}
+@media (max-width: 1200px) {
+  .shortform-stagger-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .shortform-card {
+    grid-column: span 3 !important;
+    margin-top: 0 !important;
+  }
+
+  .shortform-card-1,
+  .shortform-card-2,
+  .shortform-card-3,
+  .shortform-card-4,
+  .shortform-card-5,
+  .shortform-card-6,
+  .shortform-card-7 {
+    grid-column: span 3 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .shortform-stagger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shortform-card {
+    grid-column: 1 / -1 !important;
+    margin-top: 0 !important;
+  }
+}

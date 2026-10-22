@@ -16,6 +16,19 @@ export type Project = {
   video?: string;
   images: string[];
   cover: string;
+
+  /** Ngắt dòng riêng cho tiêu đề ở card trang chủ (không ảnh hưởng trang detail). */
+  cardTitle?: {
+    lines: string[];
+    /** Chiều cao tối thiểu (px) để các card cùng hàng thẳng hàng. */
+    minHeight?: number;
+  };
+
+  /** Mô tả chia sẵn từng dòng (dòng đầu được tô riêng) — dùng ở trang motion. */
+  descriptionLines?: string[];
+
+  /** Class bổ sung cho <main> của trang detail (override style riêng). */
+  detailClassName?: string;
 };
 export const PROJECT_TYPE_LABEL: Record<
   ProjectType,
@@ -159,10 +172,14 @@ export const projects: Project[] = [
     number: "07",
     slug: "film-project-07",
     title: "SUNNY SUMMER CAMP",
-     titleLines: [
-  "SUNNY SUMMER",
-  "CAMP",
-],
+    titleLines: [
+      "SUNNY SUMMER",
+      "CAMP",
+    ],
+    cardTitle: {
+      lines: ["SUNNY", "SUMMER CAMP"],
+      minHeight: 110,
+    },
     type: "film",
     category: "FILM",
     role:
@@ -194,10 +211,13 @@ export const projects: Project[] = [
     slug: "film-project-09",
     title: "DIM SUM WORKSHOP",
     type: "film",
-     titleLines: [
-  "DIM SUM",
-  "WORKSHOP",
-],
+    titleLines: [
+      "DIM SUM",
+      "WORKSHOP",
+    ],
+    cardTitle: {
+      lines: ["DIM SUM", "WORKSHOP"],
+    },
     category: "WORKSHOP RECAP",
     role:
       "CAM OP / DOP / EDITOR",
@@ -246,6 +266,13 @@ export const projects: Project[] = [
     ],
     cover:
       "/projects/motion-project-02/cover.png",
+    descriptionLines: [
+      "A motion design project for CMC Telecom’s “GAME ON” campaign,",
+      "combining football-inspired visuals, dynamic mascots,",
+      "and energetic stadium graphics. Together,",
+      "these elements create a bold event identity inspired by",
+      "the spirit of “One Team — One Goal.”",
+    ],
   },
   {
     number: "12",
@@ -266,6 +293,7 @@ export const projects: Project[] = [
     ],
     cover:
       "/projects/motion-project-03/cover.png",
+    detailClassName: "motion03-project",
   },
   /* =======================================================
      SHORT-FORM — 13 → 19
@@ -430,6 +458,36 @@ export function getProject(
       project.slug === slug
   );
 }
+/** Danh sách project theo loại (film / motion / short-form / photography). */
+export function getProjectsByType(
+  type: ProjectType
+) {
+  return projects.filter(
+    (project) =>
+      project.type === type
+  );
+}
+
+/** Project kế tiếp trong CÙNG loại, xoay vòng. */
+export function getNextProjectOfType(
+  project: Project
+) {
+  const group =
+    getProjectsByType(
+      project.type
+    );
+  const index = group.findIndex(
+    (item) =>
+      item.slug === project.slug
+  );
+  return (
+    group[
+      (index + 1) % group.length
+    ] ?? project
+  );
+}
+
+/** Project kế tiếp trong TOÀN BỘ danh sách, xoay vòng. */
 export function getNextProject(
   slug: string
 ) {

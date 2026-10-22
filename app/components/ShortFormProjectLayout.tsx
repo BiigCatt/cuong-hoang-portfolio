@@ -1,57 +1,12 @@
 import Link from "next/link";
 
 import type { Project } from "../../data/projects";
+import { isLocalVideoSrc, normalizeVideoSrc } from "../../lib/video";
 
 type ShortFormProjectLayoutProps = {
   project: Project;
   nextProject: Project;
 };
-
-function normalizeVideoSrc(src?: string) {
-  if (!src) return "";
-
-  const value = src.trim();
-
-  try {
-    const url = new URL(value);
-
-    if (
-      url.hostname === "youtu.be" ||
-      url.hostname === "www.youtu.be"
-    ) {
-      const id = url.pathname
-        .replace(/^\/+/, "")
-        .split("/")[0];
-
-      return id
-        ? `https://www.youtube.com/embed/${id}`
-        : value;
-    }
-
-    if (url.hostname.includes("youtube.com")) {
-      if (url.pathname.startsWith("/embed/")) {
-        return value;
-      }
-
-      const id = url.searchParams.get("v");
-
-      if (id) {
-        return `https://www.youtube.com/embed/${id}`;
-      }
-
-      const shorts =
-        url.pathname.match(/^\/shorts\/([^/?]+)/);
-
-      if (shorts?.[1]) {
-        return `https://www.youtube.com/embed/${shorts[1]}`;
-      }
-    }
-  } catch {
-    // local video path
-  }
-
-  return value;
-}
 
 export default function ShortFormProjectLayout({
   project,
@@ -61,9 +16,7 @@ export default function ShortFormProjectLayout({
     normalizeVideoSrc(project.video);
 
   const isLocalVideo =
-    /\.(mp4|webm|ogg)(\?.*)?$/i.test(
-      videoSrc
-    );
+    isLocalVideoSrc(videoSrc);
 
   return (
     <main className="shortform-detail">

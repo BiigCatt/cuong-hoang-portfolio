@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Project } from "../../data/projects";
+import { isLocalVideoSrc, normalizeVideoSrc } from "../../lib/video";
 
 type FilmProjectLayoutProps = {
   project: Project;
@@ -14,68 +15,6 @@ type FilmProjectLayoutProps = {
 
 function isGif(src: string) {
   return /\.gif(\?.*)?$/i.test(src);
-}
-
-function normalizeVideoSrc(src?: string) {
-  if (!src) return "";
-
-  const value = src.trim();
-
-  try {
-    const url = new URL(value);
-
-    /* youtu.be/VIDEO_ID */
-    if (
-      url.hostname === "youtu.be" ||
-      url.hostname === "www.youtu.be"
-    ) {
-      const videoId = url.pathname
-        .replace(/^\/+/, "")
-        .split("/")[0];
-
-      if (videoId) {
-        return `https://www.youtube.com/embed/${videoId}`;
-      }
-    }
-
-    /* youtube.com/... */
-    if (url.hostname.includes("youtube.com")) {
-      /* đã là embed */
-      if (url.pathname.startsWith("/embed/")) {
-        return value;
-      }
-
-      /* youtube.com/watch?v=VIDEO_ID */
-      const videoId =
-        url.searchParams.get("v");
-
-      if (videoId) {
-        return `https://www.youtube.com/embed/${videoId}`;
-      }
-
-      /* youtube.com/shorts/VIDEO_ID */
-      const shortsMatch =
-        url.pathname.match(
-          /^\/shorts\/([^/?]+)/
-        );
-
-      if (shortsMatch?.[1]) {
-        return `https://www.youtube.com/embed/${shortsMatch[1]}`;
-      }
-    }
-  } catch {
-    /*
-     * Local path dạng:
-     * /projects/film-project-05/video.mp4
-     *
-     * không phải URL đầy đủ nên URL()
-     * có thể throw.
-     *
-     * Cứ trả lại path gốc.
-     */
-  }
-
-  return value;
 }
 
 export default function FilmProjectLayout({
@@ -105,9 +44,7 @@ const previewImage =
     normalizeVideoSrc(project.video);
 
   const isLocalVideo =
-    /\.(mp4|webm|ogg)(\?.*)?$/i.test(
-      videoSrc
-    );
+    isLocalVideoSrc(videoSrc);
 
   /* =========================================================
      BREAKDOWN

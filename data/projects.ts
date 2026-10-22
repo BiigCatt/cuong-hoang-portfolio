@@ -287,16 +287,16 @@ export const projects: Project[] = [
   {
     number: "14",
     slug: "short-form-project-02",
-    title: "Short-Form Project 02",
+    title: "KỸ THUẬT LATTE ART",
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
-    video: "",
+      "A short-form video focused on latte art techniques.",
+    video: "https://www.youtube.com/embed/queb9H8BSbo",
     images: [],
-    cover: "",
+    cover: "https://img.youtube.com/vi/queb9H8BSbo/hqdefault.jpg",
   },
   {
     number: "15",

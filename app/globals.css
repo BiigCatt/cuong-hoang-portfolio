@@ -289,29 +289,6 @@ a {
    WORK SECTION
 ========================================================= */
 
-.work-section {
-  position: relative;
-
-  width: 100%;
-
-  padding: 160px 40px 180px;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding-bottom: 24px;
-
-  border-bottom: 1px solid rgba(211, 182, 156, 0.25);
-
-  font-size: 10px;
-  letter-spacing: 0.14em;
-
-  opacity: 0.55;
-}
-
 .projects {
   width: 100%;
 }
@@ -502,29 +479,9 @@ a {
   text-align: right;
 }
 
-
 /* =========================================================
    SIMPLE SECTIONS
 ========================================================= */
-
-.simple-section {
-  min-height: 60vh;
-
-  padding: 100px 40px;
-
-  display: flex;
-  align-items: flex-end;
-
-  border-top: 1px solid rgba(211, 182, 156, 0.18);
-
-  font-size: clamp(70px, 15vw, 220px);
-
-  font-weight: 700;
-
-  line-height: 0.8;
-
-  letter-spacing: -0.07em;
-}
 
 /* =========================================================
    PROJECT DETAIL PAGE
@@ -642,87 +599,6 @@ a {
    PROJECT VIDEO
 ========================================================= */
 
-.project-video-section {
-  padding: 0 40px;
-}
-
-.project-video-frame {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #191919 0%,
-      #252525 50%,
-      #111111 100%
-    );
-
-  overflow: hidden;
-}
-
-.project-video-label {
-  font-size: clamp(30px, 7vw, 110px);
-
-  font-weight: 700;
-
-  letter-spacing: -0.05em;
-
-  opacity: 0.08;
-}
-
-.project-play {
-  position: absolute;
-
-  width: 90px;
-
-  height: 90px;
-
-  border: 1px solid rgba(211, 182, 156, 0.5);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: #d3b69c;
-
-  font-size: 10px;
-
-  letter-spacing: 0.12em;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.project-play:hover {
-  transform: scale(1.08);
-
-  background: #d3b69c;
-
-  color: #0a0a0a;
-}
-
-.project-video-iframe {
-  width: 100%;
-
-  height: 100%;
-
-  border: 0;
-}
-
 /* =========================================================
    PROJECT DESCRIPTION
 ========================================================= */
@@ -757,123 +633,13 @@ a {
   letter-spacing: -0.04em;
 }
 
-.project-facts {
-  margin-top: 100px;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 40px;
-}
-
-.project-fact {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 15px;
-
-  font-size: 11px;
-
-  letter-spacing: 0.08em;
-}
-
-.fact-label {
-  font-size: 9px;
-
-  opacity: 0.4;
-}
-
 /* =========================================================
    PROJECT GALLERY
 ========================================================= */
 
-.project-gallery {
-  padding: 0 40px 160px;
-}
-
-.gallery-main,
-.gallery-item {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #171717;
-
-  overflow: hidden;
-}
-
-.gallery-main {
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-}
-
-.gallery-row {
-  margin-top: 20px;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 20px;
-}
-
-.gallery-item {
-  aspect-ratio: 4 / 5;
-}
-
-.gallery-main span,
-.gallery-item span {
-  font-size: 10px;
-
-  letter-spacing: 0.12em;
-
-  opacity: 0.18;
-}
-
 /* =========================================================
    CINEMATIC GALLERY
 ========================================================= */
-
-.gallery-stack {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 70px;
-}
-
-.gallery-cinematic {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
-  overflow: hidden;
-
-  background: #171717;
-
-  border-radius: 0;
-}
-
-.gallery-image {
-  object-fit: cover;
-
-  transform: scale(1.01);
-
-  transition:
-    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.6s ease;
-}
-
-.gallery-cinematic:hover .gallery-image {
-  transform: scale(1.04);
-}
 
 /* =========================================================
    NEXT PROJECT
@@ -920,7 +686,6 @@ a {
 
   overflow: hidden;
 }
-
 
 /* =========================================================
    ABOUT
@@ -1158,10 +923,6 @@ a {
     margin-left: 10vw;
   }
 
-  .work-section {
-    padding: 120px 28px 140px;
-  }
-
   .project {
     padding: 50px 0 60px;
   }
@@ -1184,11 +945,6 @@ a {
     text-align: left;
   }
 
-  .simple-section {
-    padding: 80px 28px;
-
-    min-height: 50vh;
-  }
 }
 
 /* =========================================================
@@ -1251,14 +1007,6 @@ a {
   }
 
   /* WORK */
-
-  .work-section {
-    padding: 100px 20px 120px;
-  }
-
-  .section-header {
-    font-size: 8px;
-  }
 
   .project {
     padding: 35px 0 45px;
@@ -1368,18 +1116,6 @@ a {
     font-size: clamp(48px, 15vw, 85px);
   }
 
-  .project-video-section {
-    padding: 0 20px;
-  }
-
-  .project-play {
-    width: 64px;
-
-    height: 64px;
-
-    font-size: 8px;
-  }
-
   .project-info-section {
     padding: 100px 20px;
 
@@ -1390,30 +1126,6 @@ a {
 
   .project-description {
     font-size: clamp(28px, 8vw, 44px);
-  }
-
-  .project-facts {
-    margin-top: 60px;
-
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
-  .project-gallery {
-    padding: 0 20px 100px;
-  }
-
-  .gallery-row {
-    margin-top: 12px;
-
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-  }
-
-  .gallery-stack {
-    gap: 24px;
   }
 
   .next-project-section {
@@ -1482,13 +1194,6 @@ a {
     gap: 18px;
   }
 
-  .simple-section {
-    min-height: 45vh;
-
-    padding: 70px 20px;
-
-    font-size: clamp(60px, 18vw, 110px);
-  }
 }
 
 /* =========================================================
@@ -1518,12 +1223,6 @@ a {
     font-size: 7px;
   }
 
-  .work-section {
-    padding-left: 16px;
-
-    padding-right: 16px;
-  }
-
   .project-title {
     font-size: 25px;
   }
@@ -1532,11 +1231,6 @@ a {
     font-size: 7px;
   }
 
-  .simple-section {
-    padding-left: 16px;
-
-    padding-right: 16px;
-  }
 }
 
 /* =========================================================
@@ -1610,18 +1304,9 @@ a {
   transform: translateY(0);
 }
 
-
 /* =========================================================
    9.8 â€” PROJECT DETAIL ENTRANCE
 ========================================================= */
-
-.project-page-enter {
-  animation:
-    projectPageEnter
-    0.7s
-    cubic-bezier(0.16, 1, 0.3, 1)
-    both;
-}
 
 @keyframes projectPageEnter {
   from {
@@ -1633,32 +1318,7 @@ a {
   }
 }
 
-
 /* META / VIDEO / ABOUT */
-
-.project-reveal {
-  opacity: 0;
-
-  transform: translateY(35px);
-
-  animation:
-    projectReveal
-    0.9s
-    cubic-bezier(0.16, 1, 0.3, 1)
-    forwards;
-}
-
-.project-reveal-1 {
-  animation-delay: 0.15s;
-}
-
-.project-reveal-2 {
-  animation-delay: 0.55s;
-}
-
-.project-reveal-3 {
-  animation-delay: 0.7s;
-}
 
 @keyframes projectReveal {
   from {
@@ -1674,27 +1334,7 @@ a {
   }
 }
 
-
 /* PROJECT TITLE */
-
-.project-title-mask {
-  width: 100%;
-
-  overflow: hidden;
-}
-
-.project-reveal-title {
-  opacity: 0;
-
-  transform: translateY(110%);
-
-  animation:
-    projectTitleReveal
-    1.15s
-    cubic-bezier(0.16, 1, 0.3, 1)
-    0.25s
-    forwards;
-}
 
 @keyframes projectTitleReveal {
   from {
@@ -1710,15 +1350,9 @@ a {
   }
 }
 
-
 /* =========================================================
    GALLERY POLISH
 ========================================================= */
-
-.project-gallery-reveal {
-  transform: translateZ(0);
-}
-
 
 /* =========================================================
    PROJECT NAV POLISH
@@ -1755,7 +1389,6 @@ a {
   transform-origin: left;
 }
 
-
 /* =========================================================
    NEXT PROJECT POLISH
 ========================================================= */
@@ -1780,7 +1413,6 @@ a {
   transform: translateX(15px);
 }
 
-
 /* =========================================================
    9.9 â€” TABLET PROJECT DETAIL
 ========================================================= */
@@ -1792,11 +1424,6 @@ a {
     padding-right: 28px;
   }
 
-  .project-video-section {
-    padding-left: 28px;
-    padding-right: 28px;
-  }
-
   .project-info-section {
     padding-left: 28px;
     padding-right: 28px;
@@ -1804,17 +1431,11 @@ a {
     gap: 50px;
   }
 
-  .project-gallery {
-    padding-left: 28px;
-    padding-right: 28px;
-  }
-
   .next-project-section {
     padding-left: 28px;
     padding-right: 28px;
   }
 }
-
 
 /* =========================================================
    9.9 â€” MOBILE PROJECT DETAIL
@@ -1839,7 +1460,6 @@ a {
   .project-back {
     font-size: 8px;
   }
-
 
   /* HERO */
 
@@ -1880,17 +1500,7 @@ a {
     line-height: 0.86;
   }
 
-
   /* VIDEO */
-
-  .project-video-section {
-    padding: 0 20px;
-  }
-
-  .project-video-frame {
-    aspect-ratio: 16 / 9;
-  }
-
 
   /* ABOUT */
 
@@ -1915,34 +1525,7 @@ a {
     line-height: 1;
   }
 
-  .project-facts {
-    margin-top: 60px;
-
-    grid-template-columns: 1fr;
-
-    gap: 32px;
-  }
-
-
   /* GALLERY */
-
-  .project-gallery {
-    padding:
-      0
-      20px
-      90px;
-  }
-
-  .gallery-stack {
-    gap: 22px;
-  }
-
-  .gallery-cinematic {
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-  }
-
 
   /* NEXT PROJECT */
 
@@ -1968,14 +1551,12 @@ a {
       );
   }
 
-
   /* TRANSITION */
 
   .page-transition {
     transition-duration: 0.4s;
   }
 }
-
 
 /* =========================================================
    VERY SMALL MOBILE
@@ -1993,17 +1574,7 @@ a {
     padding-right: 16px;
   }
 
-  .project-video-section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
   .project-info-section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .project-gallery {
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -2018,7 +1589,6 @@ a {
   }
 }
 
-
 /* =========================================================
    ACCESSIBILITY â€” REDUCED MOTION
 ========================================================= */
@@ -2029,17 +1599,6 @@ a {
     transition: none;
   }
 
-  .project-page-enter,
-  .project-reveal,
-  .project-reveal-title {
-    animation: none;
-
-    opacity: 1;
-
-    transform: none;
-  }
-
-  .gallery-image,
   .next-project-link span,
   .project-logo::after,
   .project-back::after {
@@ -2184,7 +1743,6 @@ a {
   opacity: 0.5;
 }
 
-
 /* =========================================================
    TYPE BADGE
 ========================================================= */
@@ -2267,23 +1825,6 @@ a {
    ALL â€” CLEAN CINEMATIC LIST
 ========================================================= */
 
-.projects-filter-all {
-  display: block;
-}
-
-.projects-filter-all
-.project {
-  width: 100%;
-}
-
-.projects-filter-all
-.project-visual {
-  width: 100%;
-
-  height: auto;
-
-  aspect-ratio: 16 / 9;
-}
 /* =========================================================
    TYPE LAYOUT â€” TABLET
 ========================================================= */
@@ -2298,37 +1839,12 @@ a {
     gap: 26px;
   }
 
-
   /* MOTION */
-
-  .projects-filter-motion {
-    gap:
-      50px
-      20px;
-  }
-
 
   /* SHORT */
 
-  .projects-filter-short-form {
-    max-width: 800px;
-
-    gap: 30px;
-  }
-
-
   /* PHOTO */
 
-  .projects-filter-photography {
-    gap:
-      80px
-      30px;
-  }
-
-  .projects-filter-photography
-  .project-type-photography:nth-child(2) {
-    margin-top: 100px;
-  }
 }
 /* =========================================================
    TYPE LAYOUT â€” MOBILE
@@ -2391,68 +1907,11 @@ a {
     cursor: pointer;
   }
 
-
   /* MOTION */
-
-  .projects-filter-motion {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-
-    padding-top: 50px;
-  }
-
-  .projects-filter-motion
-  .project-type-motion:nth-child(3) {
-    grid-column: auto;
-
-    width: 100%;
-  }
-
 
   /* SHORT FORM */
 
-  .projects-filter-short-form {
-    grid-template-columns: 1fr;
-
-    max-width: 420px;
-
-    gap: 60px;
-
-    padding-top: 50px;
-  }
-
-
   /* PHOTOGRAPHY */
-
-  .projects-filter-photography {
-    grid-template-columns: 1fr;
-
-    gap: 70px;
-
-    padding-top: 50px;
-  }
-
-  .projects-filter-photography
-  .project-type-photography:nth-child(1),
-
-  .projects-filter-photography
-  .project-type-photography:nth-child(2),
-
-  .projects-filter-photography
-  .project-type-photography:nth-child(3),
-
-  .projects-filter-photography
-  .project-type-photography:nth-child(4) {
-    width: 100%;
-
-    margin: 0;
-
-    justify-self: stretch;
-  }
-
 
   /* BADGE */
 
@@ -2480,84 +1939,9 @@ a {
   color: #d3b69c;
 }
 
-
 /* =========================================================
    TOP NAV
 ========================================================= */
-
-.aperture-nav {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 82px;
-
-  padding: 0 32px;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1fr
-    1fr;
-
-  align-items: center;
-
-  z-index: 20;
-
-  border-bottom:
-    1px solid
-    rgba(211, 182, 156, 0.18);
-}
-
-.aperture-logo {
-  color: #d3b69c;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.05em;
-}
-
-.aperture-nav-center {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 3px;
-
-  font-size: 8px;
-
-  letter-spacing: 0.12em;
-
-  opacity: 0.65;
-}
-
-.aperture-nav-right {
-  display: flex;
-
-  justify-content: flex-end;
-
-  gap: 28px;
-}
-
-.aperture-nav-right a {
-  color: inherit;
-
-  text-decoration: none;
-
-  font-size: 9px;
-
-  letter-spacing: 0.1em;
-}
-
 
 /* =========================================================
    HERO
@@ -2604,7 +1988,6 @@ a {
     );
 }
 
-
 /* =========================================================
    GRID LINES
 ========================================================= */
@@ -2612,7 +1995,6 @@ a {
 .aperture-grid {
   display: none;
 }
-
 
 /* =========================================================
    INSET IMAGE
@@ -2657,7 +2039,6 @@ a {
 .aperture-inset-image {
   transform: scale(1.04);
 }
-
 
 /* =========================================================
    PLAY
@@ -2720,7 +2101,6 @@ a {
   color: #0a0a0a;
 }
 
-
 /* =========================================================
    BOTTOM TITLE
 ========================================================= */
@@ -2764,7 +2144,6 @@ a {
 
   text-transform: uppercase;
 }
-
 
 /* =========================================================
    RIGHT FILM PANEL
@@ -2818,26 +2197,9 @@ a {
   letter-spacing: 0.1em;
 }
 
-
 /* =========================================================
    CREDIT
 ========================================================= */
-
-.aperture-credit {
-  position: absolute;
-
-  left: 52%;
-  bottom: 30px;
-
-  z-index: 8;
-
-  font-size: 7px;
-
-  letter-spacing: 0.11em;
-
-  opacity: 0.55;
-}
-
 
 /* =========================================================
    FILM SECTION
@@ -2890,157 +2252,13 @@ a {
   opacity: 0.3;
 }
 
-
 /* =========================================================
    ABOUT
 ========================================================= */
 
-.aperture-about {
-  padding:
-    150px
-    40px;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    2fr;
-
-  gap: 80px;
-
-  border-top:
-    1px solid
-    rgba(211, 182, 156, 0.16);
-}
-
-.aperture-about-label {
-  font-size: 9px;
-
-  letter-spacing: 0.12em;
-
-  opacity: 0.5;
-}
-
-.aperture-about-content p {
-  max-width: 1000px;
-
-  font-size:
-    clamp(
-      34px,
-      4.5vw,
-      70px
-    );
-
-  line-height: 1;
-
-  letter-spacing: -0.045em;
-}
-
-.aperture-facts {
-  margin-top: 100px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 40px;
-}
-
-.aperture-facts div {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 12px;
-}
-
-.aperture-facts span {
-  font-size: 8px;
-
-  letter-spacing: 0.1em;
-
-  opacity: 0.45;
-}
-
-.aperture-facts strong {
-  font-size: 10px;
-
-  letter-spacing: 0.08em;
-}
-
-
 /* =========================================================
    GALLERY
 ========================================================= */
-
-.aperture-gallery {
-  padding:
-    0
-    40px
-    160px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(12, 1fr);
-
-  gap: 24px;
-}
-
-.aperture-gallery-item {
-  position: relative;
-
-  overflow: hidden;
-}
-
-.aperture-gallery-1 {
-  grid-column:
-    1 / 9;
-
-  aspect-ratio:
-    16 / 9;
-}
-
-.aperture-gallery-2 {
-  grid-column:
-    7 / 13;
-
-  aspect-ratio:
-    4 / 3;
-
-  margin-top: 120px;
-}
-
-.aperture-gallery-3 {
-  grid-column:
-    2 / 11;
-
-  aspect-ratio:
-    16 / 9;
-
-  margin-top: 70px;
-}
-
-.aperture-gallery-image {
-  object-fit: cover;
-
-  transition:
-    transform
-    1.2s
-    cubic-bezier(
-      0.16,
-      1,
-      0.3,
-      1
-    );
-}
-
-.aperture-gallery-item:hover
-.aperture-gallery-image {
-  transform: scale(1.025);
-}
-
 
 /* =========================================================
    NEXT
@@ -3089,18 +2307,11 @@ a {
   text-transform: uppercase;
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
-
-  .aperture-nav {
-    padding:
-      0
-      24px;
-  }
 
   .aperture-type-panel {
     width: 28%;
@@ -3112,57 +2323,19 @@ a {
     width: 34vw;
   }
 
-  .aperture-about {
-    padding:
-      120px
-      28px;
-  }
-
   .aperture-film-section {
     padding:
       120px
       28px;
   }
 
-  .aperture-gallery {
-    padding:
-      0
-      28px
-      120px;
-  }
-
 }
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
-
-  .aperture-nav {
-    height: 72px;
-
-    padding:
-      0
-      18px;
-
-    grid-template-columns:
-      1fr
-      auto;
-  }
-
-  .aperture-nav-center {
-    display: none;
-  }
-
-  .aperture-nav-right {
-    gap: 14px;
-  }
-
-  .aperture-nav-right a {
-    font-size: 7px;
-  }
 
   .aperture-hero {
     height: 100svh;
@@ -3239,11 +2412,6 @@ a {
       );
   }
 
-  .aperture-credit {
-    display: none;
-  }
-
-
   /* FILM */
 
   .aperture-film-section {
@@ -3252,56 +2420,9 @@ a {
       18px;
   }
 
-
   /* ABOUT */
 
-  .aperture-about {
-    padding:
-      90px
-      18px;
-
-    grid-template-columns:
-      1fr;
-
-    gap: 40px;
-  }
-
-  .aperture-facts {
-    margin-top: 60px;
-
-    grid-template-columns:
-      1fr;
-
-    gap: 30px;
-  }
-
-
   /* GALLERY */
-
-  .aperture-gallery {
-    padding:
-      0
-      18px
-      90px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 20px;
-  }
-
-  .aperture-gallery-1,
-  .aperture-gallery-2,
-  .aperture-gallery-3 {
-    width: 100%;
-
-    margin: 0;
-
-    aspect-ratio:
-      16 / 9;
-  }
-
 
   /* NEXT */
 
@@ -3340,7 +2461,6 @@ a {
 
   isolation: isolate;
 }
-
 
 /* =========================================================
    BACKGROUND
@@ -3387,7 +2507,6 @@ a {
     blur(2px);
 }
 
-
 /* =========================================================
    BACKGROUND OVERLAY
 ========================================================= */
@@ -3413,7 +2532,6 @@ a {
       rgba(0, 0, 0, 0.34) 100%
     );
 }
-
 
 /* =========================================================
    TOP META
@@ -3464,11 +2582,6 @@ a {
 
   opacity: 0.22;
 }
-
-.featured-year {
-  text-align: right;
-}
-
 
 /* =========================================================
    SMALL COLOR IMAGE
@@ -3524,7 +2637,6 @@ a {
 .featured-small-image-content {
   transform: scale(1.05);
 }
-
 
 /* =========================================================
    PLAY
@@ -3584,7 +2696,6 @@ a {
   color: #111;
 }
 
-
 /* =========================================================
    CMC DATA CENTER TITLE
 ========================================================= */
@@ -3621,7 +2732,6 @@ a {
   display: block;
 }
 
-
 /* =========================================================
    BOTTOM META
 ========================================================= */
@@ -3648,7 +2758,6 @@ a {
 
   letter-spacing: 0.12em;
 }
-
 
 /* =========================================================
    TABLET
@@ -3683,7 +2792,6 @@ a {
 
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -3704,7 +2812,6 @@ a {
     max-height: 760px;
   }
 
-
   /* BACKGROUND */
 
   .featured-background-image {
@@ -3714,7 +2821,6 @@ a {
       brightness(0.5)
       blur(2px);
   }
-
 
   /* TOP META */
 
@@ -3731,7 +2837,6 @@ a {
     font-size: 9px;
   }
 
-
   /* SMALL IMAGE */
 
   .featured-small-image {
@@ -3740,7 +2845,6 @@ a {
 
     width: 48%;
   }
-
 
   /* PLAY */
 
@@ -3755,7 +2859,6 @@ a {
     font-size: 6px;
   }
 
-
   /* TITLE */
 
   .featured-title {
@@ -3769,7 +2872,6 @@ a {
         74px
       );
   }
-
 
   /* FILM */
 
@@ -3796,7 +2898,6 @@ a {
     transition: none;
   }
 
-
   /* BOTTOM */
 
   .featured-bottom {
@@ -3809,7 +2910,6 @@ a {
   }
 
 }
-
 
 /* =========================================================
    REDUCED MOTION
@@ -4040,7 +3140,6 @@ a {
   letter-spacing: 0.1em;
 }
 
-
 /* TABLET */
 
 @media (max-width: 900px) {
@@ -4055,7 +3154,6 @@ a {
   }
 
 }
-
 
 /* MOBILE */
 
@@ -4091,23 +3189,9 @@ a {
   opacity: 0.75;
 }
 
-
 /* =========================================================
    APERTURE / SPECIAL PROJECT NAV
 ========================================================= */
-
-.aperture-nav .aperture-logo {
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 0.045em;
-}
-
-.aperture-nav .aperture-back {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-
 
 /* =========================================================
    TABLET
@@ -4115,18 +3199,15 @@ a {
 
 @media (max-width: 900px) {
 
-  .project-nav .project-logo,
-  .aperture-nav .aperture-logo {
+  .project-nav .project-logo{
     font-size: 28px;
   }
 
-  .project-nav .project-back,
-  .aperture-nav .aperture-back {
+  .project-nav .project-back{
     font-size: 14px;
   }
 
 }
-
 
 /* =========================================================
    MOBILE
@@ -4134,13 +3215,11 @@ a {
 
 @media (max-width: 600px) {
 
-  .project-nav .project-logo,
-  .aperture-nav .aperture-logo {
+  .project-nav .project-logo{
     font-size: 22px;
   }
 
-  .project-nav .project-back,
-  .aperture-nav .aperture-back {
+  .project-nav .project-back{
     font-size: 10px;
   }
 
@@ -4179,7 +3258,6 @@ a {
 
   isolation: isolate;
 }
-
 
 /* =========================================================
    BACKGROUND
@@ -4228,28 +3306,6 @@ a {
     blur(2px);
 }
 
-.featured-background-placeholder {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-size:
-    clamp(
-      40px,
-      8vw,
-      140px
-    );
-
-  font-weight: 900;
-
-  opacity: 0.08;
-}
-
-
 /* =========================================================
    OVERLAY
 ========================================================= */
@@ -4277,7 +3333,6 @@ a {
       rgba(0, 0, 0, 0.38) 100%
     );
 }
-
 
 /* =========================================================
    TOP META
@@ -4328,11 +3383,6 @@ a {
 
   opacity: 0.22;
 }
-
-.featured-year {
-  text-align: right;
-}
-
 
 /* =========================================================
    SMALL COLOR IMAGE
@@ -4390,23 +3440,6 @@ a {
 .featured-small-image-content {
   transform: scale(1.045);
 }
-
-.featured-small-placeholder {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-size: 24px;
-
-  font-weight: 900;
-
-  opacity: 0.15;
-}
-
 
 /* =========================================================
    PLAY / VIEW
@@ -4469,7 +3502,6 @@ a {
   color: #111;
 }
 
-
 /* =========================================================
    PROJECT TITLE
 ========================================================= */
@@ -4501,33 +3533,9 @@ a {
   text-transform: uppercase;
 }
 
-
 /* =========================================================
    RIGHT TYPE
 ========================================================= */
-
-.featured-type-wrap {
-  position: absolute;
-
-  top: 0;
-  right: 0;
-
-  width: 27%;
-  height: 100%;
-
-  z-index: 7;
-
-  overflow: visible;
-
-  pointer-events: none;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
 
 /* =========================================================
    TYPE WORD
@@ -4537,89 +3545,17 @@ a {
    không tách F / I / L / M.
 ========================================================= */
 
-.featured-type-word {
-  color: #d3b69c;
-
-  opacity: 0.74;
-
-  font-size:
-    clamp(
-      115px,
-      15vw,
-      260px
-    );
-
-  font-weight: 900;
-
-  line-height: 0.75;
-
-  letter-spacing: -0.08em;
-
-  white-space: nowrap;
-
-  writing-mode: vertical-rl;
-
-  text-orientation: mixed;
-
-  transform:
-    rotate(180deg);
-
-  transform-origin: center;
-
-  text-shadow: none;
-
-  filter: none;
-}
-
-
 /* =========================================================
    MOTION
 ========================================================= */
-
-.project-type-motion
-.featured-type-word {
-  font-size:
-    clamp(
-      82px,
-      10vw,
-      180px
-    );
-}
-
 
 /* =========================================================
    SHORT-FORM
 ========================================================= */
 
-.project-type-short-form
-.featured-type-word {
-  font-size:
-    clamp(
-      52px,
-      6vw,
-      105px
-    );
-
-  letter-spacing: -0.055em;
-}
-
-
 /* =========================================================
    PHOTOGRAPHY
 ========================================================= */
-
-.project-type-photography
-.featured-type-word {
-  font-size:
-    clamp(
-      45px,
-      5.3vw,
-      92px
-    );
-
-  letter-spacing: -0.05em;
-}
-
 
 /* =========================================================
    BOTTOM META
@@ -4650,53 +3586,14 @@ a {
   letter-spacing: 0.12em;
 }
 
-
 /* =========================================================
    IMPORTANT:
    ALL FILTERS USE SAME ONE-COLUMN LAYOUT
 ========================================================= */
 
-.projects-filter-all,
-.projects-filter-film,
-.projects-filter-motion,
-.projects-filter-short-form,
-.projects-filter-photography {
-  display: block;
-
-  width: 100%;
-
-  max-width: none;
-
-  margin: 0;
-
-  padding: 0;
-}
-
-
 /* =========================================================
    RESET OLD FILTER PROJECT SIZES
 ========================================================= */
-
-.projects-filter-motion
-.project,
-
-.projects-filter-short-form
-.project,
-
-.projects-filter-photography
-.project {
-  width: 100%;
-
-  max-width: none;
-
-  margin-left: 0;
-  margin-right: 0;
-
-  grid-column: auto;
-
-  justify-self: stretch;
-}
-
 
 /* =========================================================
    TABLET
@@ -4714,51 +3611,7 @@ a {
     width: 37%;
   }
 
-  .featured-type-wrap {
-    width: 29%;
-  }
-
-  .featured-type-word {
-    font-size:
-      clamp(
-        95px,
-        15vw,
-        190px
-      );
-  }
-
-  .project-type-motion
-  .featured-type-word {
-    font-size:
-      clamp(
-        70px,
-        10vw,
-        135px
-      );
-  }
-
-  .project-type-short-form
-  .featured-type-word {
-    font-size:
-      clamp(
-        44px,
-        6vw,
-        85px
-      );
-  }
-
-  .project-type-photography
-  .featured-type-word {
-    font-size:
-      clamp(
-        38px,
-        5vw,
-        70px
-      );
-  }
-
 }
-
 
 /* =========================================================
    MOBILE
@@ -4781,7 +3634,6 @@ a {
     max-height: 760px;
   }
 
-
   /* BACKGROUND */
 
   .featured-background-image {
@@ -4791,7 +3643,6 @@ a {
       brightness(0.5)
       blur(2px);
   }
-
 
   /* META */
 
@@ -4808,7 +3659,6 @@ a {
     font-size: 9px;
   }
 
-
   /* COLOR IMAGE */
 
   .featured-small-image {
@@ -4818,7 +3668,6 @@ a {
 
     width: 48%;
   }
-
 
   /* PLAY */
 
@@ -4833,7 +3682,6 @@ a {
 
     font-size: 6px;
   }
-
 
   /* TITLE */
 
@@ -4852,54 +3700,7 @@ a {
       );
   }
 
-
   /* TYPE */
-
-  .featured-type-wrap {
-    width: 31%;
-  }
-
-  .featured-type-word {
-    font-size:
-      clamp(
-        70px,
-        22vw,
-        120px
-      );
-
-    opacity: 0.74;
-  }
-
-  .project-type-motion
-  .featured-type-word {
-    font-size:
-      clamp(
-        50px,
-        15vw,
-        82px
-      );
-  }
-
-  .project-type-short-form
-  .featured-type-word {
-    font-size:
-      clamp(
-        30px,
-        8vw,
-        48px
-      );
-  }
-
-  .project-type-photography
-  .featured-type-word {
-    font-size:
-      clamp(
-        27px,
-        7vw,
-        42px
-      );
-  }
-
 
   /* BOTTOM */
 
@@ -4933,139 +3734,13 @@ a {
   color: #5f1717;
 }
 
-
 /* =========================================================
    WORK TITLE
 ========================================================= */
 
-.editorial-work-heading {
-  display: flex;
-
-  align-items: flex-end;
-
-  justify-content: space-between;
-
-  padding-bottom: 24px;
-
-  border-bottom:
-    1px solid
-    rgba(95, 23, 23, 0.35);
-}
-
-.editorial-work-heading h1 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      32px,
-      3.2vw,
-      58px
-    );
-
-  font-weight: 500;
-
-  line-height: 0.9;
-
-  letter-spacing: -0.045em;
-}
-
-.editorial-work-heading > span {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      22px,
-      2vw,
-      36px
-    );
-
-  line-height: 1;
-}
-
-
 /* =========================================================
    FILTER
 ========================================================= */
-
-.editorial-filter {
-  min-height: 100px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 48px;
-
-  flex-wrap: wrap;
-}
-
-.editorial-filter button {
-  position: relative;
-
-  padding:
-    8px
-    0;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #5f1717;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-
-  cursor: none;
-
-  opacity: 0.55;
-}
-
-.editorial-filter button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background: #5f1717;
-
-  transform: scaleX(0);
-
-  transform-origin: right;
-
-  transition:
-    transform
-    0.35s
-    ease;
-}
-
-.editorial-filter button:hover,
-.editorial-filter button.is-active {
-  opacity: 1;
-}
-
-.editorial-filter button:hover::after,
-.editorial-filter button.is-active::after {
-  transform: scaleX(1);
-
-  transform-origin: left;
-}
-
 
 /* =========================================================
    CATEGORY
@@ -5147,7 +3822,6 @@ a {
 
   letter-spacing: 0.1em;
 }
-
 
 /* =========================================================
    BASE CARD
@@ -5278,27 +3952,6 @@ a {
     );
 }
 
-.editorial-project-top {
-  position: absolute;
-
-  top: 16px;
-  left: 18px;
-
-  z-index: 3;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 5px;
-
-  font-size: 7px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-}
-
 .editorial-project-bottom {
   position: absolute;
 
@@ -5399,7 +4052,6 @@ div > span {
   transform: scale(1.08);
 }
 
-
 /* =========================================================
    FILM
 ========================================================= */
@@ -5464,7 +4116,6 @@ div > span {
   min-height: 160px;
 }
 
-
 /* =========================================================
    MOTION
 ========================================================= */
@@ -5509,7 +4160,6 @@ div > span {
   grid-row: 2;
 }
 
-
 /* =========================================================
    SHORT FORM
 ========================================================= */
@@ -5544,7 +4194,6 @@ div > span {
   min-height: 430px;
 }
 
-
 /* =========================================================
    PHOTOGRAPHY
 ========================================================= */
@@ -5569,7 +4218,6 @@ div > span {
   min-height: 285px;
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -5580,10 +4228,6 @@ div > span {
     padding:
       120px
       28px;
-  }
-
-  .editorial-filter {
-    gap: 28px;
   }
 
   .film-hero {
@@ -5623,7 +4267,6 @@ div > span {
 
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -5637,37 +4280,7 @@ div > span {
       90px;
   }
 
-  .editorial-work-heading {
-    align-items: center;
-  }
-
-  .editorial-work-heading h1 {
-    font-size: 30px;
-  }
-
-  .editorial-work-heading > span {
-    font-size: 17px;
-  }
-
-
   /* FILTER */
-
-  .editorial-filter {
-    min-height: 88px;
-
-    justify-content: flex-start;
-
-    gap:
-      14px
-      20px;
-  }
-
-  .editorial-filter button {
-    font-size: 8px;
-
-    cursor: pointer;
-  }
-
 
   /* HEADER */
 
@@ -5705,18 +4318,10 @@ div > span {
     display: none;
   }
 
-
   /* CARD */
 
   .editorial-project {
     cursor: pointer;
-  }
-
-  .editorial-project-top {
-    top: 10px;
-    left: 11px;
-
-    font-size: 5px;
   }
 
   .editorial-project-bottom {
@@ -5744,7 +4349,6 @@ div > span {
 
     font-size: 5px;
   }
-
 
   /* FILM */
 
@@ -5776,7 +4380,6 @@ div > span {
     aspect-ratio: 16 / 8;
   }
 
-
   /* MOTION */
 
   .editorial-motion-grid {
@@ -5794,7 +4397,6 @@ div > span {
 
     min-height: 220px;
   }
-
 
   /* SHORT */
 
@@ -5814,7 +4416,6 @@ div > span {
     aspect-ratio: 9 / 15;
   }
 
-
   /* PHOTO */
 
   .editorial-photo-grid {
@@ -5827,7 +4428,6 @@ div > span {
   }
 
 }
-
 
 /* =========================================================
    SMALL MOBILE
@@ -5856,7 +4456,6 @@ div > span {
   }
 
 }
-
 
 /* =========================================================
    REDUCED MOTION
@@ -5893,22 +4492,7 @@ div > span {
 
 /* WORK TITLE */
 
-.editorial-work-heading {
-  border-bottom:
-    1px solid
-    rgba(211, 182, 156, 0.25);
-}
-
 /* FILTER */
-
-.editorial-filter button {
-  color: #d3b69c;
-
-}
-
-.editorial-filter button::after {
-  background: #d3b69c;
-}
 
 /* CATEGORY TITLE */
 
@@ -5930,7 +4514,6 @@ div > span {
 
 /* PROJECT META */
 
-.editorial-project-top,
 .editorial-project-bottom div > span {
   font-family:
     var(--font-montserrat),
@@ -5962,7 +4545,6 @@ select {
     sans-serif;
 }
 
-
 /* =========================================================
    HOMEPAGE
 ========================================================= */
@@ -5975,9 +4557,7 @@ select {
 .hero,
 .hero-title,
 .hero-line,
-.hero-bottom,
-.work-section,
-.section-header {
+.hero-bottom{
   font-family:
     var(--font-montserrat),
     Arial,
@@ -5985,17 +4565,11 @@ select {
     sans-serif;
 }
 
-
 /* =========================================================
    EDITORIAL WORK
 ========================================================= */
 
 .editorial-work-section,
-.editorial-work-heading,
-.editorial-work-heading h1,
-.editorial-work-heading > span,
-.editorial-filter,
-.editorial-filter button,
 .editorial-category,
 .editorial-category-header,
 .editorial-category-title,
@@ -6003,7 +4577,6 @@ select {
 .editorial-category-title span,
 .editorial-category-right,
 .editorial-project,
-.editorial-project-top,
 .editorial-project-bottom,
 .editorial-project-bottom h3,
 .editorial-project-bottom div > span,
@@ -6015,7 +4588,6 @@ select {
     Helvetica,
     sans-serif;
 }
-
 
 /* =========================================================
    ABOUT
@@ -6038,7 +4610,6 @@ select {
     sans-serif;
 }
 
-
 /* =========================================================
    CONTACT
 ========================================================= */
@@ -6057,7 +4628,6 @@ select {
     sans-serif;
 }
 
-
 /* =========================================================
    GENERIC PROJECT DETAIL
 ========================================================= */
@@ -6069,20 +4639,9 @@ select {
 .project-detail-hero,
 .project-detail-meta,
 .project-detail-title,
-.project-video-section,
-.project-video-label,
-.project-play,
 .project-info-section,
 .project-info-label,
 .project-description,
-.project-facts,
-.project-fact,
-.fact-label,
-.project-gallery,
-.gallery-main,
-.gallery-item,
-.gallery-stack,
-.gallery-cinematic,
 .next-project-section,
 .next-project-label,
 .next-project-link {
@@ -6093,16 +4652,11 @@ select {
     sans-serif;
 }
 
-
 /* =========================================================
    APERTURE / PROJECT 01
 ========================================================= */
 
 .aperture-project,
-.aperture-nav,
-.aperture-logo,
-.aperture-nav-center,
-.aperture-nav-right,
 .aperture-hero,
 .aperture-play,
 .aperture-bottom-title,
@@ -6110,16 +4664,9 @@ select {
 .aperture-bottom-title h1,
 .aperture-type-big,
 .aperture-type-meta,
-.aperture-credit,
 .aperture-film-section,
 .aperture-section-label,
 .aperture-film-placeholder,
-.aperture-about,
-.aperture-about-label,
-.aperture-about-content,
-.aperture-about-content p,
-.aperture-facts,
-.aperture-gallery,
 .aperture-next {
   font-family:
     var(--font-montserrat),
@@ -6127,7 +4674,6 @@ select {
     Helvetica,
     sans-serif;
 }
-
 
 /* =========================================================
    PHOTOGRAPHY DETAIL
@@ -6146,7 +4692,6 @@ select {
     sans-serif;
 }
 
-
 /* =========================================================
    FONT WEIGHT SYSTEM
 ========================================================= */
@@ -6155,43 +4700,34 @@ select {
 
 .nav-right,
 .hero-bottom,
-.editorial-filter button,
 .editorial-category-right,
-.editorial-project-top,
 .editorial-project-bottom div > span,
 .about-header,
 .about-label,
 .contact-header,
 .contact-footer,
 .project-detail-meta,
-.project-info-label,
-.fact-label {
+.project-info-label{
   font-weight: 500;
 }
-
 
 /* NAV / STANDARD CONTENT */
 
 .logo,
 .project-logo,
-.aperture-logo,
 .about-location,
-.about-role,
-.project-fact {
+.about-role{
   font-weight: 600;
 }
 
-
 /* CATEGORY + PROJECT TITLES */
 
-.editorial-work-heading h1,
 .editorial-category-title h2,
 .editorial-project-bottom h3,
 .project-detail-title,
 .contact-cta {
   font-weight: 700;
 }
-
 
 /* HERO / LARGE DISPLAY */
 
@@ -6201,7 +4737,6 @@ select {
 .aperture-bottom-title h1 {
   font-weight: 800;
 }
-
 
 /* =========================================================
    KEEP ORIGINAL COLOR SYSTEM
@@ -6213,39 +4748,17 @@ select {
   color: #d3b69c;
 }
 
-.editorial-work-heading {
-  border-bottom:
-    1px solid
-    rgba(
-      211,
-      182,
-      156,
-      0.25
-    );
-}
-
-.editorial-work-heading h1,
-.editorial-work-heading > span,
-.editorial-filter button,
 .editorial-category-title h2,
 .editorial-category-title span,
 .editorial-category-right {
   color: #d3b69c;
 }
 
-.editorial-filter button::after {
-  background: #d3b69c;
-}
  /* =========================================================
    EDITORIAL TEXT COLOR — FINAL FIX
 ========================================================= */
 
 .editorial-work-section,
-.editorial-work-heading,
-.editorial-work-heading h1,
-.editorial-work-heading > span,
-.editorial-filter,
-.editorial-filter button,
 .editorial-category,
 .editorial-category-title,
 .editorial-category-title h2,
@@ -6254,11 +4767,9 @@ select {
   color: #d3b69c;
 }
 
-
 /* PROJECT CARD TEXT */
 
 .editorial-project,
-.editorial-project-top,
 .editorial-project-bottom,
 .editorial-project-bottom h3,
 .editorial-project-bottom div,
@@ -6267,13 +4778,11 @@ select {
   color: #d3b69c;
 }
 
-
 /* PLACEHOLDER */
 
 .editorial-project-placeholder {
   color: #d3b69c;
 }
-
 
 /* PLAY / VIEW CIRCLE */
 
@@ -6288,12 +4797,8 @@ select {
   color: #820000;
 }
 
-
 /* FILTER UNDERLINE */
 
-.editorial-filter button::after {
-  background: #d3b69c;
-}
 /* =========================================================
    PROJECT PLAY / VIEW ICON — FINAL
 ========================================================= */
@@ -6338,7 +4843,6 @@ select {
     Helvetica,
     sans-serif;
 }
-
 
 /* =========================================================
    NAV
@@ -6394,7 +4898,6 @@ select {
   background: #111;
 }
 
-
 /* BACKGROUND */
 
 .motion02-background {
@@ -6432,83 +4935,13 @@ select {
     );
 }
 
-
 /* =========================================================
    GRID
 ========================================================= */
 
-.motion02-grid-lines {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-
-  pointer-events: none;
-}
-
-.motion02-grid-lines span {
-  position: absolute;
-
-  top: 0;
-
-  width: 1px;
-
-  height: 100%;
-
-  background:
-    rgba(211, 182, 156, 0.12);
-}
-
-.motion02-grid-lines span:nth-child(1) {
-  left: 33.333%;
-}
-
-.motion02-grid-lines span:nth-child(2) {
-  left: 60%;
-}
-
-.motion02-grid-lines span:nth-child(3) {
-  right: 23%;
-}
-
-
 /* =========================================================
    META
 ========================================================= */
-
-.motion02-meta {
-  position: absolute;
-
-  top: 120px;
-
-  left: 40px;
-  right: 40px;
-
-  z-index: 7;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1fr
-    1fr;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.11em;
-}
-
-.motion02-meta span:nth-child(2) {
-  text-align: center;
-}
-
-.motion02-meta span:nth-child(3) {
-  text-align: right;
-}
-
 
 /* =========================================================
    PREVIEW
@@ -6569,7 +5002,6 @@ select {
   color: #820000;
 }
 
-
 /* =========================================================
    TITLE
 ========================================================= */
@@ -6614,7 +5046,6 @@ select {
 
   text-transform: uppercase;
 }
-
 
 /* =========================================================
    GIANT MOTION TYPE
@@ -6664,27 +5095,9 @@ select {
   pointer-events: none;
 }
 
-
 /* =========================================================
    ROLE
 ========================================================= */
-
-.motion02-role {
-  position: absolute;
-
-  right: 40px;
-
-  bottom: 26px;
-
-  z-index: 8;
-
-  font-size: 7px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.1em;
-}
-
 
 /* =========================================================
    SECTION COMMON
@@ -6720,63 +5133,9 @@ select {
   letter-spacing: 0.12em;
 }
 
-
 /* =========================================================
    SHOWCASE
 ========================================================= */
-
-.motion02-video-frame {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
-  overflow: hidden;
-
-  background: #111;
-}
-
-.motion02-video {
-  width: 100%;
-
-  height: 100%;
-
-  border: 0;
-}
-
-.motion02-main-image {
-  object-fit: cover;
-
-  filter:
-    brightness(0.72);
-}
-
-.motion02-coming-soon {
-  position: absolute;
-
-  inset: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-size:
-    clamp(
-      24px,
-      4vw,
-      64px
-    );
-
-  font-weight: 800;
-
-  letter-spacing: -0.04em;
-
-  background:
-    rgba(0, 0, 0, 0.25);
-}
-
 
 .motion02-about-grid {
   display: grid;
@@ -6790,13 +5149,11 @@ select {
   align-items: start;
 }
 
-
 .motion02-about-content {
   min-width: 0;
 
   text-align: left;
 }
-
 
 .motion02-about-content p {
   margin: 0;
@@ -6823,13 +5180,11 @@ select {
   text-align: left;
 }
 
-
 .motion02-about-content p span {
   display: block;
 
   white-space: nowrap;
 }
-
 
 /* TABLET */
 
@@ -6853,7 +5208,6 @@ select {
 }
 
 }
-
 
 /* MOBILE */
 
@@ -6897,13 +5251,11 @@ select {
   align-items: start;
 }
 
-
 .motion02-about-content {
   min-width: 0;
 
   text-align: left;
 }
-
 
 .motion02-about-content p {
   margin: 0;
@@ -6930,13 +5282,11 @@ select {
   text-align: left;
 }
 
-
 .motion02-about-content p span {
   display: block;
 
   white-space: nowrap;
 }
-
 
 /* TABLET */
 
@@ -6960,7 +5310,6 @@ select {
   }
 
 }
-
 
 /* MOBILE */
 
@@ -6995,7 +5344,6 @@ select {
   padding-top: 80px;
 }
 
-
 .motion02-gallery-grid {
   display: grid;
 
@@ -7008,7 +5356,6 @@ select {
   gap: 24px;
 }
 
-
 .motion02-gallery-item {
   position: relative;
 
@@ -7016,7 +5363,6 @@ select {
 
   background: #111;
 }
-
 
 /* GIF 01 */
 
@@ -7026,7 +5372,6 @@ select {
 
   aspect-ratio: 16 / 9;
 }
-
 
 /* GIF 02 */
 
@@ -7039,7 +5384,6 @@ select {
   margin-top: 130px;
 }
 
-
 /* GIF 03 */
 
 .motion02-gallery-item-3 {
@@ -7050,7 +5394,6 @@ select {
 
   margin-top: 60px;
 }
-
 
 /* GIF 04 */
 
@@ -7063,7 +5406,6 @@ select {
   margin-top: 70px;
 }
 
-
 /* GIF 05 */
 
 .motion02-gallery-item-5 {
@@ -7075,7 +5417,6 @@ select {
   margin-top: 70px;
 }
 
-
 /* GIF 06 */
 
 .motion02-gallery-item-6 {
@@ -7086,7 +5427,6 @@ select {
 
   margin-top: 70px;
 }
-
 
 .motion02-gallery-image {
   object-fit: cover;
@@ -7102,12 +5442,10 @@ select {
     );
 }
 
-
 .motion02-gallery-item:hover
 .motion02-gallery-image {
   transform: scale(1.035);
 }
-
 
 .motion02-gallery-number {
   position: absolute;
@@ -7126,7 +5464,6 @@ select {
   letter-spacing: 0.1em;
 }
 
-
 /* =========================================================
    NEXT
 ========================================================= */
@@ -7140,7 +5477,6 @@ select {
     1px solid
     rgba(211, 182, 156, 0.2);
 }
-
 
 .motion02-next-label {
   display: block;
@@ -7157,7 +5493,6 @@ select {
 
   opacity: 0.5;
 }
-
 
 .motion02-next a {
   display: flex;
@@ -7186,7 +5521,6 @@ select {
   text-transform: uppercase;
 }
 
-
 /* =========================================================
    HOMEPAGE PLAY / VIEW
 ========================================================= */
@@ -7208,7 +5542,6 @@ select {
     );
 }
 
-
 .editorial-project-play-icon {
   font-size: 11px;
 
@@ -7217,7 +5550,6 @@ select {
   transform:
     translateX(1px);
 }
-
 
 .editorial-project-play-text {
   font-size: 7px;
@@ -7229,14 +5561,12 @@ select {
   line-height: 1;
 }
 
-
 .editorial-project:hover
 .editorial-project-play {
   background: #d3b69c;
 
   color: #820000;
 }
-
 
 /* =========================================================
    TABLET
@@ -7250,12 +5580,6 @@ select {
       28px;
   }
 
-
-  .motion02-meta {
-    left: 28px;
-    right: 28px;
-  }
-
   .motion02-about,
   .motion02-gallery {
     padding:
@@ -7263,20 +5587,9 @@ select {
       28px;
   }
 
-
   .motion02-about-grid {
     gap: 50px;
   }
-
-
-  .motion02-facts {
-    grid-template-columns:
-      repeat(
-        2,
-        1fr
-      );
-  }
-
 
   .motion02-next {
     padding:
@@ -7285,7 +5598,6 @@ select {
   }
 
 }
-
 
 /* =========================================================
    MOBILE
@@ -7305,51 +5617,22 @@ select {
       auto;
   }
 
-
   .motion02-logo {
     font-size: 18px;
   }
-
 
   .motion02-nav-center {
     display: none;
   }
 
-
   .motion02-back {
     font-size: 8px;
   }
-
 
   .motion02-hero {
     height: 100svh;
 
     min-height: 650px;
-  }
-
-
-  .motion02-grid-lines
-  span:nth-child(2),
-
-  .motion02-grid-lines
-  span:nth-child(3) {
-    display: none;
-  }
-
-
-  .motion02-grid-lines
-  span:nth-child(1) {
-    left: 50%;
-  }
-
-
-  .motion02-meta {
-    top: 92px;
-
-    left: 18px;
-    right: 18px;
-
-    font-size: 6px;
   }
 
   .motion02-view {
@@ -7361,7 +5644,6 @@ select {
     font-size: 6px;
   }
 
-
   .motion02-title-wrap {
     left: 18px;
 
@@ -7369,7 +5651,6 @@ select {
 
     width: 67%;
   }
-
 
   .motion02-title-wrap h1 {
     font-size:
@@ -7379,7 +5660,6 @@ select {
         62px
       );
   }
-
 
   .motion02-type {
     width: 31%;
@@ -7392,22 +5672,14 @@ select {
       );
   }
 
-
-  .motion02-role {
-    display: none;
-  }
-
-
   /* SECTIONS */
 
-  .motion02-showcase,
   .motion02-about,
   .motion02-gallery {
     padding:
       80px
       18px;
   }
-
 
   /* ABOUT */
 
@@ -7418,7 +5690,6 @@ select {
     gap: 36px;
   }
 
-
   .motion02-about-content p {
     font-size:
       clamp(
@@ -7427,16 +5698,6 @@ select {
         44px
       );
   }
-
-
-  .motion02-facts {
-    margin-top: 60px;
-
-    grid-template-columns:
-      1fr
-      1fr;
-  }
-
 
   /* GIF GALLERY */
 
@@ -7447,7 +5708,6 @@ select {
 
     gap: 14px;
   }
-
 
   .motion02-gallery-item,
   .motion02-gallery-item-1,
@@ -7463,7 +5723,6 @@ select {
     aspect-ratio: 16 / 9;
   }
 
-
   /* NEXT */
 
   .motion02-next {
@@ -7471,7 +5730,6 @@ select {
       75px
       18px;
   }
-
 
   .motion02-next a {
     font-size:
@@ -7516,7 +5774,6 @@ select {
     rgba(0, 0, 0, 0.5);
 }
 
-
 /* GIF */
 
 .motion02-preview > img.motion02-preview-image {
@@ -7543,7 +5800,6 @@ select {
   pointer-events: none;
 }
 
-
 /* KHÔNG ĐỔI SIZE KHI HOVER */
 
 .motion02-preview:hover
@@ -7551,7 +5807,6 @@ select {
   transform: none;
   scale: 1;
 }
-
 
 /* =========================================================
    TABLET
@@ -7564,7 +5819,6 @@ select {
   }
 
 }
-
 
 /* =========================================================
    MOBILE
@@ -7588,7 +5842,6 @@ select {
    MOTION PROJECT 02 — FINAL OVERRIDE
    =========================================================
 ========================================================= */
-
 
 /* =========================================================
    HERO PREVIEW — GIF 01
@@ -7616,7 +5869,6 @@ select {
     rgba(0, 0, 0, 0.5);
 }
 
-
 .motion02-preview > img.motion02-preview-image {
   position: absolute !important;
 
@@ -7639,13 +5891,11 @@ select {
   max-height: none !important;
 }
 
-
 .motion02-preview:hover
 .motion02-preview-image {
   transform: none !important;
   scale: 1 !important;
 }
-
 
 /* =========================================================
    BACKGROUND GIF
@@ -7669,7 +5919,6 @@ select {
   transform: scale(1.025);
 }
 
-
 /* =========================================================
    ABOUT
 ========================================================= */
@@ -7687,7 +5936,6 @@ select {
     rgba(211, 182, 156, 0.16);
 }
 
-
 .motion02-about-grid {
   display: grid;
 
@@ -7697,7 +5945,6 @@ select {
 
   gap: 60px;
 }
-
 
 .motion02-about-label {
   color: #d3b69c;
@@ -7710,7 +5957,6 @@ select {
 
   opacity: 0.55;
 }
-
 
 .motion02-about-content p {
   max-width: 33ch;
@@ -7728,53 +5974,6 @@ select {
 
   line-height: 1.25;
 }
-.motion02-facts {
-  margin-top: 55px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
-
-  gap: 20px;
-}
-
-
-.motion02-facts div {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 10px;
-}
-
-
-.motion02-facts span {
-  color: #d3b69c;
-
-  font-size: 7px;
-
-  font-weight: 500;
-
-  letter-spacing: 0.11em;
-
-  opacity: 0.45;
-}
-
-
-.motion02-facts strong {
-  color: #d3b69c;
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.06em;
-}
-
 
 /* =========================================================
    GALLERY SECTION
@@ -7789,7 +5988,6 @@ select {
     100px;
 }
 
-
 /* =========================================================
    SECTION HEADER
 ========================================================= */
@@ -7798,7 +5996,6 @@ select {
 .motion02-section-head {
   margin-bottom: 18px;
 }
-
 
 /* =========================================================
    GALLERY GRID
@@ -7820,7 +6017,6 @@ select {
   align-items: start;
 }
 
-
 /* =========================================================
    GALLERY ITEM
 ========================================================= */
@@ -7838,7 +6034,6 @@ select {
 
   aspect-ratio: auto !important;
 }
-
 
 /* =========================================================
    GIF IMAGE — ORIGINAL ASPECT RATIO
@@ -7871,7 +6066,6 @@ select {
   max-height: none !important;
 }
 
-
 .motion02-gallery-item:hover
 .motion02-gallery-image {
   transform: none !important;
@@ -7879,7 +6073,6 @@ select {
 
   opacity: 0.94;
 }
-
 
 /* =========================================================
    GIF 01 — FULL WIDTH
@@ -7894,7 +6087,6 @@ select {
   aspect-ratio: auto !important;
 }
 
-
 /* =========================================================
    GIF 02 — LEFT
 ========================================================= */
@@ -7907,7 +6099,6 @@ select {
 
   aspect-ratio: auto !important;
 }
-
 
 /* =========================================================
    GIF 03 — RIGHT
@@ -7922,7 +6113,6 @@ select {
   aspect-ratio: auto !important;
 }
 
-
 /* =========================================================
    GIF 04 — LARGE LEFT
 ========================================================= */
@@ -7935,7 +6125,6 @@ select {
 
   aspect-ratio: auto !important;
 }
-
 
 /* =========================================================
    GIF 05 — SMALL RIGHT
@@ -7950,7 +6139,6 @@ select {
   aspect-ratio: auto !important;
 }
 
-
 /* =========================================================
    GIF 06 — FULL WIDTH
 ========================================================= */
@@ -7963,7 +6151,6 @@ select {
 
   aspect-ratio: auto !important;
 }
-
 
 /* =========================================================
    NUMBER
@@ -8010,7 +6197,6 @@ select {
   pointer-events: none;
 }
 
-
 /* =========================================================
    NEXT
 ========================================================= */
@@ -8025,7 +6211,6 @@ select {
     rgba(211, 182, 156, 0.2);
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -8036,7 +6221,6 @@ select {
     width: 39%;
   }
 
-
   .motion02-about {
     padding:
       90px
@@ -8044,11 +6228,9 @@ select {
       80px;
   }
 
-
   .motion02-about-grid {
     gap: 40px;
   }
-
 
   .motion02-gallery {
     padding:
@@ -8057,11 +6239,9 @@ select {
       85px;
   }
 
-
   .motion02-gallery-grid {
     gap: 8px;
   }
-
 
   .motion02-next {
     padding:
@@ -8070,7 +6250,6 @@ select {
   }
 
 }
-
 
 /* =========================================================
    MOBILE
@@ -8091,7 +6270,6 @@ select {
     aspect-ratio: 848 / 477;
   }
 
-
   /* ABOUT */
 
   .motion02-about {
@@ -8100,14 +6278,12 @@ select {
       18px;
   }
 
-
   .motion02-about-grid {
     grid-template-columns:
       1fr;
 
     gap: 30px;
   }
-
 
   .motion02-about-content p {
     font-size:
@@ -8118,18 +6294,6 @@ select {
       );
   }
 
-
-  .motion02-facts {
-    margin-top: 45px;
-
-    grid-template-columns:
-      1fr
-      1fr;
-
-    gap: 18px;
-  }
-
-
   /* GALLERY */
 
   .motion02-gallery {
@@ -8139,7 +6303,6 @@ select {
       70px;
   }
 
-
   .motion02-gallery-grid {
     display: flex;
 
@@ -8147,7 +6310,6 @@ select {
 
     gap: 6px;
   }
-
 
   .motion02-gallery-item,
   .motion02-gallery-item-1,
@@ -8163,7 +6325,6 @@ select {
     aspect-ratio: auto !important;
   }
 
-
   .motion02-gallery-image {
     width: 100% !important;
 
@@ -8171,7 +6332,6 @@ select {
 
     object-fit: contain !important;
   }
-
 
   /* NEXT */
 
@@ -8186,86 +6346,21 @@ select {
    MOTION PROJECT 02 — TEXT SCALE UP
 ========================================================= */
 
-.motion02-page .project-nav,
-.motion02-page .motion02-topbar {
-  min-height: 100px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-
 /* =========================================================
    TOP LEFT — CUONG HOANG
 ========================================================= */
-
-.motion02-page .project-logo,
-.motion02-page .motion02-brand,
-.motion02-page .motion02-top-left {
-  font-size: clamp(40px, 3vw, 64px) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
-  line-height: 1 !important;
-}
 
 /* =========================================================
    TOP CENTER + TOP RIGHT
 ========================================================= */
 
-.motion02-page .project-back,
-.motion02-page .motion02-back,
-.motion02-page .motion02-top-right,
-.motion02-page .motion02-top-center,
-.motion02-page .motion02-top-center span,
-.motion02-page .motion02-top-center small,
-.motion02-page .motion02-top-center p,
-.motion02-page .motion02-top-center div {
-  font-size: clamp(20px, 1.55vw, 30px) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  line-height: 1.1 !important;
-}
-
 /* =========================================================
    ALL SMALL TEXT / NUMBER (KHÔNG PHẢI TITLE CHÍNH)
 ========================================================= */
 
-.motion02-page .project-detail-meta,
-.motion02-page .project-detail-meta span,
-.motion02-page .project-info-label,
-.motion02-page .next-project-label,
-.motion02-page .motion02-kicker,
-.motion02-page .motion02-meta,
-.motion02-page .motion02-meta span,
-.motion02-page .motion02-count,
-.motion02-page .motion02-index,
-.motion02-page .motion02-label,
-.motion02-page .motion02-caption,
-.motion02-page .motion02-role,
-.motion02-page .motion02-year,
-.motion02-page .motion02-small-text,
-.motion02-page .motion02-footer span {
-  font-size: clamp(20px, 1.55vw, 30px) !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  line-height: 1.12 !important;
-}
-
 /* =========================================================
    DESCRIPTION — THU CÒN KHOẢNG 3 DÒNG
 ========================================================= */
-
-.motion02-page .project-info-content,
-.motion02-page .motion02-description-wrap,
-.motion02-page .motion02-about-copy {
-  max-width: 100%;
-}
-
-.motion02-page .project-description,
-.motion02-page .motion02-description {
-  max-width: 34ch !important;
-  font-size: clamp(22px, 1.65vw, 32px) !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.01em !important;
-}
 
 /* nếu muốn ép cứng chỉ hiện đúng 3 dòng thì mở block này ra */
 /*
@@ -8282,83 +6377,14 @@ select {
    KEEP TITLE BIG — KHÔNG SCALE THEO TEXT KHÁC
 ========================================================= */
 
-.motion02-page .project-detail-title,
-.motion02-page .motion02-title,
-.motion02-page .motion02-main-title,
-.motion02-page .featured-title {
-  font-size: inherit;
-}
-
 /* =========================================================
    TABLET
 ========================================================= */
-
-@media (max-width: 900px) {
-  .motion02-page .project-logo,
-  .motion02-page .motion02-brand,
-  .motion02-page .motion02-top-left {
-    font-size: clamp(30px, 4vw, 46px) !important;
-  }
-
-  .motion02-page .project-back,
-  .motion02-page .motion02-back,
-  .motion02-page .motion02-top-right,
-  .motion02-page .motion02-top-center,
-  .motion02-page .motion02-top-center span,
-  .motion02-page .motion02-top-center small,
-  .motion02-page .project-detail-meta,
-  .motion02-page .project-detail-meta span,
-  .motion02-page .project-info-label,
-  .motion02-page .next-project-label,
-  .motion02-page .motion02-kicker,
-  .motion02-page .motion02-meta,
-  .motion02-page .motion02-count,
-  .motion02-page .motion02-label {
-    font-size: clamp(16px, 2vw, 24px) !important;
-  }
-
-  .motion02-page .project-description,
-  .motion02-page .motion02-description {
-    max-width: 32ch !important;
-    font-size: clamp(18px, 1.8vw, 24px) !important;
-  }
-}
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
-  .motion02-page .project-logo,
-  .motion02-page .motion02-brand,
-  .motion02-page .motion02-top-left {
-    font-size: 24px !important;
-  }
-
-  .motion02-page .project-back,
-  .motion02-page .motion02-back,
-  .motion02-page .motion02-top-right,
-  .motion02-page .motion02-top-center,
-  .motion02-page .motion02-top-center span,
-  .motion02-page .motion02-top-center small,
-  .motion02-page .project-detail-meta,
-  .motion02-page .project-detail-meta span,
-  .motion02-page .project-info-label,
-  .motion02-page .next-project-label,
-  .motion02-page .motion02-kicker,
-  .motion02-page .motion02-meta,
-  .motion02-page .motion02-count,
-  .motion02-page .motion02-label {
-    font-size: 12px !important;
-  }
-
-  .motion02-page .project-description,
-  .motion02-page .motion02-description {
-    max-width: 100% !important;
-    font-size: 16px !important;
-    line-height: 1.3 !important;
-  }
-}
 /* =========================================================
    MOTION 02 — MAX TYPE SCALE
 ========================================================= */
@@ -8372,7 +6398,6 @@ select {
   padding: 0 34px;
 }
 
-
 /* CUONG HOANG — TO HẲN */
 
 .motion02-logo {
@@ -8384,7 +6409,6 @@ select {
 
   letter-spacing: -0.025em !important;
 }
-
 
 /* CENTER TOP */
 
@@ -8400,7 +6424,6 @@ select {
   opacity: 1 !important;
 }
 
-
 /* BACK TO WORK */
 
 .motion02-back {
@@ -8415,23 +6438,9 @@ select {
   opacity: 1 !important;
 }
 
-
 /* =========================================================
    HERO META
 ========================================================= */
-
-.motion02-meta {
-  top: 165px !important;
-
-  font-size: clamp(20px, 1.7vw, 32px) !important;
-
-  font-weight: 700 !important;
-
-  line-height: 1 !important;
-
-  letter-spacing: 0.04em !important;
-}
-
 
 /* =========================================================
    MOTION / 02
@@ -8449,21 +6458,9 @@ select {
   letter-spacing: 0.04em !important;
 }
 
-
 /* =========================================================
    ROLE
 ========================================================= */
-
-.motion02-role {
-  font-size: clamp(18px, 1.4vw, 28px) !important;
-
-  font-weight: 700 !important;
-
-  line-height: 1 !important;
-
-  letter-spacing: 0.04em !important;
-}
-
 
 /* =========================================================
    VIEW CIRCLE
@@ -8479,7 +6476,6 @@ select {
 
   letter-spacing: 0.06em !important;
 }
-
 
 /* =========================================================
    SECTION HEADER — 01 / ABOUT / 02 / VISUAL BREAKDOWN
@@ -8499,7 +6495,6 @@ select {
   letter-spacing: 0.035em !important;
 }
 
-
 /* =========================================================
    ABOUT LABEL
 ========================================================= */
@@ -8515,7 +6510,6 @@ select {
 
   opacity: 1 !important;
 }
-
 
 /* =========================================================
    DESCRIPTION — GỌN CÒN ~3 DÒNG
@@ -8542,33 +6536,9 @@ select {
    FACT LABELS
 ========================================================= */
 
-.motion02-facts span {
-  font-size: clamp(18px, 1.35vw, 26px) !important;
-
-  font-weight: 700 !important;
-
-  line-height: 1 !important;
-
-  letter-spacing: 0.04em !important;
-
-  opacity: 0.7 !important;
-}
-
-
 /* =========================================================
    FACT VALUES
 ========================================================= */
-
-.motion02-facts strong {
-  font-size: clamp(22px, 1.8vw, 34px) !important;
-
-  font-weight: 700 !important;
-
-  line-height: 1.05 !important;
-
-  letter-spacing: 0.015em !important;
-}
-
 
 /* =========================================================
    GALLERY NUMBERS
@@ -8591,7 +6561,6 @@ select {
   letter-spacing: 0.04em !important;
 }
 
-
 /* =========================================================
    NEXT PROJECT LABEL
 ========================================================= */
@@ -8609,7 +6578,6 @@ select {
 
   opacity: 1 !important;
 }
-
 
 /* =========================================================
    TABLET
@@ -8633,12 +6601,6 @@ select {
     font-size: 18px !important;
   }
 
-  .motion02-meta {
-    top: 135px !important;
-
-    font-size: 20px !important;
-  }
-
   .motion02-title-label,
   .motion02-section-head {
     font-size: 22px !important;
@@ -8654,16 +6616,7 @@ select {
     font-size: 36px !important;
   }
 
-  .motion02-facts span {
-    font-size: 16px !important;
-  }
-
-  .motion02-facts strong {
-    font-size: 22px !important;
-  }
-
 }
-
 
 /* =========================================================
    MOBILE
@@ -8689,18 +6642,8 @@ select {
     font-size: 12px !important;
   }
 
-  .motion02-meta {
-    top: 105px !important;
-
-    font-size: 12px !important;
-  }
-
   .motion02-title-label {
     font-size: 14px !important;
-  }
-
-  .motion02-role {
-    font-size: 12px !important;
   }
 
   .motion02-view {
@@ -8724,14 +6667,6 @@ select {
     font-size: 28px !important;
 
     line-height: 1.1 !important;
-  }
-
-  .motion02-facts span {
-    font-size: 12px !important;
-  }
-
-  .motion02-facts strong {
-    font-size: 16px !important;
   }
 
   .motion02-gallery-number {
@@ -8788,7 +6723,6 @@ select {
   z-index: 1;
 }
 
-
 /* LOGO LEFT */
 
 .motion02-logo {
@@ -8802,7 +6736,6 @@ select {
   line-height: 1;
   letter-spacing: -0.03em;
 }
-
 
 /* CENTER INFO */
 
@@ -8833,7 +6766,6 @@ select {
   color: rgba(211, 182, 156, 0.72);
 }
 
-
 /* BACK LINK */
 
 .motion02-back {
@@ -8848,38 +6780,9 @@ select {
   white-space: nowrap;
 }
 
-
 /* HERO META */
 
-.motion02-meta {
-  top: 150px !important;
-
-  font-size: clamp(18px, 1.45vw, 26px) !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  letter-spacing: 0.04em !important;
-}
-
-
 /* RIGHT TYPE PANEL */
-
-.motion02-type-wrap {
-  position: absolute;
-
-  top: 130px;
-  right: 0;
-  bottom: 0;
-
-  width: 220px;
-  height: calc(100% - 130px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-}
-
 
 /* MOTION WORD */
 
@@ -8920,15 +6823,6 @@ select {
 
 /* ABOUT SECTION — bỏ hết mục ở tấm 3 */
 
-.motion02-facts,
-.motion02-info-grid,
-.motion02-about-extra,
-.motion02-role-block,
-.motion02-detail-grid {
-  display: none !important;
-}
-
-
 /* nếu section ABOUT đang có khoảng trống vì xoá facts */
 
 .motion02-about {
@@ -8946,7 +6840,6 @@ select {
   line-height: 1.08;
   letter-spacing: -0.035em;
 }
-
 
 /* MOBILE */
 
@@ -8970,17 +6863,6 @@ select {
 
   .motion02-back {
     font-size: 18px;
-  }
-
-  .motion02-meta {
-    top: 128px !important;
-    font-size: 18px !important;
-  }
-
-  .motion02-type-wrap {
-    top: 110px;
-    width: 180px;
-    height: calc(100% - 110px);
   }
 
   .motion02-type-word {
@@ -9014,17 +6896,6 @@ select {
 
   .motion02-back {
     font-size: 11px;
-  }
-
-  .motion02-meta {
-    top: 96px !important;
-    font-size: 11px !important;
-  }
-
-  .motion02-type-wrap {
-    top: 82px;
-    width: 92px;
-    height: calc(100% - 82px);
   }
 
   .motion02-type-word {
@@ -9061,7 +6932,6 @@ select {
 
   text-decoration: none !important;
 }
-
 
 /* NAV LEFT KHÔNG ÉP LOGO XUỐNG DÒNG */
 
@@ -9121,7 +6991,6 @@ select {
     ) !important;
 }
 
-
 /* =========================================================
    CUONG HOANG — TO + DÀY HƠN
 ========================================================= */
@@ -9152,7 +7021,6 @@ select {
     -0.035em !important;
 }
 
-
 /* =========================================================
    MOTION DESIGN — NHỎ HƠN LOGO
 ========================================================= */
@@ -9174,7 +7042,6 @@ select {
   letter-spacing:
     0.025em !important;
 }
-
 
 /* =========================================================
    BACK TO WORK — NHỎ HƠN LOGO
@@ -9262,13 +7129,11 @@ select {
   overflow: visible !important;
 }
 
-
 /* TẮT LỚP ĐEN CŨ NẾU CÒN */
 
 .motion02-nav::before {
   display: none !important;
 }
-
 
 /* =========================================================
    LOGO
@@ -9300,7 +7165,6 @@ select {
     -0.035em !important;
 }
 
-
 /* =========================================================
    CENTER
 ========================================================= */
@@ -9326,7 +7190,6 @@ select {
 
   opacity: 1 !important;
 }
-
 
 /* =========================================================
    BACK TO WORK
@@ -9402,13 +7265,11 @@ select {
     rgba(211, 182, 156, 0.6) !important;
 }
 
-
 /* bỏ lớp nền đen cũ nếu còn */
 
 .motion02-nav::before {
   display: none !important;
 }
-
 
 /* CUONG HOANG */
 
@@ -9434,7 +7295,6 @@ select {
     -0.035em !important;
 }
 
-
 /* MOTION DESIGN */
 
 .motion02-nav-center {
@@ -9458,7 +7318,6 @@ select {
 
   opacity: 1 !important;
 }
-
 
 /* BACK TO WORK */
 
@@ -9532,7 +7391,6 @@ select {
    MOTION 02 — TYPE + RED PAGE FINAL
 ========================================================= */
 
-
 /* =========================================================
    PAGE BACKGROUND = RED
 ========================================================= */
@@ -9547,7 +7405,6 @@ select {
 .motion02-next {
   background: #820000 !important;
 }
-
 
 /* =========================================================
    MOTION WORD — KHÔNG LAN LÊN HEADLINE
@@ -9598,7 +7455,6 @@ select {
   pointer-events: none !important;
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -9606,7 +7462,6 @@ select {
 .motion02-hero {
   background: #820000 !important;
 }
-
 
 /* =========================================================
    MOBILE
@@ -9660,13 +7515,11 @@ select {
 ========================================================= */
 
 .motion02-project,
-.motion02-showcase,
 .motion02-about,
 .motion02-gallery,
 .motion02-next {
   background: #820000 !important;
 }
-
 
 /* HEADER CỦA TỪNG SECTION */
 
@@ -9680,13 +7533,7 @@ select {
     rgba(211, 182, 156, 0.25) !important;
 }
 
-
 /* KHUNG GIF / MOTION */
-
-.motion02-video-frame {
-  background: #820000 !important;
-}
-
 
 /* GALLERY ITEM
    nếu GIF có transparency thì phía sau cũng là đỏ */
@@ -9695,7 +7542,6 @@ select {
   background: #820000 !important;
 }
 
-
 /* ABOUT */
 
 .motion02-about-grid,
@@ -9703,13 +7549,11 @@ select {
   background: transparent !important;
 }
 
-
 /* NEXT */
 
 .motion02-next {
   background: #820000 !important;
 }
-
 
 /* BODY KHÔNG LỘ NỀN ĐEN Ở KHE */
 
@@ -9722,7 +7566,6 @@ body:has(.motion02-project) {
    =========================================================
 ========================================================= */
 
-
 /* =========================================================
    PAGE BASE
 ========================================================= */
@@ -9731,7 +7574,6 @@ body:has(.motion02-project) {
   background: #820000 !important;
   color: #d3b69c !important;
 }
-
 
 /* =========================================================
    HERO
@@ -9745,7 +7587,6 @@ body:has(.motion02-project) {
   overflow: hidden !important;
 }
 
-
 /* =========================================================
    HERO BACKGROUND IMAGE
 ========================================================= */
@@ -9757,7 +7598,6 @@ body:has(.motion02-project) {
 
   z-index: 0;
 }
-
 
 .motion02-background-image {
   position: absolute;
@@ -9777,7 +7617,6 @@ body:has(.motion02-project) {
 
   transform: scale(1.025);
 }
-
 
 /* =========================================================
    RED TINT OVER BACKGROUND
@@ -9803,7 +7642,6 @@ body:has(.motion02-project) {
 
   mix-blend-mode: multiply;
 }
-
 
 /* =========================================================
    HERO → RED TRANSITION
@@ -9849,7 +7687,6 @@ body:has(.motion02-project) {
     );
 }
 
-
 /* =========================================================
    HERO CONTENT LUÔN NẰM TRÊN GRADIENT
 ========================================================= */
@@ -9857,109 +7694,30 @@ body:has(.motion02-project) {
 .motion02-preview,
 .motion02-view,
 .motion02-title-wrap,
-.motion02-type,
-.motion02-role,
-.motion02-meta {
+.motion02-type{
   position: absolute;
 
   z-index: 6;
 }
-
 
 .motion02-view,
 .motion02-title-wrap {
   z-index: 9;
 }
 
-
 /* =========================================================
    FIRST SECTION AFTER HERO
 ========================================================= */
 
-.motion02-showcase {
-  position: relative;
-
-  width: 100%;
-
-  margin: 0 !important;
-
-  padding:
-    90px
-    40px
-    110px !important;
-
-  background: #820000 !important;
-
-  color: #d3b69c !important;
-
-  z-index: 4;
-}
-
-
 /* thêm overlap nhẹ để không có đường cắt */
-
-.motion02-showcase::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  right: 0;
-
-  top: -80px;
-
-  width: 100%;
-  height: 80px;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      to bottom,
-
-      rgba(130, 0, 0, 0) 0%,
-
-      rgba(130, 0, 0, 0.28) 28%,
-
-      rgba(130, 0, 0, 0.65) 65%,
-
-      #820000 100%
-    );
-}
-
 
 /* =========================================================
    SHOWCASE HEADER
 ========================================================= */
 
-.motion02-showcase
-.motion02-section-head {
-  position: relative;
-
-  z-index: 2;
-
-  background: transparent !important;
-
-  color: #d3b69c !important;
-
-  border-bottom:
-    1px solid
-    rgba(211, 182, 156, 0.25) !important;
-}
-
-
 /* =========================================================
    MAIN MOTION FRAME
 ========================================================= */
-
-.motion02-video-frame {
-  position: relative;
-
-  z-index: 2;
-
-  background: #820000 !important;
-}
-
 
 /* =========================================================
    ALL SECTIONS BELOW
@@ -9973,7 +7731,6 @@ body:has(.motion02-project) {
   color: #d3b69c !important;
 }
 
-
 /* =========================================================
    GALLERY
 ========================================================= */
@@ -9982,7 +7739,6 @@ body:has(.motion02-project) {
   background: #820000 !important;
 }
 
-
 /* =========================================================
    BODY FALLBACK
 ========================================================= */
@@ -9990,7 +7746,6 @@ body:has(.motion02-project) {
 body:has(.motion02-project) {
   background: #820000 !important;
 }
-
 
 /* =========================================================
    TABLET
@@ -10002,21 +7757,7 @@ body:has(.motion02-project) {
     height: 220px;
   }
 
-  .motion02-showcase {
-    padding:
-      80px
-      28px
-      95px !important;
-  }
-
-  .motion02-showcase::before {
-    top: -65px;
-
-    height: 65px;
-  }
-
 }
-
 
 /* =========================================================
    MOBILE
@@ -10028,26 +7769,12 @@ body:has(.motion02-project) {
     height: 180px;
   }
 
-  .motion02-showcase {
-    padding:
-      65px
-      18px
-      80px !important;
-  }
-
-  .motion02-showcase::before {
-    top: -50px;
-
-    height: 50px;
-  }
-
 }
 /* =========================================================
    =========================================================
    MOTION PROJECT 02 — NAV + HERO FINAL
    =========================================================
 ========================================================= */
-
 
 /* =========================================================
    PAGE
@@ -10062,7 +7789,6 @@ body:has(.motion02-project) {
 
   overflow-x: hidden;
 }
-
 
 /* =========================================================
    FIXED GLASS NAV / HEADLINE
@@ -10124,13 +7850,11 @@ body:has(.motion02-project) {
   overflow: hidden;
 }
 
-
 /* TẮT LỚP CŨ NẾU CÒN */
 
 .motion02-nav::before {
   display: none !important;
 }
-
 
 /* =========================================================
    CUONG HOANG
@@ -10165,7 +7889,6 @@ body:has(.motion02-project) {
     -0.035em !important;
 }
 
-
 /* =========================================================
    MOTION DESIGN — CENTER
 ========================================================= */
@@ -10191,7 +7914,6 @@ body:has(.motion02-project) {
 
   opacity: 1 !important;
 }
-
 
 /* =========================================================
    BACK TO WORK
@@ -10221,7 +7943,6 @@ body:has(.motion02-project) {
     0.025em !important;
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -10239,7 +7960,6 @@ body:has(.motion02-project) {
   overflow: hidden !important;
 }
 
-
 /* =========================================================
    BACKGROUND
 ========================================================= */
@@ -10251,7 +7971,6 @@ body:has(.motion02-project) {
 
   z-index: 0;
 }
-
 
 .motion02-background-image {
   position: absolute;
@@ -10274,7 +7993,6 @@ body:has(.motion02-project) {
   transform:
     scale(1.025);
 }
-
 
 /* =========================================================
    RED TINT
@@ -10304,7 +8022,6 @@ body:has(.motion02-project) {
 
   mix-blend-mode: multiply;
 }
-
 
 /* =========================================================
    HERO → RED BLEND
@@ -10346,45 +8063,9 @@ body:has(.motion02-project) {
     );
 }
 
-
 /* =========================================================
    META
 ========================================================= */
-
-.motion02-meta {
-  position: absolute;
-
-  top: 155px !important;
-
-  left: 38px;
-  right: 38px;
-
-  z-index: 7;
-
-  display: flex;
-
-  align-items: flex-start;
-  justify-content: space-between;
-
-  padding-right: 37%;
-
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      18px,
-      1.45vw,
-      26px
-    ) !important;
-
-  font-weight: 500;
-
-  line-height: 1.05;
-
-  letter-spacing:
-    0.025em;
-}
-
 
 /* =========================================================
    PREVIEW GIF 01
@@ -10415,7 +8096,6 @@ body:has(.motion02-project) {
     rgba(0, 0, 0, 0.35);
 }
 
-
 .motion02-preview-image {
   position: absolute !important;
 
@@ -10442,7 +8122,6 @@ body:has(.motion02-project) {
     none !important;
 }
 
-
 .motion02-preview:hover
 .motion02-preview-image {
   transform:
@@ -10451,7 +8130,6 @@ body:has(.motion02-project) {
   scale:
     1 !important;
 }
-
 
 /* =========================================================
    VIEW BUTTON
@@ -10509,7 +8187,6 @@ body:has(.motion02-project) {
     color 0.35s ease;
 }
 
-
 .motion02-view:hover {
   transform:
     translate(
@@ -10525,7 +8202,6 @@ body:has(.motion02-project) {
     #820000;
 }
 
-
 /* =========================================================
    MAIN TITLE
 ========================================================= */
@@ -10540,7 +8216,6 @@ body:has(.motion02-project) {
 
   z-index: 8;
 }
-
 
 .motion02-title-label {
   display: block;
@@ -10564,7 +8239,6 @@ body:has(.motion02-project) {
     0.035em;
 }
 
-
 .motion02-title-wrap h1 {
   color: #d3b69c;
 
@@ -10585,7 +8259,6 @@ body:has(.motion02-project) {
   text-transform:
     uppercase;
 }
-
 
 /* =========================================================
    RIGHT VERTICAL MOTION
@@ -10620,7 +8293,6 @@ body:has(.motion02-project) {
 
   pointer-events: none;
 }
-
 
 /* CHỮ MOTION */
 
@@ -10659,45 +8331,13 @@ body:has(.motion02-project) {
     -0.075em;
 }
 
-
 /* =========================================================
    ROLE
 ========================================================= */
 
-.motion02-role {
-  position: absolute;
-
-  right: 38px;
-  bottom: 24px;
-
-  z-index: 8;
-
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      18px,
-      1.45vw,
-      26px
-    );
-
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing:
-    0.035em;
-}
-
-
 /* =========================================================
    NO GRID LINES
 ========================================================= */
-
-.motion02-grid-lines {
-  display: none !important;
-}
-
 
 /* =========================================================
    TABLET
@@ -10713,43 +8353,26 @@ body:has(.motion02-project) {
       24px !important;
   }
 
-
   .motion02-logo {
     font-size:
       30px !important;
   }
-
 
   .motion02-nav-center {
     font-size:
       18px !important;
   }
 
-
   .motion02-back {
     font-size:
       16px !important;
   }
-
-
-  .motion02-meta {
-    top:
-      130px !important;
-
-    left: 28px;
-    right: 28px;
-
-    font-size:
-      16px !important;
-  }
-
 
   .motion02-preview {
     left: 28px;
 
     width: 38%;
   }
-
 
   .motion02-view {
     width: 86px;
@@ -10758,7 +8381,6 @@ body:has(.motion02-project) {
     font-size:
       14px;
   }
-
 
   .motion02-type {
     top:
@@ -10780,7 +8402,6 @@ body:has(.motion02-project) {
       150px;
   }
 
-
   .motion02-type-word {
     font-size:
       clamp(
@@ -10790,16 +8411,7 @@ body:has(.motion02-project) {
       );
   }
 
-
-  .motion02-role {
-    right: 28px;
-
-    font-size:
-      16px;
-  }
-
 }
-
 
 /* =========================================================
    MOBILE
@@ -10819,42 +8431,20 @@ body:has(.motion02-project) {
       12px !important;
   }
 
-
   .motion02-logo {
     font-size:
       20px !important;
   }
-
 
   .motion02-nav-center {
     font-size:
       11px !important;
   }
 
-
   .motion02-back {
     font-size:
       10px !important;
   }
-
-
-  .motion02-meta {
-    top:
-      100px !important;
-
-    left:
-      18px;
-
-    right:
-      18px;
-
-    padding-right:
-      25%;
-
-    font-size:
-      11px !important;
-  }
-
 
   .motion02-preview {
     left:
@@ -10870,7 +8460,6 @@ body:has(.motion02-project) {
       none;
   }
 
-
   .motion02-view {
     left:
       58%;
@@ -10885,7 +8474,6 @@ body:has(.motion02-project) {
       10px;
   }
 
-
   .motion02-title-wrap {
     left:
       18px;
@@ -10897,12 +8485,10 @@ body:has(.motion02-project) {
       68%;
   }
 
-
   .motion02-title-label {
     font-size:
       13px;
   }
-
 
   .motion02-title-wrap h1 {
     font-size:
@@ -10912,7 +8498,6 @@ body:has(.motion02-project) {
         68px
       );
   }
-
 
   .motion02-type {
     top:
@@ -10934,7 +8519,6 @@ body:has(.motion02-project) {
       100px;
   }
 
-
   .motion02-type-word {
     font-size:
       clamp(
@@ -10946,13 +8530,6 @@ body:has(.motion02-project) {
     line-height:
       0.82;
   }
-
-
-  .motion02-role {
-    display:
-      none;
-  }
-
 
   .motion02-hero::after {
     height:
@@ -11041,7 +8618,6 @@ body:has(.motion02-project) {
   column-gap: 60px !important;
 }
 
-
 .motion02-about-content {
   width: 100% !important;
 
@@ -11049,7 +8625,6 @@ body:has(.motion02-project) {
 
   min-width: 0 !important;
 }
-
 
 .motion02-about-content p {
   width: 100% !important;
@@ -11070,7 +8645,6 @@ body:has(.motion02-project) {
 
   text-align: left !important;
 }
-
 
 .motion02-about-first-line {
   display: inline-block !important;
@@ -11095,7 +8669,6 @@ body:has(.motion02-project) {
   white-space: nowrap !important;
 }
 
-
 /* MOTION GRAPHICS — to + dày nhẹ */
 .editorial-project-bottom > div > span {
   margin-top: 10px !important;
@@ -11107,7 +8680,6 @@ body:has(.motion02-project) {
 
   letter-spacing: 0.02em !important;
 }
-
 
 /* VIEW — vòng tròn lớn x3 */
 .editorial-project-play {
@@ -11123,7 +8695,6 @@ body:has(.motion02-project) {
   border: 1px solid #d3b69c !important;
   border-radius: 50% !important;
 }
-
 
 .editorial-project-play-text {
   font-size: 14px !important;
@@ -11159,44 +8730,11 @@ body:has(.motion02-project) {
 }
 /* WORK FILTER — BIG */
 
-.editorial-filter {
-  gap: 56px !important;
-}
-
-.editorial-filter button {
-  font-size: clamp(
-    20px,
-    1.6vw,
-    30px
-  ) !important;
-
-  font-weight: 600 !important;
-
-  letter-spacing: 0.06em !important;
-
-  padding-bottom: 10px !important;
-}
-
-.editorial-filter button::after {
-  height: 2px !important;
-}
 /* =========================================================
    FILTER + CATEGORY META TUNING
 ========================================================= */
 
 /* ALL / FILM / MOTION / SHORT-FORM / PHOTOGRAPHY */
-.editorial-filter button {
-  font-size: clamp(
-    30px,
-    2.25vw,
-    42px
-  ) !important;
-
-  font-weight: 750 !important;
-
-  letter-spacing: 0.035em !important;
-}
-
 
 /* chữ note bên phải: STORIES FOR A WIDER TOMORROW */
 .editorial-category-right {
@@ -11206,7 +8744,6 @@ body:has(.motion02-project) {
 
   letter-spacing: 0.06em !important;
 }
-
 
 /* số 01 bên phải */
 .editorial-category-right span:last-child {
@@ -11218,754 +8755,56 @@ body:has(.motion02-project) {
    HERO — LAYOUT D
 ========================================================= */
 
-.hero-layout-d {
-  position: relative;
-
-  width: 100%;
-  min-height: 100vh;
-
-  padding:
-    58px
-    5vw
-    24px;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 40%,
-      rgba(180, 0, 0, 0.18),
-      transparent 55%
-    ),
-    #820000;
-
-  display: block;
-}
-
-
 /* TOP META */
-
-.hero-layout-d-meta {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1fr
-    1fr;
-
-  align-items: center;
-
-  position: relative;
-
-  z-index: 5;
-
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      10px,
-      0.85vw,
-      15px
-    );
-
-  font-weight: 500;
-
-  letter-spacing: 0.18em;
-
-  opacity: 0.9;
-}
-
-
-.hero-layout-d-meta span:nth-child(2) {
-  text-align: center;
-}
-
-
-.hero-layout-d-meta span:nth-child(3) {
-  text-align: right;
-}
-
 
 /* =========================================================
    MAIN TITLE
 ========================================================= */
 
-.hero-layout-d-title {
-  position: relative;
-
-  width: 100%;
-
-  margin-top:
-    clamp(
-      60px,
-      7vh,
-      100px
-    );
-
-  color: #d3b69c;
-
-  font-weight: 800;
-
-  line-height: 0.76;
-
-  letter-spacing: -0.07em;
-
-  text-transform: uppercase;
-}
-
-
-.hero-layout-d-line {
-  position: relative;
-
-  width: max-content;
-
-  z-index: 3;
-
-  font-size:
-    clamp(
-      100px,
-      12vw,
-      205px
-    );
-}
-
-
-.hero-layout-d-media {
-  margin-left: 0;
-}
-
-
-.hero-layout-d-motion {
-  margin-left: 0;
-}
-
-
-.hero-layout-d-designer {
-  margin-left: 12vw;
-}
-
-
 /* =========================================================
    GHOST / LAYERED TYPE
 ========================================================= */
-
-.hero-layout-d-ghost {
-  position: absolute;
-
-  z-index: 1;
-
-  pointer-events: none;
-
-  user-select: none;
-
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      100px,
-      12vw,
-      205px
-    );
-
-  font-weight: 800;
-
-  line-height: 0.76;
-
-  letter-spacing: -0.07em;
-
-  opacity: 0.11;
-
-  text-transform: uppercase;
-}
-
-
-.hero-layout-d-ghost-1 {
-  left: 0;
-
-  top: 1.52em;
-}
-
-
-.hero-layout-d-ghost-2 {
-  left: 12vw;
-
-  top: 2.3em;
-
-  opacity: 0.08;
-}
-
 
 /* =========================================================
    SELECTED WORK — LAYOUT D
 ========================================================= */
 
-.editorial-work-layout-d {
-  position: relative;
-
-  width: 100%;
-
-  padding-top: 0;
-
-  background: #820000;
-}
-
-
-.selected-work-layout-d {
-  width: calc(100% - 10vw);
-
-  margin: 0 auto;
-
-  min-height: 105px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  border-top:
-    1px solid
-    rgba(211, 182, 156, 0.55);
-
-  border-bottom:
-    1px solid
-    rgba(211, 182, 156, 0.55);
-}
-
-
-.selected-work-layout-d h1 {
-  margin: 0;
-
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      32px,
-      3vw,
-      52px
-    );
-
-  font-weight: 750;
-
-  line-height: 1;
-
-  letter-spacing: -0.04em;
-}
-
-
-.selected-work-layout-d > span {
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      20px,
-      1.6vw,
-      30px
-    );
-
-  font-weight: 500;
-
-  letter-spacing: -0.03em;
-}
-
-
 /* =========================================================
    FILTER — LAYOUT D
 ========================================================= */
-
-.editorial-filter-layout-d {
-  width: calc(100% - 10vw);
-
-  margin: 0 auto;
-
-  padding:
-    55px
-    0
-    80px;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-start;
-
-  gap: 40px;
-}
-
-
-.editorial-filter-layout-d button {
-  position: relative;
-
-  padding:
-    0
-    0
-    14px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #d3b69c;
-
-  font-family: inherit;
-
-  font-size:
-    clamp(
-      23px,
-      2vw,
-      36px
-    );
-
-  font-weight: 700;
-
-  line-height: 1;
-
-  letter-spacing: 0.015em;
-
-  opacity: 0.38;
-
-  cursor: pointer;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-
-.editorial-filter-layout-d button:hover {
-  opacity: 0.75;
-
-  transform: translateY(-2px);
-}
-
-
-.editorial-filter-layout-d button.is-active {
-  opacity: 1;
-
-  font-weight: 800;
-}
-
-
-.editorial-filter-layout-d button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 3px;
-
-  background: #d3b69c;
-
-  transform: scaleX(0);
-
-  transform-origin: right;
-
-  transition:
-    transform
-    0.4s
-    cubic-bezier(
-      0.16,
-      1,
-      0.3,
-      1
-    );
-}
-
-
-.editorial-filter-layout-d button.is-active::after {
-  transform: scaleX(1);
-
-  transform-origin: left;
-}
-
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
-
-  .hero-layout-d {
-    min-height: 82vh;
-
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-
-  .hero-layout-d-line,
-  .hero-layout-d-ghost {
-    font-size:
-      clamp(
-        80px,
-        13vw,
-        150px
-      );
-  }
-
-
-  .hero-layout-d-designer,
-  .hero-layout-d-ghost-2 {
-    margin-left: 8vw;
-  }
-
-
-  .selected-work-layout-d,
-  .editorial-filter-layout-d {
-    width:
-      calc(
-        100% - 64px
-      );
-  }
-
-
-  .editorial-filter-layout-d {
-    flex-wrap: wrap;
-
-    justify-content: flex-start;
-
-    column-gap: 48px;
-    row-gap: 28px;
-  }
-
-}
-
-
 /* =========================================================
    MOBILE
 ========================================================= */
-
-@media (max-width: 600px) {
-
-  .hero-layout-d {
-    min-height: 70svh;
-
-    padding:
-      32px
-      20px;
-  }
-
-
-  .hero-layout-d-meta {
-    font-size: 7px;
-
-    letter-spacing: 0.12em;
-  }
-
-
-  .hero-layout-d-title {
-    margin-top: 75px;
-  }
-
-
-  .hero-layout-d-line,
-  .hero-layout-d-ghost {
-    font-size:
-      clamp(
-        55px,
-        17vw,
-        100px
-      );
-  }
-
-
-  .hero-layout-d-designer {
-    margin-left: 8vw;
-  }
-
-
-  .hero-layout-d-ghost-1 {
-    top: 1.55em;
-  }
-
-
-  .hero-layout-d-ghost-2 {
-    left: 8vw;
-
-    top: 2.35em;
-  }
-
-
-  .selected-work-layout-d {
-    width:
-      calc(
-        100% - 40px
-      );
-
-    min-height: 80px;
-  }
-
-
-  .selected-work-layout-d h1 {
-    font-size:
-      clamp(
-        24px,
-        7vw,
-        36px
-      );
-  }
-
-
-  .selected-work-layout-d > span {
-    font-size: 15px;
-  }
-
-
-  .editorial-filter-layout-d {
-    width:
-      calc(
-        100% - 40px
-      );
-
-    padding:
-      38px
-      0
-      60px;
-
-    display: grid;
-
-    grid-template-columns:
-      1fr
-      1fr;
-
-    gap:
-      28px
-      20px;
-  }
-
-
-  .editorial-filter-layout-d button {
-    width: max-content;
-
-    font-size: 19px;
-  }
-
-}
 
 /* =========================================================
    WORK ART FILTER — CENTERED / TIGHT FINAL
 ========================================================= */
 
-.work-art-filter {
-  position: relative !important;
-  left: 50% !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-wrap: nowrap !important;
-
-  width: fit-content !important;
-  max-width: none !important;
-
-  margin: 0 !important;
-  padding-top: 58px !important;
-
-  gap: 28px !important;
-
-  transform: translateX(-50%) !important;
-
-  grid-template-columns: none !important;
-}
-
-.work-art-filter button {
-  flex: 0 0 auto !important;
-
-  width: max-content !important;
-  min-width: max-content !important;
-
-  margin: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-
-  white-space: nowrap !important;
-
-  justify-self: auto !important;
-}
-
-@media (max-width: 900px) {
-  .work-art-filter {
-    left: auto !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-
-    gap: 18px 24px !important;
-
-    transform: none !important;
-  }
-}
 /* =========================================================
    WORK FILTER — FIXED SPACING
 ========================================================= */
 
-.work-final-filter {
-  width: max-content;
-  max-width: 100%;
-
-  margin: 0 auto;
-  padding-top: 36px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 24px;
-
-  flex-wrap: nowrap;
-}
-
-
 /* TỪ FILM TRỞ ĐI */
-
-.work-final-filter-item {
-  display: flex;
-  align-items: center;
-
-  gap: 24px;
-
-  margin: 0;
-}
-
 
 /* BUTTON */
 
-.work-final-filter button {
-  position: relative;
-
-  flex: 0 0 auto;
-
-  width: max-content;
-
-  margin: 0;
-  padding: 0 0 10px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #d3b69c;
-
-  font-family: inherit;
-
-  font-size: clamp(20px, 1.55vw, 28px);
-
-  font-weight: 650;
-
-  line-height: 1;
-
-  letter-spacing: 0.025em;
-
-  opacity: 0.42;
-
-  cursor: pointer;
-}
-
-
 /* BỎ MARGIN CŨ CỦA ALL */
-
-.work-final-filter > button {
-  margin: 0 !important;
-}
-
 
 /* DIVIDER */
 
-.work-final-divider {
-  margin: 0 !important;
-
-  display: block;
-
-  color: #d3b69c;
-
-  font-size: 24px;
-  font-weight: 300;
-
-  line-height: 1;
-
-  opacity: 0.35;
-
-  transform: translateY(-4px);
-}
-
-
 /* ACTIVE */
-
-.work-final-filter button.is-active {
-  opacity: 1;
-
-  font-weight: 800;
-}
-
 
 /* UNDERLINE */
 
-.work-final-filter button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background: #d3b69c;
-
-  transform: scaleX(0);
-
-  transform-origin: right;
-}
-
-
-.work-final-filter button.is-active::after {
-  transform: scaleX(1);
-
-  transform-origin: left;
-}
 /* =========================================
    EDITORIAL FILTER — CENTER + TIGHT FINAL
 ========================================= */
 
-.editorial-filter {
-  display: flex !important;
-
-  width: max-content !important;
-  max-width: calc(100% - 40px) !important;
-
-  margin-left: auto !important;
-  margin-right: auto !important;
-
-  min-height: 0 !important;
-
-  justify-content: center !important;
-  align-items: center !important;
-
-  flex-wrap: nowrap !important;
-
-  gap: 18px !important;
-}
-
-.editorial-filter button {
-  flex: 0 0 auto !important;
-
-  width: max-content !important;
-  min-width: 0 !important;
-
-  margin: 0 !important;
-
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
 /* =========================================================
    SELECTED WORK — FINAL OPTION
 ========================================================= */
@@ -11982,7 +8821,6 @@ body:has(.motion02-project) {
 
   color: #d3b69c;
 }
-
 
 /* =========================================================
    TITLE ROW
@@ -12004,7 +8842,6 @@ body:has(.motion02-project) {
     rgba(211, 182, 156, 0.42);
 }
 
-
 .work-final-title-row h1 {
   margin: 0;
 
@@ -12024,7 +8861,6 @@ body:has(.motion02-project) {
   color: #d3b69c;
 }
 
-
 .work-final-title-row > span {
   font-size:
     clamp(
@@ -12042,163 +8878,15 @@ body:has(.motion02-project) {
   color: #d3b69c;
 }
 
-
 /* =========================================================
    FILTER
 ========================================================= */
 
-.work-final-filter {
-  width: max-content;
-
-  max-width: 100%;
-
-  margin:
-    0
-    auto;
-
-  padding-top: 36px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 0;
-
-  flex-wrap: nowrap;
-}
-
-
-.work-final-filter-item {
-  display: flex;
-
-  align-items: center;
-
-  gap: 28px;
-}
-
-
-.work-final-filter button {
-  position: relative;
-
-  flex: 0 0 auto;
-
-  width: max-content;
-
-  margin: 0;
-
-  padding:
-    0
-    0
-    12px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #d3b69c;
-
-  font-family: inherit;
-
-  font-size:
-    clamp(
-      20px,
-      1.55vw,
-      28px
-    );
-
-  font-weight: 600;
-
-  line-height: 1;
-
-  letter-spacing: 0.04em;
-
-  opacity: 0.48;
-
-  cursor: pointer;
-
-  transition:
-    opacity 0.25s ease;
-}
-
-
-.work-final-filter > button {
-  margin-right: 28px;
-}
-
-
-.work-final-filter button:hover {
-  opacity: 0.8;
-}
-
-
-.work-final-filter button.is-active {
-  opacity: 1;
-
-  font-weight: 750;
-}
-
-
 /* UNDERLINE ACTIVE */
-
-.work-final-filter button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background: #d3b69c;
-
-  transform: scaleX(0);
-
-  transform-origin: right;
-
-  transition:
-    transform 0.35s ease;
-}
-
-
-.work-final-filter button.is-active::after {
-  transform: scaleX(1);
-
-  transform-origin: left;
-}
-
 
 /* =========================================================
    DIVIDER |
 ========================================================= */
-
-.work-final-divider {
-  display: block;
-
-  color: #d3b69c;
-
-  font-size:
-    clamp(
-      22px,
-      1.7vw,
-      30px
-    );
-
-  font-weight: 300;
-
-  line-height: 1;
-
-  opacity: 0.35;
-
-  margin-right: 28px;
-
-  transform:
-    translateY(-5px);
-}
-
 
 /* =========================================================
    CATEGORY HEADER
@@ -12226,7 +8914,6 @@ body:has(.motion02-project) {
   color: #d3b69c !important;
 }
 
-
 .editorial-category-title {
   display: flex !important;
 
@@ -12234,7 +8921,6 @@ body:has(.motion02-project) {
 
   gap: 18px !important;
 }
-
 
 .editorial-category-title h2 {
   margin: 0 !important;
@@ -12255,7 +8941,6 @@ body:has(.motion02-project) {
   color: #d3b69c !important;
 }
 
-
 .editorial-category-title span {
   padding-bottom: 5px;
 
@@ -12270,7 +8955,6 @@ body:has(.motion02-project) {
 
   color: #d3b69c !important;
 }
-
 
 .editorial-category-right {
   padding-bottom: 5px;
@@ -12295,7 +8979,6 @@ body:has(.motion02-project) {
   letter-spacing: 0.08em !important;
 }
 
-
 /* =========================================================
    CARD — LAST MOCKUP LOOK
 ========================================================= */
@@ -12303,7 +8986,6 @@ body:has(.motion02-project) {
 .editorial-project {
   overflow: hidden;
 }
-
 
 .film-hero {
   margin:
@@ -12320,7 +9002,6 @@ body:has(.motion02-project) {
   overflow: hidden;
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -12333,35 +9014,11 @@ body:has(.motion02-project) {
       28px;
   }
 
-
-  .work-final-filter {
-    flex-wrap: wrap;
-
-    row-gap: 24px;
-  }
-
-
-  .work-final-filter button {
-    font-size: 18px;
-  }
-
-
-  .work-final-filter-item {
-    gap: 18px;
-  }
-
-
-  .work-final-divider {
-    margin-right: 18px;
-  }
-
-
   .editorial-category-header {
     padding-left: 28px !important;
 
     padding-right: 28px !important;
   }
-
 
   .film-hero {
     margin-left: 28px;
@@ -12376,7 +9033,6 @@ body:has(.motion02-project) {
 
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -12389,11 +9045,9 @@ body:has(.motion02-project) {
       20px;
   }
 
-
   .work-final-title-row {
     padding-bottom: 22px;
   }
-
 
   .work-final-title-row h1 {
     font-size:
@@ -12404,48 +9058,9 @@ body:has(.motion02-project) {
       );
   }
 
-
   .work-final-title-row > span {
     font-size: 16px;
   }
-
-
-  .work-final-filter {
-    width: 100%;
-
-    justify-content: flex-start;
-
-    flex-wrap: wrap;
-
-    gap:
-      18px
-      0;
-  }
-
-
-  .work-final-filter button {
-    font-size: 15px;
-
-    padding-bottom: 7px;
-  }
-
-
-  .work-final-filter > button {
-    margin-right: 16px;
-  }
-
-
-  .work-final-filter-item {
-    gap: 12px;
-  }
-
-
-  .work-final-divider {
-    margin-right: 12px;
-
-    font-size: 17px;
-  }
-
 
   .editorial-category-header {
     min-height: 80px !important;
@@ -12456,7 +9071,6 @@ body:has(.motion02-project) {
       14px !important;
   }
 
-
   .editorial-category-title h2 {
     font-size:
       clamp(
@@ -12466,12 +9080,10 @@ body:has(.motion02-project) {
       ) !important;
   }
 
-
   .editorial-category-right
   span:first-child {
     display: none;
   }
-
 
   .film-hero {
     margin-left: 20px;
@@ -12491,121 +9103,14 @@ body:has(.motion02-project) {
    WORK FILTER — FINAL CLEAN
 ========================================= */
 
-.work-final-filter {
-  width: max-content;
-  max-width: 100%;
-
-  margin: 0 auto;
-  padding-top: 36px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 0;
-}
-
-
-.work-final-filter button {
-  position: relative;
-
-  width: max-content;
-  flex: 0 0 auto;
-
-  margin: 0;
-
-  padding:
-    0
-    26px
-    11px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #d3b69c;
-
-  font-family: inherit;
-
-  font-size: clamp(20px, 1.55vw, 28px);
-
-  font-weight: 650;
-
-  line-height: 1;
-
-  letter-spacing: 0.025em;
-
-  opacity: 0.42;
-
-  cursor: pointer;
-}
-
-
 /* bỏ padding ngoài cùng */
-
-.work-final-filter button:first-child {
-  padding-left: 0;
-}
-
-.work-final-filter button:last-child {
-  padding-right: 0;
-}
-
 
 /* DẤU GẠCH DỌC GIỮA CÁC MỤC */
 
-.work-final-filter button + button::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  top: 45%;
-
-  width: 1px;
-  height: 22px;
-
-  background: rgba(211, 182, 156, 0.42);
-
-  transform: translateY(-50%);
-}
-
-
 /* ACTIVE */
-
-.work-final-filter button.is-active {
-  opacity: 1;
-  font-weight: 800;
-}
-
 
 /* GẠCH CHÂN ACTIVE */
 
-.work-final-filter button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 26px;
-  right: 26px;
-  bottom: 0;
-
-  height: 2px;
-
-  background: #d3b69c;
-
-  transform: scaleX(0);
-}
-
-
-.work-final-filter button:first-child::after {
-  left: 0;
-}
-
-
-.work-final-filter button.is-active::after {
-  transform: scaleX(1);
-}
 /* =========================================================
    WORK FILTER — HOVER EFFECT
 ========================================================= */
@@ -12617,7 +9122,6 @@ body:has(.motion02-project) {
     letter-spacing 0.3s ease !important;
 }
 
-
 /* TEXT HOVER */
 
 .work-nav-inline-final button:hover {
@@ -12627,7 +9131,6 @@ body:has(.motion02-project) {
 
   letter-spacing: 0.055em !important;
 }
-
 
 /* UNDERLINE */
 
@@ -12653,7 +9156,6 @@ body:has(.motion02-project) {
   transform-origin: left;
 }
 
-
 /* ACTIVE — luôn giữ underline */
 
 .work-nav-inline-final button:has(
@@ -12661,7 +9163,6 @@ body:has(.motion02-project) {
 ) > span:last-child {
   transform: scaleX(1);
 }
-
 
 /* =========================================================
    HOMEPAGE PLAY ICON — TRUE CENTERED TRIANGLE
@@ -12714,31 +9215,6 @@ body:has(.motion02-project) {
    FILM DETAIL — SHARED 6 IMAGE GALLERY
 ========================================================= */
 
-.aperture-gallery-4 {
-  grid-column: 1 / 7;
-  aspect-ratio: 16 / 9;
-  margin-top: 40px;
-}
-
-.aperture-gallery-5 {
-  grid-column: 7 / 13;
-  aspect-ratio: 16 / 9;
-  margin-top: 40px;
-}
-
-.aperture-gallery-6 {
-  grid-column: 1 / 13;
-  aspect-ratio: 16 / 9;
-  margin-top: 40px;
-}
-
-.aperture-gallery-4 .aperture-gallery-image,
-.aperture-gallery-5 .aperture-gallery-image,
-.aperture-gallery-6 .aperture-gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 /* =========================================================
    FILM BREAKDOWN — SHARED
 ========================================================= */
@@ -12753,7 +9229,6 @@ body:has(.motion02-project) {
 
   color: #e8d0b6;
 }
-
 
 /* =========================================================
    HEADER
@@ -12784,66 +9259,9 @@ body:has(.motion02-project) {
   text-transform: uppercase;
 }
 
-
 /* =========================================================
    INTRO
 ========================================================= */
-
-.film-breakdown-intro {
-  display: flex;
-
-  justify-content:
-    space-between;
-
-  align-items: flex-end;
-
-  gap: 40px;
-
-  padding:
-    32px
-    0
-    35px;
-}
-
-
-.film-breakdown-intro h2 {
-  margin: 0;
-
-  font-size:
-    clamp(
-      38px,
-      5vw,
-      76px
-    );
-
-  font-weight: 800;
-
-  line-height: 0.9;
-
-  letter-spacing: -0.055em;
-
-  text-transform: uppercase;
-}
-
-
-.film-breakdown-intro p {
-  width: 100%;
-
-  max-width: 360px;
-
-  margin: 0;
-
-  font-size: 9px;
-
-  line-height: 1.8;
-
-  letter-spacing: 0.16em;
-
-  text-transform: uppercase;
-
-  opacity: 0.6;
-}
-
 
 /* =========================================================
    GRID
@@ -12860,7 +9278,6 @@ body:has(.motion02-project) {
 
   gap: 12px;
 }
-
 
 /* =========================================================
    NORMAL CARD
@@ -12884,7 +9301,6 @@ body:has(.motion02-project) {
     rgba(232, 208, 182, 0.22);
 }
 
-
 /* =========================================================
    GIF 01 — FIRST / FEATURED
 ========================================================= */
@@ -12897,7 +9313,6 @@ body:has(.motion02-project) {
     16 / 6.5;
 }
 
-
 /* =========================================================
    MEDIA
 ========================================================= */
@@ -12907,7 +9322,6 @@ body:has(.motion02-project) {
 
   inset: 0;
 }
-
 
 .film-breakdown-image {
   display: block;
@@ -12929,13 +9343,11 @@ body:has(.motion02-project) {
     );
 }
 
-
 .film-breakdown-card:hover
 .film-breakdown-image {
   transform:
     scale(1.025);
 }
-
 
 /* =========================================================
    DARK GRADIENT
@@ -12968,7 +9380,6 @@ body:has(.motion02-project) {
   pointer-events: none;
 }
 
-
 /* =========================================================
    NUMBER
 ========================================================= */
@@ -12990,51 +9401,9 @@ body:has(.motion02-project) {
   color: #f3eee8;
 }
 
-
 /* =========================================================
    TEXT
 ========================================================= */
-
-.film-breakdown-text {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-
-.film-breakdown-text h3 {
-  margin: 0;
-
-  font-size: 11px;
-
-  font-weight: 800;
-
-  line-height: 1;
-
-  letter-spacing: 0.12em;
-
-  text-transform: uppercase;
-
-  color: #f3eee8;
-}
-
-
-.film-breakdown-text p {
-  margin: 0;
-
-  font-size: 7px;
-
-  line-height: 1;
-
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-
-  opacity: 0.55;
-}
-
 
 /* =========================================================
    TABLET
@@ -13051,14 +9420,6 @@ body:has(.motion02-project) {
       120px;
   }
 
-
-  .film-breakdown-intro {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-
   .film-breakdown-grid {
     grid-template-columns:
       repeat(
@@ -13067,12 +9428,10 @@ body:has(.motion02-project) {
       );
   }
 
-
   .film-breakdown-card {
     grid-column:
       span 1;
   }
-
 
   .film-breakdown-card.is-featured {
     grid-column:
@@ -13083,7 +9442,6 @@ body:has(.motion02-project) {
   }
 
 }
-
 
 /* =========================================================
    MOBILE
@@ -13100,14 +9458,12 @@ body:has(.motion02-project) {
       90px;
   }
 
-
   .film-breakdown-grid {
     grid-template-columns:
       1fr;
 
     gap: 8px;
   }
-
 
   .film-breakdown-card,
   .film-breakdown-card.is-featured {
@@ -13118,7 +9474,6 @@ body:has(.motion02-project) {
       16 / 9;
   }
 
-
   .film-breakdown-overlay {
     padding: 13px;
   }
@@ -13128,135 +9483,10 @@ body:has(.motion02-project) {
    FILM ABOUT — MOTION STYLE
 ========================================================= */
 
-.film-about-section {
-  background: #9d0000;
-  color: #e6c8ac;
-  padding: 28px 32px 110px;
-}
-
-.film-about-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-
-  padding-bottom: 18px;
-  margin-bottom: 34px;
-
-  border-bottom: 1px solid rgba(230, 200, 172, 0.22);
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.film-about-grid {
-  display: grid;
-  grid-template-columns: 0.95fr 2fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.film-about-label {
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-
-.film-about-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.film-about-description {
-  margin: 0;
-  max-width: 1180px;
-
-  font-size: clamp(42px, 4.2vw, 78px);
-  line-height: 0.95;
-  font-weight: 300;
-  letter-spacing: -0.05em;
-  text-align: left;
-}
-
-.film-about-meta {
-  display: flex;
-  gap: 120px;
-  margin-top: 72px;
-  flex-wrap: wrap;
-}
-
-.film-about-meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 220px;
-}
-
-.film-about-meta-k {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.55;
-}
-
-.film-about-meta-v {
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
 /* Tablet */
-@media (max-width: 1100px) {
-  .film-about-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .film-about-description {
-    max-width: 100%;
-    font-size: clamp(34px, 5vw, 58px);
-  }
-
-  .film-about-meta {
-    gap: 48px;
-    margin-top: 44px;
-  }
-}
 
 /* Mobile */
-@media (max-width: 768px) {
-  .film-about-section {
-    padding: 22px 18px 72px;
-  }
-
-  .film-about-label {
-    font-size: 18px;
-  }
-
-  .film-about-description {
-    font-size: clamp(24px, 7vw, 38px);
-    line-height: 1;
-  }
-
-  .film-about-meta {
-    flex-direction: column;
-    gap: 22px;
-    margin-top: 32px;
-  }
-
-  .film-about-meta-v {
-    font-size: 15px;
-  }
-}/* =========================================================
+/* =========================================================
    FILM DETAIL — RED THEME
 ========================================================= */
 
@@ -13266,8 +9496,6 @@ body:has(.motion02-project) {
 }
 
 .film-detail-red .aperture-film-section,
-.film-detail-red .aperture-about,
-.film-detail-red .aperture-gallery,
 .film-detail-red .film-breakdown-section,
 .film-detail-red .aperture-next {
   background: #820000 !important;
@@ -13278,7 +9506,6 @@ body:has(.motion02-project) {
   background: #111;
 }
 
-.film-detail-red .aperture-about,
 .film-detail-red .aperture-next,
 .film-detail-red .film-breakdown-head {
   border-color: rgba(211, 182, 156, 0.28) !important;
@@ -13303,7 +9530,6 @@ body:has(.motion02-project) {
     1px solid
     rgba(211, 182, 156, 0.16) !important;
 }
-
 
 /* HEADER 02 / ABOUT — GIỐNG MOTION */
 
@@ -13333,7 +9559,6 @@ body:has(.motion02-project) {
     0.035em !important;
 }
 
-
 /* 1/3 — 2/3 GIỐNG MOTION */
 
 .film-detail-red
@@ -13353,7 +9578,6 @@ body:has(.motion02-project) {
   align-items:
     start !important;
 }
-
 
 /* ABOUT THE PROJECT */
 
@@ -13382,7 +9606,6 @@ body:has(.motion02-project) {
   opacity:
     1 !important;
 }
-
 
 /* DESCRIPTION — Y CHANG MOTION */
 
@@ -13421,7 +9644,6 @@ body:has(.motion02-project) {
     left !important;
 }
 
-
 /* =========================================================
    ROLE / TYPE — GIỮ NỘI DUNG FILM
 ========================================================= */
@@ -13448,7 +9670,6 @@ body:has(.motion02-project) {
   gap: 40px;
 }
 
-
 .film-motion-meta-item {
   display: flex;
 
@@ -13456,7 +9677,6 @@ body:has(.motion02-project) {
 
   gap: 10px;
 }
-
 
 .film-motion-meta-item span {
   color: #d3b69c;
@@ -13472,7 +9692,6 @@ body:has(.motion02-project) {
   opacity: 0.55;
 }
 
-
 .film-motion-meta-item strong {
   color: #d3b69c;
 
@@ -13484,7 +9703,6 @@ body:has(.motion02-project) {
 
   letter-spacing: 0.035em;
 }
-
 
 /* =========================================================
    TABLET
@@ -13499,7 +9717,6 @@ body:has(.motion02-project) {
       28px !important;
   }
 
-
   .film-detail-red
   .film-motion-about
   .motion02-about-grid {
@@ -13509,7 +9726,6 @@ body:has(.motion02-project) {
     row-gap:
       30px !important;
   }
-
 
   .film-detail-red
   .film-motion-about
@@ -13524,7 +9740,6 @@ body:has(.motion02-project) {
 
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -13537,7 +9752,6 @@ body:has(.motion02-project) {
       65px
       18px !important;
   }
-
 
   .film-motion-meta {
     grid-template-columns:
@@ -13626,7 +9840,6 @@ body:has(.motion02-project) {
   opacity: 0.7 !important;
 }
 
-
 /* DIRECTOR / DOP / EDITOR
    MUSIC / PERFORMANCE FILM */
 .film-motion-meta-item strong {
@@ -13635,7 +9848,6 @@ body:has(.motion02-project) {
   line-height: 1 !important;
   letter-spacing: -0.02em !important;
 }
-
 
 /* BREAKDOWN / 06 VISUALS */
 .film-breakdown-head {
@@ -13650,7 +9862,6 @@ body:has(.motion02-project) {
     2px solid
     rgba(211, 182, 156, 0.45) !important;
 }
-
 
 /* cho 2 đầu BREAKDOWN / 06 VISUALS đậm đều */
 .film-breakdown-head span {
@@ -13719,11 +9930,7 @@ body:has(.motion02-project) {
 }
 
 /* bỏ luôn khoảng của intro nếu CSS cũ còn */
-.film-breakdown-intro {
-  display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+
 /* FILM BREAKDOWN — NUMBER ONLY */
 
 .film-breakdown-overlay {
@@ -13743,9 +9950,6 @@ body:has(.motion02-project) {
   color: #f3eee8 !important;
 }
 
-.film-breakdown-text {
-  display: none !important;
-}
 .film-detail-red
 .aperture-film-section
 .aperture-section-label {
@@ -13755,23 +9959,9 @@ body:has(.motion02-project) {
   letter-spacing: -0.03em !important;
 }
 /* ==== FILM DETAIL TITLE: SPEED UP ==== */
-.film-detail-red .aperture-project-title,
-.film-detail-red .aperture-hero-title,
-.film-detail-red .film-detail-title {
-  font-size: clamp(96px, 10vw, 180px) !important;
-  line-height: 0.9 !important;
-  font-weight: 900 !important;
-  letter-spacing: -0.05em !important;
-}
 
 /* nếu title đang tách mỗi chữ / mỗi dòng bằng span */
-.film-detail-red .aperture-project-title span,
-.film-detail-red .aperture-hero-title span,
-.film-detail-red .film-detail-title span {
-  font-size: inherit !important;
-  line-height: inherit !important;
-  font-weight: inherit !important;
-}
+
 .film-detail-red
 .aperture-bottom-title h1 {
   font-size: clamp(78px, 8vw, 140px) !important;
@@ -13789,167 +9979,43 @@ body:has(.motion02-project) {
    FILM DETAIL NAV — MATCH MOTION
 ========================================================= */
 
-
-
 /* LOGO */
-
-.film-detail-logo {
-  display: block;
-
-  width: max-content;
-
-  white-space: nowrap;
-
-  color: #d3b69c;
-
-  text-decoration: none;
-
-  font-size:
-    clamp(
-      34px,
-      2.6vw,
-      48px
-    );
-
-  font-weight: 800;
-
-  line-height: 1;
-
-  letter-spacing:
-    -0.035em;
-}
-
 
 /* CENTER */
 
-
 /* BACK */
 
-.film-detail-back {
-  justify-self: end;
-
-  white-space: nowrap;
-
-  color: #d3b69c;
-
-  text-decoration: none;
-
-  font-size:
-    clamp(
-      18px,
-      1.4vw,
-      26px
-    );
-
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing:
-    0.025em;
-}
 /* =========================================================
    FILM NAV — SAME REAL BLUR AS MOTION
 ========================================================= */
 
-
-
 /* ẢNH COVER COPY VÀO NAV */
-
 
 /* BLUR ẢNH COVER THẬT */
 
-
-
 /* TINT */
-
-
 
 /* TEXT TRÊN NAV */
 
-
-
 /* LOGO */
-
-.film-detail-logo {
-  justify-self: start !important;
-
-  text-decoration: none !important;
-
-  font-size:
-    clamp(
-      34px,
-      2.6vw,
-      48px
-    ) !important;
-
-  font-weight: 800 !important;
-
-  line-height: 1 !important;
-
-  letter-spacing:
-    -0.035em !important;
-}
-
 
 /* CENTER */
 
-
-
-
 /* BACK */
 
-.film-detail-back {
-  justify-self: end !important;
-
-  text-decoration: none !important;
-
-  font-size:
-    clamp(
-      18px,
-      1.4vw,
-      26px
-    ) !important;
-
-  font-weight: 500 !important;
-
-  line-height: 1 !important;
-
-  letter-spacing:
-    0.025em !important;
-}
 /* =========================================================
    FILM NAV — FIX BLUR CHỈ NẰM TRONG NAV
 ========================================================= */
 
-
-
-
 /* KHUNG BLUR — CHỈ CAO 130PX */
-
-
 
 /* QUAN TRỌNG:
    ABSOLUTE, KHÔNG PHẢI FIXED */
 
-
-
-
 /* TINT CHỈ TRONG NAV */
-
-
 
 /* TEXT */
 
-.film-detail-logo,
-.film-detail-nav-center,
-.film-detail-back {
-  position: relative !important;
-
-  z-index: 3 !important;
-
-  color: #d3b69c !important;
-}
 /* =========================================================
    FILM HERO → RED PAGE BLEND
    SAME AS MOTION
@@ -14098,7 +10164,6 @@ body:has(.motion02-project) {
     transform 0.3s ease !important;
 }
 
-
 /* BÌNH THƯỜNG = TAM GIÁC */
 
 .film-detail-red .aperture-play span {
@@ -14115,7 +10180,6 @@ body:has(.motion02-project) {
   transition: all 0.25s ease !important;
 }
 
-
 /* HOVER = FILL BEIGE */
 
 .film-detail-red .aperture-play:hover {
@@ -14125,7 +10189,6 @@ body:has(.motion02-project) {
     translate(-50%, -50%)
     scale(1.05) !important;
 }
-
 
 /* HOVER: ẨN TAM GIÁC */
 
@@ -14142,7 +10205,6 @@ body:has(.motion02-project) {
 
   color: #820000 !important;
 }
-
 
 /* ĐỔI NỘI DUNG THÀNH PLAY */
 
@@ -14178,7 +10240,6 @@ body:has(.motion02-project) {
   justify-content: center !important;
 }
 
-
 /* reset triangle cũ */
 .film-detail-red .aperture-play span {
   position: relative !important;
@@ -14196,7 +10257,6 @@ body:has(.motion02-project) {
 
   font-size: 0 !important;
 }
-
 
 /* triangle play */
 .film-detail-red .aperture-play span::before {
@@ -14217,12 +10277,10 @@ body:has(.motion02-project) {
     transform 0.25s ease;
 }
 
-
 /* hover: ẩn triangle */
 .film-detail-red .aperture-play:hover span::before {
   opacity: 0;
 }
-
 
 /* chữ PLAY khi hover */
 .film-detail-red .aperture-play span::after {
@@ -14246,7 +10304,6 @@ body:has(.motion02-project) {
 
   transition: opacity 0.25s ease;
 }
-
 
 /* hiện PLAY */
 .film-detail-red .aperture-play:hover span::after {
@@ -14274,7 +10331,6 @@ body:has(.motion02-project) {
   background: #120b09;
   color: #d3b69c;
 }
-
 
 /* =========================================================
    NAV
@@ -14336,7 +10392,6 @@ body:has(.motion02-project) {
   letter-spacing: 0.05em;
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -14371,7 +10426,6 @@ body:has(.motion02-project) {
     ),
     #120b09;
 }
-
 
 /* =========================================================
    VERTICAL PLAYER
@@ -14431,7 +10485,6 @@ body:has(.motion02-project) {
   letter-spacing: 0.12em;
 }
 
-
 /* =========================================================
    RIGHT INFO
 ========================================================= */
@@ -14461,7 +10514,6 @@ body:has(.motion02-project) {
 
   letter-spacing: 0.12em;
 }
-
 
 /* HANDWRITING STYLE */
 
@@ -14494,7 +10546,6 @@ body:has(.motion02-project) {
   opacity: 0.95;
 }
 
-
 /* TAGS */
 
 .shortform-tags {
@@ -14522,7 +10573,6 @@ body:has(.motion02-project) {
   letter-spacing: 0.08em;
 }
 
-
 /* TITLE */
 
 .shortform-title {
@@ -14546,7 +10596,6 @@ body:has(.motion02-project) {
   text-transform: uppercase;
 }
 
-
 /* DESCRIPTION */
 
 .shortform-description {
@@ -14567,7 +10616,6 @@ body:has(.motion02-project) {
 
   opacity: 0.88;
 }
-
 
 /* META */
 
@@ -14618,7 +10666,6 @@ body:has(.motion02-project) {
 
   font-weight: 900;
 }
-
 
 /* =========================================================
    MORE CLIPS
@@ -14683,7 +10730,6 @@ body:has(.motion02-project) {
   letter-spacing: 0.1em;
 }
 
-
 /* CLIP GRID */
 
 .shortform-clips {
@@ -14737,7 +10783,6 @@ body:has(.motion02-project) {
   transform: scale(1.04);
 }
 
-
 /* PLAY */
 
 .shortform-clip-play {
@@ -14772,7 +10817,6 @@ body:has(.motion02-project) {
   padding-left: 3px;
 }
 
-
 /* NUMBER */
 
 .shortform-clip-number {
@@ -14787,7 +10831,6 @@ body:has(.motion02-project) {
 
   color: #d3b69c;
 }
-
 
 /* CARD META */
 
@@ -14805,7 +10848,6 @@ body:has(.motion02-project) {
 
   letter-spacing: 0.06em;
 }
-
 
 /* =========================================================
    NEXT
@@ -14869,7 +10911,6 @@ body:has(.motion02-project) {
   text-transform: uppercase;
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -14895,7 +10936,6 @@ body:has(.motion02-project) {
   }
 
 }
-
 
 @media (
   max-width: 800px
@@ -14956,7 +10996,6 @@ body:has(.motion02-project) {
 
 }
 
-
 @media (
   max-width: 520px
 ) {
@@ -14998,28 +11037,9 @@ body:has(.motion02-project) {
   line-height: 0.95 !important;
   letter-spacing: -0.045em !important;
 }
-.editorial-project-bottom h3 .editorial-title-line {
-  display: block !important;
-}
+
 /* SUNNY SKILLS CAMP — KÉO CAO KHUNG CHỮ */
-.editorial-project-copy-tall {
-  min-height: 150px !important;
 
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-end !important;
-}
-
-.editorial-project-copy-tall h3 {
-  max-width: 100% !important;
-  line-height: 0.88 !important;
-}
-.editorial-project-title-tall {
-  min-height: 110px !important;
-
-  display: flex !important;
-  align-items: flex-end !important;
-}
 /* PJ1 — rộng bằng nguyên hàng 3 card phía dưới */
 .editorial-film .film-hero {
   width: 100% !important;
@@ -15067,80 +11087,10 @@ body:has(.motion02-project) {
 .editorial-short-grid .short-card:nth-child(7) {
   transform: translateY(55px);
 }
-.shortform-stagger-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 28px;
-  align-items: start;
-}
 
 /* form chung */
-.shortform-card {
-  grid-column: span 3;
-}
 
 /* hàng 1: 4 item */
-.shortform-card-1 {
-  grid-column: 1 / span 3;
-}
-
-.shortform-card-2 {
-  grid-column: 4 / span 3;
-  margin-top: 70px;
-}
-
-.shortform-card-3 {
-  grid-column: 7 / span 3;
-}
-
-.shortform-card-4 {
-  grid-column: 10 / span 3;
-  margin-top: 70px;
-}
 
 /* hàng 2: 3 item, căn giữa + sole với hàng trên */
-.shortform-card-5 {
-  grid-column: 2 / span 3;
-  margin-top: 8px;
-}
 
-.shortform-card-6 {
-  grid-column: 5 / span 3;
-  margin-top: 78px;
-}
-
-.shortform-card-7 {
-  grid-column: 8 / span 3;
-  margin-top: 8px;
-}
-@media (max-width: 1200px) {
-  .shortform-stagger-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .shortform-card {
-    grid-column: span 3 !important;
-    margin-top: 0 !important;
-  }
-
-  .shortform-card-1,
-  .shortform-card-2,
-  .shortform-card-3,
-  .shortform-card-4,
-  .shortform-card-5,
-  .shortform-card-6,
-  .shortform-card-7 {
-    grid-column: span 3 !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .shortform-stagger-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .shortform-card {
-    grid-column: 1 / -1 !important;
-    margin-top: 0 !important;
-  }
-}

@@ -7,7 +7,7 @@ export type Project = {
   number: string;
   slug: string;
   title: string;
-  titleLines?: string[];
+  titleLines?: string[]
   type: ProjectType;
   category: string;
   role: string;
@@ -92,9 +92,9 @@ export const projects: Project[] = [
      QUY TẮC CHUNG:
      public/projects/<slug>/
        cover.jpg
-       01.gif / 01.jpg
-       02.gif / 02.jpg
-       03.gif / 03.jpg
+       01.webp / 01.jpg
+       02.webp / 02.jpg
+       03.webp / 03.jpg
        ...
      images KHÔNG cần khai báo nữa.
      Film detail tự quét folder.
@@ -291,12 +291,12 @@ export const projects: Project[] = [
       "A motion design project for CMC Telecom “GAME ON — One Team, One Goal” campaign, combining football-inspired visuals, dynamic mascots, and energetic stadium graphics into a bold event identity.",
     video: "",
     images: [
-      "/projects/motion-project-02/01.gif",
-      "/projects/motion-project-02/02.gif",
-      "/projects/motion-project-02/03.gif",
-      "/projects/motion-project-02/04.gif",
-      "/projects/motion-project-02/05.gif",
-      "/projects/motion-project-02/06.gif",
+      "/projects/motion-project-02/01.webp",
+      "/projects/motion-project-02/02.webp",
+      "/projects/motion-project-02/03.webp",
+      "/projects/motion-project-02/04.webp",
+      "/projects/motion-project-02/05.webp",
+      "/projects/motion-project-02/06.webp",
     ],
     cover:
       "/projects/motion-project-02/cover.png",
@@ -320,10 +320,10 @@ export const projects: Project[] = [
       "A playful motion piece for CMC Telecom Family Day, celebrating connection and togetherness through colorful mascot visuals.",
     video: "",
     images: [
-      "/projects/motion-project-03/01.gif",
-      "/projects/motion-project-03/02.gif",
-      "/projects/motion-project-03/03.gif",
-      "/projects/motion-project-03/04.gif",
+      "/projects/motion-project-03/01.webp",
+      "/projects/motion-project-03/02.webp",
+      "/projects/motion-project-03/03.webp",
+      "/projects/motion-project-03/04.webp",
     ],
     cover:
       "/projects/motion-project-03/cover.png",

@@ -6,7 +6,6 @@ import { readdir } from "node:fs/promises";
 import { Project } from "../data/projects";
 
 const IMAGE_EXTENSIONS = new Set([
-  ".gif",
   ".jpg",
   ".jpeg",
   ".png",
@@ -49,7 +48,7 @@ export async function getFilmAssets(
 
   const coverFile =
     sortedFiles.find((file) =>
-      /^cover\.(jpg|jpeg|png|webp|avif|gif)$/i.test(file)
+      /^cover\.(jpg|jpeg|png|webp|avif)$/i.test(file)
     ) ?? null;
 
   const detectedImages = sortedFiles
@@ -60,7 +59,7 @@ export async function getFilmAssets(
     })
     .filter(
       (file) =>
-        !/^cover\.(jpg|jpeg|png|webp|avif|gif)$/i.test(file)
+        !/^cover\.(jpg|jpeg|png|webp|avif)$/i.test(file)
     )
     .map(
       (file) =>

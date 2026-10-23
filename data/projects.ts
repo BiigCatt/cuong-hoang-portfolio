@@ -524,19 +524,7 @@ export const projects: Project[] = [
     ...shortFormAssets("short-form-project-11"),
   },
   
-   {
-    number: "27",
-    slug: "short-form-project-12",
-    title: "Short-Form Project 12",
-    type: "short-form",
-    category: "SHORT-FORM",
-    role:
-      "DIRECTOR / DOP / EDITOR",
-    description:
-      "Short-form video project description coming soon.",
-    video: "",
-    ...shortFormAssets("short-form-project-12"),
-  },
+   
   /* =======================================================
      PHOTOGRAPHY — 20 → 22
   ======================================================= */

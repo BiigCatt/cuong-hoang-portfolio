@@ -1,6 +1,12 @@
 "use client";
 
-import { Fragment, type MouseEvent } from "react";
+import {
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -57,7 +63,24 @@ export default function EditorialProjectCard({
   const showPlay =
     project.type === "film" || project.type === "short-form";
 
-  const isGif = project.cover?.toLowerCase().endsWith(".gif") ?? false;
+  /* Ảnh bìa: nếu file `cover` chưa có / tải lỗi thì dùng coverFallback;
+     không có cả hai thì hiện khung số thứ tự. */
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const [coverFailed, setCoverFailed] = useState(false);
+
+  const cover = coverFailed ? project.coverFallback ?? "" : project.cover;
+
+  /* Ảnh lỗi trước khi trang "tỉnh dậy" (hydrate) thì onError bị lỡ,
+     nên kiểm tra lại một lần khi component vừa hiện. */
+  useEffect(() => {
+    const image = mediaRef.current?.querySelector("img");
+
+    if (image && image.complete && image.naturalWidth === 0) {
+      setCoverFailed(true);
+    }
+  }, []);
+
+  const isGif = cover?.toLowerCase().endsWith(".gif") ?? false;
 
   return (
     <Link
@@ -67,21 +90,23 @@ export default function EditorialProjectCard({
       onClick={(event) => onOpen?.(event, href)}
     >
       {/* IMAGE */}
-      <div className="editorial-project-media">
-        {project.cover ? (
+      <div className="editorial-project-media" ref={mediaRef}>
+        {cover ? (
           isGif ? (
             <img
-              src={project.cover}
+              src={cover}
               alt={project.title}
               className="editorial-project-image editorial-project-gif"
+              onError={() => setCoverFailed(true)}
             />
           ) : (
             <Image
-              src={project.cover}
+              src={cover}
               alt={project.title}
               fill
               sizes="100vw"
               className="editorial-project-image"
+              onError={() => setCoverFailed(true)}
             />
           )
         ) : (

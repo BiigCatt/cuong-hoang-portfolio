@@ -17,6 +17,9 @@ export type Project = {
   images: string[];
   cover: string;
 
+  /** Ảnh bìa dự phòng, dùng khi file `cover` chưa có / tải lỗi. */
+  coverFallback?: string;
+
   /** Ngắt dòng riêng cho tiêu đề ở card trang chủ (không ảnh hưởng trang detail). */
   cardTitle?: {
     lines: string[];
@@ -49,6 +52,37 @@ const TEAMBUILDING_PHOTOS = Array.from(
       index + 1
     ).padStart(2, "0")}.jpg`
 );
+/* =========================================================
+   SHORT-FORM ASSETS
+
+   Mỗi project short-form có 1 ảnh bìa + 4 ảnh nhỏ, nằm trong:
+     public/projects/<slug>/
+       cover.jpg   (ảnh bìa ở trang chủ)
+       01.jpg ... 04.jpg  (4 ảnh nhỏ dưới video)
+
+   CHỈ CẦN BỎ ẢNH VÀO THƯ MỤC, không phải sửa code.
+   Chưa có ảnh thì tự dùng ảnh/khung hình YouTube thay thế.
+========================================================= */
+const SHORT_FORM_IMAGE_COUNT = 4;
+
+function shortFormAssets(
+  slug: string,
+  youtubeId?: string
+) {
+  return {
+    cover: `/projects/${slug}/cover.jpg`,
+    coverFallback: youtubeId
+      ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
+      : "",
+    images: Array.from(
+      { length: SHORT_FORM_IMAGE_COUNT },
+      (_, index) =>
+        `/projects/${slug}/${String(
+          index + 1
+        ).padStart(2, "0")}.jpg`
+    ),
+  };
+}
 /* =========================================================
    PROJECTS
 ========================================================= */
@@ -296,7 +330,7 @@ export const projects: Project[] = [
     detailClassName: "motion03-project",
   },
   /* =======================================================
-     SHORT-FORM — 13 → 19
+     SHORT-FORM — 13 → 19, 23 → 27 (tổng 12 project)
   ======================================================= */
   {
     number: "13",
@@ -308,9 +342,12 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Short-form video project description coming soon.",
-    video: "",
-    images: [],
-    cover: "",
+    video:
+      "https://www.youtube.com/shorts/BngrJmlrfC8",
+    ...shortFormAssets(
+      "short-form-project-01",
+      "BngrJmlrfC8"
+    ),
   },
   {
     number: "14",
@@ -321,10 +358,12 @@ export const projects: Project[] = [
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "A short-form video focused on latte art techniques.",
+      "Video ghi lại buổi học pha cà phê bằng máy, từ cách sử dụng thiết bị đến thực hành đánh sữa và tạo hình latte art.",
     video: "https://www.youtube.com/embed/queb9H8BSbo",
-    images: [],
-    cover: "https://img.youtube.com/vi/queb9H8BSbo/hqdefault.jpg",
+    ...shortFormAssets(
+      "short-form-project-02",
+      "queb9H8BSbo"
+    ),
   },
   {
     number: "15",
@@ -336,9 +375,12 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Short-form video project description coming soon.",
-    video: "",
-    images: [],
-    cover: "",
+    video:
+      "https://www.youtube.com/shorts/R4IAgGwdVSM",
+    ...shortFormAssets(
+      "short-form-project-03",
+      "R4IAgGwdVSM"
+    ),
   },
   {
     number: "16",
@@ -350,9 +392,12 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Short-form video project description coming soon.",
-    video: "",
-    images: [],
-    cover: "",
+    video:
+      "https://www.youtube.com/shorts/hZtI5ofqVlQ",
+    ...shortFormAssets(
+      "short-form-project-04",
+      "hZtI5ofqVlQ"
+    ),
   },
 
   {
@@ -365,9 +410,12 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Short-form video project description coming soon.",
-    video: "",
-    images: [],
-    cover: "",
+    video:
+      "https://www.youtube.com/shorts/mYV_ZXsUHJo",
+    ...shortFormAssets(
+      "short-form-project-05",
+      "mYV_ZXsUHJo"
+    ),
   },
   {
     number: "18",
@@ -379,9 +427,12 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Short-form video project description coming soon.",
-    video: "",
-    images: [],
-    cover: "",
+    video:
+      "https://www.youtube.com/shorts/T8izqP7HZQw",
+    ...shortFormAssets(
+      "short-form-project-06",
+      "T8izqP7HZQw"
+    ),
   },
   {
     number: "19",
@@ -393,9 +444,81 @@ export const projects: Project[] = [
       "DIRECTOR / DOP / EDITOR",
     description:
       "Short-form video project description coming soon.",
+    video:
+      "https://www.youtube.com/shorts/1E_LmFxso1I",
+    ...shortFormAssets(
+      "short-form-project-07",
+      "1E_LmFxso1I"
+    ),
+  },
+  {
+    number: "23",
+    slug: "short-form-project-08",
+    title: "Short-Form Project 08",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video:
+      "https://www.youtube.com/shorts/tEcdJlDG3-E",
+    ...shortFormAssets(
+      "short-form-project-08",
+      "tEcdJlDG3-E"
+    ),
+  },
+  {
+    number: "24",
+    slug: "short-form-project-09",
+    title: "Short-Form Project 09",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
     video: "",
-    images: [],
-    cover: "",
+    ...shortFormAssets("short-form-project-09"),
+  },
+  {
+    number: "25",
+    slug: "short-form-project-10",
+    title: "Short-Form Project 10",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video: "",
+    ...shortFormAssets("short-form-project-10"),
+  },
+  {
+    number: "26",
+    slug: "short-form-project-11",
+    title: "Short-Form Project 11",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video: "",
+    ...shortFormAssets("short-form-project-11"),
+  },
+  {
+    number: "27",
+    slug: "short-form-project-12",
+    title: "Short-Form Project 12",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video: "",
+    ...shortFormAssets("short-form-project-12"),
   },
   /* =======================================================
      PHOTOGRAPHY — 20 → 22

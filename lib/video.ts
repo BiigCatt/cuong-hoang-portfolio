@@ -61,3 +61,25 @@ export function normalizeVideoSrc(src?: string): string {
 export function isLocalVideoSrc(src: string): boolean {
   return /\.(mp4|webm|ogg)(\?.*)?$/i.test(src);
 }
+
+/**
+ * Ảnh xem trước của video YouTube (YouTube tự tạo từ chính video):
+ * ảnh bìa + 3 khung hình ở khoảng 25% / 50% / 75% thời lượng.
+ * Video không phải YouTube thì trả về mảng rỗng.
+ */
+export function getYouTubeFrames(src?: string): string[] {
+  const match = normalizeVideoSrc(src).match(
+    /^https:\/\/www\.youtube\.com\/embed\/([\w-]+)/
+  );
+
+  if (!match) return [];
+
+  const base = `https://img.youtube.com/vi/${match[1]}`;
+
+  return [
+    `${base}/hqdefault.jpg`,
+    `${base}/hq1.jpg`,
+    `${base}/hq2.jpg`,
+    `${base}/hq3.jpg`,
+  ];
+}

@@ -1,12 +1,21 @@
 import Link from "next/link";
 
 import type { Project } from "../../data/projects";
-import { isLocalVideoSrc, normalizeVideoSrc } from "../../lib/video";
+import {
+  getYouTubeFrames,
+  isLocalVideoSrc,
+  normalizeVideoSrc,
+} from "../../lib/video";
+
+import ShortFormStrip from "./ShortFormStrip";
 
 type ShortFormProjectLayoutProps = {
   project: Project;
   nextProject: Project;
 };
+
+/* Nhãn góc phải phía trên của mọi trang short-form. */
+const LABEL = "SHORT-FORM";
 
 export default function ShortFormProjectLayout({
   project,
@@ -17,6 +26,8 @@ export default function ShortFormProjectLayout({
 
   const isLocalVideo =
     isLocalVideoSrc(videoSrc);
+
+  const fallbackImages = getYouTubeFrames(project.video);
 
   return (
     <main className="shortform-detail">
@@ -87,17 +98,16 @@ export default function ShortFormProjectLayout({
 
               )
 
-            ) : project.cover ? (
-
-              <img
-                src={project.cover}
-                alt={project.title}
-                className="shortform-player-media"
-              />
-
             ) : (
 
-              <div className="shortform-player-empty">
+              <div
+                className="shortform-player-empty"
+                style={{
+                  backgroundImage: project.cover
+                    ? `url(${project.cover})`
+                    : undefined,
+                }}
+              >
                 VIDEO COMING SOON
               </div>
 
@@ -114,22 +124,15 @@ export default function ShortFormProjectLayout({
 
           <div className="shortform-info-top">
 
-            <span>
-              PROJECT {project.number}
-            </span>
+            {/* <span> rỗng giữ nhãn bên phải ở đúng góc phải */}
+            <span />
 
             <span>
-              TIKTOK / REELS
+              {LABEL}
             </span>
 
           </div>
 
-
-          <div className="shortform-handwriting">
-            GOOD IDEAS
-            <br />
-            TRAVEL FASTER.
-          </div>
 
 
           <div className="shortform-tags">
@@ -150,114 +153,24 @@ export default function ShortFormProjectLayout({
             {project.description}
           </p>
 
-
-          <div className="shortform-meta">
-
-            <div>
-              <span>ROLE</span>
-
-              <strong>
-                {project.role}
-              </strong>
-            </div>
-
-            <div>
-              <span>TYPE</span>
-
-              <strong>
-                {project.category}
-              </strong>
-            </div>
-
-          </div>
-
         </div>
 
       </section>
 
 
       {/* =====================================================
-          MORE CLIPS
+          PREVIEW STRIP
+
+          Ảnh xem trước nếu không muốn bấm xem video.
+          Dùng ảnh trong public/projects/<slug>/01.jpg ... 04.jpg,
+          chưa có thì dùng khung hình YouTube tự tạo từ video.
       ===================================================== */}
 
-      {project.images.length > 0 && (
-
-        <section className="shortform-more">
-
-          <div className="shortform-more-head">
-
-            <div>
-              <span>02</span>
-
-              <h2>
-                MORE CLIPS
-              </h2>
-            </div>
-
-            <span>
-              {String(
-                project.images.length
-              ).padStart(2, "0")}{" "}
-              VISUALS
-            </span>
-
-          </div>
-
-
-          <div className="shortform-clips">
-
-            {project.images.map(
-              (image, index) => (
-
-                <article
-                  className="shortform-clip"
-                  key={`${image}-${index}`}
-                >
-
-                  <div className="shortform-clip-media">
-
-                    <img
-                      src={image}
-                      alt={`${project.title} clip ${index + 1}`}
-                    />
-
-                    <div className="shortform-clip-play">
-                      ▶
-                    </div>
-
-                    <span className="shortform-clip-number">
-                      {String(
-                        index + 1
-                      ).padStart(2, "0")}
-                    </span>
-
-                  </div>
-
-                  <div className="shortform-clip-bottom">
-
-                    <span>
-                      CLIP{" "}
-                      {String(
-                        index + 1
-                      ).padStart(2, "0")}
-                    </span>
-
-                    <span>
-                      SHORT-FORM
-                    </span>
-
-                  </div>
-
-                </article>
-
-              )
-            )}
-
-          </div>
-
-        </section>
-
-      )}
+      <ShortFormStrip
+        images={project.images}
+        fallbackImages={fallbackImages}
+        title={project.title}
+      />
 
 
       {/* =====================================================

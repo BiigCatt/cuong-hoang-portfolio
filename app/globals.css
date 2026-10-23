@@ -8942,10 +8942,31 @@ body:has(.motion02-project) {
    SHORT-FORM DETAIL — OPTION 02 FEATURED PLAYER
 ========================================================= */
 
+/* =========================================================
+   NỀN ĐỎ GRADIENT LAN RA TỪ TÂM — CẢ TRANG SHORT-FORM
+
+   Màu key #820000 nằm ở tâm, đậm dần ra ngoài. Đỏ phủ khoảng
+   84% diện tích màn hình, 16% còn lại (bốn góc) tối dần về màu nền.
+   Nền đứng yên (fixed) theo màn hình nên khi cuộn xuống phần
+   NEXT PROJECT vẫn liền một màu.
+   Muốn đỏ phủ nhiều/ít hơn: đổi số 74% (lớn hơn = phủ nhiều hơn).
+   Muốn đổi màu key: sửa #820000 (các màu sau là bản đậm hơn).
+========================================================= */
+
 .shortform-detail {
   min-height: 100vh;
-  background: #120b09;
   color: #d3b69c;
+
+  background-color: #120b09;
+  background-image:
+    radial-gradient(
+      ellipse at center,
+      #820000 0%,
+      #6e0000 45%,
+      #4a0000 74%,
+      #120b09 100%
+    );
+  background-attachment: fixed;
 }
 
 /* =========================================================
@@ -9034,13 +9055,7 @@ body:has(.motion02-project) {
   gap:
     clamp(70px, 9vw, 150px);
 
-  background:
-    radial-gradient(
-      circle at 35% 40%,
-      rgba(130, 0, 0, 0.25),
-      transparent 45%
-    ),
-    #120b09;
+  background: transparent;
 }
 
 /* =========================================================
@@ -9095,6 +9110,9 @@ body:has(.motion02-project) {
   align-items: center;
   justify-content: center;
 
+  background-size: cover;
+  background-position: center;
+
   font-size: 13px;
   font-weight: 700;
 
@@ -9109,7 +9127,8 @@ body:has(.motion02-project) {
   display: flex;
   flex-direction: column;
 
-  justify-content: center;
+  /* Bám mép trên video: chữ "SHORT-FORM" thẳng hàng với đỉnh khung video */
+  justify-content: flex-start;
 
   max-width: 720px;
 }
@@ -9131,37 +9150,6 @@ body:has(.motion02-project) {
   letter-spacing: 0.12em;
 }
 
-/* HANDWRITING STYLE */
-
-.shortform-handwriting {
-  margin:
-    48px
-    0
-    42px;
-
-  max-width: 420px;
-
-  font-size:
-    clamp(
-      38px,
-      4vw,
-      68px
-    );
-
-  font-weight: 500;
-
-  font-style: italic;
-
-  line-height: 0.95;
-
-  letter-spacing: -0.04em;
-
-  transform:
-    rotate(-4deg);
-
-  opacity: 0.95;
-}
-
 /* TAGS */
 
 .shortform-tags {
@@ -9170,7 +9158,11 @@ body:has(.motion02-project) {
 
   gap: 8px;
 
-  margin-bottom: 28px;
+  /* Khoảng thở giữa đường kẻ phía trên và hàng tag */
+  margin:
+    clamp(48px, 8vh, 88px)
+    0
+    28px;
 }
 
 .shortform-tags span {
@@ -9233,236 +9225,69 @@ body:has(.motion02-project) {
   opacity: 0.88;
 }
 
-/* META */
-
-.shortform-meta {
-  padding-top: 24px;
-
-  border-top:
-    1px solid
-    rgba(211, 182, 156, 0.3);
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
-
-  gap: 60px;
-}
-
-.shortform-meta > div {
-  display: flex;
-  flex-direction: column;
-
-  gap: 10px;
-}
-
-.shortform-meta span {
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-
-  opacity: 0.65;
-}
-
-.shortform-meta strong {
-  font-size:
-    clamp(
-      18px,
-      1.35vw,
-      24px
-    );
-
-  line-height: 1.05;
-
-  font-weight: 900;
-}
-
 /* =========================================================
-   MORE CLIPS
+   PREVIEW STRIP — HÀNG ẢNH XEM TRƯỚC DƯỚI VIDEO
+
+   Các ảnh chia đều chiều ngang trang (số cột = số ảnh).
+   Đổi tỉ lệ ảnh: sửa --sf-thumb-ratio
+   (3 / 4 = hơi cắt trên dưới; 9 / 16 = giữ nguyên khung dọc, ảnh cao hơn).
 ========================================================= */
 
-.shortform-more {
-  background: #d3b69c;
-  color: #3b0c09;
-
-  padding:
-    70px
-    40px
-    100px;
-}
-
-.shortform-more-head {
-  display: flex;
-
-  align-items: flex-end;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  margin-bottom: 35px;
-
-  padding-bottom: 18px;
-
-  border-bottom:
-    1px solid
-    rgba(59, 12, 9, 0.35);
-}
-
-.shortform-more-head > div {
-  display: flex;
-  align-items: baseline;
-
-  gap: 20px;
-}
-
-.shortform-more-head h2 {
-  margin: 0;
-
-  font-size:
-    clamp(
-      42px,
-      5vw,
-      82px
-    );
-
-  font-weight: 950;
-
-  line-height: 0.9;
-
-  letter-spacing: -0.055em;
-}
-
-.shortform-more-head span {
-  font-size: 13px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.1em;
-}
-
-/* CLIP GRID */
-
-.shortform-clips {
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      5,
-      minmax(0, 1fr)
-    );
-
-  gap: 16px;
-}
-
-.shortform-clip {
-  min-width: 0;
-}
-
-.shortform-clip-media {
-  position: relative;
+.shortform-strip {
+  --sf-thumb-ratio: 3 / 4;
 
   width: 100%;
 
-  aspect-ratio: 9 / 16;
+  padding:
+    0
+    clamp(40px, 6vw, 110px)
+    90px;
+}
+
+.shortform-strip-track {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      var(--strip-count, 4),
+      minmax(0, 1fr)
+    );
+
+  gap: clamp(12px, 1.6vw, 24px);
+}
+
+.shortform-strip-item {
+  aspect-ratio: var(--sf-thumb-ratio);
 
   overflow: hidden;
 
-  background: #111;
+  border-radius: 12px;
+  border: 1px solid rgba(211, 182, 156, 0.3);
 
-  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-.shortform-clip-media img {
+.shortform-strip-item img {
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
-
-  transition:
-    transform 0.5s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
 }
 
-.shortform-clip:hover
-.shortform-clip-media img {
-  transform: scale(1.04);
-}
+@media (max-width: 800px) {
 
-/* PLAY */
+  .shortform-strip {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
-.shortform-clip-play {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform:
-    translate(
-      -50%,
-      -50%
-    );
-
-  width: 52px;
-  height: 52px;
-
-  border-radius: 50%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  background:
-    rgba(211, 182, 156, 0.9);
-
-  color: #820000;
-
-  font-size: 19px;
-
-  padding-left: 3px;
-}
-
-/* NUMBER */
-
-.shortform-clip-number {
-  position: absolute;
-
-  left: 14px;
-  top: 14px;
-
-  font-size: 14px;
-
-  font-weight: 900;
-
-  color: #d3b69c;
-}
-
-/* CARD META */
-
-.shortform-clip-bottom {
-  padding-top: 12px;
-
-  display: flex;
-  justify-content: space-between;
-
-  gap: 15px;
-
-  font-size: 11px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.06em;
+  /* Điện thoại: 2 cột x 2 hàng */
+  .shortform-strip-track {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* =========================================================
@@ -9482,8 +9307,12 @@ body:has(.motion02-project) {
   align-items: center;
   justify-content: center;
 
-  background: #0c0908;
+  background: transparent;
   color: #d3b69c;
+
+  border-top:
+    1px solid
+    rgba(211, 182, 156, 0.24);
 }
 
 .shortform-next > span {
@@ -9543,14 +9372,6 @@ body:has(.motion02-project) {
     gap: 50px;
   }
 
-  .shortform-clips {
-    grid-template-columns:
-      repeat(
-        3,
-        minmax(0, 1fr)
-      );
-  }
-
 }
 
 @media (
@@ -9587,27 +9408,8 @@ body:has(.motion02-project) {
     max-width: 360px;
   }
 
-  .shortform-handwriting {
-    margin-top: 15px;
-  }
-
-  .shortform-meta {
-    gap: 30px;
-  }
-
-  .shortform-more {
-    padding:
-      55px
-      20px
-      70px;
-  }
-
-  .shortform-clips {
-    grid-template-columns:
-      repeat(
-        2,
-        minmax(0, 1fr)
-      );
+  .shortform-tags {
+    margin-top: 36px;
   }
 
 }
@@ -9622,29 +9424,6 @@ body:has(.motion02-project) {
 
   .shortform-back {
     font-size: 11px;
-  }
-
-  .shortform-meta {
-    grid-template-columns:
-      1fr;
-  }
-
-  .shortform-clips {
-    grid-template-columns:
-      repeat(
-        2,
-        minmax(0, 1fr)
-      );
-
-    gap: 10px;
-  }
-
-  .shortform-more-head {
-    align-items:
-      flex-start;
-
-    flex-direction:
-      column;
   }
 
 }
@@ -9664,19 +9443,24 @@ body:has(.motion02-project) {
   margin-right: 0 !important;
 }
 /* =========================================================
-   SHORT-FORM — STAGGERED 7 PROJECTS
+   SHORT-FORM — LƯỚI LỆCH SO LE (STAGGERED)
+
+   Mỗi hàng 4 card, mỗi card lệch xuống một khoảng khác nhau,
+   hàng sau lệch thêm khoảng 35-40px so với hàng trước để khoảng
+   cách giữa các hàng đều nhau. Đang hỗ trợ tối đa 12 card
+   (3 hàng); thêm hàng thứ 4 thì thêm 4 dòng nth-child(13..16).
 ========================================================= */
 
 .editorial-short-grid {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: 70px 28px !important;
-  padding-bottom: 100px !important;
+  padding-bottom: 210px !important;
 }
 
 /* hàng 1 */
 .editorial-short-grid .short-card:nth-child(1) {
-  transform: translateY(0);
+  transform: translateY(0px);
 }
 
 .editorial-short-grid .short-card:nth-child(2) {
@@ -9704,8 +9488,24 @@ body:has(.motion02-project) {
   transform: translateY(55px);
 }
 
-/* form chung */
+.editorial-short-grid .short-card:nth-child(8) {
+  transform: translateY(130px);
+}
 
-/* hàng 1: 4 item */
+/* hàng 3 */
+.editorial-short-grid .short-card:nth-child(9) {
+  transform: translateY(70px);
+}
 
-/* hàng 2: 3 item, căn giữa + sole với hàng trên */
+.editorial-short-grid .short-card:nth-child(10) {
+  transform: translateY(150px);
+}
+
+.editorial-short-grid .short-card:nth-child(11) {
+  transform: translateY(90px);
+}
+
+.editorial-short-grid .short-card:nth-child(12) {
+  transform: translateY(165px);
+}
+

@@ -350,21 +350,20 @@ export const projects: Project[] = [
     ),
   },
   {
-    number: "14",
-    slug: "short-form-project-02",
-    title: "KỸ THUẬT LATTE ART",
-    type: "short-form",
-    category: "SHORT-FORM",
-    role:
-      "DIRECTOR / DOP / EDITOR",
-    description:
-      "Video ghi lại buổi học pha cà phê bằng máy, từ cách sử dụng thiết bị đến thực hành đánh sữa và tạo hình latte art.",
-    video: "https://www.youtube.com/embed/queb9H8BSbo",
-    ...shortFormAssets(
-      "short-form-project-02",
-      "queb9H8BSbo"
-    ),
-  },
+  number: "28",
+  slug: "short-form-project-13",
+  title: "Short-Form Project 13",
+  type: "short-form",
+  category: "SHORT-FORM",
+  role: "DIRECTOR / DOP / EDITOR",
+  description: "Short-form video project description coming soon.",
+  video: "https://www.youtube.com/shorts/VHrqpE9BLKQ",
+  ...shortFormAssets(
+    "short-form-project-13",
+    "VHrqpE9BLKQ"
+  ),
+},
+  
   {
     number: "15",
     slug: "short-form-project-03",
@@ -434,21 +433,20 @@ export const projects: Project[] = [
       "T8izqP7HZQw"
     ),
   },
-  {
-    number: "19",
-    slug: "short-form-project-07",
-    title: "Short-Form Project 07",
+ {
+    number: "14",
+    slug: "short-form-project-02",
+    title: "KỸ THUẬT LATTE ART",
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
-    video:
-      "https://www.youtube.com/shorts/1E_LmFxso1I",
+      "Video ghi lại buổi học pha cà phê bằng máy, từ cách sử dụng thiết bị đến thực hành đánh sữa và tạo hình latte art.",
+    video: "https://www.youtube.com/embed/queb9H8BSbo",
     ...shortFormAssets(
-      "short-form-project-07",
-      "1E_LmFxso1I"
+      "short-form-project-02",
+      "queb9H8BSbo"
     ),
   },
   {
@@ -468,6 +466,7 @@ export const projects: Project[] = [
       "tEcdJlDG3-E"
     ),
   },
+  
   {
     number: "24",
     slug: "short-form-project-09",
@@ -495,6 +494,23 @@ export const projects: Project[] = [
     ...shortFormAssets("short-form-project-10"),
   },
   {
+    number: "19",
+    slug: "short-form-project-07",
+    title: "Short-Form Project 07",
+    type: "short-form",
+    category: "SHORT-FORM",
+    role:
+      "DIRECTOR / DOP / EDITOR",
+    description:
+      "Short-form video project description coming soon.",
+    video:
+      "https://www.youtube.com/shorts/1E_LmFxso1I",
+    ...shortFormAssets(
+      "short-form-project-07",
+      "1E_LmFxso1I"
+    ),
+  },
+  {
     number: "26",
     slug: "short-form-project-11",
     title: "Short-Form Project 11",
@@ -507,7 +523,8 @@ export const projects: Project[] = [
     video: "",
     ...shortFormAssets("short-form-project-11"),
   },
-  {
+  
+   {
     number: "27",
     slug: "short-form-project-12",
     title: "Short-Form Project 12",

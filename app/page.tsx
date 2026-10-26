@@ -3,7 +3,11 @@
 import { useState, type MouseEvent } from "react";
 import { useRouter } from "next/navigation";
 
-import { projects, type ProjectType } from "../data/projects";
+import {
+  getProjectsByType,
+  projects,
+  type ProjectType,
+} from "../data/projects";
 import {
   ABOUT_ROLES,
   CATEGORY_NOTES,
@@ -25,7 +29,7 @@ import {
 const PAGE_TRANSITION_MS = 450;
 
 function projectsOfType(type: ProjectType) {
-  return projects.filter((project) => project.type === type);
+  return getProjectsByType(type);
 }
 
 const filmProjects = projectsOfType("film");

@@ -70,7 +70,7 @@ function shortFormAssets(
   youtubeId?: string
 ) {
   return {
-    cover: `/projects/${slug}/cover.jpg`,
+    cover: `/projects/${slug}/cover.webp`,
     coverFallback: youtubeId
       ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
       : "",
@@ -124,14 +124,14 @@ export const projects: Project[] = [
   {
     number: "02",
     slug: "film-project-02",
-    title: "Film Project 02",
+    title: "TEAM BUILDING RECAP",
     type: "film",
     category: "FILM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
       "Project description coming soon.",
-    video: "",
+    video: "https://youtu.be/qOkql9NPRDI",
     images: [],
     cover:
       "/projects/film-project-02/cover.jpg",
@@ -139,14 +139,14 @@ export const projects: Project[] = [
   {
     number: "03",
     slug: "film-project-03",
-    title: "Film Project 03",
+    title: "COMPANY RECAP",
     type: "film",
     category: "FILM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
       "Project description coming soon.",
-    video: "",
+    video: "https://youtu.be/Uq1_E_4s-3U",
     images: [],
     cover:
       "/projects/film-project-03/cover.jpg",
@@ -335,13 +335,16 @@ export const projects: Project[] = [
   {
     number: "13",
     slug: "short-form-project-01",
-    title: "Short-Form Project 01",
+    title: "MUSIC PROGRAM ADMISSIONS",
+    cardTitle: {
+      lines: ["MUSIC PROGRAM", "ADMISSIONS"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "An introduction to music program admissions, highlighting the learning environment and opportunities for aspiring musicians.",
     video:
       "https://www.youtube.com/shorts/BngrJmlrfC8",
     ...shortFormAssets(
@@ -362,18 +365,22 @@ export const projects: Project[] = [
     "short-form-project-13",
     "VHrqpE9BLKQ"
   ),
+  cover: "",
 },
   
   {
     number: "15",
     slug: "short-form-project-03",
-    title: "Short-Form Project 03",
+    title: "CYBERSECURITY CONSULTATION",
+    cardTitle: {
+      lines: ["CYBERSECURITY", "CONSULTATION"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "Practical cybersecurity guidance to help viewers recognize common online risks and protect their personal information.",
     video:
       "https://www.youtube.com/shorts/R4IAgGwdVSM",
     ...shortFormAssets(
@@ -384,13 +391,16 @@ export const projects: Project[] = [
   {
     number: "16",
     slug: "short-form-project-04",
-    title: "Short-Form Project 04",
+    title: "BALANCING BEVERAGE FLAVORS",
+    cardTitle: {
+      lines: ["BALANCING", "BEVERAGE FLAVORS"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "A look at combining flavor notes in beverage making to create drinks that taste balanced and harmonious.",
     video:
       "https://www.youtube.com/shorts/hZtI5ofqVlQ",
     ...shortFormAssets(
@@ -402,13 +412,16 @@ export const projects: Project[] = [
   {
     number: "17",
     slug: "short-form-project-05",
-    title: "Short-Form Project 05",
+    title: "MAKEUP ARTIST",
+    cardTitle: {
+      lines: ["MAKEUP ARTIST"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "A recap of the makeup artist graduation exam, capturing the completed looks and standout moments from the showcase.",
     video:
       "https://www.youtube.com/shorts/mYV_ZXsUHJo",
     ...shortFormAssets(
@@ -419,13 +432,16 @@ export const projects: Project[] = [
   {
     number: "18",
     slug: "short-form-project-06",
-    title: "Short-Form Project 06",
+    title: "NAIL CAREER ABROAD",
+    cardTitle: {
+      lines: ["NAIL CAREER", "ABROAD"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "An introduction to pursuing a nail career abroad, with a focus on career paths and factors to consider before choosing a direction.",
     video:
       "https://www.youtube.com/shorts/T8izqP7HZQw",
     ...shortFormAssets(
@@ -436,29 +452,37 @@ export const projects: Project[] = [
  {
     number: "14",
     slug: "short-form-project-02",
-    title: "KỸ THUẬT LATTE ART",
+    title: "DELICIOUS RECIPES",
+    cardTitle: {
+      lines: ["DELICIOUS", "RECIPES"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Video ghi lại buổi học pha cà phê bằng máy, từ cách sử dụng thiết bị đến thực hành đánh sữa và tạo hình latte art.",
-    video: "https://www.youtube.com/embed/queb9H8BSbo",
+      "An easy-to-follow recipe, from the key ingredients to the cooking steps, for making a tasty dish at home.",
+    video:
+      "https://youtube.com/shorts/VHrqpE9BLKQ?feature=share",
     ...shortFormAssets(
       "short-form-project-02",
-      "queb9H8BSbo"
+      "VHrqpE9BLKQ"
     ),
+    cover: "/projects/short-form-project-02/cover.webp",
   },
   {
     number: "23",
     slug: "short-form-project-08",
-    title: "Short-Form Project 08",
+    title: "FACEBOOK MARKETING",
+    cardTitle: {
+      lines: ["FACEBOOK", "MARKETING"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "Ideas and practical approaches for using Facebook Marketing to reach customers and promote products on social media.",
     video:
       "https://www.youtube.com/shorts/tEcdJlDG3-E",
     ...shortFormAssets(
@@ -496,32 +520,43 @@ export const projects: Project[] = [
   {
     number: "19",
     slug: "short-form-project-07",
-    title: "Short-Form Project 07",
+    title: "LATTE ART TECHNIQUES",
+    cardTitle: {
+      lines: ["LATTE ART", "TECHNIQUES"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
+      "A guide to latte art techniques, from preparing steamed milk to creating designs on the surface of the coffee.",
     video:
-      "https://www.youtube.com/shorts/1E_LmFxso1I",
+      "https://youtube.com/shorts/queb9H8BSbo?feature=share",
     ...shortFormAssets(
       "short-form-project-07",
-      "1E_LmFxso1I"
+      "queb9H8BSbo"
     ),
+    cover: "/projects/short-form-project-07/cover.webp",
   },
   {
     number: "26",
     slug: "short-form-project-11",
-    title: "Short-Form Project 11",
+    title: "HEALTH ADVICE",
+    cardTitle: {
+      lines: ["HEALTH ADVICE"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
-    video: "",
-    ...shortFormAssets("short-form-project-11"),
+      "An overview of pinworm infections in children, with a reminder for parents to discuss concerns with a healthcare professional.",
+    video:
+      "https://youtube.com/shorts/1E_LmFxso1I?feature=share",
+    ...shortFormAssets(
+      "short-form-project-11",
+      "1E_LmFxso1I"
+    ),
   },
   
    
@@ -593,6 +628,8 @@ export function getProjectsByType(
   return projects.filter(
     (project) =>
       project.type === type
+  ).sort(
+    (a, b) => Number(a.number) - Number(b.number)
   );
 }
 

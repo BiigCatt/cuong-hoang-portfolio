@@ -7,10 +7,15 @@ import {
   useState,
   type MouseEvent,
 } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 
 import type { Project } from "../../data/projects";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export type OpenProjectHandler = (
   event: MouseEvent<HTMLAnchorElement>,
@@ -66,6 +71,7 @@ export default function EditorialProjectCard({
   /* Ảnh bìa: nếu file `cover` chưa có / tải lỗi thì dùng coverFallback;
      không có cả hai thì hiện khung số thứ tự. */
   const mediaRef = useRef<HTMLDivElement>(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
   const [coverFailed, setCoverFailed] = useState(false);
 
   const cover = coverFailed ? project.coverFallback ?? "" : project.cover;
@@ -82,6 +88,26 @@ export default function EditorialProjectCard({
 
   const isGif = cover?.toLowerCase().endsWith(".gif") ?? false;
 
+  useGSAP(() => {
+    const media = parallaxRef.current;
+    if (
+      !media ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(max-width: 900px)").matches
+    ) return;
+
+    gsap.fromTo(media, { yPercent: -3 }, {
+      yPercent: 3,
+      ease: "none",
+      scrollTrigger: {
+        trigger: media.closest(".editorial-project"),
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.8,
+      },
+    });
+  }, { dependencies: [cover], revertOnUpdate: true });
+
   return (
     <Link
       href={href}
@@ -92,23 +118,30 @@ export default function EditorialProjectCard({
       {/* IMAGE */}
       <div className="editorial-project-media" ref={mediaRef}>
         {cover ? (
-          isGif ? (
-            <img
-              src={cover}
-              alt={project.title}
-              className="editorial-project-image editorial-project-gif"
-              onError={() => setCoverFailed(true)}
-            />
-          ) : (
-            <Image
-              src={cover}
-              alt={project.title}
-              fill
-              sizes="100vw"
-              className="editorial-project-image"
-              onError={() => setCoverFailed(true)}
-            />
-          )
+          <div className="editorial-project-parallax" ref={parallaxRef}>
+            {isGif ? (
+              <img
+                src={cover}
+                alt={project.title}
+                className="editorial-project-image editorial-project-gif"
+                onError={() => setCoverFailed(true)}
+              />
+            ) : (
+              <Image
+                src={cover}
+                alt={project.title}
+                fill
+                sizes="100vw"
+                unoptimized={
+                  project.slug === "film-project-02" ||
+                  project.slug === "film-project-03" ||
+                  project.slug === "film-project-04"
+                }
+                className="editorial-project-image"
+                onError={() => setCoverFailed(true)}
+              />
+            )}
+          </div>
         ) : (
           <div className="editorial-project-placeholder">
             {project.number}

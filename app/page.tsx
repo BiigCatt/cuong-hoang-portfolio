@@ -21,6 +21,7 @@ import EditorialSectionHeader from "./components/EditorialSectionHeader";
 import WorkHeader, { type FilterType } from "./components/WorkHeader";
 import {
   useCustomCursor,
+  useHeroIntro,
   useNavScrolled,
   useRevealOnScroll,
 } from "./hooks/useHomeEffects";
@@ -64,6 +65,7 @@ export default function Home() {
     activeFilter === "all" || activeFilter === type;
 
   useCustomCursor(activeFilter);
+  useHeroIntro();
   useRevealOnScroll(activeFilter);
   useNavScrolled();
 

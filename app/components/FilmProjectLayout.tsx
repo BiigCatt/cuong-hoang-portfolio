@@ -21,12 +21,18 @@ export default function FilmProjectLayout({
   project,
   nextProject,
 }: FilmProjectLayoutProps) {
+  const leaveInsetEmpty =
+    project.slug === "film-project-02" ||
+    project.slug === "film-project-03" ||
+    project.slug === "film-project-04";
+
   /* =========================================================
      PREVIEW IMAGE
   ========================================================= */
 
-const previewImage =
-  project.slug === "cmc-data-center"
+const previewImage = leaveInsetEmpty
+  ? ""
+  : project.slug === "cmc-data-center"
     ? project.images[0] || project.cover
     : project.slug === "film-project-06"
       ? project.images[2] ||
@@ -118,6 +124,7 @@ const heroImage = project.cover;
     priority
     sizes="100vw"
     className="aperture-background"
+    unoptimized={leaveInsetEmpty}
   />
 )}
 
@@ -146,20 +153,23 @@ const heroImage = project.cover;
             SMALL PREVIEW
         =================================================== */}
 
-        {previewImage && (
-          <div className="aperture-inset">
-
-            <Image
-              src={previewImage}
-              alt={`${project.title} preview`}
-              fill
-              sizes="30vw"
-              className="aperture-inset-image"
-              unoptimized={
-                isGif(previewImage)
-              }
-            />
-
+        {(previewImage || leaveInsetEmpty) && (
+          <div
+            className={`aperture-inset${
+              leaveInsetEmpty ? " aperture-inset-empty" : ""
+            }`}
+            aria-hidden={leaveInsetEmpty ? true : undefined}
+          >
+            {previewImage && (
+              <Image
+                src={previewImage}
+                alt={`${project.title} preview`}
+                fill
+                sizes="30vw"
+                className="aperture-inset-image"
+                unoptimized={isGif(previewImage)}
+              />
+            )}
           </div>
         )}
 

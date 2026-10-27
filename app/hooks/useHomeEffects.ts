@@ -1,95 +1,142 @@
 "use client";
 
-import { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
-/* =========================================================
-   HIỆU ỨNG TRANG CHỦ
-   Tách khỏi page.tsx cho gọn. Logic giữ nguyên.
-   `refreshKey` đổi (ví dụ khi đổi filter) -> gắn lại listener
-   cho các phần tử mới render.
-========================================================= */
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-/** Con trỏ tuỳ chỉnh: bám chuột + đổi trạng thái khi hover [data-cursor]. */
-export function useCustomCursor(refreshKey: unknown) {
-  useEffect(() => {
-    const cursor = document.querySelector<HTMLElement>(".custom-cursor");
+export function useCustomCursor(activeFilter: string) {
+  const scope = useRef<HTMLElement>(null);
 
-    const moveCursor = (event: MouseEvent) => {
-      if (!cursor) return;
-      cursor.style.left = `${event.clientX}px`;
-      cursor.style.top = `${event.clientY}px`;
-    };
+  useGSAP(
+    (_context, contextSafe) => {
+      scope.current = document.querySelector<HTMLElement>(".portfolio");
+      const cursor = scope.current?.querySelector<HTMLElement>(".custom-cursor");
+      if (!cursor || window.matchMedia("(pointer: coarse)").matches) return;
 
-    const addHover = () => cursor?.classList.add("hover");
-    const removeHover = () => cursor?.classList.remove("hover");
-
-    const interactiveElements = document.querySelectorAll("[data-cursor]");
-
-    window.addEventListener("mousemove", moveCursor);
-
-    interactiveElements.forEach((element) => {
-      element.addEventListener("mouseenter", addHover);
-      element.addEventListener("mouseleave", removeHover);
-    });
-
-    return () => {
-      window.removeEventListener("mousemove", moveCursor);
-
-      interactiveElements.forEach((element) => {
-        element.removeEventListener("mouseenter", addHover);
-        element.removeEventListener("mouseleave", removeHover);
+      const moveCursor = gsap.quickTo(cursor, "x", {
+        duration: 0.35,
+        ease: "power3.out",
       });
-    };
-  }, [refreshKey]);
+      const moveCursorY = gsap.quickTo(cursor, "y", {
+        duration: 0.35,
+        ease: "power3.out",
+      });
+      let pointerX = window.innerWidth / 2;
+      let pointerY = window.innerHeight / 2;
+      const syncHover = (target: EventTarget | null) => {
+        const element = target instanceof Element ? target : null;
+        cursor.classList.toggle("hover", Boolean(element?.closest("[data-cursor]")));
+      };
+
+      const onMove = contextSafe?.((event: MouseEvent) => {
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        moveCursor(event.clientX);
+        moveCursorY(event.clientY);
+        syncHover(event.target);
+      });
+      const onPointerOver = contextSafe?.((event: PointerEvent) => {
+        syncHover(event.target);
+      });
+      const onPointerOut = contextSafe?.((event: PointerEvent) => {
+        const next = event.relatedTarget as Element | null;
+        if (!next?.closest("[data-cursor]")) cursor.classList.remove("hover");
+      });
+      const onScroll = contextSafe?.(() => {
+        syncHover(document.elementFromPoint(pointerX, pointerY));
+      });
+
+      if (!onMove || !onPointerOver || !onPointerOut || !onScroll) return;
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("pointerover", onPointerOver);
+      window.addEventListener("pointerout", onPointerOut);
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener("mousemove", onMove);
+        window.removeEventListener("pointerover", onPointerOver);
+        window.removeEventListener("pointerout", onPointerOut);
+        window.removeEventListener("scroll", onScroll);
+      };
+    },
+    { scope, dependencies: [activeFilter], revertOnUpdate: true }
+  );
+
+  return scope;
 }
 
-/** Thêm class "is-visible" cho từng card khi cuộn tới (hiệu ứng hiện dần). */
-export function useRevealOnScroll(refreshKey: unknown) {
-  useEffect(() => {
-    const projectElements = document.querySelectorAll(".editorial-project");
+export function useRevealOnScroll(activeFilter: string) {
+  const scope = useRef<HTMLElement>(null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.08,
-        rootMargin: "0px 0px -4% 0px",
+  useGSAP(
+    () => {
+      scope.current = document.querySelector<HTMLElement>(".portfolio");
+      const cards = gsap.utils.toArray<HTMLElement>(".editorial-project", scope.current);
+      if (!cards.length) return;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gsap.set(cards, { clearProps: "opacity" });
+        cards.forEach((card) => card.classList.add("is-visible"));
+        return;
       }
-    );
 
-    projectElements.forEach((project) => observer.observe(project));
+      gsap.set(cards, { opacity: 0 });
+      ScrollTrigger.batch(cards, {
+        start: "top 90%",
+        once: true,
+        onEnter: (batch) => {
+          batch.forEach((card) => card.classList.add("is-visible"));
+          gsap.fromTo(batch, { opacity: 0 }, {
+            opacity: 1,
+            duration: 0.75,
+            stagger: 0.08,
+            ease: "power2.out",
+            overwrite: true,
+          });
+        },
+      });
+    },
+    { scope, dependencies: [activeFilter], revertOnUpdate: true }
+  );
 
-    return () => observer.disconnect();
-  }, [refreshKey]);
+  return scope;
 }
 
-/** Thêm class "nav-scrolled" cho .nav khi cuộn quá 40px. */
 export function useNavScrolled() {
-  useEffect(() => {
-    const nav = document.querySelector(".nav");
+  useGSAP(() => {
+    const nav = document.querySelector<HTMLElement>(".nav");
+    if (!nav) return;
 
-    const handleScroll = () => {
-      if (!nav) return;
+    const updateNav = () => nav.classList.toggle("scrolled", window.scrollY > 30);
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+    return () => window.removeEventListener("scroll", updateNav);
+  });
+}
 
-      if (window.scrollY > 40) {
-        nav.classList.add("nav-scrolled");
-      } else {
-        nav.classList.remove("nav-scrolled");
-      }
-    };
+export function useHeroIntro() {
+  useGSAP(() => {
+    const portfolio = document.querySelector<HTMLElement>(".portfolio");
+    if (!portfolio) return;
 
-    handleScroll();
+    const lines = portfolio.querySelectorAll(".hero-line span");
+    const footer = portfolio.querySelector(".hero-bottom");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    gsap.timeline({ defaults: { ease: "power3.out" } })
+      .fromTo(lines, { yPercent: 110, autoAlpha: 0 }, {
+        yPercent: 0,
+        autoAlpha: 1,
+        duration: 1.05,
+        stagger: 0.13,
+      })
+      .fromTo(footer, { y: 12, autoAlpha: 0 }, {
+        y: 0,
+        autoAlpha: 0.55,
+        duration: 0.8,
+      }, "-=0.36");
+  }, { revertOnUpdate: true });
 }

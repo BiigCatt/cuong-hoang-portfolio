@@ -130,7 +130,7 @@ export const projects: Project[] = [
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Project description coming soon.",
+      "A lively recap of CMC Telecom’s team-building event, capturing seaside challenges, shared moments, and the spirit of moving forward together.",
     video: "https://youtu.be/qOkql9NPRDI",
     images: [],
     cover:
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Project description coming soon.",
+      "A company recap for CMC Telecom, bringing together its people, key moments, and ambitions in a forward-looking portrait of the organization.",
     video: "https://youtu.be/Uq1_E_4s-3U",
     images: [],
     cover:
@@ -154,14 +154,14 @@ export const projects: Project[] = [
   {
     number: "04",
     slug: "film-project-04",
-    title: "Film Project 04",
+    title: "IRONMAN RECAP 2026",
     type: "film",
     category: "FILM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Project description coming soon.",
-    video: "",
+      "A high-energy recap following CMC Telecom’s athletes through IRONMAN 2026, from the anticipation and focus of race day to the emotion of crossing the finish line. The film brings together fast-paced course action, candid moments with the team, and the celebration shared by athletes and supporters. It is a portrait of endurance, determination, and the collective spirit that carries each participant through an extraordinary challenge.",
+    video: "https://youtu.be/MwFIJgOgUao",
     images: [],
     cover:
       "/projects/film-project-04/cover.jpg",
@@ -299,7 +299,7 @@ export const projects: Project[] = [
       "/projects/motion-project-02/06.webp",
     ],
     cover:
-      "/projects/motion-project-02/cover.png",
+      "/projects/motion-project-02/cover.webp",
     descriptionLines: [
       "A motion design project for CMC Telecom’s “GAME ON” campaign,",
       "combining football-inspired visuals, dynamic mascots,",
@@ -326,7 +326,7 @@ export const projects: Project[] = [
       "/projects/motion-project-03/04.webp",
     ],
     cover:
-      "/projects/motion-project-03/cover.png",
+      "/projects/motion-project-03/cover.webp",
     detailClassName: "motion03-project",
   },
   /* =======================================================
@@ -353,18 +353,15 @@ export const projects: Project[] = [
     ),
   },
   {
-  number: "28",
-  slug: "short-form-project-13",
-  title: "Short-Form Project 13",
+  number: "27",
+  slug: "short-form-project-12",
+  title: "Short-Form Project 12",
   type: "short-form",
   category: "SHORT-FORM",
   role: "DIRECTOR / DOP / EDITOR",
-  description: "Short-form video project description coming soon.",
-  video: "https://www.youtube.com/shorts/VHrqpE9BLKQ",
-  ...shortFormAssets(
-    "short-form-project-13",
-    "VHrqpE9BLKQ"
-  ),
+  description: "Project details coming soon.",
+  video: "",
+  ...shortFormAssets("short-form-project-12"),
   cover: "",
 },
   
@@ -494,28 +491,34 @@ export const projects: Project[] = [
   {
     number: "24",
     slug: "short-form-project-09",
-    title: "Short-Form Project 09",
+    title: "HOW TO MAKE COFFEE",
+    cardTitle: {
+      lines: ["HOW TO MAKE", "COFFEE"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
-    video: "",
-    ...shortFormAssets("short-form-project-09"),
+      "A short introduction to manual coffee brewing, covering essential tools and the basic principles behind methods such as V60, Kalita, and cold brew.",
+    video: "https://youtube.com/shorts/0g7uq_E1ETI?feature=share",
+    ...shortFormAssets("short-form-project-09", "0g7uq_E1ETI"),
   },
   {
     number: "25",
     slug: "short-form-project-10",
-    title: "Short-Form Project 10",
+    title: "DELICIOUS RECIPES",
+    cardTitle: {
+      lines: ["DELICIOUS", "RECIPES"],
+    },
     type: "short-form",
     category: "SHORT-FORM",
     role:
       "DIRECTOR / DOP / EDITOR",
     description:
-      "Short-form video project description coming soon.",
-    video: "",
-    ...shortFormAssets("short-form-project-10"),
+      "A food-focused short featuring chicken steamed with premium fish sauce, highlighting the preparation, finishing touches, and rich savory flavors of the completed dish.",
+    video: "https://youtube.com/shorts/eEbKdNW3Nuc?feature=share",
+    ...shortFormAssets("short-form-project-10", "eEbKdNW3Nuc"),
   },
   {
     number: "19",

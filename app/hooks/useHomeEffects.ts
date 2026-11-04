@@ -105,18 +105,6 @@ export function useRevealOnScroll(activeFilter: string) {
   return scope;
 }
 
-export function useNavScrolled() {
-  useGSAP(() => {
-    const nav = document.querySelector<HTMLElement>(".nav");
-    if (!nav) return;
-
-    const updateNav = () => nav.classList.toggle("scrolled", window.scrollY > 30);
-    updateNav();
-    window.addEventListener("scroll", updateNav, { passive: true });
-    return () => window.removeEventListener("scroll", updateNav);
-  });
-}
-
 export function useHeroIntro() {
   useGSAP(() => {
     const portfolio = document.querySelector<HTMLElement>(".portfolio");

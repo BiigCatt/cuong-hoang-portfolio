@@ -2,6 +2,8 @@
 
 import { useState, type MouseEvent } from "react";
 import { useRouter } from "next/navigation";
+import GlassNav from "./components/GlassNav";
+import ScrollRevealText from "./components/ScrollRevealText";
 
 import {
   getProjectsByType,
@@ -22,7 +24,6 @@ import WorkHeader, { type FilterType } from "./components/WorkHeader";
 import {
   useCustomCursor,
   useHeroIntro,
-  useNavScrolled,
   useRevealOnScroll,
 } from "./hooks/useHomeEffects";
 
@@ -67,7 +68,6 @@ export default function Home() {
   useCustomCursor(activeFilter);
   useHeroIntro();
   useRevealOnScroll(activeFilter);
-  useNavScrolled();
 
   const openProject = (
     event: MouseEvent<HTMLAnchorElement>,
@@ -96,7 +96,7 @@ export default function Home() {
           NAV
       ===================================================== */}
 
-      <nav className="nav">
+      <GlassNav className="nav">
         <div className="logo">{SITE.name}</div>
 
         <div className="nav-right">
@@ -111,7 +111,7 @@ export default function Home() {
             </a>
           ))}
         </div>
-      </nav>
+      </GlassNav>
 
       {/* =====================================================
           HERO
@@ -149,6 +149,7 @@ export default function Home() {
           onFilterChange={setActiveFilter}
           activeCount={activeCount}
           totalCount={projects.length}
+          revealTitles={activeFilter === "all"}
         />
 
         {/* FILM */}
@@ -156,6 +157,7 @@ export default function Home() {
           <section className="editorial-category editorial-film">
             <EditorialSectionHeader
               title="FILM"
+              revealTitle={activeFilter === "all"}
               count={filmProjects.length}
               index="01"
               note={CATEGORY_NOTES.film}
@@ -209,6 +211,7 @@ export default function Home() {
           <section className="editorial-category editorial-short">
             <EditorialSectionHeader
               title="SHORT-FORM"
+              revealTitle={activeFilter === "all"}
               count={shortProjects.length}
               index="02"
               note={CATEGORY_NOTES["short-form"]}
@@ -229,38 +232,24 @@ export default function Home() {
 
         {/* PHOTOGRAPHY */}
         {isShown("photography") && (
-          <section className="editorial-category editorial-photo">
+          <section id="photography" className="editorial-category editorial-photo">
             <EditorialSectionHeader
               title="PHOTOGRAPHY"
+              revealTitle={activeFilter === "all"}
               count={photoProjects.length}
               index="03"
               note={CATEGORY_NOTES.photography}
             />
 
             <div className="editorial-photo-grid">
-              {photoProjects[0] && (
+              {photoProjects.map((project, index) => (
                 <EditorialProjectCard
-                  project={photoProjects[0]}
-                  className="photo-main"
+                  key={project.slug}
+                  project={project}
+                  className={index === 0 ? "photo-main" : "photo-side"}
                   onOpen={openProject}
                 />
-              )}
-
-              {photoProjects[1] && (
-                <EditorialProjectCard
-                  project={photoProjects[1]}
-                  className="photo-side"
-                  onOpen={openProject}
-                />
-              )}
-
-              {photoProjects[2] && (
-                <EditorialProjectCard
-                  project={photoProjects[2]}
-                  className="photo-side"
-                  onOpen={openProject}
-                />
-              )}
+              ))}
             </div>
           </section>
         )}
@@ -270,6 +259,7 @@ export default function Home() {
           <section className="editorial-category editorial-motion">
             <EditorialSectionHeader
               title="MOTION"
+              revealTitle={activeFilter === "all"}
               count={motionProjects.length}
               index="04"
               note={CATEGORY_NOTES.motion}
@@ -316,7 +306,12 @@ export default function Home() {
 
         <div className="about-main">
           <div className="about-intro">
-            <p>I CREATE VISUAL STORIES THROUGH FILM, MOTION AND DESIGN.</p>
+            <p>
+              <ScrollRevealText
+                text="I CREATE VISUAL STORIES THROUGH FILM, MOTION AND DESIGN."
+                enabled={activeFilter === "all"}
+              />
+            </p>
           </div>
 
           <div className="about-details">
@@ -349,7 +344,9 @@ export default function Home() {
         </div>
 
         <div className="contact-main">
-          <p className="contact-title">HAVE A PROJECT IN MIND?</p>
+          <p className="contact-title">
+            <ScrollRevealText text="HAVE A PROJECT IN MIND?" enabled={activeFilter === "all"} />
+          </p>
 
           <a
             href={`mailto:${SITE.email}`}

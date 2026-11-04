@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import GlassNav from "./GlassNav";
 
 import type { Project } from "../../data/projects";
 
@@ -21,7 +22,7 @@ export default function DefaultProjectLayout({
       className={`project-page ${isPhotography ? "photography-project-page" : ""}`}
     >
       {/* NAV */}
-      <nav className="project-nav">
+      <GlassNav className="project-nav">
         <Link href="/" className="project-logo">
           CUONG HOANG
         </Link>
@@ -29,7 +30,7 @@ export default function DefaultProjectLayout({
         <Link href="/#work" className="project-back">
           ← BACK TO WORK
         </Link>
-      </nav>
+      </GlassNav>
 
       {/* HERO */}
       <section

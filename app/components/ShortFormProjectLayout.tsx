@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GlassNav from "./GlassNav";
 
 import type { Project } from "../../data/projects";
 import {
@@ -36,7 +37,7 @@ export default function ShortFormProjectLayout({
           NAV
       ===================================================== */}
 
-      <nav className="shortform-nav">
+      <GlassNav className="shortform-nav">
 
         <Link
           href="/"
@@ -56,7 +57,7 @@ export default function ShortFormProjectLayout({
           ← BACK TO WORK
         </Link>
 
-      </nav>
+      </GlassNav>
 
 
       {/* =====================================================

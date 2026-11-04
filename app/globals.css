@@ -2365,7 +2365,7 @@ a {
   letter-spacing: -0.055em;
 }
 
-.editorial-category-title span {
+.editorial-category-title > span {
   padding-bottom: 4px;
 
   font-family:
@@ -2770,24 +2770,130 @@ div > span {
    PHOTOGRAPHY
 ========================================================= */
 
-.editorial-photo-grid {
-  width: 100%;
-
-  margin-top: 8px;
-
-  display: grid;
-
-  grid-template-columns:
-    1.45fr
-    0.82fr
-    0.88fr;
-
-  gap: 8px;
+.editorial-photo {
+  scroll-margin-top: 110px;
 }
 
-.photo-main,
-.photo-side {
-  min-height: 285px;
+.editorial-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.editorial-photo-grid .photo-main {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 5.5;
+  min-height: 340px;
+}
+
+.editorial-photo-grid .photo-side {
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  min-height: 240px;
+}
+
+.editorial-photo .editorial-project-bottom > div {
+  min-width: 0;
+  flex: 1;
+}
+
+/* The original global card styles force titles onto one line. */
+.editorial-photo .editorial-project-bottom h3 {
+  max-width: none !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.editorial-photo .photo-side .editorial-project-bottom {
+  gap: 16px;
+}
+
+.editorial-photo .photo-side .editorial-project-bottom h3 {
+  font-size: clamp(19px, 1.7vw, 28px) !important;
+  line-height: 1.05 !important;
+}
+
+.editorial-photo .photo-side .editorial-project-play {
+  width: 52px !important;
+  height: 52px !important;
+  flex: 0 0 52px !important;
+}
+
+.editorial-photo .photo-side .editorial-project-play-text {
+  font-size: 12px !important;
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .editorial-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .editorial-photo-grid .photo-main {
+    min-height: 290px;
+  }
+
+  .editorial-photo-grid .photo-side {
+    min-height: 220px;
+  }
+
+  .editorial-photo .photo-side .editorial-project-bottom {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    gap: 10px;
+  }
+
+  .editorial-photo .photo-side .editorial-project-play {
+    width: 40px !important;
+    height: 40px !important;
+    flex-basis: 40px !important;
+  }
+
+  .editorial-photo .photo-side .editorial-project-play-text {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .editorial-photo-grid .photo-main {
+    aspect-ratio: 4 / 3;
+    min-height: 280px;
+  }
+
+  .editorial-photo-grid .photo-side {
+    aspect-ratio: 4 / 3;
+    min-height: 230px;
+  }
+
+  .editorial-photo .editorial-category-header {
+    min-height: 74px !important;
+    padding: 20px 0 14px !important;
+    gap: 12px !important;
+  }
+
+  .editorial-photo .editorial-category-title {
+    min-width: 0;
+    gap: 8px !important;
+  }
+
+  .editorial-photo .editorial-category-title h2 {
+    font-size: clamp(27px, 8vw, 44px) !important;
+  }
+
+  .editorial-photo .editorial-category-title > span {
+    padding-bottom: 0;
+    font-size: 12px !important;
+  }
+
+  .editorial-photo .editorial-category-right {
+    gap: 0 !important;
+    font-size: 10px !important;
+  }
 }
 
 /* =========================================================
@@ -2832,11 +2938,6 @@ div > span {
     min-height: 360px;
   }
 
-  .photo-main,
-  .photo-side {
-    min-height: 240px;
-  }
-
 }
 
 /* =========================================================
@@ -2875,7 +2976,7 @@ div > span {
       );
   }
 
-  .editorial-category-title span {
+  .editorial-category-title > span {
     font-size: 10px;
   }
 
@@ -2994,11 +3095,6 @@ div > span {
     grid-template-columns: 1fr;
   }
 
-  .photo-main,
-  .photo-side {
-    min-height: 230px;
-  }
-
 }
 
 /* =========================================================
@@ -3069,7 +3165,7 @@ div > span {
 /* CATEGORY TITLE */
 
 .editorial-category-title h2,
-.editorial-category-title span,
+.editorial-category-title > span,
 .editorial-category-right {
   color: #d3b69c;
 
@@ -3146,7 +3242,7 @@ select {
 .editorial-category-header,
 .editorial-category-title,
 .editorial-category-title h2,
-.editorial-category-title span,
+.editorial-category-title > span,
 .editorial-category-right,
 .editorial-project,
 .editorial-project-bottom,
@@ -3321,7 +3417,7 @@ select {
 }
 
 .editorial-category-title h2,
-.editorial-category-title span,
+.editorial-category-title > span,
 .editorial-category-right {
   color: #d3b69c;
 }
@@ -3334,7 +3430,7 @@ select {
 .editorial-category,
 .editorial-category-title,
 .editorial-category-title h2,
-.editorial-category-title span,
+.editorial-category-title > span,
 .editorial-category-right {
   color: #d3b69c;
 }
@@ -7513,7 +7609,7 @@ body:has(.motion02-project) {
   color: #d3b69c !important;
 }
 
-.editorial-category-title span {
+.editorial-category-title > span {
   padding-bottom: 5px;
 
   font-size:
@@ -7557,6 +7653,7 @@ body:has(.motion02-project) {
 
 .editorial-project {
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .film-hero {
@@ -7568,8 +7665,6 @@ body:has(.motion02-project) {
     calc(
       100% - 80px
     ) !important;
-
-  border-radius: 10px;
 
   overflow: hidden;
 }
@@ -7667,6 +7762,9 @@ body:has(.motion02-project) {
         100% - 40px
       ) !important;
 
+  }
+
+  .editorial-project {
     border-radius: 6px;
   }
 
@@ -9558,3 +9656,68 @@ body:has(.motion02-project) {
   }
 }
 
+
+/* Pointer tilt uses an inner surface so scroll reveals and the
+   staggered short-form layout keep their independent transforms. */
+.editorial-project {
+  overflow: visible;
+  background: transparent;
+}
+
+.editorial-project-surface {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  background: #111;
+}
+
+.editorial-project.is-tilting {
+  z-index: 5;
+}
+
+/* Headers are clear at the top; all pages share the same scrolled glass. */
+.nav-glass {
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-glass.is-scrolled {
+  background: rgba(255, 255, 255, 0.07) !important;
+  -webkit-backdrop-filter: blur(72px) saturate(60%) brightness(85%) !important;
+  backdrop-filter: blur(72px) saturate(60%) brightness(85%) !important;
+  border-bottom: 1px solid rgba(211, 182, 156, 0.18) !important;
+}
+
+.project-nav.nav-glass,
+.shortform-nav.nav-glass {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Clipping without a scroll container lets the photo header stay sticky. */
+.project-page:has(> .nav-glass) {
+  overflow-x: clip;
+}
+
+/* Scroll-revealed titles retain their normal type, wrapping and reading order. */
+.scroll-reveal-text {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.scroll-reveal-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

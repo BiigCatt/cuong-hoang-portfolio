@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Link from "next/link";
+import GlassNav from "./GlassNav";
 
 import type { Project } from "../../data/projects";
 
@@ -50,7 +51,7 @@ export default function MotionProjectLayout({
           FIXED GLASS NAV
       ===================================================== */}
 
-      <nav className="motion02-nav">
+      <GlassNav className="motion02-nav">
         <Link href="/" className="motion02-logo">
           CUONG HOANG
         </Link>
@@ -60,7 +61,7 @@ export default function MotionProjectLayout({
         <Link href="/#work" className="motion02-back">
           ← BACK TO WORK
         </Link>
-      </nav>
+      </GlassNav>
 
       {/* =====================================================
           HERO

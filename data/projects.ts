@@ -564,7 +564,7 @@ export const projects: Project[] = [
   
    
   /* =======================================================
-     PHOTOGRAPHY — 20 → 22
+     PHOTOGRAPHY — 20 → 22, 28 → 29
   ======================================================= */
   {
     number: "20",
@@ -611,6 +611,38 @@ export const projects: Project[] = [
     video: "",
     images: [],
     cover: "",
+  },
+  {
+    number: "28",
+    slug: "photography-project-04",
+    title: "IN HER ELEMENT",
+    type: "photography",
+    category: "PHOTOGRAPHY",
+    role: "PHOTOGRAPHER",
+    description:
+      "A portrait series featuring Kim Ngann, capturing relaxed moments in a garden setting and warm, intimate scenes at the bar.",
+    images: Array.from(
+      { length: 10 },
+      (_, index) =>
+        `/images/photography/kim-ngann/${String(index + 1).padStart(2, "0")}.webp`
+    ),
+    cover: "/images/photography/kim-ngann/01.webp",
+  },
+  {
+    number: "29",
+    slug: "photography-project-05",
+    title: "PORTRAITS",
+    type: "photography",
+    category: "PHOTOGRAPHY",
+    role: "PHOTOGRAPHER",
+    description:
+      "A collection of portraits exploring natural light, quiet interiors, and relaxed outdoor moments.",
+    images: Array.from(
+      { length: 11 },
+      (_, index) =>
+        `/images/photography/chan-dung/${String(index + 1).padStart(2, "0")}.webp`
+    ),
+    cover: "/images/photography/chan-dung/11.webp",
   },
 ];
 /* =========================================================

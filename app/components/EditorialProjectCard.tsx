@@ -14,6 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Project } from "../../data/projects";
+import { useCardTilt } from "../hooks/useCardTilt";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -70,9 +71,13 @@ export default function EditorialProjectCard({
 
   /* Ảnh bìa: nếu file `cover` chưa có / tải lỗi thì dùng coverFallback;
      không có cả hai thì hiện khung số thứ tự. */
+  const cardRef = useRef<HTMLAnchorElement>(null);
+  const surfaceRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [coverFailed, setCoverFailed] = useState(false);
+
+  useCardTilt(cardRef, surfaceRef);
 
   const cover = coverFailed ? project.coverFallback ?? "" : project.cover;
 
@@ -110,62 +115,65 @@ export default function EditorialProjectCard({
 
   return (
     <Link
+      ref={cardRef}
       href={href}
       className={`editorial-project ${className}`}
       data-cursor
       onClick={(event) => onOpen?.(event, href)}
     >
-      {/* IMAGE */}
-      <div className="editorial-project-media" ref={mediaRef}>
-        {cover ? (
-          <div className="editorial-project-parallax" ref={parallaxRef}>
-            {isGif ? (
-              <img
-                src={cover}
-                alt={project.title}
-                className="editorial-project-image editorial-project-gif"
-                onError={() => setCoverFailed(true)}
-              />
-            ) : (
-              <Image
-                src={cover}
-                alt={project.title}
-                fill
-                sizes="100vw"
-                unoptimized={
-                  project.slug === "film-project-02" ||
-                  project.slug === "film-project-03" ||
-                  project.slug === "film-project-04"
-                }
-                className="editorial-project-image"
-                onError={() => setCoverFailed(true)}
-              />
-            )}
-          </div>
-        ) : (
-          <div className="editorial-project-placeholder">
-            {project.number}
-          </div>
-        )}
-      </div>
-
-      {/* SHADE */}
-      <div className="editorial-project-shade" />
-
-      {/* BOTTOM */}
-      <div className="editorial-project-bottom">
-        <div>
-          <CardTitle project={project} />
-          <span>{project.category}</span>
+      <div className="editorial-project-surface" ref={surfaceRef}>
+        {/* IMAGE */}
+        <div className="editorial-project-media" ref={mediaRef}>
+          {cover ? (
+            <div className="editorial-project-parallax" ref={parallaxRef}>
+              {isGif ? (
+                <img
+                  src={cover}
+                  alt={project.title}
+                  className="editorial-project-image editorial-project-gif"
+                  onError={() => setCoverFailed(true)}
+                />
+              ) : (
+                <Image
+                  src={cover}
+                  alt={project.title}
+                  fill
+                  sizes="100vw"
+                  unoptimized={
+                    project.slug === "film-project-02" ||
+                    project.slug === "film-project-03" ||
+                    project.slug === "film-project-04"
+                  }
+                  className="editorial-project-image"
+                  onError={() => setCoverFailed(true)}
+                />
+              )}
+            </div>
+          ) : (
+            <div className="editorial-project-placeholder">
+              {project.number}
+            </div>
+          )}
         </div>
 
-        <span className="editorial-project-play">
-          {showPlay ? (
-            <span className="editorial-project-play-icon">▶</span>
-          ) : (
-            <span className="editorial-project-play-text">VIEW</span>
-          )}
-        </span>
+        {/* SHADE */}
+        <div className="editorial-project-shade" />
+
+        {/* BOTTOM */}
+        <div className="editorial-project-bottom">
+          <div>
+            <CardTitle project={project} />
+            <span>{project.category}</span>
+          </div>
+
+          <span className="editorial-project-play">
+            {showPlay ? (
+              <span className="editorial-project-play-icon">▶</span>
+            ) : (
+              <span className="editorial-project-play-text">VIEW</span>
+            )}
+          </span>
+        </div>
       </div>
     </Link>
   );

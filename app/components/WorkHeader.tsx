@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 
 import type { ProjectType } from "../../data/projects";
+import ScrollRevealText from "./ScrollRevealText";
 
 export type FilterType = "all" | ProjectType;
 
@@ -74,6 +75,7 @@ type WorkHeaderProps = {
   onFilterChange: (filter: FilterType) => void;
   activeCount: number;
   totalCount: number;
+  revealTitles?: boolean;
 };
 
 export default function WorkHeader({
@@ -81,11 +83,12 @@ export default function WorkHeader({
   onFilterChange,
   activeCount,
   totalCount,
+  revealTitles = false,
 }: WorkHeaderProps) {
   return (
     <div className="work-final-head">
       <div className="work-final-title-row">
-        <h1>SELECTED WORK</h1>
+        <h1><ScrollRevealText text="SELECTED WORK" enabled={revealTitles} /></h1>
 
         <span>
           {String(activeCount).padStart(2, "0")}

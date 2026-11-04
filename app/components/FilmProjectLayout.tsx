@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import GlassNav from "./GlassNav";
 
 import type { Project } from "../../data/projects";
 import { isLocalVideoSrc, normalizeVideoSrc } from "../../lib/video";
@@ -85,7 +86,7 @@ const heroImage = project.cover;
           NAV — SAME AS MOTION
       ===================================================== */}
 
-      <nav className="motion02-nav">
+      <GlassNav className="motion02-nav">
 
         <Link
           href="/"
@@ -105,7 +106,7 @@ const heroImage = project.cover;
           ← BACK TO WORK
         </Link>
 
-      </nav>
+      </GlassNav>
 
 
       {/* =====================================================

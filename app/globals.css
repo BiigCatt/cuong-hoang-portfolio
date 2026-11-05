@@ -2407,9 +2407,9 @@ a {
 
   text-decoration: none;
 
-  overflow: hidden;
+  overflow: visible;
 
-  background: #111;
+  background: transparent;
 
   cursor: none;
 
@@ -7652,8 +7652,8 @@ body:has(.motion02-project) {
 ========================================================= */
 
 .editorial-project {
-  overflow: hidden;
-  border-radius: 10px;
+  --project-card-radius: 10px;
+  border-radius: var(--project-card-radius);
 }
 
 .film-hero {
@@ -7765,7 +7765,7 @@ body:has(.motion02-project) {
   }
 
   .editorial-project {
-    border-radius: 6px;
+    --project-card-radius: 6px;
   }
 
 }
@@ -9659,16 +9659,14 @@ body:has(.motion02-project) {
 
 /* Pointer tilt uses an inner surface so scroll reveals and the
    staggered short-form layout keep their independent transforms. */
-.editorial-project {
-  overflow: visible;
-  background: transparent;
-}
-
 .editorial-project-surface {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: inherit;
+  border-radius: var(--project-card-radius);
+  /* Clip transformed image layers as well as the surface background. */
+  clip-path: inset(0 round var(--project-card-radius));
+  isolation: isolate;
   background: #111;
 }
 

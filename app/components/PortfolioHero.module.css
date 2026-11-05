@@ -1,0 +1,114 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  color: #d3b69c;
+}
+
+.title,
+.outlineTitle {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  font: inherit;
+  pointer-events: none;
+}
+
+.word {
+  position: absolute;
+  left: 5%;
+  z-index: 1;
+  display: block;
+  width: max-content;
+  font-family: inherit;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+}
+
+.word:nth-child(1) { top: 19%; font-size: 8vw; }
+.word:nth-child(2) { top: 34%; font-size: 8vw; }
+.word:nth-child(3) { top: 62%; font-size: 13.2vw; }
+
+.outlineTitle .word {
+  z-index: 5;
+  color: transparent;
+  -webkit-text-stroke: 1.2px #d3b69c;
+}
+
+.portrait {
+  position: absolute;
+  left: 41%;
+  top: 14%;
+  width: 43%;
+  height: 86%;
+  margin: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero[data-intro-phase="settled"] .portrait,
+.hero[data-intro-phase="ready"] .portrait,
+.hero[data-intro-phase="free"] .portrait { opacity: 1; }
+
+.image {
+  object-fit: contain;
+  object-position: left bottom;
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, rgba(0, 0, 0, 0.82) 71%, rgba(0, 0, 0, 0.35) 79%, transparent 89%);
+  mask-image: linear-gradient(to bottom, #000 65%, rgba(0, 0, 0, 0.82) 71%, rgba(0, 0, 0, 0.35) 79%, transparent 89%);
+}
+
+.bottom {
+  position: absolute;
+  left: 3.3%;
+  right: 3.3%;
+  bottom: 4.5%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  font-size: clamp(15px, 1.65vw, 24px);
+  font-weight: 700;
+}
+
+.scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: 0.035em;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.scroll:focus-visible { outline: 2px solid currentColor; outline-offset: 8px; }
+.arrowWindow { display: block; width: 1em; height: 1.15em; overflow: hidden; }
+.arrowTrack {
+  display: flex;
+  flex-direction: column;
+  animation: scrollDown 1.6s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+.arrowTrack > span { display: block; flex: 0 0 1.15em; height: 1.15em; line-height: 1.15em; text-align: center; }
+@keyframes scrollDown { 0%, 15% { transform: translateY(-50%); } 85%, 100% { transform: translateY(0); } }
+
+@media (max-width: 760px) {
+  .hero { min-height: 640px; }
+  .word:nth-child(1) { top: 21%; font-size: 15vw; }
+  .word:nth-child(2) { top: 34%; font-size: 15vw; }
+  .word:nth-child(3) { top: 65%; font-size: 15vw; }
+  .portrait { left: 22%; top: 25%; width: 72%; height: 65%; }
+  .bottom { left: 5%; right: 5%; bottom: 5%; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait { opacity: 1; }
+  .arrowTrack { animation: none; transform: translateY(-50%); }
+}

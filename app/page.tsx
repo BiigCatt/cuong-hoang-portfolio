@@ -3,6 +3,7 @@
 import { useState, type MouseEvent } from "react";
 import { useRouter } from "next/navigation";
 import GlassNav from "./components/GlassNav";
+import PortfolioHero from "./components/PortfolioHero";
 import ScrollRevealText from "./components/ScrollRevealText";
 
 import {
@@ -23,7 +24,6 @@ import EditorialSectionHeader from "./components/EditorialSectionHeader";
 import WorkHeader, { type FilterType } from "./components/WorkHeader";
 import {
   useCustomCursor,
-  useHeroIntro,
   useRevealOnScroll,
 } from "./hooks/useHomeEffects";
 
@@ -66,7 +66,6 @@ export default function Home() {
     activeFilter === "all" || activeFilter === type;
 
   useCustomCursor(activeFilter);
-  useHeroIntro();
   useRevealOnScroll(activeFilter);
 
   const openProject = (
@@ -117,27 +116,7 @@ export default function Home() {
           HERO
       ===================================================== */}
 
-      <section className="hero">
-        <div className="hero-title">
-          <div className="hero-line">
-            <span>MEDIA</span>
-          </div>
-
-          <div className="hero-line">
-            <span>MOTION</span>
-          </div>
-
-          <div className="hero-line indent">
-            <span>DESIGNER</span>
-          </div>
-        </div>
-
-        <div className="hero-bottom">
-          <span>BASED IN {SITE.location}</span>
-          <span>SCROLL ↓</span>
-          <span>{SITE.year}</span>
-        </div>
-      </section>
+      <PortfolioHero />
 
       {/* =====================================================
           EDITORIAL WORK

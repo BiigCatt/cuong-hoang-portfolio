@@ -7510,7 +7510,7 @@ body:has(.motion02-project) {
     rgba(211, 182, 156, 0.42);
 }
 
-.work-final-title-row h1 {
+.work-final-title-row h2 {
   margin: 0;
 
   font-size:
@@ -7716,7 +7716,7 @@ body:has(.motion02-project) {
     padding-bottom: 22px;
   }
 
-  .work-final-title-row h1 {
+  .work-final-title-row h2 {
     font-size:
       clamp(
         36px,
@@ -9718,4 +9718,17 @@ body:has(.motion02-project) {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+@media (max-width: 380px) {
+  .portfolio .nav .logo {
+    font-size: clamp(16px, 4.8vw, 18px);
+  }
+
+  .portfolio .nav .nav-right {
+    flex-shrink: 0;
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
 }

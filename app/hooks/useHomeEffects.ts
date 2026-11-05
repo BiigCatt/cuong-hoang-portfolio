@@ -104,27 +104,3 @@ export function useRevealOnScroll(activeFilter: string) {
 
   return scope;
 }
-
-export function useHeroIntro() {
-  useGSAP(() => {
-    const portfolio = document.querySelector<HTMLElement>(".portfolio");
-    if (!portfolio) return;
-
-    const lines = portfolio.querySelectorAll(".hero-line span");
-    const footer = portfolio.querySelector(".hero-bottom");
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    gsap.timeline({ defaults: { ease: "power3.out" } })
-      .fromTo(lines, { yPercent: 110, autoAlpha: 0 }, {
-        yPercent: 0,
-        autoAlpha: 1,
-        duration: 1.05,
-        stagger: 0.13,
-      })
-      .fromTo(footer, { y: 12, autoAlpha: 0 }, {
-        y: 0,
-        autoAlpha: 0.55,
-        duration: 0.8,
-      }, "-=0.36");
-  }, { revertOnUpdate: true });
-}

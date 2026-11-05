@@ -88,7 +88,7 @@ export default function WorkHeader({
   return (
     <div className="work-final-head">
       <div className="work-final-title-row">
-        <h1><ScrollRevealText text="SELECTED WORK" enabled={revealTitles} /></h1>
+        <h2><ScrollRevealText text="SELECTED WORK" enabled={revealTitles} /></h2>
 
         <span>
           {String(activeCount).padStart(2, "0")}
